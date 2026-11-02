@@ -166,3 +166,13 @@ def test_changes_and_offers():
     assert len(o) == 1 and o[0]["iso3"] == "EGY" and o[0]["black_sea"]
     h = changes.history(snaps, rows, "2026-11-02")
     assert [p["risk"] for p in h["EGY"]] == [50, 72]
+
+
+def test_fx_change_never_mixes_sources(tmp_path):
+    from radar import store
+    store.use_dir(tmp_path)
+    store.append_fx("2026-11-02", {"SDG": 450.0})                       # primary feed, today only
+    store.add_fx_days({"2026-10-01": {"SDG": 600.0}, "2026-11-02": {"SDG": 610.0}})  # other feed
+    assert store.fx_change("SDG", "2026-11-02") == round(610 / 600 - 1, 4)  # not 450/600
+    store.add_fx_days({"2026-11-02": {}})                                # other feed missing today
+    assert store.fx_change("SDG", "2026-11-02") is None                  # no mixing, no fake move

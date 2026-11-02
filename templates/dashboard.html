@@ -242,7 +242,7 @@ $('legend').innerHTML = [['Low','r0'],['Watch','r1'],['Elevated','r2'],['Severe'
 function why(d) {
   if (!d) return '';
   const bits = [];
-  if (d.momentum != null) bits.push(`${d.crop} imports last season ${d.momentum >= 1 ? Math.round((d.momentum - 1) * 100) + '% above' : Math.round((1 - d.momentum) * 100) + '% below'} normal`);
+  if (d.momentum != null) bits.push(`${d.crop[0].toUpperCase() + d.crop.slice(1)} imports last season ${d.momentum >= 1 ? Math.round((d.momentum - 1) * 100) + '% above' : Math.round((1 - d.momentum) * 100) + '% below'} normal`);
   if (d.harvest != null) bits.push(`harvest ${d.harvest >= 1 ? Math.round((d.harvest - 1) * 100) + '% above' : Math.round((1 - d.harvest) * 100) + '% below'} normal`);
   return bits.join('; ');
 }

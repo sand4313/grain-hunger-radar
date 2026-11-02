@@ -21,8 +21,9 @@ def fetch(sess, countries):
 
 
 # --- History backfill -------------------------------------------------------------
-# The free feed above has no history, so on days missing from data/history/fx.csv we
-# fill in from the open fawazahmed0 currency API (dated daily files, no key).
+# The free feed above has no history. For 7/30-day moves we keep a second, consistent
+# daily series (data/history/fx_alt.csv) from the open fawazahmed0 currency API (dated daily
+# files, no key), filling any day missing from the last five weeks, today included.
 HIST_URLS = ("https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@{d}/v1/currencies/usd.min.json",
              "https://{d}.currency-api.pages.dev/v1/currencies/usd.min.json")
 
@@ -39,11 +40,11 @@ def fetch_day(sess, d):
 
 
 def backfill(sess, ccys, have_dates, as_of, days=35):
-    """Returns {date: {ccy: rate}} for missing days in the last `days` days."""
+    """Returns {date: {ccy: rate}} for days missing from the last `days` days, today included."""
     from datetime import date, timedelta
     t = date.fromisoformat(as_of)
     out = {}
-    for i in range(1, days + 1):
+    for i in range(0, days + 1):
         d = (t - timedelta(days=i)).isoformat()
         if d in have_dates:
             continue

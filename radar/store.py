@@ -6,14 +6,16 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-FX_HIST = DATA / "history" / "fx.csv"
+FX_HIST = DATA / "history" / "fx.csv"          # daily rate shown on the site (Exchange Rate API)
+FX_ALT = DATA / "history" / "fx_alt.csv"        # one consistent daily series used for 7/30-day moves
 
 
 def use_dir(path):
     """Point storage somewhere else (offline test runs write to sample_output/)."""
-    global DATA, FX_HIST
+    global DATA, FX_HIST, FX_ALT
     DATA = Path(path) / "data"
     FX_HIST = DATA / "history" / "fx.csv"
+    FX_ALT = DATA / "history" / "fx_alt.csv"
 
 
 def append_fx(today, rates):
@@ -27,32 +29,33 @@ def append_fx(today, rates):
         w.writerows(sorted(rows, key=lambda r: (r["date"], r["ccy"])))
 
 
-def add_fx_days(days):
-    """Add whole days of rates ({date: {ccy: rate}}) without touching days already stored."""
-    rows = read_fx()
-    have = {r["date"] for r in rows}
-    for d, rates in days.items():
-        if d not in have:
-            rows += [{"date": d, "ccy": k, "rate": v} for k, v in rates.items() if v]
-    FX_HIST.parent.mkdir(parents=True, exist_ok=True)
-    with FX_HIST.open("w", newline="") as f:
+def _write(path, rows):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=["date", "ccy", "rate"])
         w.writeheader()
         w.writerows(sorted(rows, key=lambda r: (r["date"], r["ccy"])))
 
 
-def read_fx():
-    if not FX_HIST.exists():
+def add_fx_days(days, path=None):
+    """Add whole days of rates ({date: {ccy: rate}}), replacing those days if already stored."""
+    path = path or FX_ALT
+    rows = [r for r in read_fx(path) if r["date"] not in days]
+    for d, rates in days.items():
+        rows += [{"date": d, "ccy": k, "rate": v} for k, v in rates.items() if v]
+    _write(path, rows)
+
+
+def read_fx(path=None):
+    path = path or FX_HIST
+    if not path.exists():
         return []
-    with FX_HIST.open() as f:
+    with path.open() as f:
         return [{"date": r["date"], "ccy": r["ccy"], "rate": float(r["rate"])} for r in csv.DictReader(f)]
 
 
-def fx_change(ccy, today, days=30):
-    """Fractional change in local units per USD vs the closest stored day >= `days` ago."""
-    rows = [r for r in read_fx() if r["ccy"] == ccy]
-    if not rows:
-        return None
+def _change(rows, ccy, today, days):
+    rows = [r for r in rows if r["ccy"] == ccy]
     t = datetime.fromisoformat(today).date()
     cutoff = (t - timedelta(days=days)).isoformat()
     past = [r for r in rows if r["date"] <= cutoff]
@@ -60,6 +63,14 @@ def fx_change(ccy, today, days=30):
     if not past or not now:
         return None
     return round(now[0]["rate"] / past[-1]["rate"] - 1, 4)
+
+
+def fx_change(ccy, today, days=30):
+    """Fractional change in local units per USD vs the closest stored day >= `days` ago.
+    Both ends always come from the same source: different feeds quote different rates for
+    some currencies (official vs parallel), and mixing them creates fake moves."""
+    alt = _change(read_fx(FX_ALT), ccy, today, days)
+    return alt if alt is not None else _change(read_fx(FX_HIST), ccy, today, days)
 
 
 def write_snapshot(snap):

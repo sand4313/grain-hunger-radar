@@ -111,7 +111,7 @@ def main():
     if g_fx:
         store.append_fx(as_of, g_fx["rates"])
         if not args.offline:  # fill any missing days of the last 5 weeks so 7/30-day moves work
-            have = {r["date"] for r in store.read_fx()}
+            have = {r["date"] for r in store.read_fx(store.FX_ALT)} - {as_of}  # refresh today
             days = log.run("fx_history", lambda: fx.backfill(sess, list(g_fx["rates"]), have, as_of))
             if days:
                 store.add_fx_days(days)
