@@ -1,0 +1,81 @@
+{
+ "question": "Did the country import 10%+ more than its own 5-year average that year?",
+ "years": [
+  2008,
+  2025
+ ],
+ "countries": 97,
+ "cases": 1832,
+ "rule": {
+  "min_kt": 300,
+  "min_dependence": 0.3,
+  "momentum_high": 1.1,
+  "harvest_short": 0.95,
+  "momentum_medium": 1.2
+ },
+ "result": {
+  "all": {
+   "n": 1832,
+   "hits": 877,
+   "rate": 0.479
+  },
+  "high": {
+   "n": 163,
+   "hits": 124,
+   "rate": 0.761,
+   "lift": 1.59
+  },
+  "medium": {
+   "n": 294,
+   "hits": 204,
+   "rate": 0.694,
+   "lift": 1.45
+  },
+  "low": {
+   "n": 1375,
+   "hits": 549,
+   "rate": 0.399,
+   "lift": 0.83
+  }
+ },
+ "recent": {
+  "all": {
+   "n": 570,
+   "hits": 251,
+   "rate": 0.44
+  },
+  "high": {
+   "n": 32,
+   "hits": 25,
+   "rate": 0.781,
+   "lift": 1.78
+  },
+  "medium": {
+   "n": 73,
+   "hits": 49,
+   "rate": 0.671,
+   "lift": 1.53
+  },
+  "low": {
+   "n": 465,
+   "hits": 177,
+   "rate": 0.381,
+   "lift": 0.87
+  },
+  "years": [
+   2021,
+   2025
+  ]
+ },
+ "rejected_rule": {
+  "name": "Opening stocks at or below 75% of the country's own norm",
+  "result": {
+   "n": 404,
+   "hits": 198,
+   "rate": 0.49,
+   "lift": 1.03
+  },
+  "base": 0.477
+ },
+ "caveat": "Uses USDA's revised figures, not the estimates available at the time."
+}

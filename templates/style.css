@@ -26,6 +26,14 @@ a{color:var(--field-2)}
 .brand{font-weight:800;font-size:22px;letter-spacing:-.02em;color:#fff;text-decoration:none}
 .brand b{color:var(--wheat);font-weight:800}
 .asof{color:#bcd3c5;font-size:13px}
+.mastlink{margin-left:auto;color:var(--wheat);font-weight:700;font-size:14px;text-decoration:none}
+.mastlink:hover{text-decoration:underline}
+.prose{max-width:780px}
+.prose h3{font-size:16px;margin:16px 0 6px}
+.prose ul{padding-left:20px;margin:8px 0}
+.prose li{margin:4px 0}
+.prose .tablewrap{margin:12px 0}
+td.why{white-space:normal;min-width:220px;color:var(--muted);font-size:13px}
 nav.tabs{background:var(--field);border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:5}
 nav.tabs .wrap{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
 nav.tabs button{appearance:none;border:0;background:none;color:#c9dbd0;font:600 14px var(--font);padding:11px 12px;white-space:nowrap;cursor:pointer;border-bottom:3px solid transparent}
@@ -105,4 +113,6 @@ td a:hover{text-decoration:underline}
 @media (max-width:760px){.two{grid-template-columns:1fr}}
 
 footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding:16px 0 30px}
+footer p{margin:0 0 8px;max-width:90ch}
+.flinks{display:flex;flex-wrap:wrap;gap:6px 16px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

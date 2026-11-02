@@ -30,10 +30,11 @@ def build(snap, out=ROOT):
             bits.append(f"{ipc['share_phase3plus'] * 100:.0f}% in IPC Phase 3+")
         if r.get("fx_change_30d") is not None:
             bits.append(f"currency {pct(r['fx_change_30d'])} vs USD in 30 days")
-        w = (r.get("psd") or {}).get("wheat") or {}
-        if "stocks_to_use" in w:
-            bits.append(f"wheat stocks-to-use {w['stocks_to_use']:.2f}")
-        lines.append(f"- **{r['name']}** — risk {r['risk']}/100 ({r['risk_band']}). " + "; ".join(bits) + ".")
+        g = r.get("grain") or {}
+        if "stocks_to_use" in g:
+            bits.append(f"grain stocks-to-use {g['stocks_to_use']:.2f}")
+        lines.append(f"- **{r['name']}** — risk {r['risk']}/100 ({r['risk_band']}, {r.get('confidence', '?')} confidence). "
+                     + "; ".join(bits) + ".")
     lines.append("")
 
     al, mv = snap.get("alerts") or [], snap.get("movers") or {}
@@ -49,14 +50,24 @@ def build(snap, out=ROOT):
             lines.append(f"- Easing: {downs}.")
         lines.append("")
 
+    bt = (snap.get("backtest") or {}).get("result") or {}
     lines += ["## Tender watch", ""]
+    if bt.get("high"):
+        lines += [f"_Likely to import more than usual this season. Since 2008, High has been right "
+                  f"{bt['high']['rate'] * 100:.0f}% of the time vs {bt['all']['rate'] * 100:.0f}% for any big importer._", ""]
     hot = [r for r in rows if r["tender"].startswith(("High", "Medium"))]
     hot.sort(key=lambda r: (not r["tender"].startswith("High"), -(r["risk"] or 0)))
     for r in hot[:12]:
         level, _, note = r["tender"].partition(", ")
         extra = f" ({note})" if note else ""
         buyer = f" ({r['buyer']})" if r.get("buyer") else ""
-        lines.append(f"- **{r['name']}**{buyer}: {level} chance of wheat buying in the next 60 days{extra}.")
+        d = r.get("tender_detail") or {}
+        why = ""
+        if d.get("momentum") is not None:
+            why = f": {d['crop']} imports last season {abs(d['momentum'] - 1) * 100:.0f}% {'above' if d['momentum'] >= 1 else 'below'} normal"
+            if d.get("harvest") is not None:
+                why += f", harvest {abs(d['harvest'] - 1) * 100:.0f}% {'above' if d['harvest'] >= 1 else 'below'} normal"
+        lines.append(f"- **{r['name']}**{buyer} — {level}{extra}{why}.")
     if not hot:
         lines.append("- No country flags a high tender likelihood this week.")
     elif len(hot) > 12:
@@ -87,7 +98,8 @@ def build(snap, out=ROOT):
         lines += ["## Climate", "", f"- ENSO: {e['phase']} (ONI {e['latest']['anom']:+.1f}, {e['latest']['season']} {e['latest']['year']}).", ""]
 
     lines += ["## What it means for traders", "", "_Write 2-3 lines of judgment here before sending._", ""]
-    lines += ["---", "Sources: WFP/IPC via HDX HAPI, USDA FAS PSD, World Bank Pink Sheet, FAO, NOAA CPC, ReliefWeb. "
+    lines += ["---", "Not investment or trading advice. Indicators built from public data; they can be wrong, late or incomplete.", "",
+              "Sources: WFP/IPC via HDX HAPI, USDA FAS PSD, World Bank Pink Sheet, FAO, NOAA CPC, ReliefWeb. "
               "Rates by Exchange Rate API (https://www.exchangerate-api.com)."]
 
     out = Path(out) / "briefs"

@@ -42,6 +42,7 @@ def test_fao_parse():
 
 
 WHEAT = {"consumption": 10000, "ending_stocks": 1000, "imports": 10000, "import_dependence": 1.0,
+         "prev_imports": 11000, "import_momentum": 1.15, "production_vs_avg": 0.9,
          "begin_stu": 0.12, "avg5_stu": 0.20}
 
 
@@ -49,12 +50,15 @@ def test_risk_and_tender():
     c = {"ipc": {"share_phase3plus": 0.40}, "fx_change_30d": 0.10, "psd": {"wheat": WHEAT}}
     s, parts = score.risk(c)
     assert s == 100 and score.band(s) == "Severe" and parts["confidence"] == "High"
-    assert score.tender_signal(c) == "High, FX may delay"          # 0.12 / 0.20 = 0.6 of normal
+    assert score.tender_signal(c) == "High, FX may delay"   # buying up 15% and a short harvest
     assert score.tender_signal(dict(c, fx_change_30d=0.0)) == "High"
-    normal = {"psd": {"wheat": dict(WHEAT, begin_stu=0.19)}}
-    assert score.tender_signal(normal) == "Low"
-    small = {"psd": {"wheat": dict(WHEAT, imports=100)}}
+    good_harvest = {"psd": {"wheat": dict(WHEAT, production_vs_avg=1.05)}}
+    assert score.tender_signal(good_harvest) == "Low"
+    strong_buying = {"psd": {"wheat": dict(WHEAT, production_vs_avg=1.05, import_momentum=1.3)}}
+    assert score.tender_signal(strong_buying) == "Medium"
+    small = {"psd": {"wheat": dict(WHEAT, prev_imports=100, imports=100)}}
     assert score.tender_signal(small) == "Low"
+    assert score.classify(1.15, None) == "Low" and score.classify(None, 0.5) is None
     assert score.tender_signal({}) == "No data"
     assert score.risk({})[0] is None
 
@@ -101,19 +105,28 @@ def test_usda_bulk_parse():
     assert "XX" not in out
 
 
+def test_usda_derive_momentum():
+    ys = {y: {"production": 1000, "imports": 1000, "consumption": 2000, "ending_stocks": 400} for y in range(2019, 2027)}
+    ys[2025]["imports"] = 1600    # bought a lot last year
+    ys[2026]["production"] = 800  # and a small crop this year
+    v = usda.derive(ys)
+    assert v["import_momentum"] == round(1600 / 1120, 3) and v["production_vs_avg"] == 0.8
+    assert score.classify(v["import_momentum"], v["production_vs_avg"]) == "High"
+
+
 def test_backtest_counts_hits():
     from radar import backtest
     ys = {}
     for y in range(2005, 2016):
-        ys[y] = {"consumption": 1000, "ending_stocks": 200, "imports": 800}
-    ys[2012]["ending_stocks"] = 100           # stocks half of normal going into 2013...
-    ys[2013]["imports"] = 1000                # ...and 2013 imports 25% above average
+        ys[y] = {"consumption": 1000, "ending_stocks": 200, "imports": 800, "production": 300}
+    ys[2012]["imports"] = 1000         # bought 20%+ above normal...
+    ys[2013]["production"] = 200       # ...then a short harvest...
+    ys[2013]["imports"] = 1100         # ...and 2013 imports well above average: a hit
     cs = backtest.cases({"EG": {"wheat": ys}}, {"EG": "Egypt"}, first=2010)
     hit = [c for c in cs if c["year"] == 2013][0]
-    assert hit["ratio"] == 0.5 and hit["hit"]
+    assert hit["level"] == "High" and hit["hit"]
     r = backtest.evaluate(cs)
     assert r["high"]["n"] == 1 and r["high"]["hits"] == 1
-
 
 def test_universe():
     from radar import universe

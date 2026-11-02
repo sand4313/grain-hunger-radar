@@ -11,7 +11,10 @@
     "market_year": 2026,
     "avg5_stu": 0.198,
     "begin_stu": 0.135,
-    "avg5_imports": 10925.0
+    "avg5_imports": 10925.0,
+    "import_momentum": 1.25,
+    "prev_imports": 13690,
+    "production_vs_avg": 1.02
    },
    "corn": {
     "imports": 6900,
@@ -40,7 +43,10 @@
     "market_year": 2026,
     "avg5_stu": 0.341,
     "begin_stu": 0.358,
-    "avg5_imports": 7885.0
+    "avg5_imports": 7885.0,
+    "import_momentum": 1.0,
+    "prev_imports": 7905,
+    "production_vs_avg": 1.0
    },
    "corn": {
     "imports": 4980,
@@ -61,7 +67,10 @@
     "market_year": 2026,
     "avg5_stu": 0.495,
     "begin_stu": 0.544,
-    "avg5_imports": 3895.0
+    "avg5_imports": 3895.0,
+    "import_momentum": 0.95,
+    "prev_imports": 3710,
+    "production_vs_avg": 1.0
    },
    "corn": {
     "imports": 2460,
@@ -82,7 +91,10 @@
     "market_year": 2026,
     "avg5_stu": 0.242,
     "begin_stu": 0.208,
-    "avg5_imports": 3325.0
+    "avg5_imports": 3325.0,
+    "import_momentum": 1.22,
+    "prev_imports": 4067,
+    "production_vs_avg": 1.0
    },
    "corn": {
     "imports": 2100,
@@ -103,7 +115,10 @@
     "market_year": 2026,
     "avg5_stu": 0.165,
     "begin_stu": 0.115,
-    "avg5_imports": 1757.5
+    "avg5_imports": 1757.5,
+    "import_momentum": 1.15,
+    "prev_imports": 2026,
+    "production_vs_avg": 0.88
    },
    "corn": {
     "imports": 1110,
@@ -124,7 +139,10 @@
     "market_year": 2026,
     "avg5_stu": 0.308,
     "begin_stu": 0.277,
-    "avg5_imports": 4275.0
+    "avg5_imports": 4275.0,
+    "import_momentum": 1.05,
+    "prev_imports": 4500,
+    "production_vs_avg": 1.0
    },
    "corn": {
     "imports": 2700,
@@ -145,7 +163,10 @@
     "market_year": 2026,
     "avg5_stu": 0.385,
     "begin_stu": 0.385,
-    "avg5_imports": 1900.0
+    "avg5_imports": 1900.0,
+    "import_momentum": 0.9,
+    "prev_imports": 1714,
+    "production_vs_avg": 1.0
    },
    "corn": {
     "imports": 1200,
@@ -166,7 +187,10 @@
     "market_year": 2026,
     "avg5_stu": 0.132,
     "begin_stu": 0.079,
-    "avg5_imports": 3942.5
+    "avg5_imports": 3942.5,
+    "import_momentum": 1.12,
+    "prev_imports": 4427,
+    "production_vs_avg": 0.9
    },
    "corn": {
     "imports": 2490,
@@ -201,7 +225,10 @@
     "market_year": 2026,
     "avg5_stu": 0.088,
     "begin_stu": 0.07,
-    "avg5_imports": 2565.0
+    "avg5_imports": 2565.0,
+    "import_momentum": 1.3,
+    "prev_imports": 3343,
+    "production_vs_avg": 0.7
    },
    "corn": {
     "imports": 1620,
@@ -236,7 +263,10 @@
     "market_year": 2026,
     "avg5_stu": 0.11,
     "begin_stu": 0.099,
-    "avg5_imports": 1330.0
+    "avg5_imports": 1330.0,
+    "import_momentum": 1.0,
+    "prev_imports": 1333,
+    "production_vs_avg": 1.0
    },
    "corn": {
     "imports": 840,
@@ -263,7 +293,10 @@
     "market_year": 2026,
     "avg5_stu": 0.154,
     "begin_stu": 0.146,
-    "avg5_imports": 2470.0
+    "avg5_imports": 2470.0,
+    "import_momentum": 1.1,
+    "prev_imports": 2724,
+    "production_vs_avg": 0.92
    },
    "corn": {
     "imports": 1560,
@@ -290,7 +323,10 @@
     "market_year": 2026,
     "avg5_stu": 0.099,
     "begin_stu": 0.071,
-    "avg5_imports": 5320.0
+    "avg5_imports": 5320.0,
+    "import_momentum": 1.15,
+    "prev_imports": 6133,
+    "production_vs_avg": 0.97
    },
    "corn": {
     "imports": 3360,
@@ -317,7 +353,10 @@
     "market_year": 2026,
     "avg5_stu": 0.22,
     "begin_stu": 0.22,
-    "avg5_imports": 950.0
+    "avg5_imports": 950.0,
+    "import_momentum": 0.8,
+    "prev_imports": 762,
+    "production_vs_avg": 1.0
    },
    "corn": {
     "imports": 600,
@@ -344,7 +383,10 @@
     "market_year": 2026,
     "avg5_stu": 0.209,
     "begin_stu": 0.184,
-    "avg5_imports": 6175.0
+    "avg5_imports": 6175.0,
+    "import_momentum": 1.21,
+    "prev_imports": 7490,
+    "production_vs_avg": 1.0
    },
    "corn": {
     "imports": 3900,
@@ -371,7 +413,10 @@
     "market_year": 2026,
     "avg5_stu": 0.231,
     "begin_stu": 0.224,
-    "avg5_imports": 11875.0
+    "avg5_imports": 11875.0,
+    "import_momentum": 1.02,
+    "prev_imports": 12143,
+    "production_vs_avg": 1.0
    },
    "corn": {
     "imports": 7500,

@@ -1,11 +1,14 @@
-"""Backtest of the tender signal on 15+ years of USDA history.
+"""Backtest of the tender signal on USDA history (2008 onward).
 
-Question it answers: when a big importer opened a marketing year with stocks well below
-its own 5-year norm (what the radar flags as High), did it then import unusually much
-that year (10%+ above its own 5-year average)?
+Question: in years the radar would have flagged, did the country then import unusually
+much (10%+ above its own 5-year average)? We compare the hit rate of each signal level
+with the base rate for all big importers.
+
+We also keep the result for the first rule we tried (low opening stocks vs normal), which
+turned out to be no better than chance, so the Method page can say so.
 
 Caveat, also shown on the Method page: USDA history is revised after the fact, so this
-uses final figures, not the numbers traders saw in real time.
+uses final figures, not the estimates traders saw in real time.
 """
 from . import score
 from .universe import iso3_for
@@ -17,9 +20,13 @@ def _stu(b):
     return (b.get("ending_stocks", 0) / b["consumption"]) if b and b.get("consumption") else None
 
 
+def _avg(xs):
+    return sum(xs) / len(xs) if xs else None
+
+
 def cases(hist, names, first=2008):
     """One record per country, crop and year: the signal inputs and the outcome."""
-    top = max((y for crops in hist.values() for ys in crops.values() for y in ys), default=0)
+    top = max((int(y) for crops in hist.values() for ys in crops.values() for y in ys), default=0)
     last = top - 1  # the newest year is still a forecast
     out = []
     for cc, crops in hist.items():
@@ -27,40 +34,44 @@ def cases(hist, names, first=2008):
         if not iso:
             continue  # aggregates like the EU, or countries that no longer exist
         for crop in score.TENDER_CROPS:
-            ys = crops.get(crop) or {}
+            ys = {int(y): v for y, v in (crops.get(crop) or {}).items()}
             for y in range(first, last + 1):
-                prev = ys.get(y - 1)
-                now = ys.get(y)
+                prev, now = ys.get(y - 1), ys.get(y)
                 if not prev or not now or not prev.get("consumption"):
                     continue
-                dep = (prev.get("imports", 0) / prev["consumption"])
-                if prev.get("imports", 0) < score.TENDER_MIN_KT or dep < score.TENDER_MIN_DEP:
+                if prev.get("imports", 0) < score.TENDER_MIN_KT or prev.get("imports", 0) / prev["consumption"] < score.TENDER_MIN_DEP:
                     continue
-                base = [_stu(ys.get(k)) for k in range(y - 6, y - 1)]
-                base = [b for b in base if b is not None]
                 imps = [ys[k].get("imports", 0) for k in range(y - 5, y) if k in ys]
-                if len(base) < 3 or len(imps) < 3:
+                prods = [ys[k].get("production", 0) for k in range(y - 5, y) if k in ys]
+                if len(imps) < 3 or not _avg(imps):
                     continue
-                avg = sum(base) / len(base)
-                if avg < 0.02:
-                    continue
+                avg_imp, avg_prod = _avg(imps), _avg(prods)
+                momentum = prev.get("imports", 0) / avg_imp
+                harvest = now.get("production", 0) / avg_prod if avg_prod and avg_prod > 50 else None
+                stus = [_stu(ys.get(k)) for k in range(y - 6, y - 1)]
+                stus = [s for s in stus if s is not None]
+                stock_ratio = (_stu(prev) / _avg(stus)) if len(stus) >= 3 and _avg(stus) > 0.02 else None
                 out.append({"iso3": iso, "crop": crop, "year": y,
-                            "ratio": round(_stu(prev) / avg, 3),
-                            "hit": now.get("imports", 0) >= UNUSUAL * (sum(imps) / len(imps))})
+                            "level": score.classify(momentum, harvest),
+                            "stock_ratio": stock_ratio,
+                            "hit": now.get("imports", 0) >= UNUSUAL * avg_imp})
     return out
 
 
-def evaluate(cs, high=score.TENDER_HIGH, medium=score.TENDER_MEDIUM):
-    def stats(sel):
-        n = len(sel)
-        h = sum(c["hit"] for c in sel)
-        return {"n": n, "hits": h, "rate": round(h / n, 3) if n else None}
-    allc = stats(cs)
-    hi = stats([c for c in cs if c["ratio"] <= high])
-    med = stats([c for c in cs if high < c["ratio"] <= medium])
-    low = stats([c for c in cs if c["ratio"] > medium])
-    lift = round(hi["rate"] / allc["rate"], 2) if hi["rate"] and allc["rate"] else None
-    return {"all": allc, "high": hi, "medium": med, "low": low, "lift_high": lift}
+def _stats(sel, base=None):
+    n = len(sel)
+    h = sum(c["hit"] for c in sel)
+    rate = round(h / n, 3) if n else None
+    out = {"n": n, "hits": h, "rate": rate}
+    if base and rate is not None:
+        out["lift"] = round(rate / base, 2)
+    return out
+
+
+def evaluate(cs):
+    base = _stats(cs)["rate"]
+    return {"all": _stats(cs), **{lvl.lower(): _stats([c for c in cs if c["level"] == lvl], base)
+                                  for lvl in ("High", "Medium", "Low")}}
 
 
 def run(hist, names):
@@ -68,19 +79,26 @@ def run(hist, names):
     if not cs:
         return None
     years = sorted({c["year"] for c in cs})
-    res = {
-        "question": "After opening the year with low stocks, did the country import 10%+ more than its 5-year average?",
+    recent = [c for c in cs if c["year"] >= years[-1] - 4]
+    old = [c for c in cs if c["stock_ratio"] is not None]
+    old_base = _stats(old)["rate"]
+    return {
+        "question": "Did the country import 10%+ more than its own 5-year average that year?",
         "years": [years[0], years[-1]],
         "countries": len({c["iso3"] for c in cs}),
-        "rule": {"high": score.TENDER_HIGH, "medium": score.TENDER_MEDIUM,
-                 "min_kt": score.TENDER_MIN_KT, "min_dependence": score.TENDER_MIN_DEP},
+        "cases": len(cs),
+        "rule": {"min_kt": score.TENDER_MIN_KT, "min_dependence": score.TENDER_MIN_DEP,
+                 "momentum_high": score.MOMENTUM_HIGH, "harvest_short": score.HARVEST_SHORT,
+                 "momentum_medium": score.MOMENTUM_MEDIUM},
         "result": evaluate(cs),
-        "grid": [dict(threshold=t, **evaluate(cs, high=t)["high"], lift=evaluate(cs, high=t)["lift_high"])
-                 for t in (0.5, 0.6, 0.7, 0.75, 0.8, 0.9)],
-        "recent": evaluate([c for c in cs if c["year"] >= years[-1] - 4]),
+        "recent": dict(evaluate(recent), years=[years[-1] - 4, years[-1]]),
+        "rejected_rule": {
+            "name": "Opening stocks at or below 75% of the country's own norm",
+            "result": _stats([c for c in old if c["stock_ratio"] <= 0.75], old_base),
+            "base": old_base,
+        },
         "caveat": "Uses USDA's revised figures, not the estimates available at the time.",
     }
-    return res
 
 
 def sanity(rows):

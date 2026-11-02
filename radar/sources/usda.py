@@ -95,7 +95,18 @@ def derive(years):
     base = [years[y] for y in range(latest - 6, latest - 1) if y in years and years[y].get("consumption")]
     if len(base) >= 3:
         vals["avg5_stu"] = round(sum(b.get("ending_stocks", 0) / b["consumption"] for b in base) / len(base), 3)
-        vals["avg5_imports"] = round(sum(b.get("imports", 0) for b in base) / len(base), 1)
+    # buying momentum: last year's imports vs the 5 years up to it
+    imp = [years[y].get("imports", 0) for y in range(latest - 5, latest) if y in years]
+    if len(imp) >= 3:
+        vals["avg5_imports"] = round(sum(imp) / len(imp), 1)
+        if vals["avg5_imports"] > 0 and prev:
+            vals["prev_imports"] = prev.get("imports", 0)
+            vals["import_momentum"] = round(prev.get("imports", 0) / vals["avg5_imports"], 3)
+    # this year's harvest (USDA forecast) vs the 5 years before
+    prod = [years[y].get("production", 0) for y in range(latest - 5, latest) if y in years]
+    if len(prod) >= 3 and sum(prod) / len(prod) > 50:
+        vals["avg5_production"] = round(sum(prod) / len(prod), 1)
+        vals["production_vs_avg"] = round(vals.get("production", 0) / vals["avg5_production"], 3)
     return vals
 
 

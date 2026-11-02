@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Grain & Hunger Radar</title>
 <meta name="description" content="Daily food-security and grain-import risk for 100+ countries.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +15,7 @@
 <header class="mast"><div class="wrap">
   <a class="brand" href="./">Grain <b>&amp;</b> Hunger Radar</a>
   <span class="asof" id="asof"></span>
+  <a class="mastlink" href="https://s-newsletter-769f65.beehiiv.com/subscribe" target="_blank" rel="noopener">Get the weekly brief</a>
 </div></header>
 <nav class="tabs" aria-label="Sections"><div class="wrap" role="tablist">
   <button role="tab" data-tab="overview" aria-selected="true">Overview</button>
@@ -48,25 +51,26 @@
 
 <section role="tabpanel" id="watch" hidden>
   <h2>Every country we watch</h2>
-  <p class="lede">Sorted by risk. Click a country for its full page. Tap a column name to sort.</p>
+  <p class="lede">Sorted by risk. Click a country for its full page. Tap a column name to sort. Grain means wheat, corn and rice together. Confidence shows how much data a score rests on: treat Low-confidence scores as a prompt to look closer, not a verdict.</p>
   <div class="tools">
     <input id="q" type="search" placeholder="Find a country or buyer" aria-label="Find a country or buyer">
     <select id="band" aria-label="Risk band"><option value="">All risk bands</option><option>Severe</option><option>Elevated</option><option>Watch</option><option>Low</option></select>
     <select id="tsig" aria-label="Tender signal"><option value="">Any tender signal</option><option value="High">High</option><option value="Medium">Medium</option><option value="Low">Low</option></select>
+    <select id="conf" aria-label="Confidence"><option value="">Any confidence</option><option>High</option><option>Medium</option><option>Low</option></select>
   </div>
   <p class="muted" id="cnt"></p>
   <div class="tablewrap"><table id="tbl"><thead><tr>
     <th><button data-k="name">Country</button></th><th><button data-k="risk">Risk</button></th><th class="n"><button data-k="risk_change">7 days</button></th>
-    <th>Band</th><th class="n"><button data-k="ipc">IPC 3+</button></th><th class="n"><button data-k="fx">FX 30 days</button></th>
-    <th class="n"><button data-k="stu">Wheat stocks/use</button></th><th class="n"><button data-k="imp">Wheat imports, kt</button></th><th>Tender signal</th><th>Income</th>
+    <th>Band</th><th><button data-k="conf">Confidence</button></th><th class="n"><button data-k="ipc">IPC 3+</button></th><th class="n"><button data-k="fx">FX 30 days</button></th>
+    <th class="n"><button data-k="stu">Grain stocks/use</button></th><th class="n"><button data-k="imp">Grain imports, kt</button></th><th>Tender signal</th><th>Income</th>
   </tr></thead><tbody></tbody></table></div>
 </section>
 
 <section role="tabpanel" id="opps" hidden>
   <h2>Who to offer grain to this week</h2>
-  <p class="lede">Countries likely to buy soon, that import real volume and can pay. Natural Black Sea destinations rank well ahead of the rest. Built for a Ukrainian or Black Sea origin seller.</p>
+  <p class="lede">Countries likely to import more than usual in the coming months, that buy real volume and can pay. Natural Black Sea destinations rank well ahead of the rest. Built for a Ukrainian or Black Sea origin seller. The "why" column shows the two numbers behind each signal.</p>
   <div class="tablewrap"><table id="otbl"><thead><tr>
-    <th>Rank</th><th>Country</th><th>Tender signal</th><th class="n">Wheat imports, kt</th><th class="n">Corn imports, kt</th><th>Black Sea route</th><th>Income</th><th>Buyer</th>
+    <th>Rank</th><th>Country</th><th>Tender signal</th><th>Why</th><th class="n">Wheat imports, kt</th><th class="n">Corn imports, kt</th><th>Black Sea route</th><th>Income</th><th>Buyer</th>
   </tr></thead><tbody></tbody></table></div>
 </section>
 
@@ -99,22 +103,68 @@
 
 <section role="tabpanel" id="method" hidden>
   <h2>How the score works</h2>
-  <div class="panel" style="max-width:760px">
-    <p>Each country gets a risk score from 0 to 100, built from four parts. Parts without data are left out and the rest re-weighted, so the coverage figure next to each score shows how many of the four were available.</p>
+  <div class="panel prose">
+    <p>Each country gets a risk score from 0 to 100, rebuilt every morning from public data. It measures how exposed a country's food supply is right now. It is an indicator, not a forecast of famine.</p>
     <ul>
-      <li><b>Hunger, 35%:</b> share of people in IPC Phase 3 or worse. 40% scores the maximum.</li>
-      <li><b>Currency, 20%:</b> loss against the dollar over 30 days. A 10% fall scores the maximum.</li>
-      <li><b>Wheat stocks, 25%:</b> ending stocks as a share of a year's use. Below 0.10 scores the maximum, above 0.40 scores zero.</li>
-      <li><b>Import dependence, 20%:</b> imports as a share of use.</li>
+      <li><b>Hunger, 35%:</b> share of people in IPC Phase 3 (crisis) or worse. 40% scores the maximum. Analyses older than two years are shown but not scored.</li>
+      <li><b>Currency, 20%:</b> loss against the US dollar over 30 days. A 10% fall scores the maximum.</li>
+      <li><b>Grain stocks, 25%:</b> wheat, corn and rice ending stocks as a share of a year's use. Below 0.10 scores the maximum, above 0.40 scores zero.</li>
+      <li><b>Import dependence, 20%:</b> grain imports as a share of use.</li>
     </ul>
     <p>Stocks and imports count for less in richer countries, because a wealthy importer with thin stocks buys more instead of going hungry: high income counts 30%, upper-middle 70%.</p>
-    <p>The tender signal is separate: high when a country imports at least 40% of its wheat and holds 0.20 or less of a year's use in stock. It is a heuristic, not a forecast.</p>
+    <h3>Confidence and caps</h3>
+    <p>When a part has no data it is left out, and the score rests on the rest. To stop thin data from producing extreme scores:</p>
+    <ul>
+      <li>A country can only be <b>Severe</b> (70+) with at least three of the four parts, or an IPC analysis showing 30% or more of people in crisis.</li>
+      <li>A score built on a single non-hunger part is capped below Elevated.</li>
+      <li>Every score carries a confidence label: <b>High</b> (all four parts, or three including hunger), <b>Medium</b>, or <b>Low</b>.</li>
+    </ul>
+  </div>
+
+  <h2>The tender signal, and how well it has worked</h2>
+  <div class="panel prose">
+    <p>The tender signal asks one question: is this country likely to import more grain than usual this season? It looks at wheat and corn, for countries that import at least 300,000 tonnes and at least 30% of what they use.</p>
+    <ul>
+      <li><b>High:</b> it bought at least 10% more than its own five-year average last season, and USDA expects this year's harvest to come in below its five-year average.</li>
+      <li><b>Medium:</b> it bought at least 20% more than its five-year average last season.</li>
+      <li><b>Low:</b> neither.</li>
+    </ul>
+    <div id="bt"></div>
+  </div>
+
+  <h2>Known limits</h2>
+  <div class="panel prose">
+    <ul>
+      <li>USDA grain balances for smaller countries are USDA's own estimates, revised each month, not measured figures.</li>
+      <li>IPC hunger analyses exist for about 45 countries and can be several months old. Countries without one are scored on the other three parts.</li>
+      <li>Currency moves use official exchange rates. Where a parallel market rate differs a lot, real stress can be higher than shown.</li>
+      <li>The backtest uses USDA's final, revised figures, so live results may be somewhat weaker than the past hit rates.</li>
+      <li>Daily history, weekly moves and alerts build up over time from the first run on 2 November 2026.</li>
+    </ul>
+  </div>
+
+  <h2>Sources and licences</h2>
+  <div class="panel prose">
+    <ul>
+      <li><b>Hunger:</b> IPC acute food insecurity analyses, via the HDX Humanitarian API (OCHA). Public domain.</li>
+      <li><b>Grain balances:</b> USDA Foreign Agricultural Service, Production, Supply and Distribution database. US government work, public domain.</li>
+      <li><b>World prices and income groups:</b> World Bank Commodity Price Data (Pink Sheet) and World Bank country classifications. CC BY 4.0.</li>
+      <li><b>Food Price Index:</b> FAO Food Price Index, FAO, Rome. CC BY 4.0 with FAO's database terms. Source: FAO, accessed daily.</li>
+      <li><b>Climate:</b> NOAA Climate Prediction Center, Oceanic Niño Index. Public domain.</li>
+      <li><b>Exchange rates:</b> <a href="https://www.exchangerate-api.com">Rates By Exchange Rate API</a>; past days filled from the open fawazahmed0 currency API.</li>
+      <li><b>Reports:</b> ReliefWeb (OCHA), linked to the original publisher.</li>
+      <li><b>Map:</b> Natural Earth, via world-atlas. Public domain.</li>
+    </ul>
     <p class="muted" id="srcs"></p>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">Sources: IPC via HDX HAPI, USDA FAS PSD, World Bank, FAO, NOAA CPC, ReliefWeb. <a href="https://www.exchangerate-api.com">Rates By Exchange Rate API</a>. Map: Natural Earth via world-atlas.</div></footer>
+<footer><div class="wrap">
+  <p><b>Not investment or trading advice.</b> Grain & Hunger Radar publishes indicators built from public data. They can be wrong, late or incomplete. Check the original sources before you trade, lend or ship.</p>
+  <p>Sources: IPC via HDX HAPI, USDA FAS PSD, World Bank, FAO, NOAA CPC, ReliefWeb. <a href="https://www.exchangerate-api.com">Rates By Exchange Rate API</a>. Map: Natural Earth via world-atlas.</p>
+  <p class="flinks"><a href="https://s-newsletter-769f65.beehiiv.com/">Home</a><a href="https://s-newsletter-769f65.beehiiv.com/subscribe">Subscribe</a><a href="https://s-newsletter-769f65.beehiiv.com/method">Method</a><a href="https://s-newsletter-769f65.beehiiv.com/terms">Terms</a><a href="https://s-newsletter-769f65.beehiiv.com/privacy">Privacy</a><a href="https://s-newsletter-769f65.beehiiv.com/disclaimer">Disclaimer</a><a href="https://s-newsletter-769f65.beehiiv.com/contact">Contact</a></p>
+</div></footer>
 
 <script src="vendor/d3.min.js"></script>
 <script src="vendor/topojson-client.min.js"></script>
@@ -188,31 +238,42 @@ $('legend').innerHTML = [['Low','r0'],['Watch','r1'],['Elevated','r2'],['Severe'
     .on('click keydown', (e, f) => { const c = byNum[String(+f.id)]; if (c && (e.type === 'click' || e.key === 'Enter')) location.href = `c/${c.iso3}.html`; });
 })();
 
+/* why a tender signal fired, in words */
+function why(d) {
+  if (!d) return '';
+  const bits = [];
+  if (d.momentum != null) bits.push(`${d.crop} imports last season ${d.momentum >= 1 ? Math.round((d.momentum - 1) * 100) + '% above' : Math.round((1 - d.momentum) * 100) + '% below'} normal`);
+  if (d.harvest != null) bits.push(`harvest ${d.harvest >= 1 ? Math.round((d.harvest - 1) * 100) + '% above' : Math.round((1 - d.harvest) * 100) + '% below'} normal`);
+  return bits.join('; ');
+}
+
 /* watchlist */
-const val = (c, k) => ({name: c.name, risk: c.risk ?? -1, risk_change: c.risk_change ?? -999,
+const CONF = {High: 3, Medium: 2, Low: 1};
+const val = (c, k) => ({name: c.name, risk: c.risk ?? -1, risk_change: c.risk_change ?? -999, conf: CONF[c.confidence] || 0,
   ipc: (c.ipc || {}).share_phase3plus ?? -1, fx: c.fx_change_30d ?? -9,
-  stu: ((c.psd || {}).wheat || {}).stocks_to_use ?? 9, imp: ((c.psd || {}).wheat || {}).imports ?? -1})[k];
+  stu: (c.grain || {}).stocks_to_use ?? 9, imp: (c.grain || {}).imports ?? -1})[k];
 let sortK = 'risk', sortDir = -1;
 function drawTable() {
-  const q = $('q').value.trim().toLowerCase(), b = $('band').value, t = $('tsig').value;
+  const q = $('q').value.trim().toLowerCase(), b = $('band').value, t = $('tsig').value, cf = $('conf').value;
   const list = C.filter(c => (!q || (c.name + ' ' + (c.buyer || '')).toLowerCase().includes(q))
-    && (!b || c.risk_band === b) && (!t || c.tender.startsWith(t)))
+    && (!b || c.risk_band === b) && (!t || c.tender.startsWith(t)) && (!cf || c.confidence === cf))
     .sort((a, z) => { const x = val(a, sortK), y = val(z, sortK); return (x > y ? 1 : x < y ? -1 : 0) * sortDir; });
   $('cnt').textContent = `Showing ${list.length} of ${C.length}`;
   $('tbl').tBodies[0].innerHTML = list.map(c => {
-    const w = (c.psd || {}).wheat || {}, ch = c.risk_change;
+    const w = c.grain || {}, ch = c.risk_change;
     return `<tr><td>${link(c)}</td>
       <td><span class="meter"><i style="width:${c.risk || 0}%;background:${rampOf(c.risk)}"></i></span>${c.risk ?? '—'} <span class="muted">${(c.risk_parts || {}).coverage || ''}</span></td>
       <td class="n ${ch > 0 ? 'up' : ch < 0 ? 'down' : ''}">${ch == null ? '—' : (ch > 0 ? '+' : '') + ch}</td>
       <td><span class="chip b-${c.risk_band}">${esc(c.risk_band)}</span></td>
+      <td>${esc(c.confidence || '—')}</td>
       <td class="n">${c.ipc ? (c.ipc.share_phase3plus*100).toFixed(0) + '%' : '—'}</td>
       <td class="n">${pct(c.fx_change_30d)}</td>
       <td class="n">${w.stocks_to_use != null ? w.stocks_to_use.toFixed(2) : '—'}</td>
       <td class="n">${num(w.imports)}</td>
-      <td>${esc(c.tender)}</td><td>${INC[c.income] || '—'}</td></tr>`;
+      <td title="${esc(why(c.tender_detail))}">${esc(c.tender)}</td><td>${INC[c.income] || '—'}</td></tr>`;
   }).join('');
 }
-['q','band','tsig'].forEach(id => $(id).addEventListener('input', drawTable));
+['q','band','tsig','conf'].forEach(id => $(id).addEventListener('input', drawTable));
 document.querySelectorAll('#tbl th button').forEach(b => b.addEventListener('click', () => {
   sortDir = sortK === b.dataset.k ? -sortDir : (b.dataset.k === 'name' || b.dataset.k === 'stu' ? 1 : -1);
   sortK = b.dataset.k; drawTable();
@@ -221,9 +282,9 @@ drawTable();
 
 /* export opportunities */
 $('otbl').tBodies[0].innerHTML = (S.opportunities || []).map(o => `<tr><td>${o.rank}</td><td><a href="c/${o.iso3}.html">${esc(o.name)}</a></td>
-  <td>${esc(o.tender)}</td><td class="n">${num(o.wheat_kt)}</td><td class="n">${num(o.corn_kt)}</td>
+  <td>${esc(o.tender)}</td><td class="why">${esc(why(o))}</td><td class="n">${num(o.wheat_kt)}</td><td class="n">${num(o.corn_kt)}</td>
   <td>${o.black_sea ? 'Yes' : 'No'}</td><td>${INC[o.income] || '—'}</td><td>${esc(o.buyer)}</td></tr>`).join('')
-  || '<tr><td colspan="8" class="muted">No country meets the criteria today.</td></tr>';
+  || '<tr><td colspan="9" class="muted">No country meets the criteria today.</td></tr>';
 
 /* prices */
 function spark(v) {
@@ -248,7 +309,7 @@ $('enso').innerHTML = S.enso ? `<b>${esc(S.enso.phase)}</b>, Oceanic Niño Index
 /* tenders */
 const T = S.tenders || [];
 $('tlist').innerHTML = T.length ? `<div class="tablewrap"><table><thead><tr><th>Date</th><th>Country</th><th>Buyer</th><th>Commodity</th><th class="n">Tonnes</th><th class="n">USD/t</th><th>Basis</th><th>Result</th></tr></thead><tbody>${
-  T.map(t => `<tr><td>${esc(t.date)}</td><td><a href="c/${esc(t.country_iso3)}.html">${esc(t.country_iso3)}</a></td><td>${esc(t.buyer)}</td><td>${esc(t.commodity)}</td><td class="n">${num(+t.tonnes || null)}</td><td class="n">${esc(t.price_usd_t)}</td><td>${esc(t.basis)}</td><td>${t.source_url ? `<a href="${esc(t.source_url)}" target="_blank" rel="noopener">${esc(t.result || 'source')}</a>` : esc(t.result)}</td></tr>`).join('')}</tbody></table></div>`
+  T.map(t => `<tr><td>${esc(t.date)}</td><td><a href="c/${esc(t.country_iso3)}.html">${esc(t.country_iso3)}</a></td><td>${esc(t.buyer)}</td><td>${esc(t.commodity)}</td><td class="n">${num(+t.tonnes || null)}</td><td class="n">${esc(t.price_usd_t)}</td><td>${esc(t.basis)}</td><td>${/^https:\/\//i.test(t.source_url || '') ? `<a href="${esc(t.source_url)}" target="_blank" rel="noopener">${esc(t.result || 'source')}</a>` : esc(t.result)}</td></tr>`).join('')}</tbody></table></div>`
   : '<div class="panel">No tenders logged yet. Add one line per tender to <b>config/tenders.csv</b> in the GitHub repo and it appears here the next morning.</div>';
 
 /* calculator */
@@ -262,6 +323,23 @@ function calc() {
     <p class="muted">Insurance $${ins.toFixed(2)}/t, finance $${fin.toFixed(2)}/t.${wheat ? ` World wheat (US HRW) was $${wheat.value}/t FOB in ${wheat.month}, so your FOB is ${pct(g('fob')/wheat.value - 1)} against it.` : ''}</p>`;
 }
 $('cform').addEventListener('input', calc); calc();
+
+/* backtest */
+const B = S.backtest, SN = S.sanity;
+const rate = x => x == null ? '—' : Math.round(x * 100) + '%';
+if (B && B.result) {
+  const r = B.result, rc = B.recent || {}, rj = B.rejected_rule;
+  const row = (name, a, b) => `<tr><td>${name}</td><td class="n">${a ? a.n : '—'}</td><td class="n">${rate(a && a.rate)}</td><td class="n">${rate(b && b.rate)}</td></tr>`;
+  $('bt').innerHTML = `<p>We tested this rule on every big importer from ${B.years[0]} to ${B.years[1]} (${B.countries} countries, ${B.cases.toLocaleString()} country-seasons for wheat and corn). A hit means the country then imported at least 10% more than its own five-year average that season.</p>
+  <div class="tablewrap"><table><thead><tr><th>Signal</th><th class="n">Cases</th><th class="n">Hit rate, all years</th><th class="n">Hit rate, ${rc.years ? rc.years[0] + '–' + rc.years[1] : 'last 5 years'}</th></tr></thead><tbody>
+    ${row('High', r.high, rc.high)}${row('Medium', r.medium, rc.medium)}${row('Low', r.low, rc.low)}${row('All big importers (base rate)', r.all, rc.all)}
+  </tbody></table></div>
+  <p>So a High signal has been right about ${rate(r.high.rate)} of the time, against ${rate(r.all.rate)} for a random big importer.${rj ? ` We first tried a simpler rule, "${esc(rj.name.toLowerCase())}". It was right ${rate(rj.result.rate)} of the time against a ${rate(rj.base)} base rate, no better than chance, so we dropped it.` : ''}</p>
+  <p class="muted">${esc(B.caveat)}</p>`;
+} else {
+  $('bt').innerHTML = '<p class="muted">Backtest results appear after the next daily run.</p>';
+}
+if (SN) $('bt').insertAdjacentHTML('beforeend', `<p class="muted">Cross-check on the risk score: leaving hunger out, a country with 20% or more of people in IPC crisis still scores higher than one without ${rate(SN.auc)} of the time (${SN.crisis_countries} crisis countries).</p>`);
 
 $('srcs').textContent = 'Data sources in this run: ' + Object.entries(S.sources).map(([k, v]) => `${k} ${v.startsWith('ok') ? 'ok' : v}`).join('; ') + '.';
 </script>
