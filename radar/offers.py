@@ -1,7 +1,7 @@
 """Export opportunities for a Black Sea origin seller.
 
 Ranks countries that (1) are likely to buy soon, (2) import real volume, and
-(3) can pay, and marks the ones that are natural Black Sea destinations.
+(3) can pay. Natural Black Sea destinations rank well ahead of the rest.
 """
 # Natural markets for Ukrainian / Black Sea wheat, corn and oil
 BLACK_SEA_MARKETS = {
@@ -27,7 +27,7 @@ def rank(rows, crops=("wheat", "corn"), min_kt=300, top=25):
             continue
         pay = PAY_WEIGHT.get(r.get("income"), 0.6)
         bs = r["iso3"] in BLACK_SEA_MARKETS
-        score = tw * pay * (1.2 if bs else 1.0) * (vol ** 0.5)
+        score = tw * pay * (1.0 if bs else 0.35) * (vol ** 0.5)  # off-route markets rarely buy Black Sea
         out.append({
             "iso3": r["iso3"], "name": r["name"], "buyer": r.get("buyer", ""),
             "tender": r["tender"], "income": r.get("income"),
