@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grain & Hunger Radar</title>
+<style>
+:root{--bg:#fbfaf6;--card:#fff;--ink:#14231c;--muted:#5d6b63;--line:#e4e0d4;--accent:#14352A;--wheat:#D9A441;
+--sev:#b42318;--ele:#c4661f;--wat:#a8871c;--low:#2f7d4f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1512;--card:#161e1a;--ink:#e9efe9;--muted:#9aa89f;--line:#26312b;--accent:#9fd3b4;--wheat:#e4b95e}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Lato,sans-serif}
+header{padding:28px 16px 8px;max-width:1100px;margin:auto}
+h1{margin:0;font-size:28px;letter-spacing:-.01em}h1 span{color:var(--wheat)}
+.sub{color:var(--muted);margin-top:4px}
+main{max-width:1100px;margin:auto;padding:8px 16px 40px}
+.sample{background:#fff3cd;color:#5c4400;border:1px solid #e9d38a;padding:10px 12px;border-radius:8px;margin:12px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.k{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.v{font-size:24px;font-weight:700;margin-top:2px}.d{font-size:13px;color:var(--muted)}
+h2{font-size:18px;margin:28px 0 10px}
+.tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:720px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);font-size:14px;white-space:nowrap}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
+td.num{text-align:right;font-variant-numeric:tabular-nums}
+.bar{display:inline-block;height:8px;border-radius:4px;background:var(--line);width:90px;vertical-align:middle;margin-right:8px;overflow:hidden}
+.bar i{display:block;height:100%}
+.pill{font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid currentColor}
+.Severe{color:var(--sev)}.Elevated{color:var(--ele)}.Watch{color:var(--wat)}.Low{color:var(--low)}
+.spark{width:100%;height:46px;display:block;margin-top:6px}
+ul.src{padding-left:18px;color:var(--muted);font-size:13px}
+footer{color:var(--muted);font-size:12px;max-width:1100px;margin:auto;padding:0 16px 30px}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Grain <span>&</span> Hunger Radar</h1>
+  <div class="sub" id="asof"></div>
+</header>
+<main>
+  <div id="sample"></div>
+  <div class="grid" id="kpis"></div>
+  <h2>Country watchlist</h2>
+  <div class="tablewrap"><table id="tbl"><thead><tr>
+    <th>Country</th><th>Risk</th><th>Band</th><th>IPC 3+</th><th class="num">FX 30d</th>
+    <th class="num">Wheat stocks/use</th><th class="num">Import dep.</th><th>Tender signal</th><th>Buyer</th>
+  </tr></thead><tbody></tbody></table></div>
+  <h2>Global prices</h2>
+  <div class="grid" id="prices"></div>
+  <h2>Latest reports</h2>
+  <div id="reports"></div>
+  <h2>Data sources</h2>
+  <ul class="src" id="sources"></ul>
+</main>
+<footer>Risk score is a transparent heuristic (hunger, currency, stocks, import dependence), not a forecast.
+Sources: IPC via HDX HAPI, USDA FAS PSD, World Bank Pink Sheet, FAO, NOAA CPC, ReliefWeb.
+<a href="https://www.exchangerate-api.com">Rates By Exchange Rate API</a>.</footer>
+<script id="data" type="application/json">{"as_of": "2026-11-02", "mode": "live", "sources": {"fx": "ok", "enso": "ok", "worldbank": "ok", "fao": "failed: RuntimeError: FAO CSV link not found", "reliefweb": "skipped: RELIEFWEB_APPNAME not set", "hapi": "ok", "usda": "failed: RetryError: HTTPSConnectionPool(host='apps.fas.usda.gov', port=443): Max retries exceeded with url: /OpenData/api/psd/commodity/0440000/country/ID/year/2026 (Caused by ResponseError('too many "}, "enso": {"latest": {"season": "JAS", "year": 2026, "anom": 2.16}, "phase": "Strong El Nino", "recent": [{"season": "ASO", "year": 2025, "anom": -0.43}, {"season": "SON", "year": 2025, "anom": -0.57}, {"season": "OND", "year": 2025, "anom": -0.61}, {"season": "NDJ", "year": 2025, "anom": -0.6}, {"season": "DJF", "year": 2026, "anom": -0.39}, {"season": "JFM", "year": 2026, "anom": -0.21}, {"season": "FMA", "year": 2026, "anom": 0.11}, {"season": "MAM", "year": 2026, "anom": 0.46}, {"season": "AMJ", "year": 2026, "anom": 0.95}, {"season": "MJJ", "year": 2026, "anom": 1.39}, {"season": "JJA", "year": 2026, "anom": 1.8}, {"season": "JAS", "year": 2026, "anom": 2.16}]}, "global_prices": {"Wheat, US HRW": [{"month": "2023-10", "value": 298.1}, {"month": "2023-11", "value": 283.6}, {"month": "2023-12", "value": 291.1}, {"month": "2024-01", "value": 283.9}, {"month": "2024-02", "value": 278.5}, {"month": "2024-03", "value": 274.8}, {"month": "2024-04", "value": 272.3}, {"month": "2024-05", "value": 289.4}, {"month": "2024-06", "value": 265.6}, {"month": "2024-07", "value": 260.3}, {"month": "2024-08", "value": 250.9}, {"month": "2024-09", "value": 269.7}, {"month": "2024-10", "value": 272.9}, {"month": "2024-11", "value": 253.8}, {"month": "2024-12", "value": 252.2}, {"month": "2025-01", "value": 254.1}, {"month": "2025-02", "value": 264.6}, {"month": "2025-03", "value": 255.4}, {"month": "2025-04", "value": 249.6}, {"month": "2025-05", "value": 237.0}, {"month": "2025-06", "value": 240.1}, {"month": "2025-07", "value": 235.0}, {"month": "2025-08", "value": 231.1}, {"month": "2025-09", "value": 233.8}, {"month": "2025-10", "value": 230.8}, {"month": "2025-11", "value": 245.9}, {"month": "2025-12", "value": 242.8}, {"month": "2026-01", "value": 249.9}, {"month": "2026-02", "value": 257.6}, {"month": "2026-03", "value": 276.0}, {"month": "2026-04", "value": 282.0}, {"month": "2026-05", "value": 303.0}, {"month": "2026-06", "value": 286.0}, {"month": "2026-07", "value": 310.0}, {"month": "2026-08", "value": 330.0}, {"month": "2026-09", "value": 347.0}], "Maize": [{"month": "2023-10", "value": 230.7}, {"month": "2023-11", "value": 211.3}, {"month": "2023-12", "value": 206.5}, {"month": "2024-01", "value": 198.6}, {"month": "2024-02", "value": 189.1}, {"month": "2024-03", "value": 190.6}, {"month": "2024-04", "value": 191.7}, {"month": "2024-05", "value": 197.8}, {"month": "2024-06", "value": 192.5}, {"month": "2024-07", "value": 177.4}, {"month": "2024-08", "value": 170.3}, {"month": "2024-09", "value": 185.0}, {"month": "2024-10", "value": 190.3}, {"month": "2024-11", "value": 201.3}, {"month": "2024-12", "value": 202.6}, {"month": "2025-01", "value": 214.4}, {"month": "2025-02", "value": 220.9}, {"month": "2025-03", "value": 207.4}, {"month": "2025-04", "value": 215.0}, {"month": "2025-05", "value": 203.9}, {"month": "2025-06", "value": 196.1}, {"month": "2025-07", "value": 192.0}, {"month": "2025-08", "value": 185.5}, {"month": "2025-09", "value": 197.4}, {"month": "2025-10", "value": 198.1}, {"month": "2025-11", "value": 202.0}, {"month": "2025-12", "value": 205.7}, {"month": "2026-01", "value": 204.5}, {"month": "2026-02", "value": 209.6}, {"month": "2026-03", "value": 212.7}, {"month": "2026-04", "value": 214.0}, {"month": "2026-05", "value": 216.2}, {"month": "2026-06", "value": 197.1}, {"month": "2026-07", "value": 213.4}, {"month": "2026-08", "value": 224.0}, {"month": "2026-09", "value": 239.6}], "Sunflower oil": [{"month": "2023-10", "value": 910.0}, {"month": "2023-11", "value": 944.0}, {"month": "2023-12", "value": 944.0}, {"month": "2024-01", "value": 943.0}, {"month": "2024-02", "value": 925.0}, {"month": "2024-03", "value": 951.0}, {"month": "2024-04", "value": 971.0}, {"month": "2024-05", "value": 1006.0}, {"month": "2024-06", "value": 1043.0}, {"month": "2024-07", "value": 1069.0}, {"month": "2024-08", "value": 1049.0}, {"month": "2024-09", "value": 1068.0}, {"month": "2024-10", "value": 1206.0}, {"month": "2024-11", "value": 1267.0}, {"month": "2024-12", "value": 1223.0}, {"month": "2025-01", "value": 1207.0}, {"month": "2025-02", "value": 1220.0}, {"month": "2025-03", "value": 1233.0}, {"month": "2025-04", "value": 1225.0}, {"month": "2025-05", "value": 1208.0}, {"month": "2025-06", "value": 1196.0}, {"month": "2025-07", "value": 1214.0}, {"month": "2025-08", "value": 1274.0}, {"month": "2025-09", "value": 1312.0}, {"month": "2025-10", "value": 1363.0}, {"month": "2025-11", "value": 1360.0}, {"month": "2025-12", "value": 1352.0}, {"month": "2026-01", "value": 1441.0}, {"month": "2026-02", "value": 1445.0}, {"month": "2026-03", "value": 1465.0}, {"month": "2026-04", "value": 1485.0}, {"month": "2026-05", "value": 1503.0}, {"month": "2026-06", "value": 1508.0}, {"month": "2026-07", "value": 1497.0}, {"month": "2026-08", "value": 1484.0}, {"month": "2026-09", "value": 1390.0}], "Urea": [{"month": "2023-10", "value": 411.4}, {"month": "2023-11", "value": 385.5}, {"month": "2023-12", "value": 354.0}, {"month": "2024-01", "value": 335.4}, {"month": "2024-02", "value": 351.3}, {"month": "2024-03", "value": 330.0}, {"month": "2024-04", "value": 320.0}, {"month": "2024-05", "value": 284.8}, {"month": "2024-06", "value": 336.3}, {"month": "2024-07", "value": 342.5}, {"month": "2024-08", "value": 342.5}, {"month": "2024-09", "value": 337.5}, {"month": "2024-10", "value": 374.8}, {"month": "2024-11", "value": 352.3}, {"month": "2024-12", "value": 352.0}, {"month": "2025-01", "value": 380.5}, {"month": "2025-02", "value": 436.5}, {"month": "2025-03", "value": 394.5}, {"month": "2025-04", "value": 386.9}, {"month": "2025-05", "value": 392.0}, {"month": "2025-06", "value": 420.5}, {"month": "2025-07", "value": 496.0}, {"month": "2025-08", "value": 507.7}, {"month": "2025-09", "value": 461.1}, {"month": "2025-10", "value": 394.4}, {"month": "2025-11", "value": 409.3}, {"month": "2025-12", "value": 392.5}, {"month": "2026-01", "value": 415.4}, {"month": "2026-02", "value": 472.0}, {"month": "2026-03", "value": 725.6}, {"month": "2026-04", "value": 856.9}, {"month": "2026-05", "value": 770.5}, {"month": "2026-06", "value": 453.1}, {"month": "2026-07", "value": 400.0}, {"month": "2026-08", "value": 390.0}, {"month": "2026-09", "value": 407.5}], "DAP": [{"month": "2023-10", "value": 534.8}, {"month": "2023-11", "value": 535.6}, {"month": "2023-12", "value": 563.8}, {"month": "2024-01", "value": 596.3}, {"month": "2024-02", "value": 583.8}, {"month": "2024-03", "value": 617.5}, {"month": "2024-04", "value": 545.0}, {"month": "2024-05", "value": 522.0}, {"month": "2024-06", "value": 543.0}, {"month": "2024-07", "value": 539.4}, {"month": "2024-08", "value": 546.0}, {"month": "2024-09", "value": 554.8}, {"month": "2024-10", "value": 573.4}, {"month": "2024-11", "value": 574.5}, {"month": "2024-12", "value": 568.3}, {"month": "2025-01", "value": 582.7}, {"month": "2025-02", "value": 603.8}, {"month": "2025-03", "value": 615.1}, {"month": "2025-04", "value": 635.0}, {"month": "2025-05", "value": 669.2}, {"month": "2025-06", "value": 715.4}, {"month": "2025-07", "value": 736.0}, {"month": "2025-08", "value": 795.1}, {"month": "2025-09", "value": 780.6}, {"month": "2025-10", "value": 754.0}, {"month": "2025-11", "value": 708.3}, {"month": "2025-12", "value": 627.5}, {"month": "2026-01", "value": 619.2}, {"month": "2026-02", "value": 626.5}, {"month": "2026-03", "value": 658.3}, {"month": "2026-04", "value": 725.3}, {"month": "2026-05", "value": 769.5}, {"month": "2026-06", "value": 783.8}, {"month": "2026-07", "value": 781.3}, {"month": "2026-08", "value": 793.5}, {"month": "2026-09", "value": 800.6}]}, "fao_index": [], "countries": [{"name": "Yemen", "iso3": "YEM", "fas": "YM", "fx": "YER", "buyer": "Private importers", "ipc": {"period_start": "2026-10-01T00:00:00", "people_phase3plus": 3225544, "share_phase3plus": 0.6, "ipc_type": "second projection"}, "psd": {"wheat": null, "corn": null}, "fx_rate": 236.539112, "fx_change_30d": null, "risk": 100, "risk_parts": {"hunger": 100}, "risk_band": "Severe", "tender": "No data"}, {"name": "Sudan", "iso3": "SDN", "fas": "SU", "fx": "SDG", "buyer": "Private importers / aid", "ipc": {"period_start": "2026-10-01T00:00:00", "people_phase3plus": 3476798, "share_phase3plus": 0.8, "ipc_type": "second projection"}, "psd": {"wheat": null, "corn": null}, "fx_rate": 458.917773, "fx_change_30d": null, "risk": 100, "risk_parts": {"hunger": 100}, "risk_band": "Severe", "tender": "No data"}, {"name": "Nigeria", "iso3": "NGA", "fas": "NI", "fx": "NGN", "buyer": "Private millers", "ipc": {"period_start": "2026-06-01T00:00:00", "people_phase3plus": 6634629, "share_phase3plus": 0.45, "ipc_type": "first projection"}, "psd": {"wheat": null, "corn": null}, "fx_rate": 1348.44829, "fx_change_30d": null, "risk": 100, "risk_parts": {"hunger": 100}, "risk_band": "Severe", "tender": "No data"}, {"name": "Ethiopia", "iso3": "ETH", "fas": "ET", "fx": "ETB", "buyer": "Government / aid", "ipc": {"period_start": "2021-07-01T00:00:00", "people_phase3plus": 7386290, "share_phase3plus": 0.37, "ipc_type": "first projection"}, "psd": {"wheat": null, "corn": null}, "fx_rate": 161.60205, "fx_change_30d": null, "risk": 92, "risk_parts": {"hunger": 92}, "risk_band": "Severe", "tender": "No data"}, {"name": "Bangladesh", "iso3": "BGD", "fas": "BG", "fx": "BDT", "buyer": "Directorate of Food", "ipc": {"period_start": "2026-09-01T00:00:00", "people_phase3plus": 18135373, "share_phase3plus": 0.18, "ipc_type": "first projection"}, "psd": {"wheat": null, "corn": null}, "fx_rate": 124.028893, "fx_change_30d": null, "risk": 45, "risk_parts": {"hunger": 45}, "risk_band": "Elevated", "tender": "No data"}, {"name": "Pakistan", "iso3": "PAK", "fas": "PK", "fx": "PKR", "buyer": "TCP", "ipc": {"period_start": "2026-04-01T00:00:00", "people_phase3plus": 9156228, "share_phase3plus": 0.17, "ipc_type": "first projection"}, "psd": {"wheat": null, "corn": null}, "fx_rate": 276.733456, "fx_change_30d": null, "risk": 42, "risk_parts": {"hunger": 42}, "risk_band": "Watch", "tender": "No data"}, {"name": "Kenya", "iso3": "KEN", "fas": "KE", "fx": "KES", "buyer": "Private millers", "ipc": {"period_start": "2026-11-01T00:00:00", "people_phase3plus": 2548552, "share_phase3plus": 0.14, "ipc_type": "first projection"}, "psd": {"wheat": null, "corn": null}, "fx_rate": 129.93775, "fx_change_30d": null, "risk": 35, "risk_parts": {"hunger": 35}, "risk_band": "Watch", "tender": "No data"}, {"name": "Egypt", "iso3": "EGY", "fas": "EG", "fx": "EGP", "buyer": "Mostakbal Misr", "ipc": null, "psd": {"wheat": null, "corn": null}, "fx_rate": 55.960696, "fx_change_30d": null, "risk": null, "risk_parts": {}, "risk_band": "No data", "tender": "No data"}, {"name": "Algeria", "iso3": "DZA", "fas": "AG", "fx": "DZD", "buyer": "OAIC", "ipc": null, "psd": {"wheat": null, "corn": null}, "fx_rate": 135.898342, "fx_change_30d": null, "risk": null, "risk_parts": {}, "risk_band": "No data", "tender": "No data"}, {"name": "Saudi Arabia", "iso3": "SAU", "fas": "SA", "fx": "SAR", "buyer": "GFSA", "ipc": null, "psd": {"wheat": null, "corn": null}, "fx_rate": 3.75, "fx_change_30d": null, "risk": null, "risk_parts": {}, "risk_band": "No data", "tender": "No data"}, {"name": "Morocco", "iso3": "MAR", "fas": "MO", "fx": "MAD", "buyer": "Private importers", "ipc": null, "psd": {"wheat": null, "corn": null}, "fx_rate": 9.84236, "fx_change_30d": null, "risk": null, "risk_parts": {}, "risk_band": "No data", "tender": "No data"}, {"name": "Tunisia", "iso3": "TUN", "fas": "TS", "fx": "TND", "buyer": "ODC", "ipc": null, "psd": {"wheat": null, "corn": null}, "fx_rate": 3.012975, "fx_change_30d": null, "risk": null, "risk_parts": {}, "risk_band": "No data", "tender": "No data"}, {"name": "Turkey", "iso3": "TUR", "fas": "TU", "fx": "TRY", "buyer": "TMO", "ipc": null, "psd": {"wheat": null, "corn": null}, "fx_rate": 49.939434, "fx_change_30d": null, "risk": null, "risk_parts": {}, "risk_band": "No data", "tender": "No data"}, {"name": "Iraq", "iso3": "IRQ", "fas": "IZ", "fx": "IQD", "buyer": "Grain Board of Iraq", "ipc": null, "psd": {"wheat": null, "corn": null}, "fx_rate": 1517.707928, "fx_change_30d": null, "risk": null, "risk_parts": {}, "risk_band": "No data", "tender": "No data"}, {"name": "Indonesia", "iso3": "IDN", "fas": "ID", "fx": "IDR", "buyer": "Bulog / private millers", "ipc": null, "psd": {"wheat": null, "corn": null}, "fx_rate": 18144.413865, "fx_change_30d": null, "risk": null, "risk_parts": {}, "risk_band": "No data", "tender": "No data"}]}</script>
+<script>
+const S = JSON.parse(document.getElementById('data').textContent);
+const $ = id => document.getElementById(id);
+const pct = x => x == null ? '—' : (x*100>0?'+':'') + (x*100).toFixed(1) + '%';
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+$('asof').textContent = 'Data as of ' + S.as_of;
+if (S.mode !== 'live') $('sample').innerHTML = '<div class="sample">Sample data from an offline test run — not real figures.</div>';
+
+const C = S.countries, scored = C.filter(c => c.risk != null);
+const hot = C.filter(c => /^(High|Medium)/.test(c.tender));
+const k = [
+  ['Countries watched', C.length, ''],
+  ['Severe or elevated', scored.filter(c => c.risk >= 45).length, 'risk score 45+'],
+  ['Tender signals', hot.length, hot.map(c => c.name).slice(0,3).join(', ')],
+  ['ENSO', S.enso ? S.enso.phase : '—', S.enso ? 'ONI ' + S.enso.latest.anom.toFixed(1) : ''],
+];
+$('kpis').innerHTML = k.map(([a,b,c]) => `<div class="card"><div class="k">${a}</div><div class="v">${esc(b)}</div><div class="d">${esc(c)}</div></div>`).join('');
+
+const colr = b => ({Severe:'var(--sev)',Elevated:'var(--ele)',Watch:'var(--wat)',Low:'var(--low)'}[b] || 'var(--muted)');
+$('tbl').querySelector('tbody').innerHTML = C.map(c => {
+  const w = (c.psd || {}).wheat || {}, ipc = c.ipc;
+  return `<tr><td><b>${esc(c.name)}</b></td>
+  <td><span class="bar"><i style="width:${c.risk||0}%;background:${colr(c.risk_band)}"></i></span>${c.risk ?? '—'}</td>
+  <td><span class="pill ${c.risk_band}">${c.risk_band}</span></td>
+  <td>${ipc ? (ipc.share_phase3plus*100).toFixed(0)+'%' : '—'}</td>
+  <td class="num">${pct(c.fx_change_30d)}</td>
+  <td class="num">${w.stocks_to_use != null ? w.stocks_to_use.toFixed(2) : '—'}</td>
+  <td class="num">${w.import_dependence != null ? (w.import_dependence*100).toFixed(0)+'%' : '—'}</td>
+  <td>${esc(c.tender)}</td><td>${esc(c.buyer)}</td></tr>`;
+}).join('');
+
+function spark(pts, key) {
+  const v = pts.map(p => p[key]).filter(x => x != null);
+  if (v.length < 2) return '';
+  const lo = Math.min(...v), hi = Math.max(...v), W = 200, H = 46;
+  const d = v.map((y,i) => `${i? 'L':'M'}${(i/(v.length-1)*W).toFixed(1)},${(H-3-(y-lo)/(hi-lo||1)*(H-6)).toFixed(1)}`).join('');
+  return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><path d="${d}" fill="none" stroke="var(--accent)" stroke-width="1.6"/></svg>`;
+}
+const priceCards = Object.entries(S.global_prices).map(([n, pts]) => {
+  const a = pts.at(-2)?.value, b = pts.at(-1)?.value;
+  return `<div class="card"><div class="k">${esc(n)}</div><div class="v">${b?.toLocaleString(undefined,{maximumFractionDigits:2}) ?? '—'}</div>
+  <div class="d">USD/t · ${a ? pct(b/a-1) + ' m/m · ' : ''}${esc(pts.at(-1)?.month || '')}</div>${spark(pts,'value')}</div>`;
+});
+if (S.fao_index.length) {
+  const f = S.fao_index, a = f.at(-2)?.food, b = f.at(-1)?.food;
+  priceCards.push(`<div class="card"><div class="k">FAO Food Price Index</div><div class="v">${b?.toFixed(1)}</div><div class="d">${pct(b/a-1)} m/m · ${esc(f.at(-1).month)}</div>${spark(f,'food')}</div>`);
+}
+$('prices').innerHTML = priceCards.join('') || '<div class="card d">No price data this run.</div>';
+
+const reps = C.flatMap(c => (c.reports || []).map(r => ({...r, country: c.name}))).sort((a,b) => (b.date||'').localeCompare(a.date||'')).slice(0, 12);
+$('reports').innerHTML = reps.length ? '<div class="card"><ul style="margin:0;padding-left:18px">' + reps.map(r =>
+  `<li><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a> <span class="d">· ${esc(r.country)} · ${esc(r.source)} · ${esc(r.date)}</span></li>`).join('') + '</ul></div>'
+  : '<div class="card d">No reports this run (ReliefWeb appname not set yet).</div>';
+
+$('sources').innerHTML = Object.entries(S.sources).map(([k,v]) => `<li><b>${esc(k)}</b>: ${esc(v)}</li>`).join('');
+</script>
+</body>
+</html>
