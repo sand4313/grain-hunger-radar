@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nicaragua | Grain & Hunger Radar</title>
+<meta name="description" content="Food-security and grain-import risk for Nicaragua, updated daily.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="mast"><div class="wrap">
+  <a class="brand" href="../">Grain <b>&amp;</b> Hunger Radar</a>
+  <span class="asof" id="asof"></span>
+</div></header>
+<main class="wrap">
+  <p class="crumb"><a href="../#watch">All countries</a></p>
+  <div id="sample"></div>
+  <h1 class="cname" id="cname"></h1>
+  <div class="ctop" id="ctop"></div>
+  <div class="two">
+    <div class="panel"><h3>What drives the score</h3><div class="bars" id="bars"></div><p class="muted" id="cov"></p></div>
+    <div class="panel"><h3>Risk over time</h3><div id="hist"></div></div>
+  </div>
+  <h2>Grain balance</h2>
+  <p class="lede" id="mylede"></p>
+  <div class="tablewrap"><table id="bal"><thead><tr><th>Crop</th><th class="n">Production</th><th class="n">Imports</th><th class="n">Use</th><th class="n">Ending stocks</th><th class="n">Stocks / use</th><th class="n">Import share</th></tr></thead><tbody></tbody></table></div>
+  <h2>Food security and currency</h2>
+  <div class="two">
+    <div class="panel" id="ipc"></div>
+    <div class="panel" id="fx"></div>
+  </div>
+  <h2>Latest reports</h2>
+  <div class="panel"><ul class="plain" id="reps"></ul></div>
+</main>
+<footer><div class="wrap">Sources: IPC via HDX HAPI, USDA FAS PSD, World Bank, ReliefWeb. <a href="https://www.exchangerate-api.com">Rates By Exchange Rate API</a>.</div></footer>
+<script id="data" type="application/json">{"as_of": "2026-11-02", "mode": "live", "country": {"name": "Nicaragua", "iso3": "NIC", "fas": "NU", "fx": "NIO", "buyer": "", "core": false, "num": "558", "income": "LMC", "ipc": null, "psd": {"wheat": {"consumption": 300.0, "ending_stocks": 46.0, "imports": 300.0, "production": 0.0, "stocks_to_use": 0.153, "import_dependence": 1.0, "market_year": 2026}, "rice": {"consumption": 430.0, "ending_stocks": 38.0, "imports": 160.0, "production": 267.0, "stocks_to_use": 0.088, "import_dependence": 0.372, "market_year": 2026}, "corn": {"consumption": 1100.0, "ending_stocks": 99.0, "imports": 700.0, "production": 370.0, "stocks_to_use": 0.09, "import_dependence": 0.636, "market_year": 2026}}, "fx_rate": 36.861146, "fx_change_30d": null, "fx_change_7d": null, "risk": 90, "risk_parts": {"stocks": 82, "imports": 100, "coverage": "2/4"}, "risk_band": "Severe", "tender": "High", "risk_change": null}, "history": [{"date": "2026-11-02", "risk": 90}]}</script>
+<script>
+const D = JSON.parse(document.getElementById('data').textContent), c = D.country;
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, x => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[x]));
+const num = x => x == null ? '—' : Math.round(x).toLocaleString();
+const pct = x => x == null ? '—' : (x > 0 ? '+' : '') + (x*100).toFixed(1) + '%';
+const INC = {HIC:'High income', UMC:'Upper-middle income', LMC:'Lower-middle income', LIC:'Low income'};
+$('asof').textContent = 'Data for ' + D.as_of;
+if (D.mode !== 'live') $('sample').innerHTML = '<div class="note">Sample data from a test run, not real figures.</div>';
+$('cname').textContent = c.name;
+const ch = c.risk_change;
+$('ctop').innerHTML = `<div><div class="big">${c.risk ?? '—'}</div><div class="muted">risk out of 100</div></div>
+  <div><span class="chip b-${c.risk_band}">${esc(c.risk_band)}</span><div class="muted" style="margin-top:6px">${ch == null ? 'No weekly change yet' : (ch > 0 ? 'Up ' : ch < 0 ? 'Down ' : 'Unchanged ') + (ch ? Math.abs(ch) + ' in a week' : 'this week')}</div></div>
+  <div><b>${esc(c.tender)}</b><div class="muted">tender signal</div></div>
+  ${c.buyer ? `<div><b>${esc(c.buyer)}</b><div class="muted">main buyer</div></div>` : ''}
+  <div><b>${esc(INC[c.income] || 'Income group unknown')}</b><div class="muted">World Bank group</div></div>`;
+
+const NAMES = {hunger:'Hunger', fx:'Currency', stocks:'Wheat stocks', imports:'Import need'};
+const parts = c.risk_parts || {};
+$('bars').innerHTML = Object.keys(NAMES).map(k => `<div><span>${NAMES[k]}</span><span class="t"><i style="width:${parts[k] ?? 0}%"></i></span><span>${parts[k] ?? '—'}</span></div>`).join('');
+$('cov').textContent = parts.coverage ? `Based on ${parts.coverage} parts with data.` : 'Not enough data to score.';
+
+const H = D.history || [];
+if (H.length > 1) {
+  const W = 520, Ht = 140, lo = 0, hi = 100;
+  const x = i => 30 + i / (H.length - 1) * (W - 40), y = v => Ht - 20 - (v - lo) / (hi - lo) * (Ht - 30);
+  const d = H.map((p, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(p.risk).toFixed(1)}`).join('');
+  $('hist').innerHTML = `<svg viewBox="0 0 ${W} ${Ht}" width="100%" role="img" aria-label="Risk score over time">
+    ${[0,50,100].map(v => `<line x1="30" x2="${W-10}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="0" y="${y(v)+4}" font-size="11" fill="var(--muted)">${v}</text>`).join('')}
+    <path d="${d}" fill="none" stroke="var(--field-2)" stroke-width="2"/>
+    <text x="30" y="${Ht-3}" font-size="11" fill="var(--muted)">${esc(H[0].date)}</text>
+    <text x="${W-10}" y="${Ht-3}" font-size="11" fill="var(--muted)" text-anchor="end">${esc(H.at(-1).date)}</text></svg>`;
+} else {
+  $('hist').innerHTML = '<p class="muted">The chart fills in as daily history builds up.</p>';
+}
+
+const psd = c.psd || {};
+const crops = Object.keys(psd);
+$('mylede').textContent = crops.length ? `USDA estimates for marketing year ${(psd[crops[0]] || {}).market_year ?? ''}, thousand tonnes.` : 'USDA has no grain balance for this country.';
+$('bal').tBodies[0].innerHTML = crops.map(k => { const b = psd[k] || {}; return `<tr><td>${k[0].toUpperCase() + k.slice(1)}</td>
+  <td class="n">${num(b.production)}</td><td class="n">${num(b.imports)}</td><td class="n">${num(b.consumption)}</td><td class="n">${num(b.ending_stocks)}</td>
+  <td class="n">${b.stocks_to_use != null ? b.stocks_to_use.toFixed(2) : '—'}</td><td class="n">${b.import_dependence != null ? (b.import_dependence*100).toFixed(0) + '%' : '—'}</td></tr>`; }).join('')
+  || '<tr><td colspan="7" class="muted">No data.</td></tr>';
+
+const ipc = c.ipc || c.ipc_stale;
+$('ipc').innerHTML = ipc ? `<h3>Hunger (IPC)</h3><p><b style="font-size:26px">${(ipc.share_phase3plus*100).toFixed(0)}%</b> of the analysed population in Phase 3 or worse, about ${num(ipc.people_phase3plus)} people.</p>
+  <p class="muted">${esc(ipc.ipc_type)} analysis from ${esc((ipc.period_start || '').slice(0,10))}${c.ipc_stale ? '. Older than two years, so it is not used in the score.' : '.'}</p>`
+  : '<h3>Hunger (IPC)</h3><p class="muted">No national IPC analysis for this country.</p>';
+$('fx').innerHTML = `<h3>Currency</h3><p><b style="font-size:26px">${c.fx_rate ? c.fx_rate.toLocaleString(undefined, {maximumFractionDigits: 2}) : '—'}</b> ${esc(c.fx || '')} per US dollar.</p>
+  <p class="muted">7-day change ${pct(c.fx_change_7d)}, 30-day change ${pct(c.fx_change_30d)}. A rise means the local currency lost value.</p>`;
+$('reps').innerHTML = (c.reports || []).map(r => `<li><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a> <span class="muted">${esc(r.source)}, ${esc(r.date)}</span></li>`).join('')
+  || '<li class="muted">No recent reports linked yet.</li>';
+</script>
+</body>
+</html>
