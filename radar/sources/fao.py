@@ -1,11 +1,12 @@
 """FAO Food Price Index (monthly). The download link is read from the FAO page."""
+import html
 import io
 import re
 
 import pandas as pd
 
 PAGE = "https://www.fao.org/worldfoodsituation/foodpricesindex/en/"
-LINK_RE = re.compile(r'href="([^"]*Food_price_indices_data[^"]*\.csv)"', re.I)
+LINK_RE = re.compile(r'href="([^"]*food_price_indices_data\.csv[^"]*)"', re.I)
 
 
 def parse(csv_text):
@@ -27,7 +28,7 @@ def fetch(sess):
     m = LINK_RE.search(r.text)
     if not m:
         raise RuntimeError("FAO CSV link not found")
-    url = m.group(1)
+    url = html.unescape(m.group(1))
     if not url.startswith("http"):
         url = "https://www.fao.org" + url
     csv = sess.get(url, timeout=60)

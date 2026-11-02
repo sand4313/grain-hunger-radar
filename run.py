@@ -98,6 +98,8 @@ def main():
             log.skip("reliefweb", "RELIEFWEB_APPNAME not set")
         if not fas_key:
             log.skip("usda", "USDA_FAS_API_KEY not set")
+        elif log.run("usda", lambda: usda.check_key(fas_key)) is None:
+            fas_key = None  # key check failed; the reason is already in log.status
 
     fix_c = fixture("countries") if args.offline else {}
     rows = []

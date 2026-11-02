@@ -35,7 +35,9 @@ def risk(c):
         return None, comp
     tot = sum(WEIGHTS[k] for k in comp)
     score = sum(comp[k] * WEIGHTS[k] for k in comp) / tot
-    return round(score), {k: round(v) for k, v in comp.items()}
+    parts = {k: round(v) for k, v in comp.items()}
+    parts["coverage"] = f"{len(comp)}/4"
+    return round(score), parts
 
 
 def tender_signal(c):

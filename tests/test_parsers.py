@@ -48,3 +48,9 @@ def test_risk_and_tender():
     assert s == 100 and score.band(s) == "Severe"
     assert score.tender_signal(c).startswith("High")
     assert score.risk({})[0] is None
+
+
+def test_fao_link_regex():
+    page = '<a href="https://www.fao.org/media/docs/x/food_price_indices_data.csv?sfvrsn=523_84&amp;download=true">CSV</a>'
+    m = fao.LINK_RE.search(page)
+    assert m and "food_price_indices_data.csv" in m.group(1)

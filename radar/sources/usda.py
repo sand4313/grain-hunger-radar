@@ -22,8 +22,20 @@ def balance(rows):
     return vals
 
 
+def _get(url, key):
+    import requests  # plain request: no automatic retries, so a bad key fails fast
+    r = requests.get(url, headers={"API_KEY": key.strip(), "Accept": "application/json"}, timeout=60)
+    if r.status_code != 200:
+        raise RuntimeError(f"USDA HTTP {r.status_code} on {url.split('/OpenData')[-1]}: {r.text[:150]}")
+    return r.json()
+
+
+def check_key(key):
+    """One cheap call before the loop. Raises with USDA's own message if the key is bad."""
+    rows = _get(f"{BASE}/commodities", key)
+    return len(rows)
+
+
 def fetch(sess, commodity_code, fas_code, year, key):
     url = f"{BASE}/commodity/{commodity_code}/country/{fas_code}/year/{year}"
-    r = sess.get(url, headers={"API_KEY": key, "Accept": "application/json"}, timeout=60)
-    r.raise_for_status()
-    return balance(r.json())
+    return balance(_get(url, key))

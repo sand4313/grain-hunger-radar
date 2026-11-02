@@ -80,7 +80,7 @@ const colr = b => ({Severe:'var(--sev)',Elevated:'var(--ele)',Watch:'var(--wat)'
 $('tbl').querySelector('tbody').innerHTML = C.map(c => {
   const w = (c.psd || {}).wheat || {}, ipc = c.ipc;
   return `<tr><td><b>${esc(c.name)}</b></td>
-  <td><span class="bar"><i style="width:${c.risk||0}%;background:${colr(c.risk_band)}"></i></span>${c.risk ?? '—'}</td>
+  <td><span class="bar"><i style="width:${c.risk||0}%;background:${colr(c.risk_band)}"></i></span>${c.risk ?? '—'}${c.risk_parts && c.risk_parts.coverage ? ` <span class="d" title="data points available">${c.risk_parts.coverage}</span>` : ''}</td>
   <td><span class="pill ${c.risk_band}">${c.risk_band}</span></td>
   <td>${ipc ? (ipc.share_phase3plus*100).toFixed(0)+'%' : '—'}</td>
   <td class="num">${pct(c.fx_change_30d)}</td>
