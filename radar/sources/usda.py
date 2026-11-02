@@ -47,12 +47,18 @@ BULK_ATTR = {"production": "production", "imports": "imports",
              "domestic consumption": "consumption", "ending stocks": "ending_stocks"}
 
 
-def parse_bulk(df, commodity_codes, fas_codes):
-    """Latest market year per country and commodity from the bulk CSV."""
+def parse_bulk(df, commodity_codes, fas_codes=None):
+    """Latest market year per country and commodity from the bulk CSV.
+    fas_codes=None keeps every country. Returns (balances, names)."""
     import pandas as pd
     df.columns = [c.strip().lower() for c in df.columns]
     df["commodity_code"] = df["commodity_code"].astype(str).str.zfill(7)
-    df = df[df["commodity_code"].isin(commodity_codes.values()) & df["country_code"].isin(fas_codes)]
+    df = df[df["commodity_code"].isin(commodity_codes.values())]
+    if fas_codes is not None:
+        df = df[df["country_code"].isin(fas_codes)]
+    names = {}
+    if "country_name" in df.columns:
+        names = dict(zip(df["country_code"], df["country_name"].str.strip()))
     df = df[df["attribute_description"].str.strip().str.lower().isin(BULK_ATTR)]
     out = {}
     code_to_crop = {v: k for k, v in commodity_codes.items()}
@@ -70,10 +76,10 @@ def parse_bulk(df, commodity_codes, fas_codes):
             vals["import_dependence"] = round(vals.get("imports", 0) / cons, 3)
         vals["market_year"] = int(latest)
         out.setdefault(cc, {})[code_to_crop[com]] = vals
-    return out
+    return out, names
 
 
-def fetch_bulk(sess, commodity_codes, fas_codes):
+def fetch_bulk(sess, commodity_codes, fas_codes=None):
     import io
     import zipfile
 

@@ -1,4 +1,4 @@
-# Countries the Radar watches.
+# Core countries (always watched, with buyer names). More are added automatically.
 # iso3  = ISO code (HDX HAPI, ReliefWeb)
 # fas   = USDA FAS country code used by the PSD API (verify on first live run)
 # fx    = local currency code (exchange-rate feed)
@@ -19,6 +19,12 @@ countries:
   - {name: Pakistan,     iso3: PAK, fas: PK, fx: PKR, buyer: "TCP"}
   - {name: Bangladesh,   iso3: BGD, fas: BG, fx: BDT, buyer: "Directorate of Food"}
   - {name: Indonesia,    iso3: IDN, fas: ID, fx: IDR, buyer: "Bulog / private millers"}
+
+# Automatic expansion: besides the core list above, the radar watches every country
+# importing at least this much wheat OR corn (thousand tonnes, USDA latest year),
+# plus every country with an IPC food-security analysis.
+universe:
+  min_imports_kt: 300
 
 # USDA PSD commodity codes
 commodities:

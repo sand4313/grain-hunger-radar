@@ -16,7 +16,7 @@ from pathlib import Path
 
 import yaml
 
-from radar import brief, dashboard, score, store
+from radar import brief, dashboard, score, store, universe
 from radar.http import session
 from radar.sources import enso, fao, fx, hapi, reliefweb, usda, worldbank
 
@@ -56,7 +56,6 @@ def main():
     args = ap.parse_args()
 
     cfg = load_config()
-    countries = cfg["countries"]
     log = Log()
     sess = session()
     as_of = os.environ.get("RADAR_DATE") or store.today()
@@ -72,6 +71,25 @@ def main():
         as_of = "2026-11-02"
         year = 2026
 
+    # --- who to watch: core list + every big importer + every IPC country ----
+    hapi_id = os.environ.get("HAPI_APP_IDENTIFIER")
+    rw_app = os.environ.get("RELIEFWEB_APPNAME")
+    fix_c = fixture("countries") if args.offline else {}
+    if args.offline:
+        countries, unmatched = cfg["countries"], []
+        psd_all, ipc_all = {}, {}
+    else:
+        bulk = log.run("usda_bulk", lambda: usda.fetch_bulk(sess, cfg["commodities"])) or ({}, {})
+        psd_all, psd_names = bulk
+        if hapi_id:
+            ipc_all = log.run("hapi", lambda: hapi.fetch_all(sess, hapi_id)) or {}
+        else:
+            ipc_all = {}
+            log.skip("hapi", "HAPI_APP_IDENTIFIER not set")
+        countries, unmatched = universe.build(cfg, psd_all, psd_names, ipc_all)
+        if not rw_app:
+            log.skip("reliefweb", "RELIEFWEB_APPNAME not set")
+
     # --- global feeds -----------------------------------------------------
     if args.offline:
         g_fx = fixture("fx")
@@ -79,7 +97,7 @@ def main():
         for k in ("fx", "enso", "worldbank", "fao"):
             log.status[k] = "ok (fixture)"
     else:
-        g_fx = log.run("fx", lambda: fx.fetch(sess, countries))
+        g_fx = log.run("fx", lambda: fx.fetch(sess, [c for c in countries if c.get("fx")]))
         g_enso = log.run("enso", lambda: enso.fetch(sess))
         g_wb = log.run("worldbank", lambda: worldbank.fetch(sess, cfg["global_prices"]))
         g_fao = log.run("fao", lambda: fao.fetch(sess))
@@ -87,24 +105,7 @@ def main():
     if g_fx:
         store.append_fx(as_of, g_fx["rates"])
 
-    # --- per-country feeds ------------------------------------------------
-    hapi_id = os.environ.get("HAPI_APP_IDENTIFIER")
-    rw_app = os.environ.get("RELIEFWEB_APPNAME")
-    fas_key = os.environ.get("USDA_FAS_API_KEY")
-    if not args.offline:
-        if not hapi_id:
-            log.skip("hapi", "HAPI_APP_IDENTIFIER not set")
-        if not rw_app:
-            log.skip("reliefweb", "RELIEFWEB_APPNAME not set")
-        api_ok = bool(fas_key) and log.run("usda_api", lambda: usda.check_key(fas_key)) is not None
-        if not fas_key:
-            log.skip("usda_api", "USDA_FAS_API_KEY not set")
-        if not api_ok:
-            fas_key = None  # use the keyless bulk download instead
-            psd_bulk = log.run("usda_bulk", lambda: usda.fetch_bulk(
-                sess, cfg["commodities"], [c["fas"] for c in countries])) or {}
-
-    fix_c = fixture("countries") if args.offline else {}
+    # --- score every country ----------------------------------------------
     rows = []
     for c in countries:
         iso = c["iso3"]
@@ -112,29 +113,25 @@ def main():
         if args.offline:
             row.update(fix_c.get(iso, {}))
         else:
-            if hapi_id:
-                row["ipc"] = log.run("hapi", lambda: hapi.fetch(sess, iso, hapi_id))
-            if rw_app:
-                row["reports"] = log.run("reliefweb", lambda: reliefweb.fetch(sess, iso, rw_app))
-            if fas_key:
-                row["psd"] = {
-                    crop: log.run("usda_api", lambda code=code: usda.fetch(sess, code, c["fas"], year, fas_key))
-                    for crop, code in cfg["commodities"].items()
-                }
-            else:
-                row["psd"] = psd_bulk.get(c["fas"])
+            row["ipc"] = (ipc_all.get(iso) or {}).get("ipc")
+            row["psd"] = psd_all.get(c.get("fas")) if c.get("fas") else None
         ipc = row.get("ipc")
         if ipc and (ipc.get("period_start") or "")[:10] < f"{year - 2}{as_of[4:]}":
             row["ipc_stale"] = ipc  # keep it visible in the data, but do not score on it
             row["ipc"] = None
-        row["fx_rate"] = (g_fx or {}).get("rates", {}).get(c["fx"])
-        row["fx_change_30d"] = store.fx_change(c["fx"], as_of)
+        row["fx_rate"] = (g_fx or {}).get("rates", {}).get(c.get("fx"))
+        row["fx_change_30d"] = store.fx_change(c["fx"], as_of) if c.get("fx") else None
         row["risk"], row["risk_parts"] = score.risk(row)
         row["risk_band"] = score.band(row["risk"])
         row["tender"] = score.tender_signal(row)
         rows.append(row)
 
     rows.sort(key=lambda r: (r["risk"] is None, -(r["risk"] or 0)))
+
+    # ReliefWeb reports for the 30 highest-risk countries (one call each, keeps us polite)
+    if rw_app and not args.offline:
+        for r in rows[:30]:
+            r["reports"] = log.run("reliefweb", lambda iso=r["iso3"]: reliefweb.fetch(sess, iso, rw_app))
 
     snap = {
         "as_of": as_of,
@@ -144,6 +141,7 @@ def main():
         "global_prices": (g_wb or {}).get("series", {}),
         "fao_index": (g_fao or {}).get("series", []),
         "countries": rows,
+        "unmatched_names": unmatched,
     }
     store.write_snapshot(snap)
     dashboard.build(snap, out)

@@ -22,7 +22,7 @@ def build(snap, out=ROOT):
     if snap["mode"] != "live":
         lines += ["> SAMPLE DATA — offline test run, not real figures.", ""]
 
-    lines += ["## Top risks this week", ""]
+    lines += [f"_Watching {len(rows)} countries._", "", "## Top risks this week", ""]
     for r in scored[:5]:
         ipc = r.get("ipc") or {}
         bits = []
@@ -39,12 +39,15 @@ def build(snap, out=ROOT):
     lines += ["## Tender watch", ""]
     hot = [r for r in rows if r["tender"].startswith(("High", "Medium"))]
     hot.sort(key=lambda r: (not r["tender"].startswith("High"), -(r["risk"] or 0)))
-    for r in hot:
+    for r in hot[:12]:
         level, _, note = r["tender"].partition(", ")
         extra = f" ({note})" if note else ""
-        lines.append(f"- **{r['name']}** ({r['buyer']}): {level} chance of wheat buying in the next 60 days{extra}.")
+        buyer = f" ({r['buyer']})" if r.get("buyer") else ""
+        lines.append(f"- **{r['name']}**{buyer}: {level} chance of wheat buying in the next 60 days{extra}.")
     if not hot:
         lines.append("- No country flags a high tender likelihood this week.")
+    elif len(hot) > 12:
+        lines.append(f"- Plus {len(hot) - 12} more on the dashboard.")
     lines.append("")
 
     lines += ["## Prices", ""]

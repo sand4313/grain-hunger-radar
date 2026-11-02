@@ -42,7 +42,8 @@ a{color:var(--accent)}
 <main>
   <div id="sample"></div>
   <div class="grid" id="kpis"></div>
-  <h2>Country watchlist</h2>
+  <h2>Country watchlist <span class="d" id="cnt"></span></h2>
+  <input id="q" placeholder="Filter by country or buyer" style="width:100%;max-width:340px;padding:9px 12px;margin:0 0 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit">
   <div class="tablewrap"><table id="tbl"><thead><tr>
     <th>Country</th><th>Risk</th><th>Band</th><th>IPC 3+</th><th class="num">FX 30d</th>
     <th class="num">Wheat stocks/use</th><th class="num">Import dep.</th><th>Tender signal</th><th>Buyer</th>
@@ -77,7 +78,7 @@ const k = [
 $('kpis').innerHTML = k.map(([a,b,c]) => `<div class="card"><div class="k">${a}</div><div class="v">${esc(b)}</div><div class="d">${esc(c)}</div></div>`).join('');
 
 const colr = b => ({Severe:'var(--sev)',Elevated:'var(--ele)',Watch:'var(--wat)',Low:'var(--low)'}[b] || 'var(--muted)');
-$('tbl').querySelector('tbody').innerHTML = C.map(c => {
+const rowHtml = c => {
   const w = (c.psd || {}).wheat || {}, ipc = c.ipc;
   return `<tr><td><b>${esc(c.name)}</b></td>
   <td><span class="bar"><i style="width:${c.risk||0}%;background:${colr(c.risk_band)}"></i></span>${c.risk ?? '—'}${c.risk_parts && c.risk_parts.coverage ? ` <span class="d" title="data points available">${c.risk_parts.coverage}</span>` : ''}</td>
@@ -87,7 +88,15 @@ $('tbl').querySelector('tbody').innerHTML = C.map(c => {
   <td class="num">${w.stocks_to_use != null ? w.stocks_to_use.toFixed(2) : '—'}</td>
   <td class="num">${w.import_dependence != null ? (w.import_dependence*100).toFixed(0)+'%' : '—'}</td>
   <td>${esc(c.tender)}</td><td>${esc(c.buyer)}</td></tr>`;
-}).join('');
+};
+function drawTable() {
+  const q = $('q').value.trim().toLowerCase();
+  const list = C.filter(c => !q || (c.name + ' ' + (c.buyer || '')).toLowerCase().includes(q));
+  $('tbl').querySelector('tbody').innerHTML = list.map(rowHtml).join('');
+  $('cnt').textContent = `· ${list.length} of ${C.length}`;
+}
+$('q').addEventListener('input', drawTable);
+drawTable();
 
 function spark(pts, key) {
   const v = pts.map(p => p[key]).filter(x => x != null);

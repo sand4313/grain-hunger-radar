@@ -36,3 +36,23 @@ def fetch(sess, iso3, app_id):
     r = sess.get(BASE, params=params, timeout=60)
     r.raise_for_status()
     return latest_national(r.json().get("data", []))
+
+
+def fetch_all(sess, app_id):
+    """National IPC Phase 3+ rows for every country in one paged request."""
+    rows, offset = [], 0
+    while True:
+        params = {"app_identifier": app_id, "admin_level": 0, "ipc_phase": "3+",
+                  "output_format": "json", "limit": 10000, "offset": offset}
+        r = sess.get(BASE, params=params, timeout=120)
+        r.raise_for_status()
+        page = r.json().get("data", [])
+        rows += page
+        if len(page) < 10000:
+            break
+        offset += 10000
+    by = {}
+    for row in rows:
+        by.setdefault(row.get("location_code"), []).append(row)
+    return {iso: {"name": rs[0].get("location_name"), "ipc": latest_national(rs)}
+            for iso, rs in by.items() if iso}

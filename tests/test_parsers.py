@@ -66,7 +66,22 @@ def test_usda_bulk_parse():
                          "Month": 10, "Attribute_Description": attr, "Value": val})
     rows.append({"Commodity_Code": "410000", "Country_Code": "XX", "Market_Year": 2026,
                  "Month": 10, "Attribute_Description": "Imports", "Value": 1})
-    out = usda.parse_bulk(pd.DataFrame(rows), {"wheat": "0410000"}, ["EG"])
+    out, _ = usda.parse_bulk(pd.DataFrame(rows), {"wheat": "0410000"}, ["EG"])
     w = out["EG"]["wheat"]
     assert w["market_year"] == 2026 and w["stocks_to_use"] == 0.15 and w["import_dependence"] == 0.625
     assert "XX" not in out
+
+
+def test_universe():
+    from radar import universe
+    cfg = {"countries": [{"name": "Egypt", "iso3": "EGY", "fas": "EG", "fx": "EGP", "buyer": "MM"}],
+           "universe": {"min_imports_kt": 300}}
+    psd = {"EG": {"wheat": {"imports": 12000}}, "VM": {"wheat": {"imports": 3500}},
+           "XX": {"corn": {"imports": 50}}, "E4": {"wheat": {"imports": 9000}}}
+    names = {"EG": "Egypt", "VM": "Vietnam", "XX": "Iceland", "E4": "European Union"}
+    ipc = {"SOM": {"name": "Somalia", "ipc": {"share_phase3plus": 0.2}}}
+    lst, unmatched = universe.build(cfg, psd, names, ipc)
+    by = {c["iso3"]: c for c in lst}
+    assert set(by) == {"EGY", "VNM", "SOM"}          # Iceland too small, EU is an aggregate
+    assert by["VNM"]["fx"] == "VND" and by["VNM"]["fas"] == "VM"
+    assert by["EGY"]["buyer"] == "MM" and by["EGY"]["core"]
