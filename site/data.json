@@ -1078,29 +1078,6 @@
       "tender": "No data"
     },
     {
-      "name": "Ethiopia",
-      "iso3": "ETH",
-      "fas": "ET",
-      "fx": "ETB",
-      "buyer": "Government / aid",
-      "ipc": {
-        "period_start": "2021-05-01T00:00:00",
-        "people_phase3plus": 16756345,
-        "share_phase3plus": 0.3,
-        "ipc_type": "current",
-        "period_end": "2021-06-30T23:59:59"
-      },
-      "fx_rate": 161.60205,
-      "fx_change_30d": null,
-      "risk": 75,
-      "risk_parts": {
-        "hunger": 75,
-        "coverage": "1/4"
-      },
-      "risk_band": "Severe",
-      "tender": "No data"
-    },
-    {
       "name": "Pakistan",
       "iso3": "PAK",
       "fas": "PK",
@@ -1284,6 +1261,27 @@
       "buyer": "Grain Board of Iraq",
       "ipc": null,
       "fx_rate": 1517.707928,
+      "fx_change_30d": null,
+      "risk": null,
+      "risk_parts": {},
+      "risk_band": "No data",
+      "tender": "No data"
+    },
+    {
+      "name": "Ethiopia",
+      "iso3": "ETH",
+      "fas": "ET",
+      "fx": "ETB",
+      "buyer": "Government / aid",
+      "ipc": null,
+      "ipc_stale": {
+        "period_start": "2021-05-01T00:00:00",
+        "people_phase3plus": 16756345,
+        "share_phase3plus": 0.3,
+        "ipc_type": "current",
+        "period_end": "2021-06-30T23:59:59"
+      },
+      "fx_rate": 161.60205,
       "fx_change_30d": null,
       "risk": null,
       "risk_parts": {},
