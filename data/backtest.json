@@ -1,105 +1,81 @@
 {
-  "question": "After opening the year with low stocks, did the country import 10%+ more than its 5-year average?",
+  "question": "Did the country import 10%+ more than its own 5-year average that year?",
   "years": [
     2008,
     2025
   ],
-  "countries": 88,
+  "countries": 97,
+  "cases": 1832,
   "rule": {
-    "high": 0.75,
-    "medium": 0.9,
     "min_kt": 300,
-    "min_dependence": 0.3
+    "min_dependence": 0.3,
+    "momentum_high": 1.1,
+    "harvest_short": 0.95,
+    "momentum_medium": 1.2
   },
   "result": {
     "all": {
-      "n": 1643,
-      "hits": 783,
-      "rate": 0.477
+      "n": 1832,
+      "hits": 877,
+      "rate": 0.479
     },
     "high": {
-      "n": 405,
-      "hits": 198,
-      "rate": 0.489
+      "n": 163,
+      "hits": 124,
+      "rate": 0.761,
+      "lift": 1.59
     },
     "medium": {
-      "n": 265,
-      "hits": 141,
-      "rate": 0.532
+      "n": 294,
+      "hits": 204,
+      "rate": 0.694,
+      "lift": 1.45
     },
     "low": {
-      "n": 973,
-      "hits": 444,
-      "rate": 0.456
-    },
-    "lift_high": 1.03
-  },
-  "grid": [
-    {
-      "threshold": 0.5,
-      "n": 115,
-      "hits": 50,
-      "rate": 0.435,
-      "lift": 0.91
-    },
-    {
-      "threshold": 0.6,
-      "n": 214,
-      "hits": 106,
-      "rate": 0.495,
-      "lift": 1.04
-    },
-    {
-      "threshold": 0.7,
-      "n": 342,
-      "hits": 166,
-      "rate": 0.485,
-      "lift": 1.02
-    },
-    {
-      "threshold": 0.75,
-      "n": 405,
-      "hits": 198,
-      "rate": 0.489,
-      "lift": 1.03
-    },
-    {
-      "threshold": 0.8,
-      "n": 488,
-      "hits": 237,
-      "rate": 0.486,
-      "lift": 1.02
-    },
-    {
-      "threshold": 0.9,
-      "n": 670,
-      "hits": 339,
-      "rate": 0.506,
-      "lift": 1.06
+      "n": 1375,
+      "hits": 549,
+      "rate": 0.399,
+      "lift": 0.83
     }
-  ],
+  },
   "recent": {
     "all": {
-      "n": 532,
-      "hits": 234,
+      "n": 570,
+      "hits": 251,
       "rate": 0.44
     },
     "high": {
-      "n": 157,
-      "hits": 62,
-      "rate": 0.395
+      "n": 32,
+      "hits": 25,
+      "rate": 0.781,
+      "lift": 1.78
     },
     "medium": {
-      "n": 87,
+      "n": 73,
       "hits": 49,
-      "rate": 0.563
+      "rate": 0.671,
+      "lift": 1.53
     },
     "low": {
-      "n": 288,
-      "hits": 123,
-      "rate": 0.427
+      "n": 465,
+      "hits": 177,
+      "rate": 0.381,
+      "lift": 0.87
     },
-    "lift_high": 0.9
+    "years": [
+      2021,
+      2025
+    ]
+  },
+  "rejected_rule": {
+    "name": "Opening stocks at or below 75% of the country's own norm",
+    "result": {
+      "n": 404,
+      "hits": 198,
+      "rate": 0.49,
+      "lift": 1.03
+    },
+    "base": 0.477
   },
   "caveat": "Uses USDA's revised figures, not the estimates available at the time."
 }

@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Niger | Grain & Hunger Radar</title>
 <meta name="description" content="Food-security and grain-import risk for Niger, updated daily.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +15,7 @@
 <header class="mast"><div class="wrap">
   <a class="brand" href="../">Grain <b>&amp;</b> Hunger Radar</a>
   <span class="asof" id="asof"></span>
+  <a class="mastlink" href="https://s-newsletter-769f65.beehiiv.com/subscribe" target="_blank" rel="noopener">Get the weekly brief</a>
 </div></header>
 <main class="wrap">
   <p class="crumb"><a href="../#watch">All countries</a></p>
@@ -20,7 +23,7 @@
   <h1 class="cname" id="cname"></h1>
   <div class="ctop" id="ctop"></div>
   <div class="two">
-    <div class="panel"><h3>What drives the score</h3><div class="bars" id="bars"></div><p class="muted" id="cov"></p></div>
+    <div class="panel"><h3>What drives the score</h3><div class="bars" id="bars"></div><p class="muted" id="cov"></p><p id="tnd"></p></div>
     <div class="panel"><h3>Risk over time</h3><div id="hist"></div></div>
   </div>
   <h2>Grain balance</h2>
@@ -34,8 +37,12 @@
   <h2>Latest reports</h2>
   <div class="panel"><ul class="plain" id="reps"></ul></div>
 </main>
-<footer><div class="wrap">Sources: IPC via HDX HAPI, USDA FAS PSD, World Bank, ReliefWeb. <a href="https://www.exchangerate-api.com">Rates By Exchange Rate API</a>.</div></footer>
-<script id="data" type="application/json">{"as_of": "2026-11-02", "mode": "live", "country": {"name": "Niger", "iso3": "NER", "fas": "NG", "fx": "XOF", "buyer": "", "core": false, "num": "562", "income": "LIC", "ipc": {"period_start": "2025-10-01T00:00:00", "people_phase3plus": 1855774, "share_phase3plus": 0.07, "ipc_type": "current", "period_end": "2025-12-31T23:59:59"}, "psd": {"wheat": {"ending_stocks": 0.0, "consumption": 230.0, "production": 0.0, "imports": 230.0, "stocks_to_use": 0.0, "import_dependence": 1.0, "market_year": 2026, "begin_stu": 0.0, "avg5_stu": 0.0, "avg5_imports": 240.4}, "rice": {"production": 111.0, "imports": 325.0, "ending_stocks": 0.0, "consumption": 436.0, "stocks_to_use": 0.0, "import_dependence": 0.745, "market_year": 2026, "begin_stu": 0.0, "avg5_stu": 0.0, "avg5_imports": 320.0}}, "fx_rate": 587.750125, "fx_change_30d": 0.0083, "fx_change_7d": 0.0055, "risk": 49, "risk_parts": {"hunger": 18, "fx": 8, "stocks": 100, "imports": 83, "coverage": "4/4", "confidence": "High"}, "confidence": "High", "risk_band": "Elevated", "grain": {"stocks_to_use": 0.0, "import_dependence": 0.833, "imports": 555, "consumption": 666}, "tender": "Low", "tender_detail": null, "risk_change": null}, "history": [{"date": "2026-11-02", "risk": 49}]}</script>
+<footer><div class="wrap">
+  <p><b>Not investment or trading advice.</b> Indicators built from public data. They can be wrong, late or incomplete.</p>
+  <p>Sources: IPC via HDX HAPI, USDA FAS PSD, World Bank, ReliefWeb. <a href="https://www.exchangerate-api.com">Rates By Exchange Rate API</a>.</p>
+  <p class="flinks"><a href="../">Dashboard</a><a href="https://s-newsletter-769f65.beehiiv.com/method">Method</a><a href="https://s-newsletter-769f65.beehiiv.com/terms">Terms</a><a href="https://s-newsletter-769f65.beehiiv.com/privacy">Privacy</a><a href="https://s-newsletter-769f65.beehiiv.com/disclaimer">Disclaimer</a></p>
+</div></footer>
+<script id="data" type="application/json">{"as_of": "2026-11-02", "mode": "live", "country": {"name": "Niger", "iso3": "NER", "fas": "NG", "fx": "XOF", "buyer": "", "core": false, "num": "562", "income": "LIC", "ipc": {"period_start": "2025-10-01T00:00:00", "people_phase3plus": 1855774, "share_phase3plus": 0.07, "ipc_type": "current", "period_end": "2025-12-31T23:59:59"}, "psd": {"wheat": {"ending_stocks": 0.0, "consumption": 230.0, "production": 0.0, "imports": 230.0, "stocks_to_use": 0.0, "import_dependence": 1.0, "market_year": 2026, "begin_stu": 0.0, "avg5_stu": 0.0, "avg5_imports": 225.4, "prev_imports": 200.0, "import_momentum": 0.887}, "rice": {"production": 111.0, "imports": 325.0, "ending_stocks": 0.0, "consumption": 436.0, "stocks_to_use": 0.0, "import_dependence": 0.745, "market_year": 2026, "begin_stu": 0.0, "avg5_stu": 0.0, "avg5_imports": 300.0, "prev_imports": 300.0, "import_momentum": 1.0, "avg5_production": 97.8, "production_vs_avg": 1.135}}, "fx_rate": 587.750125, "fx_change_30d": 0.0083, "fx_change_7d": 0.0055, "risk": 49, "risk_parts": {"hunger": 18, "fx": 8, "stocks": 100, "imports": 83, "coverage": "4/4", "confidence": "High"}, "confidence": "High", "risk_band": "Elevated", "grain": {"stocks_to_use": 0.0, "import_dependence": 0.833, "imports": 555, "consumption": 666}, "tender": "Low", "tender_detail": null, "risk_change": null}, "history": [{"date": "2026-11-02", "risk": 49}]}</script>
 <script>
 const D = JSON.parse(document.getElementById('data').textContent), c = D.country;
 const $ = id => document.getElementById(id);
@@ -53,10 +60,15 @@ $('ctop').innerHTML = `<div><div class="big">${c.risk ?? '—'}</div><div class=
   ${c.buyer ? `<div><b>${esc(c.buyer)}</b><div class="muted">main buyer</div></div>` : ''}
   <div><b>${esc(INC[c.income] || 'Income group unknown')}</b><div class="muted">World Bank group</div></div>`;
 
-const NAMES = {hunger:'Hunger', fx:'Currency', stocks:'Wheat stocks', imports:'Import need'};
+const safe = u => /^https:\/\//i.test(String(u || '')) ? esc(u) : '#';
+const NAMES = {hunger:'Hunger', fx:'Currency', stocks:'Grain stocks', imports:'Import need'};
 const parts = c.risk_parts || {};
 $('bars').innerHTML = Object.keys(NAMES).map(k => `<div><span>${NAMES[k]}</span><span class="t"><i style="width:${parts[k] ?? 0}%"></i></span><span>${parts[k] ?? '—'}</span></div>`).join('');
-$('cov').textContent = parts.coverage ? `Based on ${parts.coverage} parts with data.` : 'Not enough data to score.';
+$('cov').textContent = parts.coverage ? `Based on ${parts.coverage} parts with data. Confidence: ${parts.confidence || '—'}.` : 'Not enough data to score.';
+const td = c.tender_detail;
+const pctv = x => x >= 1 ? Math.round((x - 1) * 100) + '% above' : Math.round((1 - x) * 100) + '% below';
+$('tnd').innerHTML = td ? `<b>Tender signal: ${esc(c.tender)}.</b> ${esc(td.crop)} imports last season were ${pctv(td.momentum)} the five-year norm${td.harvest != null ? `, and USDA expects this year's ${esc(td.crop)} harvest ${pctv(td.harvest)} normal` : ''}.`
+  : `<b>Tender signal: ${esc(c.tender)}.</b> <span class="muted">Not a large enough importer of wheat or corn to score.</span>`;
 
 const H = D.history || [];
 if (H.length > 1) {
@@ -75,9 +87,11 @@ if (H.length > 1) {
 const psd = c.psd || {};
 const crops = Object.keys(psd);
 $('mylede').textContent = crops.length ? `USDA estimates for marketing year ${(psd[crops[0]] || {}).market_year ?? ''}, thousand tonnes.` : 'USDA has no grain balance for this country.';
+const G = c.grain;
 $('bal').tBodies[0].innerHTML = crops.map(k => { const b = psd[k] || {}; return `<tr><td>${k[0].toUpperCase() + k.slice(1)}</td>
   <td class="n">${num(b.production)}</td><td class="n">${num(b.imports)}</td><td class="n">${num(b.consumption)}</td><td class="n">${num(b.ending_stocks)}</td>
   <td class="n">${b.stocks_to_use != null ? b.stocks_to_use.toFixed(2) : '—'}</td><td class="n">${b.import_dependence != null ? (b.import_dependence*100).toFixed(0) + '%' : '—'}</td></tr>`; }).join('')
+  + (G && crops.length > 1 ? `<tr><td><b>All grain</b></td><td class="n">—</td><td class="n"><b>${num(G.imports)}</b></td><td class="n"><b>${num(G.consumption)}</b></td><td class="n">—</td><td class="n"><b>${G.stocks_to_use.toFixed(2)}</b></td><td class="n"><b>${(G.import_dependence*100).toFixed(0)}%</b></td></tr>` : '')
   || '<tr><td colspan="7" class="muted">No data.</td></tr>';
 
 const ipc = c.ipc || c.ipc_stale;
@@ -86,7 +100,7 @@ $('ipc').innerHTML = ipc ? `<h3>Hunger (IPC)</h3><p><b style="font-size:26px">${
   : '<h3>Hunger (IPC)</h3><p class="muted">No national IPC analysis for this country.</p>';
 $('fx').innerHTML = `<h3>Currency</h3><p><b style="font-size:26px">${c.fx_rate ? c.fx_rate.toLocaleString(undefined, {maximumFractionDigits: 2}) : '—'}</b> ${esc(c.fx || '')} per US dollar.</p>
   <p class="muted">7-day change ${pct(c.fx_change_7d)}, 30-day change ${pct(c.fx_change_30d)}. A rise means the local currency lost value.</p>`;
-$('reps').innerHTML = (c.reports || []).map(r => `<li><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a> <span class="muted">${esc(r.source)}, ${esc(r.date)}</span></li>`).join('')
+$('reps').innerHTML = (c.reports || []).map(r => `<li><a href="${safe(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a> <span class="muted">${esc(r.source)}, ${esc(r.date)}</span></li>`).join('')
   || '<li class="muted">No recent reports linked yet.</li>';
 </script>
 </body>
