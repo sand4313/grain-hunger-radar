@@ -96,10 +96,13 @@ def main():
             log.skip("hapi", "HAPI_APP_IDENTIFIER not set")
         if not rw_app:
             log.skip("reliefweb", "RELIEFWEB_APPNAME not set")
+        api_ok = bool(fas_key) and log.run("usda_api", lambda: usda.check_key(fas_key)) is not None
         if not fas_key:
-            log.skip("usda", "USDA_FAS_API_KEY not set")
-        elif log.run("usda", lambda: usda.check_key(fas_key)) is None:
-            fas_key = None  # key check failed; the reason is already in log.status
+            log.skip("usda_api", "USDA_FAS_API_KEY not set")
+        if not api_ok:
+            fas_key = None  # use the keyless bulk download instead
+            psd_bulk = log.run("usda_bulk", lambda: usda.fetch_bulk(
+                sess, cfg["commodities"], [c["fas"] for c in countries])) or {}
 
     fix_c = fixture("countries") if args.offline else {}
     rows = []
@@ -115,9 +118,11 @@ def main():
                 row["reports"] = log.run("reliefweb", lambda: reliefweb.fetch(sess, iso, rw_app))
             if fas_key:
                 row["psd"] = {
-                    crop: log.run("usda", lambda code=code: usda.fetch(sess, code, c["fas"], year, fas_key))
+                    crop: log.run("usda_api", lambda code=code: usda.fetch(sess, code, c["fas"], year, fas_key))
                     for crop, code in cfg["commodities"].items()
                 }
+            else:
+                row["psd"] = psd_bulk.get(c["fas"])
         ipc = row.get("ipc")
         if ipc and (ipc.get("period_start") or "")[:10] < f"{year - 2}{as_of[4:]}":
             row["ipc_stale"] = ipc  # keep it visible in the data, but do not score on it

@@ -39,3 +39,48 @@ def check_key(key):
 def fetch(sess, commodity_code, fas_code, year, key):
     url = f"{BASE}/commodity/{commodity_code}/country/{fas_code}/year/{year}"
     return balance(_get(url, key))
+
+
+# --- Keyless fallback: USDA's bulk PSD download (same numbers, no API key) ---------
+BULK_URL = "https://apps.fas.usda.gov/psdonline/downloads/psd_grains_pulses_csv.zip"
+BULK_ATTR = {"production": "production", "imports": "imports",
+             "domestic consumption": "consumption", "ending stocks": "ending_stocks"}
+
+
+def parse_bulk(df, commodity_codes, fas_codes):
+    """Latest market year per country and commodity from the bulk CSV."""
+    import pandas as pd
+    df.columns = [c.strip().lower() for c in df.columns]
+    df["commodity_code"] = df["commodity_code"].astype(str).str.zfill(7)
+    df = df[df["commodity_code"].isin(commodity_codes.values()) & df["country_code"].isin(fas_codes)]
+    df = df[df["attribute_description"].str.strip().str.lower().isin(BULK_ATTR)]
+    out = {}
+    code_to_crop = {v: k for k, v in commodity_codes.items()}
+    for (cc, com), g in df.groupby(["country_code", "commodity_code"]):
+        latest = g["market_year"].max()
+        g = g[g["market_year"] == latest]
+        if "month" in g.columns:  # keep the most recent estimate for that year
+            g = g[g["month"] == g["month"].max()]
+        rows = [{"attributeId": None, "name": BULK_ATTR[a.strip().lower()], "value": v}
+                for a, v in zip(g["attribute_description"], pd.to_numeric(g["value"], errors="coerce"))]
+        vals = {r["name"]: float(r["value"]) for r in rows if r["value"] == r["value"]}
+        cons = vals.get("consumption") or 0
+        if cons:
+            vals["stocks_to_use"] = round(vals.get("ending_stocks", 0) / cons, 3)
+            vals["import_dependence"] = round(vals.get("imports", 0) / cons, 3)
+        vals["market_year"] = int(latest)
+        out.setdefault(cc, {})[code_to_crop[com]] = vals
+    return out
+
+
+def fetch_bulk(sess, commodity_codes, fas_codes):
+    import io
+    import zipfile
+
+    import pandas as pd
+    r = sess.get(BULK_URL, timeout=180)
+    r.raise_for_status()
+    z = zipfile.ZipFile(io.BytesIO(r.content))
+    name = next(n for n in z.namelist() if n.lower().endswith(".csv"))
+    df = pd.read_csv(z.open(name), dtype=str)
+    return parse_bulk(df, commodity_codes, fas_codes)

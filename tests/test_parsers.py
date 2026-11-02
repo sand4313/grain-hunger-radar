@@ -54,3 +54,19 @@ def test_fao_link_regex():
     page = '<a href="https://www.fao.org/media/docs/x/food_price_indices_data.csv?sfvrsn=523_84&amp;download=true">CSV</a>'
     m = fao.LINK_RE.search(page)
     assert m and "food_price_indices_data.csv" in m.group(1)
+
+
+def test_usda_bulk_parse():
+    import pandas as pd
+    rows = []
+    for yr, cons, stocks in [(2025, 20000, 4000), (2026, 20000, 3000)]:
+        for attr, val in [("Production", 9800), ("Imports", 12500),
+                          ("Domestic Consumption", cons), ("Ending Stocks", stocks)]:
+            rows.append({"Commodity_Code": "410000", "Country_Code": "EG", "Market_Year": yr,
+                         "Month": 10, "Attribute_Description": attr, "Value": val})
+    rows.append({"Commodity_Code": "410000", "Country_Code": "XX", "Market_Year": 2026,
+                 "Month": 10, "Attribute_Description": "Imports", "Value": 1})
+    out = usda.parse_bulk(pd.DataFrame(rows), {"wheat": "0410000"}, ["EG"])
+    w = out["EG"]["wheat"]
+    assert w["market_year"] == 2026 and w["stocks_to_use"] == 0.15 and w["import_dependence"] == 0.625
+    assert "XX" not in out
