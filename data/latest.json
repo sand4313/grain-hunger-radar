@@ -7,7 +7,8 @@
     "worldbank": "ok",
     "fao": "ok",
     "reliefweb": "skipped: RELIEFWEB_APPNAME not set",
-    "usda": "failed: RuntimeError: USDA HTTP 500 on /api/psd/commodities: {\"message\":\"An error has occurred.\"}",
+    "usda_api": "failed: RuntimeError: USDA HTTP 500 on /api/psd/commodities: {\"message\":\"An error has occurred.\"}",
+    "usda_bulk": "ok",
     "hapi": "ok"
   },
   "enso": {
@@ -1044,15 +1045,75 @@
         "ipc_type": "current",
         "period_end": "2026-05-31T23:59:59"
       },
+      "psd": {
+        "wheat": {
+          "consumption": 4250.0,
+          "ending_stocks": 342.0,
+          "imports": 4150.0,
+          "production": 110.0,
+          "stocks_to_use": 0.08,
+          "import_dependence": 0.976,
+          "market_year": 2026
+        },
+        "corn": {
+          "consumption": 650.0,
+          "ending_stocks": 57.0,
+          "imports": 600.0,
+          "production": 65.0,
+          "stocks_to_use": 0.088,
+          "import_dependence": 0.923,
+          "market_year": 2026
+        }
+      },
       "fx_rate": 236.539112,
       "fx_change_30d": null,
-      "risk": 100,
+      "risk": 99,
       "risk_parts": {
         "hunger": 100,
-        "coverage": "1/4"
+        "stocks": 100,
+        "imports": 98,
+        "coverage": "3/4"
       },
       "risk_band": "Severe",
-      "tender": "No data"
+      "tender": "High"
+    },
+    {
+      "name": "Indonesia",
+      "iso3": "IDN",
+      "fas": "ID",
+      "fx": "IDR",
+      "buyer": "Bulog / private millers",
+      "ipc": null,
+      "psd": {
+        "wheat": {
+          "consumption": 12700.0,
+          "ending_stocks": 1220.0,
+          "imports": 12500.0,
+          "production": 0.0,
+          "stocks_to_use": 0.096,
+          "import_dependence": 0.984,
+          "market_year": 2026
+        },
+        "corn": {
+          "consumption": 14400.0,
+          "ending_stocks": 1011.0,
+          "imports": 1000.0,
+          "production": 13500.0,
+          "stocks_to_use": 0.07,
+          "import_dependence": 0.069,
+          "market_year": 2026
+        }
+      },
+      "fx_rate": 18144.413865,
+      "fx_change_30d": null,
+      "risk": 99,
+      "risk_parts": {
+        "stocks": 100,
+        "imports": 98,
+        "coverage": "2/4"
+      },
+      "risk_band": "Severe",
+      "tender": "High"
     },
     {
       "name": "Sudan",
@@ -1067,38 +1128,28 @@
         "ipc_type": "current",
         "period_end": "2026-05-31T23:59:59"
       },
+      "psd": {
+        "wheat": {
+          "consumption": 3050.0,
+          "ending_stocks": 243.0,
+          "imports": 2700.0,
+          "production": 300.0,
+          "stocks_to_use": 0.08,
+          "import_dependence": 0.885,
+          "market_year": 2026
+        }
+      },
       "fx_rate": 458.917773,
       "fx_change_30d": null,
-      "risk": 100,
+      "risk": 97,
       "risk_parts": {
         "hunger": 100,
-        "coverage": "1/4"
+        "stocks": 100,
+        "imports": 88,
+        "coverage": "3/4"
       },
       "risk_band": "Severe",
-      "tender": "No data"
-    },
-    {
-      "name": "Pakistan",
-      "iso3": "PAK",
-      "fas": "PK",
-      "fx": "PKR",
-      "buyer": "TCP",
-      "ipc": {
-        "period_start": "2026-03-01T00:00:00",
-        "people_phase3plus": 10553872,
-        "share_phase3plus": 0.2,
-        "ipc_type": "current",
-        "period_end": "2026-03-31T23:59:59"
-      },
-      "fx_rate": 276.733456,
-      "fx_change_30d": null,
-      "risk": 50,
-      "risk_parts": {
-        "hunger": 50,
-        "coverage": "1/4"
-      },
-      "risk_band": "Elevated",
-      "tender": "No data"
+      "tender": "High"
     },
     {
       "name": "Kenya",
@@ -1113,38 +1164,37 @@
         "ipc_type": "current",
         "period_end": "2026-10-31T23:59:59"
       },
+      "psd": {
+        "wheat": {
+          "consumption": 2810.0,
+          "ending_stocks": 221.0,
+          "imports": 2600.0,
+          "production": 130.0,
+          "stocks_to_use": 0.079,
+          "import_dependence": 0.925,
+          "market_year": 2026
+        },
+        "corn": {
+          "consumption": 4100.0,
+          "ending_stocks": 129.0,
+          "imports": 1800.0,
+          "production": 2200.0,
+          "stocks_to_use": 0.031,
+          "import_dependence": 0.439,
+          "market_year": 2026
+        }
+      },
       "fx_rate": 129.93775,
       "fx_change_30d": null,
-      "risk": 42,
+      "risk": 73,
       "risk_parts": {
         "hunger": 42,
-        "coverage": "1/4"
+        "stocks": 100,
+        "imports": 92,
+        "coverage": "3/4"
       },
-      "risk_band": "Watch",
-      "tender": "No data"
-    },
-    {
-      "name": "Bangladesh",
-      "iso3": "BGD",
-      "fas": "BG",
-      "fx": "BDT",
-      "buyer": "Directorate of Food",
-      "ipc": {
-        "period_start": "2026-05-01T00:00:00",
-        "people_phase3plus": 15270914,
-        "share_phase3plus": 0.15,
-        "ipc_type": "current",
-        "period_end": "2026-08-31T23:59:59"
-      },
-      "fx_rate": 124.028893,
-      "fx_change_30d": null,
-      "risk": 37,
-      "risk_parts": {
-        "hunger": 37,
-        "coverage": "1/4"
-      },
-      "risk_band": "Watch",
-      "tender": "No data"
+      "risk_band": "Severe",
+      "tender": "High"
     },
     {
       "name": "Nigeria",
@@ -1159,15 +1209,37 @@
         "ipc_type": "current",
         "period_end": "2025-12-31T23:59:59"
       },
+      "psd": {
+        "wheat": {
+          "consumption": 5600.0,
+          "ending_stocks": 321.0,
+          "imports": 5600.0,
+          "production": 140.0,
+          "stocks_to_use": 0.057,
+          "import_dependence": 1.0,
+          "market_year": 2026
+        },
+        "corn": {
+          "consumption": 12000.0,
+          "ending_stocks": 281.0,
+          "imports": 500.0,
+          "production": 11500.0,
+          "stocks_to_use": 0.023,
+          "import_dependence": 0.042,
+          "market_year": 2026
+        }
+      },
       "fx_rate": 1348.44829,
       "fx_change_30d": null,
-      "risk": 30,
+      "risk": 69,
       "risk_parts": {
         "hunger": 30,
-        "coverage": "1/4"
+        "stocks": 100,
+        "imports": 100,
+        "coverage": "3/4"
       },
-      "risk_band": "Watch",
-      "tender": "No data"
+      "risk_band": "Elevated",
+      "tender": "High"
     },
     {
       "name": "Egypt",
@@ -1176,40 +1248,81 @@
       "fx": "EGP",
       "buyer": "Mostakbal Misr",
       "ipc": null,
+      "psd": {
+        "wheat": {
+          "consumption": 20700.0,
+          "ending_stocks": 4256.0,
+          "imports": 11500.0,
+          "production": 10000.0,
+          "stocks_to_use": 0.206,
+          "import_dependence": 0.556,
+          "market_year": 2026
+        },
+        "corn": {
+          "consumption": 20400.0,
+          "ending_stocks": 2090.0,
+          "imports": 13500.0,
+          "production": 7000.0,
+          "stocks_to_use": 0.102,
+          "import_dependence": 0.662,
+          "market_year": 2026
+        }
+      },
       "fx_rate": 55.960696,
       "fx_change_30d": null,
-      "risk": null,
-      "risk_parts": {},
-      "risk_band": "No data",
-      "tender": "No data"
+      "risk": 61,
+      "risk_parts": {
+        "stocks": 65,
+        "imports": 56,
+        "coverage": "2/4"
+      },
+      "risk_band": "Elevated",
+      "tender": "Medium"
     },
     {
-      "name": "Algeria",
-      "iso3": "DZA",
-      "fas": "AG",
-      "fx": "DZD",
-      "buyer": "OAIC",
-      "ipc": null,
-      "fx_rate": 135.898342,
+      "name": "Bangladesh",
+      "iso3": "BGD",
+      "fas": "BG",
+      "fx": "BDT",
+      "buyer": "Directorate of Food",
+      "ipc": {
+        "period_start": "2026-05-01T00:00:00",
+        "people_phase3plus": 15270914,
+        "share_phase3plus": 0.15,
+        "ipc_type": "current",
+        "period_end": "2026-08-31T23:59:59"
+      },
+      "psd": {
+        "wheat": {
+          "consumption": 7700.0,
+          "ending_stocks": 1433.0,
+          "imports": 6500.0,
+          "production": 1050.0,
+          "stocks_to_use": 0.186,
+          "import_dependence": 0.844,
+          "market_year": 2026
+        },
+        "corn": {
+          "consumption": 7650.0,
+          "ending_stocks": 174.0,
+          "imports": 1650.0,
+          "production": 6000.0,
+          "stocks_to_use": 0.023,
+          "import_dependence": 0.216,
+          "market_year": 2026
+        }
+      },
+      "fx_rate": 124.028893,
       "fx_change_30d": null,
-      "risk": null,
-      "risk_parts": {},
-      "risk_band": "No data",
-      "tender": "No data"
-    },
-    {
-      "name": "Saudi Arabia",
-      "iso3": "SAU",
-      "fas": "SA",
-      "fx": "SAR",
-      "buyer": "GFSA",
-      "ipc": null,
-      "fx_rate": 3.75,
-      "fx_change_30d": null,
-      "risk": null,
-      "risk_parts": {},
-      "risk_band": "No data",
-      "tender": "No data"
+      "risk": 60,
+      "risk_parts": {
+        "hunger": 37,
+        "stocks": 71,
+        "imports": 84,
+        "coverage": "3/4"
+      },
+      "risk_band": "Elevated",
+      "tender": "High"
     },
     {
       "name": "Morocco",
@@ -1218,54 +1331,36 @@
       "fx": "MAD",
       "buyer": "Private importers",
       "ipc": null,
+      "psd": {
+        "wheat": {
+          "consumption": 10300.0,
+          "ending_stocks": 1683.0,
+          "imports": 3500.0,
+          "production": 7500.0,
+          "stocks_to_use": 0.163,
+          "import_dependence": 0.34,
+          "market_year": 2026
+        },
+        "corn": {
+          "consumption": 3450.0,
+          "ending_stocks": 186.0,
+          "imports": 3450.0,
+          "production": 60.0,
+          "stocks_to_use": 0.054,
+          "import_dependence": 1.0,
+          "market_year": 2026
+        }
+      },
       "fx_rate": 9.84236,
       "fx_change_30d": null,
-      "risk": null,
-      "risk_parts": {},
-      "risk_band": "No data",
-      "tender": "No data"
-    },
-    {
-      "name": "Tunisia",
-      "iso3": "TUN",
-      "fas": "TS",
-      "fx": "TND",
-      "buyer": "ODC",
-      "ipc": null,
-      "fx_rate": 3.012975,
-      "fx_change_30d": null,
-      "risk": null,
-      "risk_parts": {},
-      "risk_band": "No data",
-      "tender": "No data"
-    },
-    {
-      "name": "Turkey",
-      "iso3": "TUR",
-      "fas": "TU",
-      "fx": "TRY",
-      "buyer": "TMO",
-      "ipc": null,
-      "fx_rate": 49.939434,
-      "fx_change_30d": null,
-      "risk": null,
-      "risk_parts": {},
-      "risk_band": "No data",
-      "tender": "No data"
-    },
-    {
-      "name": "Iraq",
-      "iso3": "IRQ",
-      "fas": "IZ",
-      "fx": "IQD",
-      "buyer": "Grain Board of Iraq",
-      "ipc": null,
-      "fx_rate": 1517.707928,
-      "fx_change_30d": null,
-      "risk": null,
-      "risk_parts": {},
-      "risk_band": "No data",
-      "tender": "No data"
+      "risk": 59,
+      "risk_parts": {
+        "stocks": 79,
+        "imports": 34,
+        "coverage": "2/4"
+      },
+      "risk_band": "Elevated",
+      "tender": "Low"
     },
     {
       "name": "Ethiopia",
@@ -1274,6 +1369,26 @@
       "fx": "ETB",
       "buyer": "Government / aid",
       "ipc": null,
+      "psd": {
+        "wheat": {
+          "consumption": 8200.0,
+          "ending_stocks": 1033.0,
+          "imports": 1400.0,
+          "production": 6800.0,
+          "stocks_to_use": 0.126,
+          "import_dependence": 0.171,
+          "market_year": 2026
+        },
+        "corn": {
+          "consumption": 10450.0,
+          "ending_stocks": 650.0,
+          "imports": 0.0,
+          "production": 10500.0,
+          "stocks_to_use": 0.062,
+          "import_dependence": 0.0,
+          "market_year": 2026
+        }
+      },
       "ipc_stale": {
         "period_start": "2021-05-01T00:00:00",
         "people_phase3plus": 16756345,
@@ -1283,24 +1398,249 @@
       },
       "fx_rate": 161.60205,
       "fx_change_30d": null,
-      "risk": null,
-      "risk_parts": {},
-      "risk_band": "No data",
-      "tender": "No data"
+      "risk": 58,
+      "risk_parts": {
+        "stocks": 91,
+        "imports": 17,
+        "coverage": "2/4"
+      },
+      "risk_band": "Elevated",
+      "tender": "Low"
     },
     {
-      "name": "Indonesia",
-      "iso3": "IDN",
-      "fas": "ID",
-      "fx": "IDR",
-      "buyer": "Bulog / private millers",
+      "name": "Tunisia",
+      "iso3": "TUN",
+      "fas": "TS",
+      "fx": "TND",
+      "buyer": "ODC",
       "ipc": null,
-      "fx_rate": 18144.413865,
+      "psd": {
+        "wheat": {
+          "consumption": 3100.0,
+          "ending_stocks": 788.0,
+          "imports": 1850.0,
+          "production": 1300.0,
+          "stocks_to_use": 0.254,
+          "import_dependence": 0.597,
+          "market_year": 2026
+        },
+        "corn": {
+          "consumption": 1400.0,
+          "ending_stocks": 57.0,
+          "imports": 1400.0,
+          "production": 0.0,
+          "stocks_to_use": 0.041,
+          "import_dependence": 1.0,
+          "market_year": 2026
+        }
+      },
+      "fx_rate": 3.012975,
       "fx_change_30d": null,
-      "risk": null,
-      "risk_parts": {},
-      "risk_band": "No data",
-      "tender": "No data"
+      "risk": 54,
+      "risk_parts": {
+        "stocks": 49,
+        "imports": 60,
+        "coverage": "2/4"
+      },
+      "risk_band": "Elevated",
+      "tender": "Medium"
+    },
+    {
+      "name": "Pakistan",
+      "iso3": "PAK",
+      "fas": "PK",
+      "fx": "PKR",
+      "buyer": "TCP",
+      "ipc": {
+        "period_start": "2026-03-01T00:00:00",
+        "people_phase3plus": 10553872,
+        "share_phase3plus": 0.2,
+        "ipc_type": "current",
+        "period_end": "2026-03-31T23:59:59"
+      },
+      "psd": {
+        "wheat": {
+          "consumption": 30300.0,
+          "ending_stocks": 2493.0,
+          "imports": 1000.0,
+          "production": 29000.0,
+          "stocks_to_use": 0.082,
+          "import_dependence": 0.033,
+          "market_year": 2026
+        },
+        "corn": {
+          "consumption": 9400.0,
+          "ending_stocks": 1277.0,
+          "imports": 20.0,
+          "production": 9800.0,
+          "stocks_to_use": 0.136,
+          "import_dependence": 0.002,
+          "market_year": 2026
+        }
+      },
+      "fx_rate": 276.733456,
+      "fx_change_30d": null,
+      "risk": 54,
+      "risk_parts": {
+        "hunger": 50,
+        "stocks": 100,
+        "imports": 3,
+        "coverage": "3/4"
+      },
+      "risk_band": "Elevated",
+      "tender": "Low"
+    },
+    {
+      "name": "Iraq",
+      "iso3": "IRQ",
+      "fas": "IZ",
+      "fx": "IQD",
+      "buyer": "Grain Board of Iraq",
+      "ipc": null,
+      "psd": {
+        "wheat": {
+          "consumption": 8000.0,
+          "ending_stocks": 2069.0,
+          "imports": 2000.0,
+          "production": 5800.0,
+          "stocks_to_use": 0.259,
+          "import_dependence": 0.25,
+          "market_year": 2026
+        },
+        "corn": {
+          "consumption": 2000.0,
+          "ending_stocks": 119.0,
+          "imports": 1500.0,
+          "production": 500.0,
+          "stocks_to_use": 0.059,
+          "import_dependence": 0.75,
+          "market_year": 2026
+        }
+      },
+      "fx_rate": 1517.707928,
+      "fx_change_30d": null,
+      "risk": 37,
+      "risk_parts": {
+        "stocks": 47,
+        "imports": 25,
+        "coverage": "2/4"
+      },
+      "risk_band": "Watch",
+      "tender": "Low"
+    },
+    {
+      "name": "Turkey",
+      "iso3": "TUR",
+      "fas": "TU",
+      "fx": "TRY",
+      "buyer": "TMO",
+      "ipc": null,
+      "psd": {
+        "wheat": {
+          "consumption": 19200.0,
+          "ending_stocks": 5073.0,
+          "imports": 4500.0,
+          "production": 23000.0,
+          "stocks_to_use": 0.264,
+          "import_dependence": 0.234,
+          "market_year": 2026
+        },
+        "corn": {
+          "consumption": 11500.0,
+          "ending_stocks": 1161.0,
+          "imports": 4500.0,
+          "production": 7400.0,
+          "stocks_to_use": 0.101,
+          "import_dependence": 0.391,
+          "market_year": 2026
+        }
+      },
+      "fx_rate": 49.939434,
+      "fx_change_30d": null,
+      "risk": 36,
+      "risk_parts": {
+        "stocks": 45,
+        "imports": 23,
+        "coverage": "2/4"
+      },
+      "risk_band": "Watch",
+      "tender": "Low"
+    },
+    {
+      "name": "Saudi Arabia",
+      "iso3": "SAU",
+      "fas": "SA",
+      "fx": "SAR",
+      "buyer": "GFSA",
+      "ipc": null,
+      "psd": {
+        "wheat": {
+          "consumption": 5300.0,
+          "ending_stocks": 3889.0,
+          "imports": 4100.0,
+          "production": 1100.0,
+          "stocks_to_use": 0.734,
+          "import_dependence": 0.774,
+          "market_year": 2026
+        },
+        "corn": {
+          "consumption": 4850.0,
+          "ending_stocks": 445.0,
+          "imports": 4700.0,
+          "production": 135.0,
+          "stocks_to_use": 0.092,
+          "import_dependence": 0.969,
+          "market_year": 2026
+        }
+      },
+      "fx_rate": 3.75,
+      "fx_change_30d": null,
+      "risk": 34,
+      "risk_parts": {
+        "stocks": 0,
+        "imports": 77,
+        "coverage": "2/4"
+      },
+      "risk_band": "Watch",
+      "tender": "Low"
+    },
+    {
+      "name": "Algeria",
+      "iso3": "DZA",
+      "fas": "AG",
+      "fx": "DZD",
+      "buyer": "OAIC",
+      "ipc": null,
+      "psd": {
+        "wheat": {
+          "consumption": 12575.0,
+          "ending_stocks": 5156.0,
+          "imports": 8300.0,
+          "production": 4100.0,
+          "stocks_to_use": 0.41,
+          "import_dependence": 0.66,
+          "market_year": 2026
+        },
+        "corn": {
+          "consumption": 5100.0,
+          "ending_stocks": 260.0,
+          "imports": 5100.0,
+          "production": 12.0,
+          "stocks_to_use": 0.051,
+          "import_dependence": 1.0,
+          "market_year": 2026
+        }
+      },
+      "fx_rate": 135.898342,
+      "fx_change_30d": null,
+      "risk": 29,
+      "risk_parts": {
+        "stocks": 0,
+        "imports": 66,
+        "coverage": "2/4"
+      },
+      "risk_band": "Watch",
+      "tender": "Low"
     }
   ]
 }
