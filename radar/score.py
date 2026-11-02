@@ -6,7 +6,11 @@ A transparent heuristic, not a forecast model. Each component is scaled 0-100:
   stocks  - wheat stocks-to-use, lower is worse      (0.10 -> 100, 0.40+ -> 0)
   imports - wheat import dependence                  (100% of use -> 100)
 Missing components are skipped and the weights re-normalised.
+
+Supply components (stocks, imports) are scaled by ability to pay: a rich importer
+with thin stocks simply buys more, it does not go hungry. Hunger and FX are not scaled.
 """
+INCOME_FACTOR = {"HIC": 0.3, "UMC": 0.7, "LMC": 1.0, "LIC": 1.0}
 WEIGHTS = {"hunger": 0.35, "fx": 0.20, "stocks": 0.25, "imports": 0.20}
 
 
@@ -26,6 +30,10 @@ def components(c):
         out["stocks"] = clamp((0.40 - w["stocks_to_use"]) / 0.30 * 100)
     if "import_dependence" in w:
         out["imports"] = clamp(w["import_dependence"] * 100)
+    f = INCOME_FACTOR.get(c.get("income"), 1.0)
+    for k in ("stocks", "imports"):
+        if k in out:
+            out[k] *= f
     return out
 
 

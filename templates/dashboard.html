@@ -46,7 +46,7 @@ a{color:var(--accent)}
   <input id="q" placeholder="Filter by country or buyer" style="width:100%;max-width:340px;padding:9px 12px;margin:0 0 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit">
   <div class="tablewrap"><table id="tbl"><thead><tr>
     <th>Country</th><th>Risk</th><th>Band</th><th>IPC 3+</th><th class="num">FX 30d</th>
-    <th class="num">Wheat stocks/use</th><th class="num">Import dep.</th><th>Tender signal</th><th>Buyer</th>
+    <th class="num">Wheat stocks/use</th><th class="num">Import dep.</th><th>Tender signal</th><th>Income</th><th>Buyer</th>
   </tr></thead><tbody></tbody></table></div>
   <h2>Global prices</h2>
   <div class="grid" id="prices"></div>
@@ -87,7 +87,7 @@ const rowHtml = c => {
   <td class="num">${pct(c.fx_change_30d)}</td>
   <td class="num">${w.stocks_to_use != null ? w.stocks_to_use.toFixed(2) : '—'}</td>
   <td class="num">${w.import_dependence != null ? (w.import_dependence*100).toFixed(0)+'%' : '—'}</td>
-  <td>${esc(c.tender)}</td><td>${esc(c.buyer)}</td></tr>`;
+  <td>${esc(c.tender)}</td><td>${esc({HIC:'High',UMC:'Upper-mid',LMC:'Lower-mid',LIC:'Low'}[c.income] || '—')}</td><td>${esc(c.buyer)}</td></tr>`;
 };
 function drawTable() {
   const q = $('q').value.trim().toLowerCase();

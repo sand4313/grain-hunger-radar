@@ -85,3 +85,10 @@ def test_universe():
     assert set(by) == {"EGY", "VNM", "SOM"}          # Iceland too small, EU is an aggregate
     assert by["VNM"]["fx"] == "VND" and by["VNM"]["fas"] == "VM"
     assert by["EGY"]["buyer"] == "MM" and by["EGY"]["core"]
+
+
+def test_income_scaling():
+    base = {"psd": {"wheat": {"stocks_to_use": 0.05, "import_dependence": 1.0}}}
+    poor = score.risk(dict(base, income="LIC"))[0]
+    rich = score.risk(dict(base, income="HIC"))[0]
+    assert poor == 100 and rich == 30

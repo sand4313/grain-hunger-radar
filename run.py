@@ -18,7 +18,7 @@ import yaml
 
 from radar import brief, dashboard, score, store, universe
 from radar.http import session
-from radar.sources import enso, fao, fx, hapi, reliefweb, usda, worldbank
+from radar.sources import enso, fao, fx, hapi, reliefweb, usda, wbincome, worldbank
 
 ROOT = Path(__file__).resolve().parent
 FIX = ROOT / "tests" / "fixtures"
@@ -87,6 +87,9 @@ def main():
             ipc_all = {}
             log.skip("hapi", "HAPI_APP_IDENTIFIER not set")
         countries, unmatched = universe.build(cfg, psd_all, psd_names, ipc_all)
+        income = log.run("wb_income", lambda: wbincome.fetch(sess)) or {}
+        for c in countries:
+            c["income"] = income.get(c["iso3"])
         if not rw_app:
             log.skip("reliefweb", "RELIEFWEB_APPNAME not set")
 
