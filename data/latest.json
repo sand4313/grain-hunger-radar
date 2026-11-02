@@ -1051,25 +1051,11 @@
         "period_end": "2026-05-31T23:59:59"
       },
       "psd": {
-        "rice": {
-          "consumption": 775.0,
-          "imports": 775.0,
-          "production": 0.0,
-          "ending_stocks": 0.0,
-          "stocks_to_use": 0.0,
-          "import_dependence": 1.0,
-          "market_year": 2026,
-          "begin_stu": 0.0,
-          "avg5_stu": 0.0,
-          "avg5_imports": 663.0,
-          "prev_imports": 750.0,
-          "import_momentum": 1.131
-        },
         "corn": {
-          "imports": 600.0,
           "ending_stocks": 57.0,
-          "production": 65.0,
           "consumption": 650.0,
+          "imports": 600.0,
+          "production": 65.0,
           "stocks_to_use": 0.088,
           "import_dependence": 0.923,
           "market_year": 2026,
@@ -1081,11 +1067,25 @@
           "avg5_production": 68.8,
           "production_vs_avg": 0.945
         },
+        "rice": {
+          "production": 0.0,
+          "imports": 775.0,
+          "ending_stocks": 0.0,
+          "consumption": 775.0,
+          "stocks_to_use": 0.0,
+          "import_dependence": 1.0,
+          "market_year": 2026,
+          "begin_stu": 0.0,
+          "avg5_stu": 0.0,
+          "avg5_imports": 663.0,
+          "prev_imports": 750.0,
+          "import_momentum": 1.131
+        },
         "wheat": {
-          "consumption": 4250.0,
-          "ending_stocks": 342.0,
-          "imports": 4150.0,
           "production": 110.0,
+          "imports": 4150.0,
+          "ending_stocks": 342.0,
+          "consumption": 4250.0,
           "stocks_to_use": 0.08,
           "import_dependence": 0.976,
           "market_year": 2026,
@@ -1147,18 +1147,18 @@
       },
       "psd": {
         "rice": {
+          "production": 0.0,
+          "imports": 0.0,
           "ending_stocks": 0.0,
           "consumption": 0.0,
-          "imports": 0.0,
-          "production": 0.0,
           "market_year": 2026,
           "avg5_imports": 0.0
         },
         "wheat": {
-          "production": 300.0,
           "imports": 2700.0,
           "ending_stocks": 243.0,
           "consumption": 3050.0,
+          "production": 300.0,
           "stocks_to_use": 0.08,
           "import_dependence": 0.885,
           "market_year": 2026,
@@ -1214,10 +1214,10 @@
       "ipc": null,
       "psd": {
         "rice": {
+          "consumption": 0.0,
           "production": 0.0,
           "imports": 0.0,
           "ending_stocks": 0.0,
-          "consumption": 0.0,
           "market_year": 2026,
           "avg5_imports": 0.0
         },
@@ -1284,10 +1284,10 @@
       },
       "psd": {
         "rice": {
-          "production": 50.0,
-          "imports": 520.0,
           "ending_stocks": 59.0,
           "consumption": 560.0,
+          "production": 50.0,
+          "imports": 520.0,
           "stocks_to_use": 0.105,
           "import_dependence": 0.929,
           "market_year": 2026,
@@ -1316,10 +1316,10 @@
           "production_vs_avg": 0.82
         },
         "wheat": {
-          "consumption": 465.0,
-          "ending_stocks": 84.0,
-          "imports": 480.0,
           "production": 0.0,
+          "imports": 480.0,
+          "ending_stocks": 84.0,
+          "consumption": 465.0,
           "stocks_to_use": 0.181,
           "import_dependence": 1.032,
           "market_year": 2026,
@@ -1378,10 +1378,24 @@
         "period_end": "2026-10-31T23:59:59"
       },
       "psd": {
+        "wheat": {
+          "production": 25.0,
+          "imports": 1000.0,
+          "ending_stocks": 63.0,
+          "consumption": 850.0,
+          "stocks_to_use": 0.074,
+          "import_dependence": 1.176,
+          "market_year": 2026,
+          "begin_stu": 0.098,
+          "avg5_stu": 0.107,
+          "avg5_imports": 805.0,
+          "prev_imports": 1103.0,
+          "import_momentum": 1.37
+        },
         "rice": {
-          "ending_stocks": 0.0,
           "production": 237.0,
           "imports": 50.0,
+          "ending_stocks": 0.0,
           "consumption": 277.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.181,
@@ -1394,25 +1408,11 @@
           "avg5_production": 221.6,
           "production_vs_avg": 1.069
         },
-        "wheat": {
-          "production": 25.0,
-          "imports": 1000.0,
-          "consumption": 850.0,
-          "ending_stocks": 63.0,
-          "stocks_to_use": 0.074,
-          "import_dependence": 1.176,
-          "market_year": 2026,
-          "begin_stu": 0.098,
-          "avg5_stu": 0.107,
-          "avg5_imports": 805.0,
-          "prev_imports": 1103.0,
-          "import_momentum": 1.37
-        },
         "corn": {
+          "consumption": 4600.0,
           "production": 5000.0,
           "imports": 5.0,
           "ending_stocks": 646.0,
-          "consumption": 4600.0,
           "stocks_to_use": 0.14,
           "import_dependence": 0.001,
           "market_year": 2026,
@@ -1502,10 +1502,10 @@
       "ipc": null,
       "psd": {
         "corn": {
-          "ending_stocks": 2090.0,
+          "consumption": 20400.0,
           "production": 7000.0,
           "imports": 13500.0,
-          "consumption": 20400.0,
+          "ending_stocks": 2090.0,
           "stocks_to_use": 0.102,
           "import_dependence": 0.662,
           "market_year": 2026,
@@ -1518,10 +1518,10 @@
           "production_vs_avg": 0.978
         },
         "rice": {
-          "imports": 200.0,
-          "consumption": 4175.0,
-          "ending_stocks": 411.0,
           "production": 4100.0,
+          "imports": 200.0,
+          "ending_stocks": 411.0,
+          "consumption": 4175.0,
           "stocks_to_use": 0.098,
           "import_dependence": 0.048,
           "market_year": 2026,
@@ -1534,10 +1534,10 @@
           "production_vs_avg": 1.115
         },
         "wheat": {
-          "production": 10000.0,
           "imports": 11500.0,
           "ending_stocks": 4256.0,
           "consumption": 20700.0,
+          "production": 10000.0,
           "stocks_to_use": 0.206,
           "import_dependence": 0.556,
           "market_year": 2026,
@@ -1593,9 +1593,9 @@
       "psd": {
         "wheat": {
           "production": 0.0,
+          "imports": 350.0,
           "ending_stocks": 0.0,
           "consumption": 350.0,
-          "imports": 350.0,
           "stocks_to_use": 0.0,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -1606,10 +1606,10 @@
           "import_momentum": 1.275
         },
         "corn": {
-          "consumption": 63.0,
-          "ending_stocks": 0.0,
-          "imports": 50.0,
           "production": 13.0,
+          "imports": 50.0,
+          "ending_stocks": 0.0,
+          "consumption": 63.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.794,
           "market_year": 2026,
@@ -1668,10 +1668,10 @@
       },
       "psd": {
         "corn": {
-          "consumption": 80.0,
           "production": 75.0,
           "imports": 5.0,
           "ending_stocks": 0.0,
+          "consumption": 80.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.062,
           "market_year": 2026,
@@ -1684,10 +1684,10 @@
           "production_vs_avg": 1.0
         },
         "wheat": {
-          "consumption": 1200.0,
-          "ending_stocks": 0.0,
-          "imports": 1200.0,
           "production": 0.0,
+          "imports": 1200.0,
+          "ending_stocks": 0.0,
+          "consumption": 1200.0,
           "stocks_to_use": 0.0,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -1823,10 +1823,10 @@
       "ipc": null,
       "psd": {
         "corn": {
-          "imports": 1600.0,
-          "production": 1680.0,
           "ending_stocks": 137.0,
           "consumption": 3280.0,
+          "production": 1680.0,
+          "imports": 1600.0,
           "stocks_to_use": 0.042,
           "import_dependence": 0.488,
           "market_year": 2026,
@@ -1856,9 +1856,9 @@
         },
         "wheat": {
           "ending_stocks": 193.0,
-          "imports": 1650.0,
-          "production": 0.0,
           "consumption": 1650.0,
+          "production": 0.0,
+          "imports": 1650.0,
           "stocks_to_use": 0.117,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -1917,10 +1917,10 @@
       },
       "psd": {
         "rice": {
-          "ending_stocks": 0.0,
-          "consumption": 390.0,
           "production": 290.0,
           "imports": 100.0,
+          "ending_stocks": 0.0,
+          "consumption": 390.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.256,
           "market_year": 2026,
@@ -1933,10 +1933,10 @@
           "production_vs_avg": 1.079
         },
         "wheat": {
+          "consumption": 9500.0,
           "production": 4800.0,
           "imports": 4500.0,
           "ending_stocks": 614.0,
-          "consumption": 9500.0,
           "stocks_to_use": 0.065,
           "import_dependence": 0.474,
           "market_year": 2026,
@@ -1949,10 +1949,10 @@
           "production_vs_avg": 1.101
         },
         "corn": {
-          "consumption": 399.0,
-          "ending_stocks": 0.0,
-          "imports": 50.0,
           "production": 350.0,
+          "imports": 50.0,
+          "ending_stocks": 0.0,
+          "consumption": 399.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.125,
           "market_year": 2026,
@@ -2014,8 +2014,8 @@
       },
       "psd": {
         "corn": {
-          "imports": 10.0,
           "production": 185.0,
+          "imports": 10.0,
           "ending_stocks": 7.0,
           "consumption": 195.0,
           "stocks_to_use": 0.036,
@@ -2066,10 +2066,10 @@
       "ipc": null,
       "psd": {
         "rice": {
-          "production": 267.0,
-          "imports": 160.0,
           "ending_stocks": 38.0,
           "consumption": 430.0,
+          "production": 267.0,
+          "imports": 160.0,
           "stocks_to_use": 0.088,
           "import_dependence": 0.372,
           "market_year": 2026,
@@ -2154,10 +2154,10 @@
       "ipc": null,
       "psd": {
         "corn": {
-          "production": 500.0,
-          "imports": 1500.0,
           "ending_stocks": 119.0,
           "consumption": 2000.0,
+          "production": 500.0,
+          "imports": 1500.0,
           "stocks_to_use": 0.059,
           "import_dependence": 0.75,
           "market_year": 2026,
@@ -2170,10 +2170,10 @@
           "production_vs_avg": 1.05
         },
         "rice": {
-          "consumption": 2150.0,
-          "ending_stocks": 270.0,
-          "imports": 1900.0,
           "production": 225.0,
+          "imports": 1900.0,
+          "ending_stocks": 270.0,
+          "consumption": 2150.0,
           "stocks_to_use": 0.126,
           "import_dependence": 0.884,
           "market_year": 2026,
@@ -2186,10 +2186,10 @@
           "production_vs_avg": 1.387
         },
         "wheat": {
+          "consumption": 8000.0,
           "production": 5800.0,
           "imports": 2000.0,
           "ending_stocks": 2069.0,
-          "consumption": 8000.0,
           "stocks_to_use": 0.259,
           "import_dependence": 0.25,
           "market_year": 2026,
@@ -2250,10 +2250,10 @@
       },
       "psd": {
         "wheat": {
-          "consumption": 850.0,
-          "ending_stocks": 48.0,
-          "imports": 700.0,
           "production": 140.0,
+          "imports": 700.0,
+          "ending_stocks": 48.0,
+          "consumption": 850.0,
           "stocks_to_use": 0.056,
           "import_dependence": 0.824,
           "market_year": 2026,
@@ -2274,10 +2274,10 @@
           "avg5_imports": 0.0
         },
         "corn": {
-          "imports": 500.0,
-          "ending_stocks": 50.0,
           "consumption": 500.0,
           "production": 3.0,
+          "imports": 500.0,
+          "ending_stocks": 50.0,
           "stocks_to_use": 0.1,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -2336,27 +2336,11 @@
         "period_end": "2026-10-31T23:59:59"
       },
       "psd": {
-        "rice": {
-          "consumption": 1100.0,
-          "ending_stocks": 246.0,
-          "imports": 800.0,
-          "production": 225.0,
-          "stocks_to_use": 0.224,
-          "import_dependence": 0.727,
-          "market_year": 2026,
-          "begin_stu": 0.292,
-          "avg5_stu": 0.174,
-          "avg5_imports": 832.8,
-          "prev_imports": 1100.0,
-          "import_momentum": 1.321,
-          "avg5_production": 153.4,
-          "production_vs_avg": 1.467
-        },
         "corn": {
-          "consumption": 4100.0,
-          "imports": 1800.0,
           "production": 2200.0,
+          "imports": 1800.0,
           "ending_stocks": 129.0,
+          "consumption": 4100.0,
           "stocks_to_use": 0.031,
           "import_dependence": 0.439,
           "market_year": 2026,
@@ -2368,11 +2352,27 @@
           "avg5_production": 3618.8,
           "production_vs_avg": 0.608
         },
+        "rice": {
+          "consumption": 1100.0,
+          "ending_stocks": 246.0,
+          "production": 225.0,
+          "imports": 800.0,
+          "stocks_to_use": 0.224,
+          "import_dependence": 0.727,
+          "market_year": 2026,
+          "begin_stu": 0.292,
+          "avg5_stu": 0.174,
+          "avg5_imports": 832.8,
+          "prev_imports": 1100.0,
+          "import_momentum": 1.321,
+          "avg5_production": 153.4,
+          "production_vs_avg": 1.467
+        },
         "wheat": {
-          "imports": 2600.0,
-          "production": 130.0,
-          "ending_stocks": 221.0,
           "consumption": 2810.0,
+          "production": 130.0,
+          "imports": 2600.0,
+          "ending_stocks": 221.0,
           "stocks_to_use": 0.079,
           "import_dependence": 0.925,
           "market_year": 2026,
@@ -2434,10 +2434,10 @@
       },
       "psd": {
         "corn": {
+          "consumption": 175.0,
           "production": 75.0,
           "imports": 100.0,
           "ending_stocks": 11.0,
-          "consumption": 175.0,
           "stocks_to_use": 0.063,
           "import_dependence": 0.571,
           "market_year": 2026,
@@ -2450,10 +2450,10 @@
           "production_vs_avg": 0.895
         },
         "wheat": {
+          "production": 7.0,
+          "imports": 100.0,
           "ending_stocks": 0.0,
           "consumption": 62.0,
-          "imports": 100.0,
-          "production": 7.0,
           "stocks_to_use": 0.0,
           "import_dependence": 1.613,
           "market_year": 2026,
@@ -2506,10 +2506,10 @@
       },
       "psd": {
         "wheat": {
-          "consumption": 200.0,
           "ending_stocks": 7.0,
-          "imports": 200.0,
+          "consumption": 200.0,
           "production": 25.0,
+          "imports": 200.0,
           "stocks_to_use": 0.035,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -2594,9 +2594,9 @@
           "production_vs_avg": 1.027
         },
         "rice": {
-          "ending_stocks": 0.0,
-          "imports": 0.0,
           "production": 0.0,
+          "imports": 0.0,
+          "ending_stocks": 0.0,
           "consumption": 0.0,
           "market_year": 2026,
           "avg5_imports": 0.0
@@ -2644,10 +2644,10 @@
       },
       "psd": {
         "corn": {
+          "production": 200.0,
+          "imports": 0.0,
           "ending_stocks": 10.0,
           "consumption": 200.0,
-          "imports": 0.0,
-          "production": 200.0,
           "stocks_to_use": 0.05,
           "import_dependence": 0.0,
           "market_year": 2026,
@@ -2693,20 +2693,6 @@
       "income": "LIC",
       "ipc": null,
       "psd": {
-        "wheat": {
-          "production": 0.0,
-          "imports": 400.0,
-          "consumption": 450.0,
-          "ending_stocks": 36.0,
-          "stocks_to_use": 0.08,
-          "import_dependence": 0.889,
-          "market_year": 2026,
-          "begin_stu": 0.205,
-          "avg5_stu": 0.044,
-          "avg5_imports": 369.6,
-          "prev_imports": 477.0,
-          "import_momentum": 1.291
-        },
         "rice": {
           "consumption": 1200.0,
           "production": 319.0,
@@ -2723,11 +2709,25 @@
           "avg5_production": 305.0,
           "production_vs_avg": 1.046
         },
+        "wheat": {
+          "production": 0.0,
+          "imports": 400.0,
+          "ending_stocks": 36.0,
+          "consumption": 450.0,
+          "stocks_to_use": 0.08,
+          "import_dependence": 0.889,
+          "market_year": 2026,
+          "begin_stu": 0.205,
+          "avg5_stu": 0.044,
+          "avg5_imports": 369.6,
+          "prev_imports": 477.0,
+          "import_momentum": 1.291
+        },
         "corn": {
-          "consumption": 1925.0,
-          "ending_stocks": 172.0,
-          "imports": 50.0,
           "production": 1850.0,
+          "imports": 50.0,
+          "ending_stocks": 172.0,
+          "consumption": 1925.0,
           "stocks_to_use": 0.089,
           "import_dependence": 0.026,
           "market_year": 2026,
@@ -2788,27 +2788,11 @@
       "income": "LMC",
       "ipc": null,
       "psd": {
-        "corn": {
-          "consumption": 865.0,
-          "ending_stocks": 81.0,
-          "imports": 75.0,
-          "production": 800.0,
-          "stocks_to_use": 0.094,
-          "import_dependence": 0.087,
-          "market_year": 2026,
-          "begin_stu": 0.085,
-          "avg5_stu": 0.091,
-          "avg5_imports": 71.4,
-          "prev_imports": 75.0,
-          "import_momentum": 1.05,
-          "avg5_production": 723.8,
-          "production_vs_avg": 1.105
-        },
         "rice": {
-          "consumption": 340.0,
-          "ending_stocks": 76.0,
-          "imports": 80.0,
           "production": 245.0,
+          "imports": 80.0,
+          "ending_stocks": 76.0,
+          "consumption": 340.0,
           "stocks_to_use": 0.224,
           "import_dependence": 0.235,
           "market_year": 2026,
@@ -2819,6 +2803,22 @@
           "import_momentum": 0.957,
           "avg5_production": 226.4,
           "production_vs_avg": 1.082
+        },
+        "corn": {
+          "production": 800.0,
+          "imports": 75.0,
+          "ending_stocks": 81.0,
+          "consumption": 865.0,
+          "stocks_to_use": 0.094,
+          "import_dependence": 0.087,
+          "market_year": 2026,
+          "begin_stu": 0.085,
+          "avg5_stu": 0.091,
+          "avg5_imports": 71.4,
+          "prev_imports": 75.0,
+          "import_momentum": 1.05,
+          "avg5_production": 723.8,
+          "production_vs_avg": 1.105
         },
         "wheat": {
           "production": 7200.0,
@@ -2879,10 +2879,10 @@
       "ipc": null,
       "psd": {
         "corn": {
-          "consumption": 3450.0,
           "production": 60.0,
           "imports": 3450.0,
           "ending_stocks": 186.0,
+          "consumption": 3450.0,
           "stocks_to_use": 0.054,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -2893,9 +2893,9 @@
           "import_momentum": 1.325
         },
         "rice": {
-          "ending_stocks": 0.0,
           "production": 55.0,
           "imports": 160.0,
+          "ending_stocks": 0.0,
           "consumption": 215.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.744,
@@ -2965,10 +2965,10 @@
       "ipc": null,
       "psd": {
         "rice": {
-          "ending_stocks": 0.0,
-          "production": 32.0,
           "imports": 550.0,
+          "ending_stocks": 0.0,
           "consumption": 582.0,
+          "production": 32.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.945,
           "market_year": 2026,
@@ -2979,10 +2979,10 @@
           "import_momentum": 0.887
         },
         "wheat": {
-          "imports": 1350.0,
-          "consumption": 1500.0,
-          "ending_stocks": 64.0,
           "production": 40.0,
+          "imports": 1350.0,
+          "ending_stocks": 64.0,
+          "consumption": 1500.0,
           "stocks_to_use": 0.043,
           "import_dependence": 0.9,
           "market_year": 2026,
@@ -2993,10 +2993,10 @@
           "import_momentum": 1.133
         },
         "corn": {
-          "production": 3000.0,
           "imports": 200.0,
           "ending_stocks": 475.0,
           "consumption": 3400.0,
+          "production": 3000.0,
           "stocks_to_use": 0.14,
           "import_dependence": 0.059,
           "market_year": 2026,
@@ -3063,25 +3063,11 @@
         "period_end": "2025-12-31T23:59:59"
       },
       "psd": {
-        "wheat": {
-          "consumption": 775.0,
-          "ending_stocks": 88.0,
-          "imports": 725.0,
-          "production": 9.0,
-          "stocks_to_use": 0.114,
-          "import_dependence": 0.935,
-          "market_year": 2026,
-          "begin_stu": 0.172,
-          "avg5_stu": 0.126,
-          "avg5_imports": 645.0,
-          "prev_imports": 815.0,
-          "import_momentum": 1.264
-        },
         "rice": {
-          "consumption": 1597.0,
-          "ending_stocks": 0.0,
-          "imports": 400.0,
           "production": 1197.0,
+          "imports": 400.0,
+          "ending_stocks": 0.0,
+          "consumption": 1597.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.25,
           "market_year": 2026,
@@ -3093,11 +3079,25 @@
           "avg5_production": 1124.8,
           "production_vs_avg": 1.064
         },
+        "wheat": {
+          "production": 9.0,
+          "imports": 725.0,
+          "ending_stocks": 88.0,
+          "consumption": 775.0,
+          "stocks_to_use": 0.114,
+          "import_dependence": 0.935,
+          "market_year": 2026,
+          "begin_stu": 0.172,
+          "avg5_stu": 0.126,
+          "avg5_imports": 645.0,
+          "prev_imports": 815.0,
+          "import_momentum": 1.264
+        },
         "corn": {
           "consumption": 2350.0,
-          "ending_stocks": 134.0,
-          "imports": 50.0,
           "production": 2250.0,
+          "imports": 50.0,
+          "ending_stocks": 134.0,
           "stocks_to_use": 0.057,
           "import_dependence": 0.021,
           "market_year": 2026,
@@ -3159,10 +3159,10 @@
       },
       "psd": {
         "rice": {
-          "consumption": 160.0,
           "production": 15.0,
           "imports": 150.0,
           "ending_stocks": 29.0,
+          "consumption": 160.0,
           "stocks_to_use": 0.181,
           "import_dependence": 0.938,
           "market_year": 2026,
@@ -3173,10 +3173,10 @@
           "import_momentum": 0.947
         },
         "corn": {
+          "production": 690.0,
+          "imports": 1150.0,
           "ending_stocks": 170.0,
           "consumption": 1875.0,
-          "imports": 1150.0,
-          "production": 690.0,
           "stocks_to_use": 0.091,
           "import_dependence": 0.613,
           "market_year": 2026,
@@ -3189,10 +3189,10 @@
           "production_vs_avg": 1.007
         },
         "wheat": {
-          "consumption": 330.0,
-          "ending_stocks": 12.0,
-          "imports": 360.0,
           "production": 0.0,
+          "imports": 360.0,
+          "ending_stocks": 12.0,
+          "consumption": 330.0,
           "stocks_to_use": 0.036,
           "import_dependence": 1.091,
           "market_year": 2026,
@@ -3262,10 +3262,10 @@
           "production_vs_avg": 1.011
         },
         "wheat": {
-          "consumption": 17050.0,
-          "ending_stocks": 3236.0,
-          "imports": 2000.0,
           "production": 16000.0,
+          "imports": 2000.0,
+          "ending_stocks": 3236.0,
+          "consumption": 17050.0,
           "stocks_to_use": 0.19,
           "import_dependence": 0.117,
           "market_year": 2026,
@@ -3278,10 +3278,10 @@
           "production_vs_avg": 1.164
         },
         "corn": {
-          "consumption": 9850.0,
-          "ending_stocks": 1406.0,
-          "imports": 8500.0,
           "production": 1400.0,
+          "imports": 8500.0,
+          "ending_stocks": 1406.0,
+          "consumption": 9850.0,
           "stocks_to_use": 0.143,
           "import_dependence": 0.863,
           "market_year": 2026,
@@ -3350,9 +3350,9 @@
           "import_momentum": 0.943
         },
         "rice": {
-          "ending_stocks": 0.0,
           "production": 0.0,
           "imports": 100.0,
+          "ending_stocks": 0.0,
           "consumption": 100.0,
           "stocks_to_use": 0.0,
           "import_dependence": 1.0,
@@ -3365,8 +3365,8 @@
         },
         "wheat": {
           "imports": 200.0,
-          "consumption": 198.0,
           "ending_stocks": 0.0,
+          "consumption": 198.0,
           "production": 0.0,
           "stocks_to_use": 0.0,
           "import_dependence": 1.01,
@@ -3429,9 +3429,9 @@
         },
         "wheat": {
           "consumption": 270.0,
-          "ending_stocks": 55.0,
-          "imports": 300.0,
           "production": 15.0,
+          "imports": 300.0,
+          "ending_stocks": 55.0,
           "stocks_to_use": 0.204,
           "import_dependence": 1.111,
           "market_year": 2026,
@@ -3442,10 +3442,10 @@
           "import_momentum": 1.242
         },
         "corn": {
-          "ending_stocks": 71.0,
           "consumption": 670.0,
-          "imports": 175.0,
           "production": 500.0,
+          "imports": 175.0,
+          "ending_stocks": 71.0,
           "stocks_to_use": 0.106,
           "import_dependence": 0.261,
           "market_year": 2026,
@@ -3502,16 +3502,16 @@
         "rice": {
           "production": 0.0,
           "imports": 0.0,
-          "consumption": 0.0,
           "ending_stocks": 0.0,
+          "consumption": 0.0,
           "market_year": 2026,
           "avg5_imports": 0.0
         },
         "corn": {
+          "consumption": 535.0,
           "production": 475.0,
           "imports": 60.0,
           "ending_stocks": 47.0,
-          "consumption": 535.0,
           "stocks_to_use": 0.088,
           "import_dependence": 0.112,
           "market_year": 2026,
@@ -3524,9 +3524,9 @@
           "production_vs_avg": 1.182
         },
         "wheat": {
-          "ending_stocks": 335.0,
           "production": 880.0,
           "imports": 1375.0,
+          "ending_stocks": 335.0,
           "consumption": 2325.0,
           "stocks_to_use": 0.144,
           "import_dependence": 0.591,
@@ -3582,10 +3582,10 @@
       "ipc": null,
       "psd": {
         "corn": {
-          "consumption": 1400.0,
-          "ending_stocks": 57.0,
-          "imports": 1400.0,
           "production": 0.0,
+          "imports": 1400.0,
+          "ending_stocks": 57.0,
+          "consumption": 1400.0,
           "stocks_to_use": 0.041,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -3596,9 +3596,9 @@
           "import_momentum": 1.329
         },
         "wheat": {
-          "consumption": 3100.0,
-          "ending_stocks": 788.0,
           "imports": 1850.0,
+          "ending_stocks": 788.0,
+          "consumption": 3100.0,
           "production": 1300.0,
           "stocks_to_use": 0.254,
           "import_dependence": 0.597,
@@ -3654,8 +3654,8 @@
       "ipc": null,
       "psd": {
         "wheat": {
-          "imports": 5800.0,
           "production": 1850.0,
+          "imports": 5800.0,
           "ending_stocks": 351.0,
           "consumption": 7550.0,
           "stocks_to_use": 0.046,
@@ -3671,9 +3671,9 @@
         },
         "corn": {
           "imports": 27200.0,
-          "production": 24500.0,
           "ending_stocks": 4831.0,
           "consumption": 52400.0,
+          "production": 24500.0,
           "stocks_to_use": 0.092,
           "import_dependence": 0.519,
           "market_year": 2026,
@@ -3686,10 +3686,10 @@
           "production_vs_avg": 0.97
         },
         "rice": {
-          "ending_stocks": 88.0,
-          "consumption": 1020.0,
           "production": 162.0,
           "imports": 850.0,
+          "ending_stocks": 88.0,
+          "consumption": 1020.0,
           "stocks_to_use": 0.086,
           "import_dependence": 0.833,
           "market_year": 2026,
@@ -3750,10 +3750,10 @@
       },
       "psd": {
         "wheat": {
-          "consumption": 230.0,
           "ending_stocks": 0.0,
-          "imports": 230.0,
+          "consumption": 230.0,
           "production": 0.0,
+          "imports": 230.0,
           "stocks_to_use": 0.0,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -3764,10 +3764,10 @@
           "import_momentum": 0.887
         },
         "rice": {
-          "consumption": 436.0,
-          "ending_stocks": 0.0,
-          "imports": 325.0,
           "production": 111.0,
+          "imports": 325.0,
+          "ending_stocks": 0.0,
+          "consumption": 436.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.745,
           "market_year": 2026,
@@ -3832,10 +3832,10 @@
           "production_vs_avg": 0.501
         },
         "corn": {
-          "production": 70.0,
           "imports": 50.0,
           "ending_stocks": 8.0,
           "consumption": 120.0,
+          "production": 70.0,
           "stocks_to_use": 0.067,
           "import_dependence": 0.417,
           "market_year": 2026,
@@ -3848,10 +3848,10 @@
           "production_vs_avg": 0.426
         },
         "wheat": {
+          "production": 0.0,
+          "imports": 475.0,
           "ending_stocks": 0.0,
           "consumption": 475.0,
-          "imports": 475.0,
-          "production": 0.0,
           "stocks_to_use": 0.0,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -3940,8 +3940,8 @@
           "production_vs_avg": 1.0
         },
         "corn": {
-          "imports": 250.0,
           "production": 2000.0,
+          "imports": 250.0,
           "ending_stocks": 197.0,
           "consumption": 2350.0,
           "stocks_to_use": 0.084,
@@ -4019,10 +4019,10 @@
           "import_momentum": 0.735
         },
         "wheat": {
-          "consumption": 875.0,
-          "ending_stocks": 73.0,
-          "imports": 850.0,
           "production": 0.0,
+          "imports": 850.0,
+          "ending_stocks": 73.0,
+          "consumption": 875.0,
           "stocks_to_use": 0.083,
           "import_dependence": 0.971,
           "market_year": 2026,
@@ -4034,9 +4034,9 @@
         },
         "rice": {
           "production": 300.0,
-          "consumption": 355.0,
-          "ending_stocks": 57.0,
           "imports": 50.0,
+          "ending_stocks": 57.0,
+          "consumption": 355.0,
           "stocks_to_use": 0.161,
           "import_dependence": 0.141,
           "market_year": 2026,
@@ -4097,20 +4097,6 @@
         "period_end": "2025-12-31T23:59:59"
       },
       "psd": {
-        "wheat": {
-          "production": 0.0,
-          "imports": 1225.0,
-          "ending_stocks": 10.0,
-          "consumption": 1225.0,
-          "stocks_to_use": 0.008,
-          "import_dependence": 1.0,
-          "market_year": 2026,
-          "begin_stu": 0.009,
-          "avg5_stu": 0.008,
-          "avg5_imports": 1109.0,
-          "prev_imports": 1175.0,
-          "import_momentum": 1.06
-        },
         "rice": {
           "production": 246.0,
           "imports": 600.0,
@@ -4127,11 +4113,25 @@
           "avg5_production": 225.4,
           "production_vs_avg": 1.091
         },
+        "wheat": {
+          "consumption": 1225.0,
+          "production": 0.0,
+          "imports": 1225.0,
+          "ending_stocks": 10.0,
+          "stocks_to_use": 0.008,
+          "import_dependence": 1.0,
+          "market_year": 2026,
+          "begin_stu": 0.009,
+          "avg5_stu": 0.008,
+          "avg5_imports": 1109.0,
+          "prev_imports": 1175.0,
+          "import_momentum": 1.06
+        },
         "corn": {
           "production": 2200.0,
           "imports": 50.0,
-          "consumption": 2250.0,
           "ending_stocks": 275.0,
+          "consumption": 2250.0,
           "stocks_to_use": 0.122,
           "import_dependence": 0.022,
           "market_year": 2026,
@@ -4208,9 +4208,9 @@
         },
         "rice": {
           "production": 2688.0,
-          "consumption": 3538.0,
-          "ending_stocks": 0.0,
           "imports": 850.0,
+          "ending_stocks": 0.0,
+          "consumption": 3538.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.24,
           "market_year": 2026,
@@ -4224,9 +4224,9 @@
         },
         "corn": {
           "production": 300.0,
-          "consumption": 300.0,
           "imports": 1.0,
           "ending_stocks": 20.0,
+          "consumption": 300.0,
           "stocks_to_use": 0.067,
           "import_dependence": 0.003,
           "market_year": 2026,
@@ -4282,9 +4282,9 @@
       "ipc": null,
       "psd": {
         "rice": {
-          "ending_stocks": 266.0,
-          "imports": 1600.0,
           "production": 1650.0,
+          "imports": 1600.0,
+          "ending_stocks": 266.0,
           "consumption": 3100.0,
           "stocks_to_use": 0.086,
           "import_dependence": 0.516,
@@ -4297,25 +4297,11 @@
           "avg5_production": 1610.4,
           "production_vs_avg": 1.025
         },
-        "wheat": {
-          "production": 0.0,
-          "imports": 2100.0,
-          "ending_stocks": 241.0,
-          "consumption": 2000.0,
-          "stocks_to_use": 0.12,
-          "import_dependence": 1.05,
-          "market_year": 2026,
-          "begin_stu": 0.156,
-          "avg5_stu": 0.178,
-          "avg5_imports": 1980.4,
-          "prev_imports": 2171.0,
-          "import_momentum": 1.096
-        },
         "corn": {
-          "consumption": 4250.0,
-          "ending_stocks": 116.0,
-          "imports": 4150.0,
           "production": 0.0,
+          "imports": 4150.0,
+          "ending_stocks": 116.0,
+          "consumption": 4250.0,
           "stocks_to_use": 0.027,
           "import_dependence": 0.976,
           "market_year": 2026,
@@ -4324,6 +4310,20 @@
           "avg5_imports": 3837.0,
           "prev_imports": 4100.0,
           "import_momentum": 1.069
+        },
+        "wheat": {
+          "consumption": 2000.0,
+          "production": 0.0,
+          "imports": 2100.0,
+          "ending_stocks": 241.0,
+          "stocks_to_use": 0.12,
+          "import_dependence": 1.05,
+          "market_year": 2026,
+          "begin_stu": 0.156,
+          "avg5_stu": 0.178,
+          "avg5_imports": 1980.4,
+          "prev_imports": 2171.0,
+          "import_momentum": 1.096
         }
       },
       "fx_rate": 4.05704,
@@ -4374,10 +4374,10 @@
       },
       "psd": {
         "wheat": {
-          "consumption": 60.0,
-          "ending_stocks": 0.0,
-          "imports": 60.0,
           "production": 0.0,
+          "imports": 60.0,
+          "ending_stocks": 0.0,
+          "consumption": 60.0,
           "stocks_to_use": 0.0,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -4446,10 +4446,10 @@
       },
       "psd": {
         "corn": {
-          "consumption": 12000.0,
-          "ending_stocks": 281.0,
           "production": 11500.0,
           "imports": 500.0,
+          "ending_stocks": 281.0,
+          "consumption": 12000.0,
           "stocks_to_use": 0.023,
           "import_dependence": 0.042,
           "market_year": 2026,
@@ -4543,10 +4543,10 @@
       },
       "psd": {
         "rice": {
-          "consumption": 38800.0,
-          "ending_stocks": 1767.0,
-          "imports": 1300.0,
           "production": 36900.0,
+          "imports": 1300.0,
+          "ending_stocks": 1767.0,
+          "consumption": 38800.0,
           "stocks_to_use": 0.046,
           "import_dependence": 0.034,
           "market_year": 2026,
@@ -4575,10 +4575,10 @@
           "production_vs_avg": 0.966
         },
         "corn": {
+          "consumption": 7650.0,
           "production": 6000.0,
           "imports": 1650.0,
           "ending_stocks": 174.0,
-          "consumption": 7650.0,
           "stocks_to_use": 0.023,
           "import_dependence": 0.216,
           "market_year": 2026,
@@ -4633,22 +4633,6 @@
       "income": "LMC",
       "ipc": null,
       "psd": {
-        "wheat": {
-          "ending_stocks": 144.0,
-          "production": 285.0,
-          "imports": 300.0,
-          "consumption": 615.0,
-          "stocks_to_use": 0.234,
-          "import_dependence": 0.488,
-          "market_year": 2026,
-          "begin_stu": 0.308,
-          "avg5_stu": 0.191,
-          "avg5_imports": 265.2,
-          "prev_imports": 413.0,
-          "import_momentum": 1.557,
-          "avg5_production": 284.2,
-          "production_vs_avg": 1.003
-        },
         "corn": {
           "production": 1150.0,
           "imports": 5.0,
@@ -4665,10 +4649,26 @@
           "avg5_production": 1227.2,
           "production_vs_avg": 0.937
         },
+        "wheat": {
+          "production": 285.0,
+          "imports": 300.0,
+          "ending_stocks": 144.0,
+          "consumption": 615.0,
+          "stocks_to_use": 0.234,
+          "import_dependence": 0.488,
+          "market_year": 2026,
+          "begin_stu": 0.308,
+          "avg5_stu": 0.191,
+          "avg5_imports": 265.2,
+          "prev_imports": 413.0,
+          "import_momentum": 1.557,
+          "avg5_production": 284.2,
+          "production_vs_avg": 1.003
+        },
         "rice": {
-          "consumption": 439.0,
-          "ending_stocks": 0.0,
           "imports": 25.0,
+          "ending_stocks": 0.0,
+          "consumption": 439.0,
           "production": 414.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.057,
@@ -4724,10 +4724,10 @@
       "ipc": null,
       "psd": {
         "corn": {
-          "production": 1400.0,
           "imports": 8600.0,
-          "consumption": 10000.0,
           "ending_stocks": 385.0,
+          "consumption": 10000.0,
+          "production": 1400.0,
           "stocks_to_use": 0.038,
           "import_dependence": 0.86,
           "market_year": 2026,
@@ -4740,10 +4740,10 @@
           "production_vs_avg": 0.906
         },
         "rice": {
+          "production": 1925.0,
+          "imports": 220.0,
           "ending_stocks": 216.0,
           "consumption": 2025.0,
-          "imports": 220.0,
-          "production": 1925.0,
           "stocks_to_use": 0.107,
           "import_dependence": 0.109,
           "market_year": 2026,
@@ -4756,9 +4756,9 @@
           "production_vs_avg": 1.017
         },
         "wheat": {
-          "consumption": 1920.0,
           "production": 4.0,
           "imports": 2000.0,
+          "consumption": 1920.0,
           "ending_stocks": 198.0,
           "stocks_to_use": 0.103,
           "import_dependence": 1.042,
@@ -4831,6 +4831,22 @@
           "prev_imports": 488.0,
           "import_momentum": 0.966
         },
+        "rice": {
+          "ending_stocks": 278.0,
+          "consumption": 3500.0,
+          "production": 2459.0,
+          "imports": 1150.0,
+          "stocks_to_use": 0.079,
+          "import_dependence": 0.329,
+          "market_year": 2026,
+          "begin_stu": 0.08,
+          "avg5_stu": 0.05,
+          "avg5_imports": 920.0,
+          "prev_imports": 1050.0,
+          "import_momentum": 1.141,
+          "avg5_production": 2239.0,
+          "production_vs_avg": 1.098
+        },
         "corn": {
           "production": 950.0,
           "imports": 25.0,
@@ -4846,22 +4862,6 @@
           "import_momentum": 1.667,
           "avg5_production": 858.4,
           "production_vs_avg": 1.107
-        },
-        "rice": {
-          "production": 2459.0,
-          "consumption": 3500.0,
-          "ending_stocks": 278.0,
-          "imports": 1150.0,
-          "stocks_to_use": 0.079,
-          "import_dependence": 0.329,
-          "market_year": 2026,
-          "begin_stu": 0.08,
-          "avg5_stu": 0.05,
-          "avg5_imports": 920.0,
-          "prev_imports": 1050.0,
-          "import_momentum": 1.141,
-          "avg5_production": 2239.0,
-          "production_vs_avg": 1.098
         }
       },
       "fx_rate": 8813.470712,
@@ -4906,27 +4906,11 @@
       "income": "LIC",
       "ipc": null,
       "psd": {
-        "wheat": {
-          "imports": 1400.0,
-          "ending_stocks": 1033.0,
-          "consumption": 8200.0,
-          "production": 6800.0,
-          "stocks_to_use": 0.126,
-          "import_dependence": 0.171,
-          "market_year": 2026,
-          "begin_stu": 0.13,
-          "avg5_stu": 0.123,
-          "avg5_imports": 1486.0,
-          "prev_imports": 1500.0,
-          "import_momentum": 1.009,
-          "avg5_production": 6020.0,
-          "production_vs_avg": 1.13
-        },
         "corn": {
-          "consumption": 10450.0,
-          "ending_stocks": 650.0,
-          "imports": 0.0,
           "production": 10500.0,
+          "imports": 0.0,
+          "ending_stocks": 650.0,
+          "consumption": 10450.0,
           "stocks_to_use": 0.062,
           "import_dependence": 0.0,
           "market_year": 2026,
@@ -4938,11 +4922,27 @@
           "avg5_production": 10290.2,
           "production_vs_avg": 1.02
         },
+        "wheat": {
+          "consumption": 8200.0,
+          "production": 6800.0,
+          "imports": 1400.0,
+          "ending_stocks": 1033.0,
+          "stocks_to_use": 0.126,
+          "import_dependence": 0.171,
+          "market_year": 2026,
+          "begin_stu": 0.13,
+          "avg5_stu": 0.123,
+          "avg5_imports": 1486.0,
+          "prev_imports": 1500.0,
+          "import_momentum": 1.009,
+          "avg5_production": 6020.0,
+          "production_vs_avg": 1.13
+        },
         "rice": {
-          "consumption": 695.0,
-          "ending_stocks": 0.0,
-          "imports": 500.0,
           "production": 195.0,
+          "imports": 500.0,
+          "ending_stocks": 0.0,
+          "consumption": 695.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.719,
           "market_year": 2026,
@@ -4997,8 +4997,8 @@
       "ipc": null,
       "psd": {
         "wheat": {
-          "imports": 400.0,
           "production": 2200.0,
+          "imports": 400.0,
           "ending_stocks": 0.0,
           "consumption": 2590.0,
           "stocks_to_use": 0.0,
@@ -5013,10 +5013,10 @@
           "production_vs_avg": 1.04
         },
         "rice": {
-          "ending_stocks": 0.0,
-          "imports": 700.0,
           "consumption": 4600.0,
           "production": 3900.0,
+          "imports": 700.0,
+          "ending_stocks": 0.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.152,
           "market_year": 2026,
@@ -5029,9 +5029,9 @@
           "production_vs_avg": 1.046
         },
         "corn": {
-          "consumption": 3500.0,
-          "ending_stocks": 232.0,
           "imports": 400.0,
+          "ending_stocks": 232.0,
+          "consumption": 3500.0,
           "production": 3100.0,
           "stocks_to_use": 0.066,
           "import_dependence": 0.114,
@@ -5080,10 +5080,10 @@
       "ipc": null,
       "psd": {
         "rice": {
-          "consumption": 2575.0,
           "production": 2400.0,
           "imports": 170.0,
           "ending_stocks": 165.0,
+          "consumption": 2575.0,
           "stocks_to_use": 0.064,
           "import_dependence": 0.066,
           "market_year": 2026,
@@ -5096,10 +5096,10 @@
           "production_vs_avg": 1.0
         },
         "wheat": {
-          "production": 225.0,
-          "imports": 2150.0,
           "ending_stocks": 244.0,
           "consumption": 2330.0,
+          "production": 225.0,
+          "imports": 2150.0,
           "stocks_to_use": 0.105,
           "import_dependence": 0.923,
           "market_year": 2026,
@@ -5175,6 +5175,22 @@
         "period_end": "2025-12-31T23:59:59"
       },
       "psd": {
+        "rice": {
+          "production": 882.0,
+          "imports": 450.0,
+          "ending_stocks": 0.0,
+          "consumption": 1332.0,
+          "stocks_to_use": 0.0,
+          "import_dependence": 0.338,
+          "market_year": 2026,
+          "begin_stu": 0.0,
+          "avg5_stu": 0.0,
+          "avg5_imports": 427.4,
+          "prev_imports": 425.0,
+          "import_momentum": 0.994,
+          "avg5_production": 898.6,
+          "production_vs_avg": 0.982
+        },
         "wheat": {
           "production": 0.0,
           "imports": 200.0,
@@ -5189,26 +5205,10 @@
           "prev_imports": 175.0,
           "import_momentum": 1.378
         },
-        "rice": {
-          "production": 882.0,
-          "consumption": 1332.0,
-          "ending_stocks": 0.0,
-          "imports": 450.0,
-          "stocks_to_use": 0.0,
-          "import_dependence": 0.338,
-          "market_year": 2026,
-          "begin_stu": 0.0,
-          "avg5_stu": 0.0,
-          "avg5_imports": 427.4,
-          "prev_imports": 425.0,
-          "import_momentum": 0.994,
-          "avg5_production": 898.6,
-          "production_vs_avg": 0.982
-        },
         "corn": {
-          "ending_stocks": 0.0,
-          "imports": 0.0,
           "production": 25.0,
+          "imports": 0.0,
+          "ending_stocks": 0.0,
           "consumption": 25.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.0,
@@ -5262,10 +5262,10 @@
       },
       "psd": {
         "rice": {
-          "consumption": 251.0,
-          "ending_stocks": 0.0,
-          "imports": 5.0,
           "production": 246.0,
+          "imports": 5.0,
+          "ending_stocks": 0.0,
+          "consumption": 251.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.02,
           "market_year": 2026,
@@ -5278,10 +5278,10 @@
           "production_vs_avg": 1.419
         },
         "wheat": {
-          "consumption": 252.0,
-          "ending_stocks": 0.0,
-          "imports": 250.0,
           "production": 2.0,
+          "imports": 250.0,
+          "ending_stocks": 0.0,
+          "consumption": 252.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.992,
           "market_year": 2026,
@@ -5292,10 +5292,10 @@
           "import_momentum": 1.192
         },
         "corn": {
-          "consumption": 390.0,
-          "ending_stocks": 60.0,
-          "imports": 10.0,
           "production": 380.0,
+          "imports": 10.0,
+          "ending_stocks": 60.0,
+          "consumption": 390.0,
           "stocks_to_use": 0.154,
           "import_dependence": 0.026,
           "market_year": 2026,
@@ -5344,10 +5344,10 @@
       "ipc": null,
       "psd": {
         "corn": {
-          "production": 0.0,
-          "consumption": 900.0,
-          "ending_stocks": 57.0,
           "imports": 900.0,
+          "ending_stocks": 57.0,
+          "consumption": 900.0,
+          "production": 0.0,
           "stocks_to_use": 0.063,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -5358,10 +5358,10 @@
           "import_momentum": 1.155
         },
         "rice": {
-          "ending_stocks": 0.0,
+          "consumption": 220.0,
           "production": 0.0,
           "imports": 220.0,
-          "consumption": 220.0,
+          "ending_stocks": 0.0,
           "stocks_to_use": 0.0,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -5372,9 +5372,9 @@
           "import_momentum": 1.813
         },
         "wheat": {
-          "ending_stocks": 511.0,
-          "imports": 1900.0,
           "production": 200.0,
+          "imports": 1900.0,
+          "ending_stocks": 511.0,
           "consumption": 2300.0,
           "stocks_to_use": 0.222,
           "import_dependence": 0.826,
@@ -5431,8 +5431,8 @@
       "psd": {
         "rice": {
           "production": 7400.0,
-          "ending_stocks": 614.0,
           "imports": 950.0,
+          "ending_stocks": 614.0,
           "consumption": 7300.0,
           "stocks_to_use": 0.084,
           "import_dependence": 0.13,
@@ -5445,27 +5445,11 @@
           "avg5_production": 7526.6,
           "production_vs_avg": 0.983
         },
-        "corn": {
-          "consumption": 102000.0,
-          "ending_stocks": 10604.0,
-          "imports": 1800.0,
-          "production": 139000.0,
-          "stocks_to_use": 0.104,
-          "import_dependence": 0.018,
-          "market_year": 2026,
-          "begin_stu": 0.147,
-          "avg5_stu": 0.095,
-          "avg5_imports": 1821.0,
-          "prev_imports": 1700.0,
-          "import_momentum": 0.934,
-          "avg5_production": 129800.0,
-          "production_vs_avg": 1.071
-        },
         "wheat": {
-          "consumption": 12300.0,
-          "ending_stocks": 1821.0,
           "imports": 7500.0,
           "production": 5800.0,
+          "ending_stocks": 1821.0,
+          "consumption": 12300.0,
           "stocks_to_use": 0.148,
           "import_dependence": 0.61,
           "market_year": 2026,
@@ -5476,6 +5460,22 @@
           "import_momentum": 1.023,
           "avg5_production": 8418.4,
           "production_vs_avg": 0.689
+        },
+        "corn": {
+          "production": 139000.0,
+          "imports": 1800.0,
+          "ending_stocks": 10604.0,
+          "consumption": 102000.0,
+          "stocks_to_use": 0.104,
+          "import_dependence": 0.018,
+          "market_year": 2026,
+          "begin_stu": 0.147,
+          "avg5_stu": 0.095,
+          "avg5_imports": 1821.0,
+          "prev_imports": 1700.0,
+          "import_momentum": 0.934,
+          "avg5_production": 129800.0,
+          "production_vs_avg": 1.071
         }
       },
       "fx_rate": 5.436971,
@@ -5520,10 +5520,10 @@
       "ipc": null,
       "psd": {
         "corn": {
-          "consumption": 1825.0,
-          "ending_stocks": 168.0,
-          "imports": 1700.0,
           "production": 80.0,
+          "imports": 1700.0,
+          "ending_stocks": 168.0,
+          "consumption": 1825.0,
           "stocks_to_use": 0.092,
           "import_dependence": 0.932,
           "market_year": 2026,
@@ -5536,10 +5536,10 @@
           "production_vs_avg": 1.294
         },
         "rice": {
-          "consumption": 740.0,
           "production": 670.0,
           "imports": 25.0,
           "ending_stocks": 260.0,
+          "consumption": 740.0,
           "stocks_to_use": 0.351,
           "import_dependence": 0.034,
           "market_year": 2026,
@@ -5615,10 +5615,10 @@
       "ipc": null,
       "psd": {
         "rice": {
-          "consumption": 17800.0,
-          "ending_stocks": 2598.0,
-          "imports": 5600.0,
           "production": 12100.0,
+          "imports": 5600.0,
+          "ending_stocks": 2598.0,
+          "consumption": 17800.0,
           "stocks_to_use": 0.146,
           "import_dependence": 0.315,
           "market_year": 2026,
@@ -5646,9 +5646,9 @@
         },
         "corn": {
           "imports": 3000.0,
-          "production": 7850.0,
           "ending_stocks": 334.0,
           "consumption": 10900.0,
+          "production": 7850.0,
           "stocks_to_use": 0.031,
           "import_dependence": 0.275,
           "market_year": 2026,
@@ -5709,9 +5709,9 @@
       },
       "psd": {
         "rice": {
-          "ending_stocks": 2563.0,
-          "imports": 20.0,
           "production": 9400.0,
+          "imports": 20.0,
+          "ending_stocks": 2563.0,
           "consumption": 4700.0,
           "stocks_to_use": 0.545,
           "import_dependence": 0.004,
@@ -5723,22 +5723,6 @@
           "import_momentum": 1.176,
           "avg5_production": 9245.0,
           "production_vs_avg": 1.017
-        },
-        "corn": {
-          "consumption": 9400.0,
-          "ending_stocks": 1277.0,
-          "imports": 20.0,
-          "production": 9800.0,
-          "stocks_to_use": 0.136,
-          "import_dependence": 0.002,
-          "market_year": 2026,
-          "begin_stu": 0.138,
-          "avg5_stu": 0.18,
-          "avg5_imports": 32.6,
-          "prev_imports": 33.0,
-          "import_momentum": 1.012,
-          "avg5_production": 9616.0,
-          "production_vs_avg": 1.019
         },
         "wheat": {
           "production": 29000.0,
@@ -5755,6 +5739,22 @@
           "import_momentum": 0.006,
           "avg5_production": 28408.8,
           "production_vs_avg": 1.021
+        },
+        "corn": {
+          "production": 9800.0,
+          "imports": 20.0,
+          "ending_stocks": 1277.0,
+          "consumption": 9400.0,
+          "stocks_to_use": 0.136,
+          "import_dependence": 0.002,
+          "market_year": 2026,
+          "begin_stu": 0.138,
+          "avg5_stu": 0.18,
+          "avg5_imports": 32.6,
+          "prev_imports": 33.0,
+          "import_momentum": 1.012,
+          "avg5_production": 9616.0,
+          "production_vs_avg": 1.019
         }
       },
       "fx_rate": 276.733456,
@@ -5792,27 +5792,11 @@
       "income": "LMC",
       "ipc": null,
       "psd": {
-        "corn": {
-          "consumption": 800.0,
-          "ending_stocks": 70.0,
-          "production": 800.0,
-          "imports": 1.0,
-          "stocks_to_use": 0.087,
-          "import_dependence": 0.001,
-          "market_year": 2026,
-          "begin_stu": 0.105,
-          "avg5_stu": 0.133,
-          "avg5_imports": 2.0,
-          "prev_imports": 3.0,
-          "import_momentum": 1.5,
-          "avg5_production": 767.8,
-          "production_vs_avg": 1.042
-        },
         "wheat": {
           "consumption": 1100.0,
-          "ending_stocks": 191.0,
-          "imports": 375.0,
           "production": 625.0,
+          "imports": 375.0,
+          "ending_stocks": 191.0,
           "stocks_to_use": 0.174,
           "import_dependence": 0.341,
           "market_year": 2026,
@@ -5824,11 +5808,27 @@
           "avg5_production": 522.6,
           "production_vs_avg": 1.196
         },
+        "corn": {
+          "production": 800.0,
+          "imports": 1.0,
+          "ending_stocks": 70.0,
+          "consumption": 800.0,
+          "stocks_to_use": 0.087,
+          "import_dependence": 0.001,
+          "market_year": 2026,
+          "begin_stu": 0.105,
+          "avg5_stu": 0.133,
+          "avg5_imports": 2.0,
+          "prev_imports": 3.0,
+          "import_momentum": 1.5,
+          "avg5_production": 767.8,
+          "production_vs_avg": 1.042
+        },
         "rice": {
           "consumption": 0.0,
-          "ending_stocks": 0.0,
-          "imports": 0.0,
           "production": 0.0,
+          "imports": 0.0,
+          "ending_stocks": 0.0,
           "market_year": 2026,
           "avg5_imports": 0.0
         }
@@ -5881,10 +5881,10 @@
       },
       "psd": {
         "wheat": {
-          "ending_stocks": 166.0,
-          "imports": 1000.0,
-          "production": 0.0,
           "consumption": 1100.0,
+          "production": 0.0,
+          "imports": 1000.0,
+          "ending_stocks": 166.0,
           "stocks_to_use": 0.151,
           "import_dependence": 0.909,
           "market_year": 2026,
@@ -5895,10 +5895,10 @@
           "import_momentum": 1.157
         },
         "rice": {
-          "consumption": 2025.0,
-          "ending_stocks": 175.0,
           "production": 670.0,
           "imports": 1400.0,
+          "ending_stocks": 175.0,
+          "consumption": 2025.0,
           "stocks_to_use": 0.086,
           "import_dependence": 0.691,
           "market_year": 2026,
@@ -5911,10 +5911,10 @@
           "production_vs_avg": 0.857
         },
         "corn": {
-          "imports": 500.0,
-          "consumption": 1100.0,
-          "ending_stocks": 170.0,
           "production": 600.0,
+          "imports": 500.0,
+          "ending_stocks": 170.0,
+          "consumption": 1100.0,
           "stocks_to_use": 0.155,
           "import_dependence": 0.455,
           "market_year": 2026,
@@ -5976,10 +5976,10 @@
       },
       "psd": {
         "rice": {
-          "consumption": 400.0,
-          "ending_stocks": 63.0,
-          "imports": 250.0,
           "production": 138.0,
+          "imports": 250.0,
+          "ending_stocks": 63.0,
+          "consumption": 400.0,
           "stocks_to_use": 0.158,
           "import_dependence": 0.625,
           "market_year": 2026,
@@ -5992,10 +5992,10 @@
           "production_vs_avg": 0.993
         },
         "corn": {
-          "imports": 0.0,
-          "consumption": 25.0,
-          "ending_stocks": 0.0,
           "production": 25.0,
+          "imports": 0.0,
+          "ending_stocks": 0.0,
+          "consumption": 25.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.0,
           "market_year": 2026,
@@ -6040,10 +6040,10 @@
       "ipc": null,
       "psd": {
         "rice": {
-          "consumption": 100.0,
-          "ending_stocks": 16.0,
-          "imports": 115.0,
           "production": 3.0,
+          "imports": 115.0,
+          "ending_stocks": 16.0,
+          "consumption": 100.0,
           "stocks_to_use": 0.16,
           "import_dependence": 1.15,
           "market_year": 2026,
@@ -6054,10 +6054,10 @@
           "import_momentum": 1.035
         },
         "wheat": {
-          "consumption": 400.0,
-          "ending_stocks": 73.0,
-          "imports": 400.0,
           "production": 0.0,
+          "imports": 400.0,
+          "ending_stocks": 73.0,
+          "consumption": 400.0,
           "stocks_to_use": 0.182,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -6133,8 +6133,8 @@
       "ipc": null,
       "psd": {
         "corn": {
-          "imports": 60.0,
           "production": 205.0,
+          "imports": 60.0,
           "ending_stocks": 30.0,
           "consumption": 260.0,
           "stocks_to_use": 0.115,
@@ -6215,8 +6215,8 @@
         "rice": {
           "consumption": 2750.0,
           "production": 2400.0,
-          "ending_stocks": 0.0,
           "imports": 500.0,
+          "ending_stocks": 0.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.182,
           "market_year": 2026,
@@ -6245,10 +6245,10 @@
           "production_vs_avg": 0.982
         },
         "corn": {
-          "production": 7300.0,
-          "imports": 30.0,
           "ending_stocks": 191.0,
           "consumption": 7200.0,
+          "production": 7300.0,
+          "imports": 30.0,
           "stocks_to_use": 0.027,
           "import_dependence": 0.004,
           "market_year": 2026,
@@ -6319,11 +6319,25 @@
           "avg5_production": 26812.0,
           "production_vs_avg": 0.973
         },
+        "wheat": {
+          "production": 0.0,
+          "imports": 6200.0,
+          "ending_stocks": 740.0,
+          "consumption": 5950.0,
+          "stocks_to_use": 0.124,
+          "import_dependence": 1.042,
+          "market_year": 2026,
+          "begin_stu": 0.176,
+          "avg5_stu": 0.132,
+          "avg5_imports": 5447.4,
+          "prev_imports": 7300.0,
+          "import_momentum": 1.34
+        },
         "corn": {
-          "consumption": 18200.0,
-          "ending_stocks": 902.0,
-          "imports": 14600.0,
           "production": 4100.0,
+          "imports": 14600.0,
+          "ending_stocks": 902.0,
+          "consumption": 18200.0,
           "stocks_to_use": 0.05,
           "import_dependence": 0.802,
           "market_year": 2026,
@@ -6334,20 +6348,6 @@
           "import_momentum": 1.23,
           "avg5_production": 4381.6,
           "production_vs_avg": 0.936
-        },
-        "wheat": {
-          "consumption": 5950.0,
-          "ending_stocks": 740.0,
-          "imports": 6200.0,
-          "production": 0.0,
-          "stocks_to_use": 0.124,
-          "import_dependence": 1.042,
-          "market_year": 2026,
-          "begin_stu": 0.176,
-          "avg5_stu": 0.132,
-          "avg5_imports": 5447.4,
-          "prev_imports": 7300.0,
-          "import_momentum": 1.34
         }
       },
       "fx_rate": 25786.746123,
@@ -6398,10 +6398,10 @@
       },
       "psd": {
         "corn": {
-          "consumption": 610.0,
-          "ending_stocks": 37.0,
-          "imports": 10.0,
           "production": 600.0,
+          "imports": 10.0,
+          "ending_stocks": 37.0,
+          "consumption": 610.0,
           "stocks_to_use": 0.061,
           "import_dependence": 0.016,
           "market_year": 2026,
@@ -6456,10 +6456,10 @@
       },
       "psd": {
         "corn": {
-          "production": 1.0,
-          "imports": 25.0,
           "ending_stocks": 0.0,
           "consumption": 26.0,
+          "production": 1.0,
+          "imports": 25.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.962,
           "market_year": 2026,
@@ -6506,10 +6506,10 @@
       "ipc": null,
       "psd": {
         "corn": {
+          "consumption": 14400.0,
           "production": 13500.0,
           "imports": 1000.0,
           "ending_stocks": 1011.0,
-          "consumption": 14400.0,
           "stocks_to_use": 0.07,
           "import_dependence": 0.069,
           "market_year": 2026,
@@ -6522,10 +6522,10 @@
           "production_vs_avg": 1.055
         },
         "rice": {
+          "production": 33600.0,
+          "imports": 500.0,
           "ending_stocks": 3575.0,
           "consumption": 35000.0,
-          "imports": 500.0,
-          "production": 33600.0,
           "stocks_to_use": 0.102,
           "import_dependence": 0.014,
           "market_year": 2026,
@@ -6538,10 +6538,10 @@
           "production_vs_avg": 0.993
         },
         "wheat": {
-          "consumption": 12700.0,
-          "ending_stocks": 1220.0,
-          "imports": 12500.0,
           "production": 0.0,
+          "imports": 12500.0,
+          "ending_stocks": 1220.0,
+          "consumption": 12700.0,
           "stocks_to_use": 0.096,
           "import_dependence": 0.984,
           "market_year": 2026,
@@ -6614,10 +6614,10 @@
           "import_momentum": 1.091
         },
         "rice": {
-          "production": 333.0,
-          "consumption": 733.0,
-          "ending_stocks": 0.0,
           "imports": 400.0,
+          "ending_stocks": 0.0,
+          "consumption": 733.0,
+          "production": 333.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.546,
           "market_year": 2026,
@@ -6630,10 +6630,10 @@
           "production_vs_avg": 1.021
         },
         "corn": {
+          "consumption": 2150.0,
           "production": 2100.0,
           "imports": 2.0,
           "ending_stocks": 220.0,
-          "consumption": 2150.0,
           "stocks_to_use": 0.102,
           "import_dependence": 0.001,
           "market_year": 2026,
@@ -6696,9 +6696,9 @@
       "psd": {
         "rice": {
           "production": 18.0,
-          "consumption": 148.0,
-          "ending_stocks": 0.0,
           "imports": 130.0,
+          "ending_stocks": 0.0,
+          "consumption": 148.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.878,
           "market_year": 2026,
@@ -6709,10 +6709,10 @@
           "import_momentum": 0.954
         },
         "corn": {
-          "consumption": 3700.0,
-          "ending_stocks": 398.0,
-          "imports": 2000.0,
           "production": 1635.0,
+          "imports": 2000.0,
+          "ending_stocks": 398.0,
+          "consumption": 3700.0,
           "stocks_to_use": 0.108,
           "import_dependence": 0.541,
           "market_year": 2026,
@@ -6725,8 +6725,8 @@
           "production_vs_avg": 1.007
         },
         "wheat": {
-          "production": 0.0,
           "imports": 900.0,
+          "production": 0.0,
           "ending_stocks": 196.0,
           "consumption": 1000.0,
           "stocks_to_use": 0.196,
@@ -6788,10 +6788,10 @@
       },
       "psd": {
         "wheat": {
-          "consumption": 300.0,
-          "ending_stocks": 32.0,
-          "imports": 325.0,
           "production": 0.0,
+          "imports": 325.0,
+          "ending_stocks": 32.0,
+          "consumption": 300.0,
           "stocks_to_use": 0.107,
           "import_dependence": 1.083,
           "market_year": 2026,
@@ -6802,10 +6802,10 @@
           "import_momentum": 1.164
         },
         "rice": {
-          "consumption": 395.0,
-          "ending_stocks": 0.0,
-          "imports": 275.0,
           "production": 120.0,
+          "imports": 275.0,
+          "ending_stocks": 0.0,
+          "consumption": 395.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.696,
           "market_year": 2026,
@@ -6819,9 +6819,9 @@
         },
         "corn": {
           "consumption": 1025.0,
-          "ending_stocks": 61.0,
-          "imports": 5.0,
           "production": 1000.0,
+          "imports": 5.0,
+          "ending_stocks": 61.0,
           "stocks_to_use": 0.06,
           "import_dependence": 0.005,
           "market_year": 2026,
@@ -6878,9 +6878,9 @@
       "psd": {
         "wheat": {
           "consumption": 3250.0,
-          "ending_stocks": 319.0,
-          "imports": 1450.0,
           "production": 1850.0,
+          "imports": 1450.0,
+          "ending_stocks": 319.0,
           "stocks_to_use": 0.098,
           "import_dependence": 0.446,
           "market_year": 2026,
@@ -6893,9 +6893,9 @@
           "production_vs_avg": 1.005
         },
         "rice": {
-          "ending_stocks": 5.0,
-          "imports": 60.0,
           "production": 10.0,
+          "imports": 60.0,
+          "ending_stocks": 5.0,
           "consumption": 70.0,
           "stocks_to_use": 0.071,
           "import_dependence": 0.857,
@@ -6907,10 +6907,10 @@
           "import_momentum": 1.056
         },
         "corn": {
-          "production": 290.0,
-          "imports": 50.0,
           "ending_stocks": 34.0,
           "consumption": 335.0,
+          "production": 290.0,
+          "imports": 50.0,
           "stocks_to_use": 0.101,
           "import_dependence": 0.149,
           "market_year": 2026,
@@ -7045,10 +7045,10 @@
       },
       "psd": {
         "corn": {
+          "consumption": 1785.0,
           "production": 1650.0,
           "imports": 150.0,
           "ending_stocks": 57.0,
-          "consumption": 1785.0,
           "stocks_to_use": 0.032,
           "import_dependence": 0.084,
           "market_year": 2026,
@@ -7061,10 +7061,10 @@
           "production_vs_avg": 1.106
         },
         "rice": {
-          "ending_stocks": 249.0,
-          "consumption": 1150.0,
           "production": 1100.0,
           "imports": 50.0,
+          "ending_stocks": 249.0,
+          "consumption": 1150.0,
           "stocks_to_use": 0.217,
           "import_dependence": 0.043,
           "market_year": 2026,
@@ -7077,10 +7077,10 @@
           "production_vs_avg": 1.036
         },
         "wheat": {
-          "consumption": 2325.0,
-          "ending_stocks": 283.0,
-          "imports": 2300.0,
           "production": 9.0,
+          "imports": 2300.0,
+          "ending_stocks": 283.0,
+          "consumption": 2325.0,
           "stocks_to_use": 0.122,
           "import_dependence": 0.989,
           "market_year": 2026,
@@ -7142,8 +7142,8 @@
         "rice": {
           "production": 39.0,
           "imports": 350.0,
-          "consumption": 380.0,
           "ending_stocks": 78.0,
+          "consumption": 380.0,
           "stocks_to_use": 0.205,
           "import_dependence": 0.921,
           "market_year": 2026,
@@ -7154,10 +7154,10 @@
           "import_momentum": 1.127
         },
         "corn": {
+          "production": 25.0,
+          "imports": 0.0,
           "ending_stocks": 0.0,
           "consumption": 25.0,
-          "imports": 0.0,
-          "production": 25.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.0,
           "market_year": 2026,
@@ -7208,10 +7208,10 @@
       },
       "psd": {
         "rice": {
+          "consumption": 3500.0,
           "production": 1755.0,
           "imports": 1700.0,
           "ending_stocks": 653.0,
-          "consumption": 3500.0,
           "stocks_to_use": 0.187,
           "import_dependence": 0.486,
           "market_year": 2026,
@@ -7224,10 +7224,10 @@
           "production_vs_avg": 1.27
         },
         "corn": {
-          "production": 1760.0,
           "imports": 125.0,
           "ending_stocks": 150.0,
           "consumption": 1775.0,
+          "production": 1760.0,
           "stocks_to_use": 0.085,
           "import_dependence": 0.07,
           "market_year": 2026,
@@ -7240,9 +7240,9 @@
           "production_vs_avg": 1.24
         },
         "wheat": {
-          "ending_stocks": 80.0,
-          "imports": 900.0,
           "production": 0.0,
+          "imports": 900.0,
+          "ending_stocks": 80.0,
           "consumption": 900.0,
           "stocks_to_use": 0.089,
           "import_dependence": 1.0,
@@ -7303,8 +7303,8 @@
       },
       "psd": {
         "wheat": {
-          "production": 1.0,
           "imports": 100.0,
+          "production": 1.0,
           "ending_stocks": 10.0,
           "consumption": 110.0,
           "stocks_to_use": 0.091,
@@ -7316,19 +7316,11 @@
           "prev_imports": 125.0,
           "import_momentum": 1.26
         },
-        "rice": {
-          "consumption": 0.0,
-          "production": 0.0,
-          "imports": 0.0,
-          "ending_stocks": 0.0,
-          "market_year": 2026,
-          "avg5_imports": 0.0
-        },
         "corn": {
-          "imports": 50.0,
-          "ending_stocks": 200.0,
           "consumption": 3250.0,
           "production": 3300.0,
+          "imports": 50.0,
+          "ending_stocks": 200.0,
           "stocks_to_use": 0.062,
           "import_dependence": 0.015,
           "market_year": 2026,
@@ -7339,6 +7331,14 @@
           "import_momentum": 1.938,
           "avg5_production": 3476.0,
           "production_vs_avg": 0.949
+        },
+        "rice": {
+          "consumption": 0.0,
+          "ending_stocks": 0.0,
+          "production": 0.0,
+          "imports": 0.0,
+          "market_year": 2026,
+          "avg5_imports": 0.0
         }
       },
       "fx_rate": 1734.11739,
@@ -7409,10 +7409,10 @@
           "production_vs_avg": 0.921
         },
         "corn": {
+          "production": 2500.0,
+          "imports": 10.0,
           "ending_stocks": 164.0,
           "consumption": 150.0,
-          "imports": 10.0,
-          "production": 2500.0,
           "stocks_to_use": 1.093,
           "import_dependence": 0.067,
           "market_year": 2026,
@@ -7467,10 +7467,10 @@
       "ipc": null,
       "psd": {
         "wheat": {
-          "consumption": 775.0,
-          "ending_stocks": 142.0,
           "imports": 450.0,
           "production": 300.0,
+          "consumption": 775.0,
+          "ending_stocks": 142.0,
           "stocks_to_use": 0.183,
           "import_dependence": 0.581,
           "market_year": 2026,
@@ -7483,10 +7483,10 @@
           "production_vs_avg": 1.282
         },
         "corn": {
-          "consumption": 2450.0,
-          "ending_stocks": 563.0,
-          "imports": 700.0,
           "production": 1800.0,
+          "imports": 700.0,
+          "ending_stocks": 563.0,
+          "consumption": 2450.0,
           "stocks_to_use": 0.23,
           "import_dependence": 0.286,
           "market_year": 2026,
@@ -7541,10 +7541,10 @@
       "ipc": null,
       "psd": {
         "wheat": {
-          "consumption": 620.0,
           "imports": 410.0,
-          "production": 170.0,
           "ending_stocks": 133.0,
+          "consumption": 620.0,
+          "production": 170.0,
           "stocks_to_use": 0.215,
           "import_dependence": 0.661,
           "market_year": 2026,
@@ -7620,24 +7620,10 @@
           "avg5_production": 1823.0,
           "production_vs_avg": 1.07
         },
-        "wheat": {
-          "imports": 400.0,
-          "production": 35.0,
-          "ending_stocks": 48.0,
-          "consumption": 465.0,
-          "stocks_to_use": 0.103,
-          "import_dependence": 0.86,
-          "market_year": 2026,
-          "begin_stu": 0.17,
-          "avg5_stu": 0.147,
-          "avg5_imports": 373.2,
-          "prev_imports": 449.0,
-          "import_momentum": 1.203
-        },
         "corn": {
-          "consumption": 3900.0,
-          "ending_stocks": 417.0,
           "imports": 10.0,
+          "ending_stocks": 417.0,
+          "consumption": 3900.0,
           "production": 3800.0,
           "stocks_to_use": 0.107,
           "import_dependence": 0.003,
@@ -7649,6 +7635,20 @@
           "import_momentum": 1.429,
           "avg5_production": 3769.6,
           "production_vs_avg": 1.008
+        },
+        "wheat": {
+          "consumption": 465.0,
+          "production": 35.0,
+          "imports": 400.0,
+          "ending_stocks": 48.0,
+          "stocks_to_use": 0.103,
+          "import_dependence": 0.86,
+          "market_year": 2026,
+          "begin_stu": 0.17,
+          "avg5_stu": 0.147,
+          "avg5_imports": 373.2,
+          "prev_imports": 449.0,
+          "import_momentum": 1.203
         }
       },
       "fx_rate": 587.750125,
@@ -7694,10 +7694,10 @@
       "ipc": null,
       "psd": {
         "corn": {
-          "imports": 5100.0,
           "production": 12.0,
-          "consumption": 5100.0,
+          "imports": 5100.0,
           "ending_stocks": 260.0,
+          "consumption": 5100.0,
           "stocks_to_use": 0.051,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -7708,10 +7708,10 @@
           "import_momentum": 1.297
         },
         "rice": {
-          "consumption": 150.0,
-          "ending_stocks": 0.0,
-          "imports": 150.0,
           "production": 0.0,
+          "imports": 150.0,
+          "ending_stocks": 0.0,
+          "consumption": 150.0,
           "stocks_to_use": 0.0,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -7796,10 +7796,10 @@
           "production_vs_avg": 1.277
         },
         "corn": {
-          "production": 7400.0,
           "imports": 4500.0,
           "ending_stocks": 1161.0,
           "consumption": 11500.0,
+          "production": 7400.0,
           "stocks_to_use": 0.101,
           "import_dependence": 0.391,
           "market_year": 2026,
@@ -7812,10 +7812,10 @@
           "production_vs_avg": 1.016
         },
         "rice": {
-          "consumption": 820.0,
-          "ending_stocks": 221.0,
-          "imports": 450.0,
           "production": 580.0,
+          "imports": 450.0,
+          "ending_stocks": 221.0,
+          "consumption": 820.0,
           "stocks_to_use": 0.27,
           "import_dependence": 0.549,
           "market_year": 2026,
@@ -7870,10 +7870,10 @@
       "ipc": null,
       "psd": {
         "wheat": {
-          "consumption": 4200.0,
           "production": 3800.0,
           "imports": 800.0,
           "ending_stocks": 1029.0,
+          "consumption": 4200.0,
           "stocks_to_use": 0.245,
           "import_dependence": 0.19,
           "market_year": 2026,
@@ -7885,11 +7885,25 @@
           "avg5_production": 2137.4,
           "production_vs_avg": 1.778
         },
+        "rice": {
+          "production": 0.0,
+          "imports": 170.0,
+          "ending_stocks": 56.0,
+          "consumption": 155.0,
+          "stocks_to_use": 0.361,
+          "import_dependence": 1.097,
+          "market_year": 2026,
+          "begin_stu": 0.265,
+          "avg5_stu": 0.237,
+          "avg5_imports": 151.0,
+          "prev_imports": 160.0,
+          "import_momentum": 1.06
+        },
         "corn": {
-          "consumption": 800.0,
-          "ending_stocks": 96.0,
-          "imports": 300.0,
           "production": 500.0,
+          "imports": 300.0,
+          "ending_stocks": 96.0,
+          "consumption": 800.0,
           "stocks_to_use": 0.12,
           "import_dependence": 0.375,
           "market_year": 2026,
@@ -7900,20 +7914,6 @@
           "import_momentum": 1.154,
           "avg5_production": 435.4,
           "production_vs_avg": 1.148
-        },
-        "rice": {
-          "ending_stocks": 56.0,
-          "consumption": 155.0,
-          "imports": 170.0,
-          "production": 0.0,
-          "stocks_to_use": 0.361,
-          "import_dependence": 1.097,
-          "market_year": 2026,
-          "begin_stu": 0.265,
-          "avg5_stu": 0.237,
-          "avg5_imports": 151.0,
-          "prev_imports": 160.0,
-          "import_momentum": 1.06
         }
       },
       "fx_rate": 121.913502,
@@ -7964,10 +7964,10 @@
       },
       "psd": {
         "corn": {
-          "imports": 75.0,
-          "consumption": 3700.0,
-          "ending_stocks": 611.0,
           "production": 3300.0,
+          "imports": 75.0,
+          "ending_stocks": 611.0,
+          "consumption": 3700.0,
           "stocks_to_use": 0.165,
           "import_dependence": 0.02,
           "market_year": 2026,
@@ -7980,10 +7980,10 @@
           "production_vs_avg": 0.954
         },
         "wheat": {
-          "ending_stocks": 264.0,
-          "consumption": 1165.0,
           "production": 0.0,
           "imports": 1050.0,
+          "ending_stocks": 264.0,
+          "consumption": 1165.0,
           "stocks_to_use": 0.227,
           "import_dependence": 0.901,
           "market_year": 2026,
@@ -7994,8 +7994,8 @@
           "import_momentum": 1.252
         },
         "rice": {
-          "imports": 900.0,
           "production": 932.0,
+          "imports": 900.0,
           "ending_stocks": 340.0,
           "consumption": 1950.0,
           "stocks_to_use": 0.174,
@@ -8053,10 +8053,10 @@
       "ipc": null,
       "psd": {
         "rice": {
-          "imports": 265.0,
-          "production": 0.0,
-          "consumption": 265.0,
           "ending_stocks": 22.0,
+          "consumption": 265.0,
+          "production": 0.0,
+          "imports": 265.0,
           "stocks_to_use": 0.083,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -8066,24 +8066,10 @@
           "prev_imports": 260.0,
           "import_momentum": 1.06
         },
-        "wheat": {
-          "consumption": 1095.0,
-          "ending_stocks": 773.0,
-          "imports": 1100.0,
-          "production": 30.0,
-          "stocks_to_use": 0.706,
-          "import_dependence": 1.005,
-          "market_year": 2026,
-          "begin_stu": 0.747,
-          "avg5_stu": 0.713,
-          "avg5_imports": 1071.4,
-          "prev_imports": 1036.0,
-          "import_momentum": 0.967
-        },
         "corn": {
-          "ending_stocks": 17.0,
-          "imports": 1100.0,
           "production": 11.0,
+          "imports": 1100.0,
+          "ending_stocks": 17.0,
           "consumption": 1110.0,
           "stocks_to_use": 0.015,
           "import_dependence": 0.991,
@@ -8093,6 +8079,20 @@
           "avg5_imports": 807.4,
           "prev_imports": 1100.0,
           "import_momentum": 1.362
+        },
+        "wheat": {
+          "consumption": 1095.0,
+          "production": 30.0,
+          "imports": 1100.0,
+          "ending_stocks": 773.0,
+          "stocks_to_use": 0.706,
+          "import_dependence": 1.005,
+          "market_year": 2026,
+          "begin_stu": 0.747,
+          "avg5_stu": 0.713,
+          "avg5_imports": 1071.4,
+          "prev_imports": 1036.0,
+          "import_momentum": 0.967
         }
       },
       "fx_rate": 0.709,
@@ -8136,22 +8136,6 @@
       "income": "UMC",
       "ipc": null,
       "psd": {
-        "rice": {
-          "production": 3350.0,
-          "imports": 200.0,
-          "consumption": 3550.0,
-          "ending_stocks": 886.0,
-          "stocks_to_use": 0.25,
-          "import_dependence": 0.056,
-          "market_year": 2026,
-          "begin_stu": 0.256,
-          "avg5_stu": 0.169,
-          "avg5_imports": 289.0,
-          "prev_imports": 250.0,
-          "import_momentum": 0.865,
-          "avg5_production": 3111.6,
-          "production_vs_avg": 1.077
-        },
         "wheat": {
           "production": 0.0,
           "imports": 1300.0,
@@ -8166,11 +8150,27 @@
           "prev_imports": 1339.0,
           "import_momentum": 1.221
         },
+        "rice": {
+          "ending_stocks": 886.0,
+          "consumption": 3550.0,
+          "production": 3350.0,
+          "imports": 200.0,
+          "stocks_to_use": 0.25,
+          "import_dependence": 0.056,
+          "market_year": 2026,
+          "begin_stu": 0.256,
+          "avg5_stu": 0.169,
+          "avg5_imports": 289.0,
+          "prev_imports": 250.0,
+          "import_momentum": 0.865,
+          "avg5_production": 3111.6,
+          "production_vs_avg": 1.077
+        },
         "corn": {
-          "production": 300.0,
           "imports": 250.0,
           "ending_stocks": 38.0,
           "consumption": 550.0,
+          "production": 300.0,
           "stocks_to_use": 0.069,
           "import_dependence": 0.455,
           "market_year": 2026,
@@ -8310,6 +8310,22 @@
       "income": "HIC",
       "ipc": null,
       "psd": {
+        "rice": {
+          "production": 1050.0,
+          "imports": 115.0,
+          "ending_stocks": 315.0,
+          "consumption": 1050.0,
+          "stocks_to_use": 0.3,
+          "import_dependence": 0.11,
+          "market_year": 2026,
+          "begin_stu": 0.31,
+          "avg5_stu": 0.401,
+          "avg5_imports": 115.4,
+          "prev_imports": 115.0,
+          "import_momentum": 0.997,
+          "avg5_production": 1068.8,
+          "production_vs_avg": 0.982
+        },
         "wheat": {
           "production": 2.0,
           "imports": 1390.0,
@@ -8325,8 +8341,8 @@
           "import_momentum": 0.971
         },
         "corn": {
-          "imports": 4550.0,
           "production": 110.0,
+          "imports": 4550.0,
           "ending_stocks": 364.0,
           "consumption": 4700.0,
           "stocks_to_use": 0.077,
@@ -8339,22 +8355,6 @@
           "import_momentum": 1.041,
           "avg5_production": 100.0,
           "production_vs_avg": 1.1
-        },
-        "rice": {
-          "ending_stocks": 315.0,
-          "consumption": 1050.0,
-          "imports": 115.0,
-          "production": 1050.0,
-          "stocks_to_use": 0.3,
-          "import_dependence": 0.11,
-          "market_year": 2026,
-          "begin_stu": 0.31,
-          "avg5_stu": 0.401,
-          "avg5_imports": 115.4,
-          "prev_imports": 115.0,
-          "import_momentum": 0.997,
-          "avg5_production": 1068.8,
-          "production_vs_avg": 0.982
         }
       },
       "fx_rate": 32.636828,
@@ -8399,10 +8399,10 @@
       "ipc": null,
       "psd": {
         "rice": {
+          "ending_stocks": 3847.0,
+          "consumption": 12800.0,
           "production": 20300.0,
           "imports": 50.0,
-          "consumption": 12800.0,
-          "ending_stocks": 3847.0,
           "stocks_to_use": 0.301,
           "import_dependence": 0.004,
           "market_year": 2026,
@@ -8415,10 +8415,10 @@
           "production_vs_avg": 0.992
         },
         "corn": {
-          "production": 5300.0,
           "imports": 1800.0,
           "ending_stocks": 181.0,
           "consumption": 7200.0,
+          "production": 5300.0,
           "stocks_to_use": 0.025,
           "import_dependence": 0.25,
           "market_year": 2026,
@@ -8431,9 +8431,9 @@
           "production_vs_avg": 0.994
         },
         "wheat": {
-          "ending_stocks": 462.0,
-          "imports": 3500.0,
           "production": 0.0,
+          "imports": 3500.0,
+          "ending_stocks": 462.0,
           "consumption": 3400.0,
           "stocks_to_use": 0.136,
           "import_dependence": 1.029,
@@ -8531,9 +8531,9 @@
       "psd": {
         "rice": {
           "consumption": 1025.0,
-          "ending_stocks": 109.0,
           "production": 0.0,
           "imports": 1250.0,
+          "ending_stocks": 109.0,
           "stocks_to_use": 0.106,
           "import_dependence": 1.22,
           "market_year": 2026,
@@ -8544,10 +8544,10 @@
           "import_momentum": 1.071
         },
         "corn": {
-          "consumption": 14700.0,
-          "ending_stocks": 2656.0,
-          "imports": 0.0,
           "production": 16500.0,
+          "imports": 0.0,
+          "ending_stocks": 2656.0,
+          "consumption": 14700.0,
           "stocks_to_use": 0.181,
           "import_dependence": 0.0,
           "market_year": 2026,
@@ -8560,10 +8560,10 @@
           "production_vs_avg": 1.005
         },
         "wheat": {
-          "consumption": 3840.0,
-          "ending_stocks": 593.0,
-          "imports": 2150.0,
           "production": 1800.0,
+          "imports": 2150.0,
+          "ending_stocks": 593.0,
+          "consumption": 3840.0,
           "stocks_to_use": 0.154,
           "import_dependence": 0.56,
           "market_year": 2026,
@@ -8618,10 +8618,10 @@
       "ipc": null,
       "psd": {
         "wheat": {
-          "consumption": 7975.0,
-          "ending_stocks": 2029.0,
-          "imports": 1500.0,
           "production": 15000.0,
+          "imports": 1500.0,
+          "ending_stocks": 2029.0,
+          "consumption": 7975.0,
           "stocks_to_use": 0.254,
           "import_dependence": 0.188,
           "market_year": 2026,
@@ -8635,9 +8635,9 @@
         },
         "corn": {
           "imports": 10.0,
-          "production": 1650.0,
           "ending_stocks": 259.0,
           "consumption": 1300.0,
+          "production": 1650.0,
           "stocks_to_use": 0.199,
           "import_dependence": 0.008,
           "market_year": 2026,
@@ -8650,9 +8650,9 @@
           "production_vs_avg": 1.521
         },
         "rice": {
-          "consumption": 450.0,
-          "ending_stocks": 0.0,
           "imports": 310.0,
+          "ending_stocks": 0.0,
+          "consumption": 450.0,
           "production": 270.0,
           "stocks_to_use": 0.0,
           "import_dependence": 0.689,
@@ -8701,10 +8701,10 @@
       "ipc": null,
       "psd": {
         "rice": {
+          "production": 0.0,
+          "imports": 220.0,
           "ending_stocks": 0.0,
           "consumption": 220.0,
-          "imports": 220.0,
-          "production": 0.0,
           "stocks_to_use": 0.0,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -8716,9 +8716,9 @@
         },
         "corn": {
           "production": 0.0,
-          "consumption": 125.0,
-          "ending_stocks": 10.0,
           "imports": 125.0,
+          "ending_stocks": 10.0,
+          "consumption": 125.0,
           "stocks_to_use": 0.08,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -8729,10 +8729,10 @@
           "import_momentum": 0.85
         },
         "wheat": {
-          "consumption": 525.0,
-          "ending_stocks": 0.0,
-          "imports": 525.0,
           "production": 0.0,
+          "imports": 525.0,
+          "ending_stocks": 0.0,
+          "consumption": 525.0,
           "stocks_to_use": 0.0,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -8785,10 +8785,10 @@
       "ipc": null,
       "psd": {
         "corn": {
-          "consumption": 30.0,
           "production": 0.0,
           "imports": 30.0,
           "ending_stocks": 0.0,
+          "consumption": 30.0,
           "stocks_to_use": 0.0,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -8799,8 +8799,8 @@
           "import_momentum": 1.0
         },
         "rice": {
-          "imports": 300.0,
           "production": 0.0,
+          "imports": 300.0,
           "ending_stocks": 0.0,
           "consumption": 300.0,
           "stocks_to_use": 0.0,
@@ -8813,10 +8813,10 @@
           "import_momentum": 1.033
         },
         "wheat": {
-          "imports": 410.0,
           "consumption": 370.0,
-          "ending_stocks": 0.0,
           "production": 0.0,
+          "imports": 410.0,
+          "ending_stocks": 0.0,
           "stocks_to_use": 0.0,
           "import_dependence": 1.108,
           "market_year": 2026,
@@ -8869,10 +8869,10 @@
       "ipc": null,
       "psd": {
         "corn": {
+          "production": 0.0,
           "imports": 1.0,
           "ending_stocks": 0.0,
           "consumption": 1.0,
-          "production": 0.0,
           "stocks_to_use": 0.0,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -8883,9 +8883,9 @@
           "import_momentum": 0.25
         },
         "rice": {
-          "imports": 525.0,
           "consumption": 525.0,
           "production": 0.0,
+          "imports": 525.0,
           "ending_stocks": 0.0,
           "stocks_to_use": 0.0,
           "import_dependence": 1.0,
@@ -8897,10 +8897,10 @@
           "import_momentum": 1.149
         },
         "wheat": {
-          "production": 0.0,
-          "imports": 390.0,
           "ending_stocks": 39.0,
           "consumption": 250.0,
+          "production": 0.0,
+          "imports": 390.0,
           "stocks_to_use": 0.156,
           "import_dependence": 1.56,
           "market_year": 2026,
@@ -8970,9 +8970,9 @@
         },
         "corn": {
           "production": 7.0,
-          "consumption": 1125.0,
-          "ending_stocks": 77.0,
           "imports": 1100.0,
+          "ending_stocks": 77.0,
+          "consumption": 1125.0,
           "stocks_to_use": 0.068,
           "import_dependence": 0.978,
           "market_year": 2026,
@@ -8984,8 +8984,8 @@
         },
         "wheat": {
           "imports": 305.0,
-          "production": 0.0,
           "consumption": 265.0,
+          "production": 0.0,
           "ending_stocks": 53.0,
           "stocks_to_use": 0.2,
           "import_dependence": 1.151,
@@ -9040,9 +9040,9 @@
       "psd": {
         "rice": {
           "imports": 225.0,
-          "production": 80.0,
           "ending_stocks": 66.0,
           "consumption": 295.0,
+          "production": 80.0,
           "stocks_to_use": 0.224,
           "import_dependence": 0.763,
           "market_year": 2026,
@@ -9071,10 +9071,10 @@
           "production_vs_avg": 0.944
         },
         "wheat": {
+          "consumption": 2550.0,
           "production": 1150.0,
           "imports": 1400.0,
           "ending_stocks": 253.0,
-          "consumption": 2550.0,
           "stocks_to_use": 0.099,
           "import_dependence": 0.549,
           "market_year": 2026,
@@ -9129,10 +9129,10 @@
       "ipc": null,
       "psd": {
         "rice": {
-          "consumption": 330.0,
-          "ending_stocks": 14.0,
-          "imports": 100.0,
           "production": 234.0,
+          "imports": 100.0,
+          "ending_stocks": 14.0,
+          "consumption": 330.0,
           "stocks_to_use": 0.042,
           "import_dependence": 0.303,
           "market_year": 2026,
@@ -9145,10 +9145,10 @@
           "production_vs_avg": 0.967
         },
         "corn": {
-          "consumption": 830.0,
-          "ending_stocks": 80.0,
-          "imports": 700.0,
           "production": 120.0,
+          "imports": 700.0,
+          "ending_stocks": 80.0,
+          "consumption": 830.0,
           "stocks_to_use": 0.096,
           "import_dependence": 0.843,
           "market_year": 2026,
@@ -9161,10 +9161,10 @@
           "production_vs_avg": 0.93
         },
         "wheat": {
-          "production": 0.0,
-          "imports": 175.0,
           "ending_stocks": 5.0,
           "consumption": 180.0,
+          "imports": 175.0,
+          "production": 0.0,
           "stocks_to_use": 0.028,
           "import_dependence": 0.972,
           "market_year": 2026,
@@ -9218,9 +9218,9 @@
       "psd": {
         "corn": {
           "production": 0.0,
-          "consumption": 600.0,
-          "ending_stocks": 9.0,
           "imports": 600.0,
+          "ending_stocks": 9.0,
+          "consumption": 600.0,
           "stocks_to_use": 0.015,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -9231,10 +9231,10 @@
           "import_momentum": 1.095
         },
         "rice": {
-          "consumption": 1050.0,
-          "ending_stocks": 125.0,
-          "imports": 1000.0,
           "production": 0.0,
+          "imports": 1000.0,
+          "ending_stocks": 125.0,
+          "consumption": 1050.0,
           "stocks_to_use": 0.119,
           "import_dependence": 0.952,
           "market_year": 2026,
@@ -9246,9 +9246,9 @@
         },
         "wheat": {
           "production": 0.0,
-          "consumption": 1700.0,
-          "ending_stocks": 471.0,
           "imports": 1850.0,
+          "ending_stocks": 471.0,
+          "consumption": 1700.0,
           "stocks_to_use": 0.277,
           "import_dependence": 1.088,
           "market_year": 2026,
@@ -9301,10 +9301,10 @@
       "ipc": null,
       "psd": {
         "corn": {
-          "imports": 15500.0,
-          "consumption": 15500.0,
-          "ending_stocks": 1404.0,
           "production": 16.0,
+          "imports": 15500.0,
+          "ending_stocks": 1404.0,
+          "consumption": 15500.0,
           "stocks_to_use": 0.091,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -9316,9 +9316,9 @@
         },
         "rice": {
           "consumption": 7954.0,
+          "production": 7370.0,
           "imports": 700.0,
           "ending_stocks": 2522.0,
-          "production": 7370.0,
           "stocks_to_use": 0.317,
           "import_dependence": 0.088,
           "market_year": 2026,
@@ -9403,10 +9403,10 @@
           "import_momentum": 1.082
         },
         "corn": {
-          "consumption": 360.0,
-          "ending_stocks": 31.0,
-          "imports": 200.0,
           "production": 160.0,
+          "imports": 200.0,
+          "ending_stocks": 31.0,
+          "consumption": 360.0,
           "stocks_to_use": 0.086,
           "import_dependence": 0.556,
           "market_year": 2026,
@@ -9476,24 +9476,10 @@
       "income": "HIC",
       "ipc": null,
       "psd": {
-        "wheat": {
-          "consumption": 4100.0,
-          "ending_stocks": 1428.0,
-          "imports": 4700.0,
-          "production": 40.0,
-          "stocks_to_use": 0.348,
-          "import_dependence": 1.146,
-          "market_year": 2026,
-          "begin_stu": 0.354,
-          "avg5_stu": 0.393,
-          "avg5_imports": 4777.8,
-          "prev_imports": 4672.0,
-          "import_momentum": 0.978
-        },
         "rice": {
-          "imports": 408.0,
-          "production": 3490.0,
           "consumption": 3775.0,
+          "production": 3490.0,
+          "imports": 408.0,
           "ending_stocks": 550.0,
           "stocks_to_use": 0.146,
           "import_dependence": 0.108,
@@ -9506,11 +9492,25 @@
           "avg5_production": 3694.4,
           "production_vs_avg": 0.945
         },
+        "wheat": {
+          "production": 40.0,
+          "imports": 4700.0,
+          "ending_stocks": 1428.0,
+          "consumption": 4100.0,
+          "stocks_to_use": 0.348,
+          "import_dependence": 1.146,
+          "market_year": 2026,
+          "begin_stu": 0.354,
+          "avg5_stu": 0.393,
+          "avg5_imports": 4777.8,
+          "prev_imports": 4672.0,
+          "import_momentum": 0.978
+        },
         "corn": {
           "production": 94.0,
-          "consumption": 11550.0,
-          "ending_stocks": 2116.0,
           "imports": 11500.0,
+          "ending_stocks": 2116.0,
+          "consumption": 11550.0,
           "stocks_to_use": 0.183,
           "import_dependence": 0.996,
           "market_year": 2026,
@@ -9564,22 +9564,6 @@
       "income": "HIC",
       "ipc": null,
       "psd": {
-        "wheat": {
-          "consumption": 1150.0,
-          "ending_stocks": 239.0,
-          "imports": 725.0,
-          "production": 430.0,
-          "stocks_to_use": 0.208,
-          "import_dependence": 0.63,
-          "market_year": 2026,
-          "begin_stu": 0.222,
-          "avg5_stu": 0.242,
-          "avg5_imports": 678.6,
-          "prev_imports": 699.0,
-          "import_momentum": 1.03,
-          "avg5_production": 429.2,
-          "production_vs_avg": 1.002
-        },
         "corn": {
           "production": 225.0,
           "imports": 50.0,
@@ -9596,10 +9580,26 @@
           "avg5_production": 212.2,
           "production_vs_avg": 1.06
         },
+        "wheat": {
+          "production": 430.0,
+          "imports": 725.0,
+          "ending_stocks": 239.0,
+          "consumption": 1150.0,
+          "stocks_to_use": 0.208,
+          "import_dependence": 0.63,
+          "market_year": 2026,
+          "begin_stu": 0.222,
+          "avg5_stu": 0.242,
+          "avg5_imports": 678.6,
+          "prev_imports": 699.0,
+          "import_momentum": 1.03,
+          "avg5_production": 429.2,
+          "production_vs_avg": 1.002
+        },
         "rice": {
-          "ending_stocks": 0.0,
           "production": 0.0,
           "imports": 75.0,
+          "ending_stocks": 0.0,
           "consumption": 75.0,
           "stocks_to_use": 0.0,
           "import_dependence": 1.0,
@@ -9653,10 +9653,10 @@
       "ipc": null,
       "psd": {
         "corn": {
-          "consumption": 380.0,
-          "ending_stocks": 21.0,
-          "imports": 350.0,
           "production": 15.0,
+          "imports": 350.0,
+          "ending_stocks": 21.0,
+          "consumption": 380.0,
           "stocks_to_use": 0.055,
           "import_dependence": 0.921,
           "market_year": 2026,
@@ -9681,10 +9681,10 @@
           "import_momentum": 1.127
         },
         "wheat": {
-          "production": 0.0,
           "consumption": 880.0,
-          "ending_stocks": 342.0,
+          "production": 0.0,
           "imports": 840.0,
+          "ending_stocks": 342.0,
           "stocks_to_use": 0.389,
           "import_dependence": 0.955,
           "market_year": 2026,
@@ -9737,10 +9737,10 @@
       "ipc": null,
       "psd": {
         "wheat": {
-          "consumption": 15200.0,
-          "ending_stocks": 2483.0,
-          "imports": 3600.0,
           "production": 12000.0,
+          "imports": 3600.0,
+          "ending_stocks": 2483.0,
+          "consumption": 15200.0,
           "stocks_to_use": 0.163,
           "import_dependence": 0.237,
           "market_year": 2026,
@@ -9753,10 +9753,10 @@
           "production_vs_avg": 0.901
         },
         "rice": {
-          "consumption": 675.0,
           "ending_stocks": 83.0,
-          "imports": 725.0,
+          "consumption": 675.0,
           "production": 0.0,
+          "imports": 725.0,
           "stocks_to_use": 0.123,
           "import_dependence": 1.074,
           "market_year": 2026,
@@ -9767,10 +9767,10 @@
           "import_momentum": 1.055
         },
         "corn": {
-          "consumption": 2400.0,
-          "ending_stocks": 173.0,
-          "imports": 2500.0,
           "production": 25.0,
+          "imports": 2500.0,
+          "ending_stocks": 173.0,
+          "consumption": 2400.0,
           "stocks_to_use": 0.072,
           "import_dependence": 1.042,
           "market_year": 2026,
@@ -9829,18 +9829,18 @@
       },
       "psd": {
         "rice": {
-          "ending_stocks": 0.0,
           "imports": 0.0,
-          "production": 0.0,
+          "ending_stocks": 0.0,
           "consumption": 0.0,
+          "production": 0.0,
           "market_year": 2026,
           "avg5_imports": 0.0
         },
         "wheat": {
-          "consumption": 545.0,
-          "ending_stocks": 130.0,
-          "imports": 350.0,
           "production": 200.0,
+          "imports": 350.0,
+          "ending_stocks": 130.0,
+          "consumption": 545.0,
           "stocks_to_use": 0.239,
           "import_dependence": 0.642,
           "market_year": 2026,
@@ -9853,10 +9853,10 @@
           "production_vs_avg": 0.955
         },
         "corn": {
-          "consumption": 3150.0,
-          "ending_stocks": 2076.0,
-          "imports": 10.0,
           "production": 4938.0,
+          "imports": 10.0,
+          "ending_stocks": 2076.0,
+          "consumption": 3150.0,
           "stocks_to_use": 0.659,
           "import_dependence": 0.003,
           "market_year": 2026,
@@ -9912,10 +9912,10 @@
       "ipc": null,
       "psd": {
         "corn": {
-          "consumption": 100.0,
-          "ending_stocks": 0.0,
-          "imports": 100.0,
           "production": 0.0,
+          "imports": 100.0,
+          "ending_stocks": 0.0,
+          "consumption": 100.0,
           "stocks_to_use": 0.0,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -9926,10 +9926,10 @@
           "import_momentum": 1.035
         },
         "wheat": {
-          "consumption": 875.0,
-          "ending_stocks": 272.0,
-          "imports": 450.0,
           "production": 420.0,
+          "imports": 450.0,
+          "ending_stocks": 272.0,
+          "consumption": 875.0,
           "stocks_to_use": 0.311,
           "import_dependence": 0.514,
           "market_year": 2026,
@@ -9983,6 +9983,22 @@
       "income": "HIC",
       "ipc": null,
       "psd": {
+        "corn": {
+          "production": 135.0,
+          "imports": 4700.0,
+          "ending_stocks": 445.0,
+          "consumption": 4850.0,
+          "stocks_to_use": 0.092,
+          "import_dependence": 0.969,
+          "market_year": 2026,
+          "begin_stu": 0.084,
+          "avg5_stu": 0.102,
+          "avg5_imports": 4437.0,
+          "prev_imports": 5400.0,
+          "import_momentum": 1.217,
+          "avg5_production": 106.2,
+          "production_vs_avg": 1.271
+        },
         "wheat": {
           "production": 1100.0,
           "imports": 4100.0,
@@ -9999,27 +10015,11 @@
           "avg5_production": 942.8,
           "production_vs_avg": 1.167
         },
-        "corn": {
-          "consumption": 4850.0,
-          "ending_stocks": 445.0,
-          "imports": 4700.0,
-          "production": 135.0,
-          "stocks_to_use": 0.092,
-          "import_dependence": 0.969,
-          "market_year": 2026,
-          "begin_stu": 0.084,
-          "avg5_stu": 0.102,
-          "avg5_imports": 4437.0,
-          "prev_imports": 5400.0,
-          "import_momentum": 1.217,
-          "avg5_production": 106.2,
-          "production_vs_avg": 1.271
-        },
         "rice": {
-          "consumption": 1800.0,
-          "ending_stocks": 758.0,
-          "imports": 1800.0,
           "production": 0.0,
+          "imports": 1800.0,
+          "ending_stocks": 758.0,
+          "consumption": 1800.0,
           "stocks_to_use": 0.421,
           "import_dependence": 1.0,
           "market_year": 2026,
@@ -10071,10 +10071,26 @@
       "income": "HIC",
       "ipc": null,
       "psd": {
+        "rice": {
+          "production": 5008.0,
+          "imports": 1581.0,
+          "ending_stocks": 1269.0,
+          "consumption": 4698.0,
+          "stocks_to_use": 0.27,
+          "import_dependence": 0.337,
+          "market_year": 2026,
+          "begin_stu": 0.356,
+          "avg5_stu": 0.269,
+          "avg5_imports": 1358.8,
+          "prev_imports": 1358.0,
+          "import_momentum": 0.999,
+          "avg5_production": 6337.2,
+          "production_vs_avg": 0.79
+        },
         "corn": {
-          "consumption": 330342.0,
-          "ending_stocks": 46967.0,
           "imports": 635.0,
+          "ending_stocks": 46967.0,
+          "consumption": 330342.0,
           "production": 407281.0,
           "stocks_to_use": 0.142,
           "import_dependence": 0.002,
@@ -10087,27 +10103,11 @@
           "avg5_production": 385407.8,
           "production_vs_avg": 1.057
         },
-        "rice": {
-          "consumption": 4698.0,
-          "production": 5008.0,
-          "imports": 1581.0,
-          "ending_stocks": 1269.0,
-          "stocks_to_use": 0.27,
-          "import_dependence": 0.337,
-          "market_year": 2026,
-          "begin_stu": 0.356,
-          "avg5_stu": 0.269,
-          "avg5_imports": 1358.8,
-          "prev_imports": 1358.0,
-          "import_momentum": 0.999,
-          "avg5_production": 6337.2,
-          "production_vs_avg": 0.79
-        },
         "wheat": {
+          "production": 41742.0,
+          "imports": 3946.0,
           "ending_stocks": 20135.0,
           "consumption": 30182.0,
-          "imports": 3946.0,
-          "production": 41742.0,
           "stocks_to_use": 0.667,
           "import_dependence": 0.131,
           "market_year": 2026,
@@ -10171,10 +10171,10 @@
           "production_vs_avg": 1.091
         },
         "corn": {
-          "consumption": 15700.0,
-          "ending_stocks": 2083.0,
-          "imports": 2000.0,
           "production": 16800.0,
+          "imports": 2000.0,
+          "ending_stocks": 2083.0,
+          "consumption": 15700.0,
           "stocks_to_use": 0.133,
           "import_dependence": 0.127,
           "market_year": 2026,
@@ -10236,10 +10236,10 @@
       "ipc": null,
       "psd": {
         "corn": {
+          "production": 16500.0,
+          "imports": 50.0,
           "ending_stocks": 1308.0,
           "consumption": 12200.0,
-          "imports": 50.0,
-          "production": 16500.0,
           "stocks_to_use": 0.107,
           "import_dependence": 0.004,
           "market_year": 2026,
@@ -10268,8 +10268,8 @@
           "production_vs_avg": 0.793
         },
         "wheat": {
-          "imports": 300.0,
           "production": 88000.0,
+          "imports": 300.0,
           "ending_stocks": 19088.0,
           "consumption": 41200.0,
           "stocks_to_use": 0.463,
@@ -10319,10 +10319,10 @@
       "ipc": null,
       "psd": {
         "corn": {
+          "consumption": 335.0,
           "production": 420.0,
           "imports": 1.0,
           "ending_stocks": 47.0,
-          "consumption": 335.0,
           "stocks_to_use": 0.14,
           "import_dependence": 0.003,
           "market_year": 2026,
@@ -10333,22 +10333,6 @@
           "import_momentum": 1.111,
           "avg5_production": 388.4,
           "production_vs_avg": 1.081
-        },
-        "rice": {
-          "consumption": 400.0,
-          "production": 100.0,
-          "imports": 300.0,
-          "ending_stocks": 61.0,
-          "stocks_to_use": 0.152,
-          "import_dependence": 0.75,
-          "market_year": 2026,
-          "begin_stu": 0.348,
-          "avg5_stu": 0.543,
-          "avg5_imports": 260.2,
-          "prev_imports": 300.0,
-          "import_momentum": 1.153,
-          "avg5_production": 363.2,
-          "production_vs_avg": 0.275
         },
         "wheat": {
           "production": 31000.0,
@@ -10365,6 +10349,22 @@
           "import_momentum": 1.065,
           "avg5_production": 34567.4,
           "production_vs_avg": 0.897
+        },
+        "rice": {
+          "production": 100.0,
+          "imports": 300.0,
+          "ending_stocks": 61.0,
+          "consumption": 400.0,
+          "stocks_to_use": 0.152,
+          "import_dependence": 0.75,
+          "market_year": 2026,
+          "begin_stu": 0.348,
+          "avg5_stu": 0.543,
+          "avg5_imports": 260.2,
+          "prev_imports": 300.0,
+          "import_momentum": 1.153,
+          "avg5_production": 363.2,
+          "production_vs_avg": 0.275
         }
       },
       "fx_rate": 1.422744,
@@ -10403,9 +10403,9 @@
       "psd": {
         "corn": {
           "consumption": 324000.0,
-          "ending_stocks": 165128.0,
-          "imports": 5000.0,
           "production": 307000.0,
+          "imports": 5000.0,
+          "ending_stocks": 165128.0,
           "stocks_to_use": 0.51,
           "import_dependence": 0.015,
           "market_year": 2026,
@@ -10434,10 +10434,10 @@
           "production_vs_avg": 1.005
         },
         "wheat": {
+          "production": 141000.0,
+          "imports": 6000.0,
           "consumption": 149000.0,
           "ending_stocks": 119204.0,
-          "imports": 6000.0,
-          "production": 141000.0,
           "stocks_to_use": 0.8,
           "import_dependence": 0.04,
           "market_year": 2026,
