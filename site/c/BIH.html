@@ -42,7 +42,7 @@
   <p>Sources: IPC via HDX HAPI, USDA FAS PSD, World Bank, ReliefWeb. <a href="https://www.exchangerate-api.com">Rates By Exchange Rate API</a>.</p>
   <p class="flinks"><a href="../">Dashboard</a><a href="https://s-newsletter-769f65.beehiiv.com/method">Method</a><a href="https://s-newsletter-769f65.beehiiv.com/terms">Terms</a><a href="https://s-newsletter-769f65.beehiiv.com/privacy">Privacy</a><a href="https://s-newsletter-769f65.beehiiv.com/disclaimer">Disclaimer</a></p>
 </div></footer>
-<script id="data" type="application/json">{"as_of": "2026-11-02", "mode": "live", "country": {"name": "Bosnia and Herzegovina", "iso3": "BIH", "fas": "BK", "fx": "BAM", "buyer": "", "core": false, "num": "070", "income": "UMC", "ipc": null, "psd": {"wheat": {"production": 280.0, "imports": 400.0, "ending_stocks": 91.0, "consumption": 590.0, "stocks_to_use": 0.154, "import_dependence": 0.678, "market_year": 2026, "begin_stu": 0.14, "avg5_stu": 0.147, "avg5_imports": 380.4, "prev_imports": 440.0, "import_momentum": 1.157, "avg5_production": 272.0, "production_vs_avg": 1.029}, "corn": {"production": 650.0, "imports": 200.0, "ending_stocks": 83.0, "consumption": 850.0, "stocks_to_use": 0.098, "import_dependence": 0.235, "market_year": 2026, "begin_stu": 0.101, "avg5_stu": 0.149, "avg5_imports": 200.8, "prev_imports": 225.0, "import_momentum": 1.121, "avg5_production": 702.0, "production_vs_avg": 0.926}}, "fx_rate": 1.752461, "fx_change_30d": 0.0083, "fx_change_7d": 0.0055, "risk": 37, "risk_parts": {"fx": 8, "stocks": 65, "imports": 29, "coverage": "3/4", "confidence": "Medium"}, "confidence": "Medium", "risk_band": "Watch", "grain": {"stocks_to_use": 0.121, "import_dependence": 0.417, "imports": 600, "consumption": 1440}, "tender": "Low", "tender_detail": {"level": "Low", "momentum": 1.157, "harvest": 1.029, "stocks_vs_normal": 0.95, "imports": 400, "crop": "wheat"}, "risk_change": null}, "history": [{"date": "2026-11-02", "risk": 37}]}</script>
+<script id="data" type="application/json">{"as_of": "2026-11-02", "mode": "live", "country": {"name": "Bosnia and Herzegovina", "iso3": "BIH", "fas": "BK", "fx": "BAM", "buyer": "", "core": false, "num": "070", "income": "UMC", "ipc": null, "psd": {"wheat": {"production": 280.0, "imports": 400.0, "ending_stocks": 91.0, "consumption": 590.0, "stocks_to_use": 0.154, "import_dependence": 0.678, "market_year": 2026, "begin_stu": 0.14, "avg5_stu": 0.147, "avg5_imports": 380.4, "prev_imports": 440.0, "import_momentum": 1.157, "avg5_production": 272.0, "production_vs_avg": 1.029}, "corn": {"production": 650.0, "imports": 200.0, "ending_stocks": 83.0, "consumption": 850.0, "stocks_to_use": 0.098, "import_dependence": 0.235, "market_year": 2026, "begin_stu": 0.101, "avg5_stu": 0.149, "avg5_imports": 200.8, "prev_imports": 225.0, "import_momentum": 1.121, "avg5_production": 702.0, "production_vs_avg": 0.926}}, "fx_rate": 1.752461, "fx_change_30d": 0.0062, "fx_change_7d": 0.0034, "risk": 36, "risk_parts": {"fx": 6, "stocks": 65, "imports": 29, "coverage": "3/4", "confidence": "Medium"}, "confidence": "Medium", "risk_band": "Watch", "grain": {"stocks_to_use": 0.121, "import_dependence": 0.417, "imports": 600, "consumption": 1440}, "tender": "Low", "tender_detail": {"level": "Low", "momentum": 1.157, "harvest": 1.029, "stocks_vs_normal": 0.95, "imports": 400, "crop": "wheat"}, "risk_change": null}, "history": [{"date": "2026-11-02", "risk": 36}]}</script>
 <script>
 const D = JSON.parse(document.getElementById('data').textContent), c = D.country;
 const $ = id => document.getElementById(id);
@@ -67,7 +67,8 @@ $('bars').innerHTML = Object.keys(NAMES).map(k => `<div><span>${NAMES[k]}</span>
 $('cov').textContent = parts.coverage ? `Based on ${parts.coverage} parts with data. Confidence: ${parts.confidence || '—'}.` : 'Not enough data to score.';
 const td = c.tender_detail;
 const pctv = x => x >= 1 ? Math.round((x - 1) * 100) + '% above' : Math.round((1 - x) * 100) + '% below';
-$('tnd').innerHTML = td ? `<b>Tender signal: ${esc(c.tender)}.</b> ${esc(td.crop)} imports last season were ${pctv(td.momentum)} the five-year norm${td.harvest != null ? `, and USDA expects this year's ${esc(td.crop)} harvest ${pctv(td.harvest)} normal` : ''}.`
+const cap = x => String(x || '').charAt(0).toUpperCase() + String(x || '').slice(1);
+$('tnd').innerHTML = td ? `<b>Tender signal: ${esc(c.tender)}.</b> ${esc(cap(td.crop))} imports last season were ${pctv(td.momentum)} the five-year norm${td.harvest != null ? `, and USDA expects this year's ${esc(td.crop)} harvest ${pctv(td.harvest)} normal` : ''}.`
   : `<b>Tender signal: ${esc(c.tender)}.</b> <span class="muted">Not a large enough importer of wheat or corn to score.</span>`;
 
 const H = D.history || [];
@@ -85,7 +86,7 @@ if (H.length > 1) {
 }
 
 const psd = c.psd || {};
-const crops = Object.keys(psd);
+const crops = Object.keys(psd).filter(k => psd[k] && (psd[k].consumption || psd[k].imports || psd[k].production));
 $('mylede').textContent = crops.length ? `USDA estimates for marketing year ${(psd[crops[0]] || {}).market_year ?? ''}, thousand tonnes.` : 'USDA has no grain balance for this country.';
 const G = c.grain;
 $('bal').tBodies[0].innerHTML = crops.map(k => { const b = psd[k] || {}; return `<tr><td>${k[0].toUpperCase() + k.slice(1)}</td>
