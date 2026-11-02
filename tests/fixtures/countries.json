@@ -1,0 +1,188 @@
+{
+ "EGY": {
+  "psd": {
+   "wheat": {
+    "stocks_to_use": 0.18,
+    "import_dependence": 0.62
+   }
+  },
+  "reports": [
+   {
+    "title": "SAMPLE: Egypt wheat import outlook",
+    "url": "https://reliefweb.int/",
+    "source": "FAO",
+    "date": "2026-10-28"
+   }
+  ]
+ },
+ "DZA": {
+  "psd": {
+   "wheat": {
+    "stocks_to_use": 0.31,
+    "import_dependence": 0.7
+   }
+  }
+ },
+ "SAU": {
+  "psd": {
+   "wheat": {
+    "stocks_to_use": 0.45,
+    "import_dependence": 0.95
+   }
+  }
+ },
+ "MAR": {
+  "psd": {
+   "wheat": {
+    "stocks_to_use": 0.22,
+    "import_dependence": 0.55
+   }
+  }
+ },
+ "TUN": {
+  "psd": {
+   "wheat": {
+    "stocks_to_use": 0.15,
+    "import_dependence": 0.68
+   }
+  }
+ },
+ "TUR": {
+  "psd": {
+   "wheat": {
+    "stocks_to_use": 0.28,
+    "import_dependence": 0.12
+   }
+  }
+ },
+ "IRQ": {
+  "psd": {
+   "wheat": {
+    "stocks_to_use": 0.35,
+    "import_dependence": 0.3
+   }
+  }
+ },
+ "YEM": {
+  "psd": {
+   "wheat": {
+    "stocks_to_use": 0.12,
+    "import_dependence": 0.92
+   }
+  },
+  "ipc": {
+   "share_phase3plus": 0.49,
+   "people_phase3plus": 0,
+   "period_start": "2026-09-01",
+   "ipc_type": "projected"
+  },
+  "reports": [
+   {
+    "title": "SAMPLE: Yemen food security update",
+    "url": "https://reliefweb.int/",
+    "source": "WFP",
+    "date": "2026-10-30"
+   }
+  ]
+ },
+ "SDN": {
+  "psd": {
+   "wheat": {
+    "stocks_to_use": 0.08,
+    "import_dependence": 0.8
+   }
+  },
+  "ipc": {
+   "share_phase3plus": 0.45,
+   "people_phase3plus": 0,
+   "period_start": "2026-09-01",
+   "ipc_type": "projected"
+  },
+  "reports": [
+   {
+    "title": "SAMPLE: Sudan famine risk alert",
+    "url": "https://reliefweb.int/",
+    "source": "IPC",
+    "date": "2026-10-31"
+   }
+  ]
+ },
+ "ETH": {
+  "psd": {
+   "wheat": {
+    "stocks_to_use": 0.1,
+    "import_dependence": 0.25
+   }
+  },
+  "ipc": {
+   "share_phase3plus": 0.18,
+   "people_phase3plus": 0,
+   "period_start": "2026-09-01",
+   "ipc_type": "projected"
+  }
+ },
+ "KEN": {
+  "psd": {
+   "wheat": {
+    "stocks_to_use": 0.14,
+    "import_dependence": 0.75
+   }
+  },
+  "ipc": {
+   "share_phase3plus": 0.12,
+   "people_phase3plus": 0,
+   "period_start": "2026-09-01",
+   "ipc_type": "projected"
+  }
+ },
+ "NGA": {
+  "psd": {
+   "wheat": {
+    "stocks_to_use": 0.09,
+    "import_dependence": 0.98
+   }
+  },
+  "ipc": {
+   "share_phase3plus": 0.15,
+   "people_phase3plus": 0,
+   "period_start": "2026-09-01",
+   "ipc_type": "projected"
+  }
+ },
+ "PAK": {
+  "psd": {
+   "wheat": {
+    "stocks_to_use": 0.2,
+    "import_dependence": 0.08
+   }
+  },
+  "ipc": {
+   "share_phase3plus": 0.11,
+   "people_phase3plus": 0,
+   "period_start": "2026-09-01",
+   "ipc_type": "projected"
+  }
+ },
+ "BGD": {
+  "psd": {
+   "wheat": {
+    "stocks_to_use": 0.19,
+    "import_dependence": 0.85
+   }
+  },
+  "ipc": {
+   "share_phase3plus": 0.13,
+   "people_phase3plus": 0,
+   "period_start": "2026-09-01",
+   "ipc_type": "projected"
+  }
+ },
+ "IDN": {
+  "psd": {
+   "wheat": {
+    "stocks_to_use": 0.21,
+    "import_dependence": 1.0
+   }
+  }
+ }
+}

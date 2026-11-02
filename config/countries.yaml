@@ -1,0 +1,34 @@
+# Countries the Radar watches.
+# iso3  = ISO code (HDX HAPI, ReliefWeb)
+# fas   = USDA FAS country code used by the PSD API (verify on first live run)
+# fx    = local currency code (exchange-rate feed)
+# buyer = the state or main buyer, shown on the dashboard
+countries:
+  - {name: Egypt,        iso3: EGY, fas: EG, fx: EGP, buyer: "Mostakbal Misr"}
+  - {name: Algeria,      iso3: DZA, fas: AG, fx: DZD, buyer: "OAIC"}
+  - {name: Saudi Arabia, iso3: SAU, fas: SA, fx: SAR, buyer: "GFSA"}
+  - {name: Morocco,      iso3: MAR, fas: MO, fx: MAD, buyer: "Private importers"}
+  - {name: Tunisia,      iso3: TUN, fas: TS, fx: TND, buyer: "ODC"}
+  - {name: Turkey,       iso3: TUR, fas: TU, fx: TRY, buyer: "TMO"}
+  - {name: Iraq,         iso3: IRQ, fas: IZ, fx: IQD, buyer: "Grain Board of Iraq"}
+  - {name: Yemen,        iso3: YEM, fas: YM, fx: YER, buyer: "Private importers"}
+  - {name: Sudan,        iso3: SDN, fas: SU, fx: SDG, buyer: "Private importers / aid"}
+  - {name: Ethiopia,     iso3: ETH, fas: ET, fx: ETB, buyer: "Government / aid"}
+  - {name: Kenya,        iso3: KEN, fas: KE, fx: KES, buyer: "Private millers"}
+  - {name: Nigeria,      iso3: NGA, fas: NI, fx: NGN, buyer: "Private millers"}
+  - {name: Pakistan,     iso3: PAK, fas: PK, fx: PKR, buyer: "TCP"}
+  - {name: Bangladesh,   iso3: BGD, fas: BG, fx: BDT, buyer: "Directorate of Food"}
+  - {name: Indonesia,    iso3: IDN, fas: ID, fx: IDR, buyer: "Bulog / private millers"}
+
+# USDA PSD commodity codes
+commodities:
+  wheat: "0410000"
+  corn: "0440000"
+
+# Global price series pulled from the World Bank Pink Sheet (matched by name)
+global_prices:
+  - "Wheat, US HRW"
+  - "Maize"
+  - "Sunflower oil"
+  - "Urea"
+  - "DAP"

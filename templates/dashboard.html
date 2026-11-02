@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grain & Hunger Radar</title>
+<style>
+:root{--bg:#fbfaf6;--card:#fff;--ink:#14231c;--muted:#5d6b63;--line:#e4e0d4;--accent:#14352A;--wheat:#D9A441;
+--sev:#b42318;--ele:#c4661f;--wat:#a8871c;--low:#2f7d4f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1512;--card:#161e1a;--ink:#e9efe9;--muted:#9aa89f;--line:#26312b;--accent:#9fd3b4;--wheat:#e4b95e}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Lato,sans-serif}
+header{padding:28px 16px 8px;max-width:1100px;margin:auto}
+h1{margin:0;font-size:28px;letter-spacing:-.01em}h1 span{color:var(--wheat)}
+.sub{color:var(--muted);margin-top:4px}
+main{max-width:1100px;margin:auto;padding:8px 16px 40px}
+.sample{background:#fff3cd;color:#5c4400;border:1px solid #e9d38a;padding:10px 12px;border-radius:8px;margin:12px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.k{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.v{font-size:24px;font-weight:700;margin-top:2px}.d{font-size:13px;color:var(--muted)}
+h2{font-size:18px;margin:28px 0 10px}
+.tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:720px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);font-size:14px;white-space:nowrap}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
+td.num{text-align:right;font-variant-numeric:tabular-nums}
+.bar{display:inline-block;height:8px;border-radius:4px;background:var(--line);width:90px;vertical-align:middle;margin-right:8px;overflow:hidden}
+.bar i{display:block;height:100%}
+.pill{font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid currentColor}
+.Severe{color:var(--sev)}.Elevated{color:var(--ele)}.Watch{color:var(--wat)}.Low{color:var(--low)}
+.spark{width:100%;height:46px;display:block;margin-top:6px}
+ul.src{padding-left:18px;color:var(--muted);font-size:13px}
+footer{color:var(--muted);font-size:12px;max-width:1100px;margin:auto;padding:0 16px 30px}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Grain <span>&</span> Hunger Radar</h1>
+  <div class="sub" id="asof"></div>
+</header>
+<main>
+  <div id="sample"></div>
+  <div class="grid" id="kpis"></div>
+  <h2>Country watchlist</h2>
+  <div class="tablewrap"><table id="tbl"><thead><tr>
+    <th>Country</th><th>Risk</th><th>Band</th><th>IPC 3+</th><th class="num">FX 30d</th>
+    <th class="num">Wheat stocks/use</th><th class="num">Import dep.</th><th>Tender signal</th><th>Buyer</th>
+  </tr></thead><tbody></tbody></table></div>
+  <h2>Global prices</h2>
+  <div class="grid" id="prices"></div>
+  <h2>Latest reports</h2>
+  <div id="reports"></div>
+  <h2>Data sources</h2>
+  <ul class="src" id="sources"></ul>
+</main>
+<footer>Risk score is a transparent heuristic (hunger, currency, stocks, import dependence), not a forecast.
+Sources: IPC via HDX HAPI, USDA FAS PSD, World Bank Pink Sheet, FAO, NOAA CPC, ReliefWeb.
+<a href="https://www.exchangerate-api.com">Rates By Exchange Rate API</a>.</footer>
+<script id="data" type="application/json">__DATA__</script>
+<script>
+const S = JSON.parse(document.getElementById('data').textContent);
+const $ = id => document.getElementById(id);
+const pct = x => x == null ? '—' : (x*100>0?'+':'') + (x*100).toFixed(1) + '%';
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+$('asof').textContent = 'Data as of ' + S.as_of;
+if (S.mode !== 'live') $('sample').innerHTML = '<div class="sample">Sample data from an offline test run — not real figures.</div>';
+
+const C = S.countries, scored = C.filter(c => c.risk != null);
+const hot = C.filter(c => /^(High|Medium)/.test(c.tender));
+const k = [
+  ['Countries watched', C.length, ''],
+  ['Severe or elevated', scored.filter(c => c.risk >= 45).length, 'risk score 45+'],
+  ['Tender signals', hot.length, hot.map(c => c.name).slice(0,3).join(', ')],
+  ['ENSO', S.enso ? S.enso.phase : '—', S.enso ? 'ONI ' + S.enso.latest.anom.toFixed(1) : ''],
+];
+$('kpis').innerHTML = k.map(([a,b,c]) => `<div class="card"><div class="k">${a}</div><div class="v">${esc(b)}</div><div class="d">${esc(c)}</div></div>`).join('');
+
+const colr = b => ({Severe:'var(--sev)',Elevated:'var(--ele)',Watch:'var(--wat)',Low:'var(--low)'}[b] || 'var(--muted)');
+$('tbl').querySelector('tbody').innerHTML = C.map(c => {
+  const w = (c.psd || {}).wheat || {}, ipc = c.ipc;
+  return `<tr><td><b>${esc(c.name)}</b></td>
+  <td><span class="bar"><i style="width:${c.risk||0}%;background:${colr(c.risk_band)}"></i></span>${c.risk ?? '—'}</td>
+  <td><span class="pill ${c.risk_band}">${c.risk_band}</span></td>
+  <td>${ipc ? (ipc.share_phase3plus*100).toFixed(0)+'%' : '—'}</td>
+  <td class="num">${pct(c.fx_change_30d)}</td>
+  <td class="num">${w.stocks_to_use != null ? w.stocks_to_use.toFixed(2) : '—'}</td>
+  <td class="num">${w.import_dependence != null ? (w.import_dependence*100).toFixed(0)+'%' : '—'}</td>
+  <td>${esc(c.tender)}</td><td>${esc(c.buyer)}</td></tr>`;
+}).join('');
+
+function spark(pts, key) {
+  const v = pts.map(p => p[key]).filter(x => x != null);
+  if (v.length < 2) return '';
+  const lo = Math.min(...v), hi = Math.max(...v), W = 200, H = 46;
+  const d = v.map((y,i) => `${i? 'L':'M'}${(i/(v.length-1)*W).toFixed(1)},${(H-3-(y-lo)/(hi-lo||1)*(H-6)).toFixed(1)}`).join('');
+  return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><path d="${d}" fill="none" stroke="var(--accent)" stroke-width="1.6"/></svg>`;
+}
+const priceCards = Object.entries(S.global_prices).map(([n, pts]) => {
+  const a = pts.at(-2)?.value, b = pts.at(-1)?.value;
+  return `<div class="card"><div class="k">${esc(n)}</div><div class="v">${b?.toLocaleString(undefined,{maximumFractionDigits:2}) ?? '—'}</div>
+  <div class="d">USD/t · ${a ? pct(b/a-1) + ' m/m · ' : ''}${esc(pts.at(-1)?.month || '')}</div>${spark(pts,'value')}</div>`;
+});
+if (S.fao_index.length) {
+  const f = S.fao_index, a = f.at(-2)?.food, b = f.at(-1)?.food;
+  priceCards.push(`<div class="card"><div class="k">FAO Food Price Index</div><div class="v">${b?.toFixed(1)}</div><div class="d">${pct(b/a-1)} m/m · ${esc(f.at(-1).month)}</div>${spark(f,'food')}</div>`);
+}
+$('prices').innerHTML = priceCards.join('') || '<div class="card d">No price data this run.</div>';
+
+const reps = C.flatMap(c => (c.reports || []).map(r => ({...r, country: c.name}))).sort((a,b) => (b.date||'').localeCompare(a.date||'')).slice(0, 12);
+$('reports').innerHTML = reps.length ? '<div class="card"><ul style="margin:0;padding-left:18px">' + reps.map(r =>
+  `<li><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a> <span class="d">· ${esc(r.country)} · ${esc(r.source)} · ${esc(r.date)}</span></li>`).join('') + '</ul></div>'
+  : '<div class="card d">No reports this run (ReliefWeb appname not set yet).</div>';
+
+$('sources').innerHTML = Object.entries(S.sources).map(([k,v]) => `<li><b>${esc(k)}</b>: ${esc(v)}</li>`).join('');
+</script>
+</body>
+</html>

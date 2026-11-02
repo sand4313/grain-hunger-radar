@@ -1,0 +1,50 @@
+{
+ "latest": {
+  "season": "ASO",
+  "year": 2026,
+  "anom": 1.8
+ },
+ "phase": "Strong El Nino",
+ "recent": [
+  {
+   "season": "JFM",
+   "year": 2026,
+   "anom": -0.2
+  },
+  {
+   "season": "FMA",
+   "year": 2026,
+   "anom": 0.1
+  },
+  {
+   "season": "MAM",
+   "year": 2026,
+   "anom": 0.4
+  },
+  {
+   "season": "AMJ",
+   "year": 2026,
+   "anom": 0.7
+  },
+  {
+   "season": "MJJ",
+   "year": 2026,
+   "anom": 1.0
+  },
+  {
+   "season": "JJA",
+   "year": 2026,
+   "anom": 1.3
+  },
+  {
+   "season": "JAS",
+   "year": 2026,
+   "anom": 1.6
+  },
+  {
+   "season": "ASO",
+   "year": 2026,
+   "anom": 1.8
+  }
+ ]
+}
