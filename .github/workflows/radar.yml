@@ -43,6 +43,13 @@ jobs:
           USDA_FAS_API_KEY: ${{ secrets.USDA_FAS_API_KEY }}
         run: python run.py
 
+      - name: Save daily map images
+        continue-on-error: true
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+          python -m radar.snapshot_img
+
       - name: Commit data
         run: |
           git config user.name "radar-bot"
