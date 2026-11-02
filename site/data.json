@@ -1229,46 +1229,6 @@
       "tender": "High"
     },
     {
-      "name": "Taiwan",
-      "iso3": "TWN",
-      "fas": "TW",
-      "fx": "TWD",
-      "buyer": "",
-      "core": false,
-      "income": null,
-      "ipc": null,
-      "psd": {
-        "wheat": {
-          "consumption": 1300.0,
-          "ending_stocks": 136.0,
-          "imports": 1390.0,
-          "production": 2.0,
-          "stocks_to_use": 0.105,
-          "import_dependence": 1.069,
-          "market_year": 2026
-        },
-        "corn": {
-          "consumption": 4700.0,
-          "ending_stocks": 364.0,
-          "imports": 4550.0,
-          "production": 110.0,
-          "stocks_to_use": 0.077,
-          "import_dependence": 0.968,
-          "market_year": 2026
-        }
-      },
-      "fx_rate": 32.636828,
-      "fx_change_30d": null,
-      "risk": 99,
-      "risk_parts": {
-        "stocks": 98,
-        "imports": 100,
-        "coverage": "2/4"
-      },
-      "risk_band": "Severe",
-      "tender": "High"
-    },
-    {
       "name": "Sudan",
       "iso3": "SDN",
       "fas": "SU",
@@ -4707,6 +4667,46 @@
       "risk_parts": {
         "stocks": 30,
         "imports": 29,
+        "coverage": "2/4"
+      },
+      "risk_band": "Watch",
+      "tender": "High"
+    },
+    {
+      "name": "Taiwan",
+      "iso3": "TWN",
+      "fas": "TW",
+      "fx": "TWD",
+      "buyer": "",
+      "core": false,
+      "income": "HIC",
+      "ipc": null,
+      "psd": {
+        "wheat": {
+          "consumption": 1300.0,
+          "ending_stocks": 136.0,
+          "imports": 1390.0,
+          "production": 2.0,
+          "stocks_to_use": 0.105,
+          "import_dependence": 1.069,
+          "market_year": 2026
+        },
+        "corn": {
+          "consumption": 4700.0,
+          "ending_stocks": 364.0,
+          "imports": 4550.0,
+          "production": 110.0,
+          "stocks_to_use": 0.077,
+          "import_dependence": 0.968,
+          "market_year": 2026
+        }
+      },
+      "fx_rate": 32.636828,
+      "fx_change_30d": null,
+      "risk": 30,
+      "risk_parts": {
+        "stocks": 30,
+        "imports": 30,
         "coverage": "2/4"
       },
       "risk_band": "Watch",
