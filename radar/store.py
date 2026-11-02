@@ -27,6 +27,20 @@ def append_fx(today, rates):
         w.writerows(sorted(rows, key=lambda r: (r["date"], r["ccy"])))
 
 
+def add_fx_days(days):
+    """Add whole days of rates ({date: {ccy: rate}}) without touching days already stored."""
+    rows = read_fx()
+    have = {r["date"] for r in rows}
+    for d, rates in days.items():
+        if d not in have:
+            rows += [{"date": d, "ccy": k, "rate": v} for k, v in rates.items() if v]
+    FX_HIST.parent.mkdir(parents=True, exist_ok=True)
+    with FX_HIST.open("w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=["date", "ccy", "rate"])
+        w.writeheader()
+        w.writerows(sorted(rows, key=lambda r: (r["date"], r["ccy"])))
+
+
 def read_fx():
     if not FX_HIST.exists():
         return []

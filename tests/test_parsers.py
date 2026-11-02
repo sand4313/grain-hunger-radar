@@ -41,13 +41,41 @@ def test_fao_parse():
     assert s[-1]["month"] == "2026-09" and s[-1]["food"] == 126.0
 
 
+WHEAT = {"consumption": 10000, "ending_stocks": 1000, "imports": 10000, "import_dependence": 1.0,
+         "begin_stu": 0.12, "avg5_stu": 0.20}
+
+
 def test_risk_and_tender():
-    c = {"ipc": {"share_phase3plus": 0.40}, "fx_change_30d": 0.10,
-         "psd": {"wheat": {"stocks_to_use": 0.10, "import_dependence": 1.0}}}
+    c = {"ipc": {"share_phase3plus": 0.40}, "fx_change_30d": 0.10, "psd": {"wheat": WHEAT}}
     s, parts = score.risk(c)
-    assert s == 100 and score.band(s) == "Severe"
-    assert score.tender_signal(c).startswith("High")
+    assert s == 100 and score.band(s) == "Severe" and parts["confidence"] == "High"
+    assert score.tender_signal(c) == "High, FX may delay"          # 0.12 / 0.20 = 0.6 of normal
+    assert score.tender_signal(dict(c, fx_change_30d=0.0)) == "High"
+    normal = {"psd": {"wheat": dict(WHEAT, begin_stu=0.19)}}
+    assert score.tender_signal(normal) == "Low"
+    small = {"psd": {"wheat": dict(WHEAT, imports=100)}}
+    assert score.tender_signal(small) == "Low"
+    assert score.tender_signal({}) == "No data"
     assert score.risk({})[0] is None
+
+
+def test_thin_scores_are_capped():
+    supply_only = {"psd": {"wheat": WHEAT}, "income": "LIC"}          # 2 of 4 parts
+    s, parts = score.risk(supply_only)
+    assert s == 69 and score.band(s) == "Elevated" and parts["confidence"] == "Low"
+    fx_only = {"fx_change_30d": 0.2}
+    assert score.risk(fx_only)[0] == 44
+    deep_crisis = {"ipc": {"share_phase3plus": 0.5}}                   # IPC alone can be Severe
+    assert score.risk(deep_crisis)[0] == 100
+    mild = {"ipc": {"share_phase3plus": 0.2}, "fx_change_30d": 0.2}
+    assert score.risk(mild)[0] <= 69
+
+
+def test_grain_totals_combine_crops():
+    psd = {"wheat": {"consumption": 100, "ending_stocks": 10, "imports": 100},
+           "rice": {"consumption": 300, "ending_stocks": 90, "imports": 0}}
+    g = score.grain_totals(psd)
+    assert g["stocks_to_use"] == 0.25 and g["import_dependence"] == 0.25
 
 
 def test_fao_link_regex():
@@ -66,10 +94,25 @@ def test_usda_bulk_parse():
                          "Month": 10, "Attribute_Description": attr, "Value": val})
     rows.append({"Commodity_Code": "410000", "Country_Code": "XX", "Market_Year": 2026,
                  "Month": 10, "Attribute_Description": "Imports", "Value": 1})
-    out, _ = usda.parse_bulk(pd.DataFrame(rows), {"wheat": "0410000"}, ["EG"])
+    out, _, hist = usda.parse_bulk(pd.DataFrame(rows), {"wheat": "0410000"}, ["EG"])
     w = out["EG"]["wheat"]
     assert w["market_year"] == 2026 and w["stocks_to_use"] == 0.15 and w["import_dependence"] == 0.625
+    assert w["begin_stu"] == 0.2 and set(hist["EG"]["wheat"]) == {2025, 2026}
     assert "XX" not in out
+
+
+def test_backtest_counts_hits():
+    from radar import backtest
+    ys = {}
+    for y in range(2005, 2016):
+        ys[y] = {"consumption": 1000, "ending_stocks": 200, "imports": 800}
+    ys[2012]["ending_stocks"] = 100           # stocks half of normal going into 2013...
+    ys[2013]["imports"] = 1000                # ...and 2013 imports 25% above average
+    cs = backtest.cases({"EG": {"wheat": ys}}, {"EG": "Egypt"}, first=2010)
+    hit = [c for c in cs if c["year"] == 2013][0]
+    assert hit["ratio"] == 0.5 and hit["hit"]
+    r = backtest.evaluate(cs)
+    assert r["high"]["n"] == 1 and r["high"]["hits"] == 1
 
 
 def test_universe():
@@ -88,10 +131,10 @@ def test_universe():
 
 
 def test_income_scaling():
-    base = {"psd": {"wheat": {"stocks_to_use": 0.05, "import_dependence": 1.0}}}
+    base = {"fx_change_30d": 0.0, "psd": {"wheat": dict(WHEAT, ending_stocks=500)}}
     poor = score.risk(dict(base, income="LIC"))[0]
     rich = score.risk(dict(base, income="HIC"))[0]
-    assert poor == 100 and rich == 30
+    assert rich < poor / 2
 
 
 def test_changes_and_offers():

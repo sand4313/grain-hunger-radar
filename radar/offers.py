@@ -27,12 +27,15 @@ def rank(rows, crops=("wheat", "corn"), min_kt=300, top=25):
             continue
         pay = PAY_WEIGHT.get(r.get("income"), 0.6)
         bs = r["iso3"] in BLACK_SEA_MARKETS
-        score = tw * pay * (1.0 if bs else 0.35) * (vol ** 0.5)  # off-route markets rarely buy Black Sea
+        d = r.get("tender_detail") or {}
+        pressure = max(0.5, 1.5 - d.get("ratio", 1.0))  # deeper stock drawdown = more urgent buyer
+        score = tw * pay * pressure * (1.0 if bs else 0.35) * (vol ** 0.5)  # off-route markets rarely buy Black Sea
         out.append({
             "iso3": r["iso3"], "name": r["name"], "buyer": r.get("buyer", ""),
             "tender": r["tender"], "income": r.get("income"),
             "wheat_kt": round(vols.get("wheat", 0)), "corn_kt": round(vols.get("corn", 0)),
             "black_sea": bs, "fx_change_30d": r.get("fx_change_30d"),
+            "crop": d.get("crop"), "stocks_vs_normal": d.get("ratio"),
             "score": round(score, 1),
         })
     out.sort(key=lambda x: -x["score"])

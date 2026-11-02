@@ -17,7 +17,7 @@ from pathlib import Path
 import pycountry
 import yaml
 
-from radar import brief, changes, dashboard, offers, score, store, universe
+from radar import backtest, brief, changes, dashboard, offers, score, store, universe
 from radar.http import session
 from radar.sources import enso, fao, fx, hapi, reliefweb, usda, wbincome, worldbank
 
@@ -80,10 +80,10 @@ def main():
     fix_c = fixture("countries") if args.offline else {}
     if args.offline:
         countries, unmatched = cfg["countries"], []
-        psd_all, ipc_all = {}, {}
+        psd_all, ipc_all, psd_hist, psd_names = {}, {}, {}, {}
     else:
-        bulk = log.run("usda_bulk", lambda: usda.fetch_bulk(sess, cfg["commodities"])) or ({}, {})
-        psd_all, psd_names = bulk
+        bulk = log.run("usda_bulk", lambda: usda.fetch_bulk(sess, cfg["commodities"])) or ({}, {}, {})
+        psd_all, psd_names, psd_hist = bulk
         if hapi_id:
             ipc_all = log.run("hapi", lambda: hapi.fetch_all(sess, hapi_id)) or {}
         else:
@@ -110,6 +110,11 @@ def main():
 
     if g_fx:
         store.append_fx(as_of, g_fx["rates"])
+        if not args.offline:  # fill any missing days of the last 5 weeks so 7/30-day moves work
+            have = {r["date"] for r in store.read_fx()}
+            days = log.run("fx_history", lambda: fx.backfill(sess, list(g_fx["rates"]), have, as_of))
+            if days:
+                store.add_fx_days(days)
 
     # --- score every country ----------------------------------------------
     rows = []
@@ -132,8 +137,11 @@ def main():
         row["fx_change_30d"] = store.fx_change(c["fx"], as_of) if c.get("fx") else None
         row["fx_change_7d"] = store.fx_change(c["fx"], as_of, days=7) if c.get("fx") else None
         row["risk"], row["risk_parts"] = score.risk(row)
+        row["confidence"] = row["risk_parts"].get("confidence")
         row["risk_band"] = score.band(row["risk"])
+        row["grain"] = score.grain_totals(row.get("psd"))
         row["tender"] = score.tender_signal(row)
+        row["tender_detail"] = score.tender_detail(row)
         rows.append(row)
 
     rows.sort(key=lambda r: (r["risk"] is None, -(r["risk"] or 0)))
@@ -149,6 +157,18 @@ def main():
     hist = changes.history(snaps, rows, as_of)
     opps = offers.rank(rows)
     tenders = store.read_tenders(ROOT / "config" / "tenders.csv")
+    bt = None
+    if psd_hist:
+        bt = log.run("backtest", lambda: backtest.run(psd_hist, psd_names))
+        (store.DATA / "backtest.json").write_text(json.dumps(bt, indent=2))
+        hist_file = store.DATA / "history" / "psd.json"  # compact copy, for audits and offline tuning
+        recent = {cc: {k: {y: v for y, v in ys.items() if y >= 2000} for k, ys in crops.items()}
+                  for cc, crops in psd_hist.items()}
+        hist_file.write_text(json.dumps({"names": psd_names, "years": recent}, separators=(",", ":")))
+    elif (store.DATA / "backtest.json").exists():
+        bt = json.loads((store.DATA / "backtest.json").read_text())
+    elif args.offline and (FIX / "backtest.json").exists():
+        bt = fixture("backtest")
 
     snap = {
         "as_of": as_of,
@@ -164,6 +184,8 @@ def main():
         "compared_with": base_date,
         "opportunities": opps,
         "tenders": tenders,
+        "backtest": bt,
+        "sanity": backtest.sanity(rows),
     }
     store.write_snapshot(snap)
     dashboard.build(snap, out, history=hist)

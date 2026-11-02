@@ -8,7 +8,10 @@
     "consumption": 18548,
     "ending_stocks": 3339,
     "production": 7048,
-    "market_year": 2026
+    "market_year": 2026,
+    "avg5_stu": 0.198,
+    "begin_stu": 0.135,
+    "avg5_imports": 10925.0
    },
    "corn": {
     "imports": 6900,
@@ -34,7 +37,10 @@
     "consumption": 11857,
     "ending_stocks": 3676,
     "production": 3557,
-    "market_year": 2026
+    "market_year": 2026,
+    "avg5_stu": 0.341,
+    "begin_stu": 0.358,
+    "avg5_imports": 7885.0
    },
    "corn": {
     "imports": 4980,
@@ -52,7 +58,10 @@
     "consumption": 4316,
     "ending_stocks": 1942,
     "production": 216,
-    "market_year": 2026
+    "market_year": 2026,
+    "avg5_stu": 0.495,
+    "begin_stu": 0.544,
+    "avg5_imports": 3895.0
    },
    "corn": {
     "imports": 2460,
@@ -70,7 +79,10 @@
     "consumption": 6364,
     "ending_stocks": 1400,
     "production": 2864,
-    "market_year": 2026
+    "market_year": 2026,
+    "avg5_stu": 0.242,
+    "begin_stu": 0.208,
+    "avg5_imports": 3325.0
    },
    "corn": {
     "imports": 2100,
@@ -88,7 +100,10 @@
     "consumption": 2721,
     "ending_stocks": 408,
     "production": 871,
-    "market_year": 2026
+    "market_year": 2026,
+    "avg5_stu": 0.165,
+    "begin_stu": 0.115,
+    "avg5_imports": 1757.5
    },
    "corn": {
     "imports": 1110,
@@ -106,7 +121,10 @@
     "consumption": 37500,
     "ending_stocks": 10500,
     "production": 33000,
-    "market_year": 2026
+    "market_year": 2026,
+    "avg5_stu": 0.308,
+    "begin_stu": 0.277,
+    "avg5_imports": 4275.0
    },
    "corn": {
     "imports": 2700,
@@ -124,7 +142,10 @@
     "consumption": 6667,
     "ending_stocks": 2333,
     "production": 4667,
-    "market_year": 2026
+    "market_year": 2026,
+    "avg5_stu": 0.385,
+    "begin_stu": 0.385,
+    "avg5_imports": 1900.0
    },
    "corn": {
     "imports": 1200,
@@ -142,7 +163,10 @@
     "consumption": 4511,
     "ending_stocks": 541,
     "production": 361,
-    "market_year": 2026
+    "market_year": 2026,
+    "avg5_stu": 0.132,
+    "begin_stu": 0.079,
+    "avg5_imports": 3942.5
    },
    "corn": {
     "imports": 2490,
@@ -174,7 +198,10 @@
     "consumption": 3375,
     "ending_stocks": 270,
     "production": 675,
-    "market_year": 2026
+    "market_year": 2026,
+    "avg5_stu": 0.088,
+    "begin_stu": 0.07,
+    "avg5_imports": 2565.0
    },
    "corn": {
     "imports": 1620,
@@ -206,7 +233,10 @@
     "consumption": 5600,
     "ending_stocks": 560,
     "production": 4200,
-    "market_year": 2026
+    "market_year": 2026,
+    "avg5_stu": 0.11,
+    "begin_stu": 0.099,
+    "avg5_imports": 1330.0
    },
    "corn": {
     "imports": 840,
@@ -230,7 +260,10 @@
     "consumption": 3467,
     "ending_stocks": 485,
     "production": 867,
-    "market_year": 2026
+    "market_year": 2026,
+    "avg5_stu": 0.154,
+    "begin_stu": 0.146,
+    "avg5_imports": 2470.0
    },
    "corn": {
     "imports": 1560,
@@ -254,7 +287,10 @@
     "consumption": 5714,
     "ending_stocks": 514,
     "production": 114,
-    "market_year": 2026
+    "market_year": 2026,
+    "avg5_stu": 0.099,
+    "begin_stu": 0.071,
+    "avg5_imports": 5320.0
    },
    "corn": {
     "imports": 3360,
@@ -278,7 +314,10 @@
     "consumption": 12500,
     "ending_stocks": 2500,
     "production": 11500,
-    "market_year": 2026
+    "market_year": 2026,
+    "avg5_stu": 0.22,
+    "begin_stu": 0.22,
+    "avg5_imports": 950.0
    },
    "corn": {
     "imports": 600,
@@ -302,7 +341,10 @@
     "consumption": 7647,
     "ending_stocks": 1453,
     "production": 1147,
-    "market_year": 2026
+    "market_year": 2026,
+    "avg5_stu": 0.209,
+    "begin_stu": 0.184,
+    "avg5_imports": 6175.0
    },
    "corn": {
     "imports": 3900,
@@ -326,7 +368,10 @@
     "consumption": 12500,
     "ending_stocks": 2625,
     "production": 0,
-    "market_year": 2026
+    "market_year": 2026,
+    "avg5_stu": 0.231,
+    "begin_stu": 0.224,
+    "avg5_imports": 11875.0
    },
    "corn": {
     "imports": 7500,
