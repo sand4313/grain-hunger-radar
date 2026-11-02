@@ -118,6 +118,10 @@ def main():
                     crop: log.run("usda", lambda code=code: usda.fetch(sess, code, c["fas"], year, fas_key))
                     for crop, code in cfg["commodities"].items()
                 }
+        ipc = row.get("ipc")
+        if ipc and (ipc.get("period_start") or "")[:10] < f"{year - 2}{as_of[4:]}":
+            row["ipc_stale"] = ipc  # keep it visible in the data, but do not score on it
+            row["ipc"] = None
         row["fx_rate"] = (g_fx or {}).get("rates", {}).get(c["fx"])
         row["fx_change_30d"] = store.fx_change(c["fx"], as_of)
         row["risk"], row["risk_parts"] = score.risk(row)
