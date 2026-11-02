@@ -1,0 +1,105 @@
+{
+  "question": "After opening the year with low stocks, did the country import 10%+ more than its 5-year average?",
+  "years": [
+    2008,
+    2025
+  ],
+  "countries": 88,
+  "rule": {
+    "high": 0.75,
+    "medium": 0.9,
+    "min_kt": 300,
+    "min_dependence": 0.3
+  },
+  "result": {
+    "all": {
+      "n": 1643,
+      "hits": 783,
+      "rate": 0.477
+    },
+    "high": {
+      "n": 405,
+      "hits": 198,
+      "rate": 0.489
+    },
+    "medium": {
+      "n": 265,
+      "hits": 141,
+      "rate": 0.532
+    },
+    "low": {
+      "n": 973,
+      "hits": 444,
+      "rate": 0.456
+    },
+    "lift_high": 1.03
+  },
+  "grid": [
+    {
+      "threshold": 0.5,
+      "n": 115,
+      "hits": 50,
+      "rate": 0.435,
+      "lift": 0.91
+    },
+    {
+      "threshold": 0.6,
+      "n": 214,
+      "hits": 106,
+      "rate": 0.495,
+      "lift": 1.04
+    },
+    {
+      "threshold": 0.7,
+      "n": 342,
+      "hits": 166,
+      "rate": 0.485,
+      "lift": 1.02
+    },
+    {
+      "threshold": 0.75,
+      "n": 405,
+      "hits": 198,
+      "rate": 0.489,
+      "lift": 1.03
+    },
+    {
+      "threshold": 0.8,
+      "n": 488,
+      "hits": 237,
+      "rate": 0.486,
+      "lift": 1.02
+    },
+    {
+      "threshold": 0.9,
+      "n": 670,
+      "hits": 339,
+      "rate": 0.506,
+      "lift": 1.06
+    }
+  ],
+  "recent": {
+    "all": {
+      "n": 532,
+      "hits": 234,
+      "rate": 0.44
+    },
+    "high": {
+      "n": 157,
+      "hits": 62,
+      "rate": 0.395
+    },
+    "medium": {
+      "n": 87,
+      "hits": 49,
+      "rate": 0.563
+    },
+    "low": {
+      "n": 288,
+      "hits": 123,
+      "rate": 0.427
+    },
+    "lift_high": 0.9
+  },
+  "caveat": "Uses USDA's revised figures, not the estimates available at the time."
+}
