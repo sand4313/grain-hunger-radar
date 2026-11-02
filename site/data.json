@@ -5,10 +5,10 @@
     "fx": "ok",
     "enso": "ok",
     "worldbank": "ok",
-    "fao": "failed: RuntimeError: FAO CSV link not found",
+    "fao": "ok",
     "reliefweb": "skipped: RELIEFWEB_APPNAME not set",
-    "hapi": "ok",
-    "usda": "failed: RetryError: HTTPSConnectionPool(host='apps.fas.usda.gov', port=443): Max retries exceeded with url: /OpenData/api/psd/commodity/0440000/country/ID/year/2026 (Caused by ResponseError('too many "
+    "usda": "failed: RuntimeError: USDA HTTP 500 on /api/psd/commodities: {\"message\":\"An error has occurred.\"}",
+    "hapi": "ok"
   },
   "enso": {
     "latest": {
@@ -812,7 +812,224 @@
       }
     ]
   },
-  "fao_index": [],
+  "fao_index": [
+    {
+      "month": "2023-10",
+      "food": 120.7,
+      "cereals": 124.8,
+      "oils": 120.0
+    },
+    {
+      "month": "2023-11",
+      "food": 120.6,
+      "cereals": 121.0,
+      "oils": 124.1
+    },
+    {
+      "month": "2023-12",
+      "food": 119.1,
+      "cereals": 122.8,
+      "oils": 122.3
+    },
+    {
+      "month": "2024-01",
+      "food": 117.6,
+      "cereals": 119.9,
+      "oils": 122.5
+    },
+    {
+      "month": "2024-02",
+      "food": 117.4,
+      "cereals": 113.8,
+      "oils": 120.9
+    },
+    {
+      "month": "2024-03",
+      "food": 118.9,
+      "cereals": 110.9,
+      "oils": 130.6
+    },
+    {
+      "month": "2024-04",
+      "food": 119.2,
+      "cereals": 111.6,
+      "oils": 130.9
+    },
+    {
+      "month": "2024-05",
+      "food": 120.5,
+      "cereals": 118.7,
+      "oils": 127.8
+    },
+    {
+      "month": "2024-06",
+      "food": 121.0,
+      "cereals": 115.2,
+      "oils": 131.8
+    },
+    {
+      "month": "2024-07",
+      "food": 120.9,
+      "cereals": 110.7,
+      "oils": 135.0
+    },
+    {
+      "month": "2024-08",
+      "food": 121.7,
+      "cereals": 110.2,
+      "oils": 136.1
+    },
+    {
+      "month": "2024-09",
+      "food": 124.6,
+      "cereals": 113.6,
+      "oils": 142.4
+    },
+    {
+      "month": "2024-10",
+      "food": 126.9,
+      "cereals": 114.4,
+      "oils": 152.7
+    },
+    {
+      "month": "2024-11",
+      "food": 127.7,
+      "cereals": 111.4,
+      "oils": 164.1
+    },
+    {
+      "month": "2024-12",
+      "food": 127.3,
+      "cereals": 111.4,
+      "oils": 162.1
+    },
+    {
+      "month": "2025-01",
+      "food": 124.6,
+      "cereals": 111.8,
+      "oils": 153.0
+    },
+    {
+      "month": "2025-02",
+      "food": 126.6,
+      "cereals": 112.6,
+      "oils": 156.0
+    },
+    {
+      "month": "2025-03",
+      "food": 127.2,
+      "cereals": 109.7,
+      "oils": 161.8
+    },
+    {
+      "month": "2025-04",
+      "food": 128.2,
+      "cereals": 110.9,
+      "oils": 158.0
+    },
+    {
+      "month": "2025-05",
+      "food": 127.1,
+      "cereals": 109.0,
+      "oils": 152.2
+    },
+    {
+      "month": "2025-06",
+      "food": 128.1,
+      "cereals": 107.3,
+      "oils": 155.7
+    },
+    {
+      "month": "2025-07",
+      "food": 129.8,
+      "cereals": 106.5,
+      "oils": 166.8
+    },
+    {
+      "month": "2025-08",
+      "food": 130.0,
+      "cereals": 105.6,
+      "oils": 169.1
+    },
+    {
+      "month": "2025-09",
+      "food": 128.6,
+      "cereals": 104.8,
+      "oils": 167.9
+    },
+    {
+      "month": "2025-10",
+      "food": 126.4,
+      "cereals": 103.8,
+      "oils": 169.4
+    },
+    {
+      "month": "2025-11",
+      "food": 125.2,
+      "cereals": 105.6,
+      "oils": 165.0
+    },
+    {
+      "month": "2025-12",
+      "food": 124.5,
+      "cereals": 107.2,
+      "oils": 165.2
+    },
+    {
+      "month": "2026-01",
+      "food": 124.1,
+      "cereals": 107.5,
+      "oils": 168.6
+    },
+    {
+      "month": "2026-02",
+      "food": 125.5,
+      "cereals": 108.7,
+      "oils": 174.2
+    },
+    {
+      "month": "2026-03",
+      "food": 128.7,
+      "cereals": 110.4,
+      "oils": 183.1
+    },
+    {
+      "month": "2026-04",
+      "food": 131.0,
+      "cereals": 111.3,
+      "oils": 193.9
+    },
+    {
+      "month": "2026-05",
+      "food": 131.0,
+      "cereals": 114.2,
+      "oils": 185.0
+    },
+    {
+      "month": "2026-06",
+      "food": 130.1,
+      "cereals": 110.0,
+      "oils": 192.0
+    },
+    {
+      "month": "2026-07",
+      "food": 131.7,
+      "cereals": 113.8,
+      "oils": 195.7
+    },
+    {
+      "month": "2026-08",
+      "food": 134.0,
+      "cereals": 116.8,
+      "oils": 196.9
+    },
+    {
+      "month": "2026-09",
+      "food": 136.0,
+      "cereals": 122.8,
+      "oils": 198.6
+    }
+  ],
   "countries": [
     {
       "name": "Yemen",
@@ -821,20 +1038,18 @@
       "fx": "YER",
       "buyer": "Private importers",
       "ipc": {
-        "period_start": "2026-10-01T00:00:00",
-        "people_phase3plus": 3225544,
-        "share_phase3plus": 0.6,
-        "ipc_type": "second projection"
-      },
-      "psd": {
-        "wheat": null,
-        "corn": null
+        "period_start": "2026-03-01T00:00:00",
+        "people_phase3plus": 4980505,
+        "share_phase3plus": 0.47,
+        "ipc_type": "current",
+        "period_end": "2026-05-31T23:59:59"
       },
       "fx_rate": 236.539112,
       "fx_change_30d": null,
       "risk": 100,
       "risk_parts": {
-        "hunger": 100
+        "hunger": 100,
+        "coverage": "1/4"
       },
       "risk_band": "Severe",
       "tender": "No data"
@@ -846,45 +1061,18 @@
       "fx": "SDG",
       "buyer": "Private importers / aid",
       "ipc": {
-        "period_start": "2026-10-01T00:00:00",
-        "people_phase3plus": 3476798,
-        "share_phase3plus": 0.8,
-        "ipc_type": "second projection"
-      },
-      "psd": {
-        "wheat": null,
-        "corn": null
+        "period_start": "2026-02-01T00:00:00",
+        "people_phase3plus": 19466533,
+        "share_phase3plus": 0.41,
+        "ipc_type": "current",
+        "period_end": "2026-05-31T23:59:59"
       },
       "fx_rate": 458.917773,
       "fx_change_30d": null,
       "risk": 100,
       "risk_parts": {
-        "hunger": 100
-      },
-      "risk_band": "Severe",
-      "tender": "No data"
-    },
-    {
-      "name": "Nigeria",
-      "iso3": "NGA",
-      "fas": "NI",
-      "fx": "NGN",
-      "buyer": "Private millers",
-      "ipc": {
-        "period_start": "2026-06-01T00:00:00",
-        "people_phase3plus": 6634629,
-        "share_phase3plus": 0.45,
-        "ipc_type": "first projection"
-      },
-      "psd": {
-        "wheat": null,
-        "corn": null
-      },
-      "fx_rate": 1348.44829,
-      "fx_change_30d": null,
-      "risk": 100,
-      "risk_parts": {
-        "hunger": 100
+        "hunger": 100,
+        "coverage": "1/4"
       },
       "risk_band": "Severe",
       "tender": "No data"
@@ -896,47 +1084,20 @@
       "fx": "ETB",
       "buyer": "Government / aid",
       "ipc": {
-        "period_start": "2021-07-01T00:00:00",
-        "people_phase3plus": 7386290,
-        "share_phase3plus": 0.37,
-        "ipc_type": "first projection"
-      },
-      "psd": {
-        "wheat": null,
-        "corn": null
+        "period_start": "2021-05-01T00:00:00",
+        "people_phase3plus": 16756345,
+        "share_phase3plus": 0.3,
+        "ipc_type": "current",
+        "period_end": "2021-06-30T23:59:59"
       },
       "fx_rate": 161.60205,
       "fx_change_30d": null,
-      "risk": 92,
+      "risk": 75,
       "risk_parts": {
-        "hunger": 92
+        "hunger": 75,
+        "coverage": "1/4"
       },
       "risk_band": "Severe",
-      "tender": "No data"
-    },
-    {
-      "name": "Bangladesh",
-      "iso3": "BGD",
-      "fas": "BG",
-      "fx": "BDT",
-      "buyer": "Directorate of Food",
-      "ipc": {
-        "period_start": "2026-09-01T00:00:00",
-        "people_phase3plus": 18135373,
-        "share_phase3plus": 0.18,
-        "ipc_type": "first projection"
-      },
-      "psd": {
-        "wheat": null,
-        "corn": null
-      },
-      "fx_rate": 124.028893,
-      "fx_change_30d": null,
-      "risk": 45,
-      "risk_parts": {
-        "hunger": 45
-      },
-      "risk_band": "Elevated",
       "tender": "No data"
     },
     {
@@ -946,22 +1107,20 @@
       "fx": "PKR",
       "buyer": "TCP",
       "ipc": {
-        "period_start": "2026-04-01T00:00:00",
-        "people_phase3plus": 9156228,
-        "share_phase3plus": 0.17,
-        "ipc_type": "first projection"
-      },
-      "psd": {
-        "wheat": null,
-        "corn": null
+        "period_start": "2026-03-01T00:00:00",
+        "people_phase3plus": 10553872,
+        "share_phase3plus": 0.2,
+        "ipc_type": "current",
+        "period_end": "2026-03-31T23:59:59"
       },
       "fx_rate": 276.733456,
       "fx_change_30d": null,
-      "risk": 42,
+      "risk": 50,
       "risk_parts": {
-        "hunger": 42
+        "hunger": 50,
+        "coverage": "1/4"
       },
-      "risk_band": "Watch",
+      "risk_band": "Elevated",
       "tender": "No data"
     },
     {
@@ -971,20 +1130,64 @@
       "fx": "KES",
       "buyer": "Private millers",
       "ipc": {
-        "period_start": "2026-11-01T00:00:00",
-        "people_phase3plus": 2548552,
-        "share_phase3plus": 0.14,
-        "ipc_type": "first projection"
-      },
-      "psd": {
-        "wheat": null,
-        "corn": null
+        "period_start": "2026-07-01T00:00:00",
+        "people_phase3plus": 3086659,
+        "share_phase3plus": 0.17,
+        "ipc_type": "current",
+        "period_end": "2026-10-31T23:59:59"
       },
       "fx_rate": 129.93775,
       "fx_change_30d": null,
-      "risk": 35,
+      "risk": 42,
       "risk_parts": {
-        "hunger": 35
+        "hunger": 42,
+        "coverage": "1/4"
+      },
+      "risk_band": "Watch",
+      "tender": "No data"
+    },
+    {
+      "name": "Bangladesh",
+      "iso3": "BGD",
+      "fas": "BG",
+      "fx": "BDT",
+      "buyer": "Directorate of Food",
+      "ipc": {
+        "period_start": "2026-05-01T00:00:00",
+        "people_phase3plus": 15270914,
+        "share_phase3plus": 0.15,
+        "ipc_type": "current",
+        "period_end": "2026-08-31T23:59:59"
+      },
+      "fx_rate": 124.028893,
+      "fx_change_30d": null,
+      "risk": 37,
+      "risk_parts": {
+        "hunger": 37,
+        "coverage": "1/4"
+      },
+      "risk_band": "Watch",
+      "tender": "No data"
+    },
+    {
+      "name": "Nigeria",
+      "iso3": "NGA",
+      "fas": "NI",
+      "fx": "NGN",
+      "buyer": "Private millers",
+      "ipc": {
+        "period_start": "2025-10-01T00:00:00",
+        "people_phase3plus": 27212933,
+        "share_phase3plus": 0.12,
+        "ipc_type": "current",
+        "period_end": "2025-12-31T23:59:59"
+      },
+      "fx_rate": 1348.44829,
+      "fx_change_30d": null,
+      "risk": 30,
+      "risk_parts": {
+        "hunger": 30,
+        "coverage": "1/4"
       },
       "risk_band": "Watch",
       "tender": "No data"
@@ -996,10 +1199,6 @@
       "fx": "EGP",
       "buyer": "Mostakbal Misr",
       "ipc": null,
-      "psd": {
-        "wheat": null,
-        "corn": null
-      },
       "fx_rate": 55.960696,
       "fx_change_30d": null,
       "risk": null,
@@ -1014,10 +1213,6 @@
       "fx": "DZD",
       "buyer": "OAIC",
       "ipc": null,
-      "psd": {
-        "wheat": null,
-        "corn": null
-      },
       "fx_rate": 135.898342,
       "fx_change_30d": null,
       "risk": null,
@@ -1032,10 +1227,6 @@
       "fx": "SAR",
       "buyer": "GFSA",
       "ipc": null,
-      "psd": {
-        "wheat": null,
-        "corn": null
-      },
       "fx_rate": 3.75,
       "fx_change_30d": null,
       "risk": null,
@@ -1050,10 +1241,6 @@
       "fx": "MAD",
       "buyer": "Private importers",
       "ipc": null,
-      "psd": {
-        "wheat": null,
-        "corn": null
-      },
       "fx_rate": 9.84236,
       "fx_change_30d": null,
       "risk": null,
@@ -1068,10 +1255,6 @@
       "fx": "TND",
       "buyer": "ODC",
       "ipc": null,
-      "psd": {
-        "wheat": null,
-        "corn": null
-      },
       "fx_rate": 3.012975,
       "fx_change_30d": null,
       "risk": null,
@@ -1086,10 +1269,6 @@
       "fx": "TRY",
       "buyer": "TMO",
       "ipc": null,
-      "psd": {
-        "wheat": null,
-        "corn": null
-      },
       "fx_rate": 49.939434,
       "fx_change_30d": null,
       "risk": null,
@@ -1104,10 +1283,6 @@
       "fx": "IQD",
       "buyer": "Grain Board of Iraq",
       "ipc": null,
-      "psd": {
-        "wheat": null,
-        "corn": null
-      },
       "fx_rate": 1517.707928,
       "fx_change_30d": null,
       "risk": null,
@@ -1122,10 +1297,6 @@
       "fx": "IDR",
       "buyer": "Bulog / private millers",
       "ipc": null,
-      "psd": {
-        "wheat": null,
-        "corn": null
-      },
       "fx_rate": 18144.413865,
       "fx_change_30d": null,
       "risk": null,
