@@ -89,7 +89,7 @@ def main():
         countries, unmatched = universe.build(cfg, psd_all, psd_names, ipc_all)
         income = log.run("wb_income", lambda: wbincome.fetch(sess)) or {}
         for c in countries:
-            c["income"] = income.get(c["iso3"])
+            c["income"] = income.get(c["iso3"]) or {"TWN": "HIC"}.get(c["iso3"])  # not in WB list
         if not rw_app:
             log.skip("reliefweb", "RELIEFWEB_APPNAME not set")
 
