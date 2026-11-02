@@ -7077,19 +7077,6 @@
   "compared_with": null,
   "opportunities": [
     {
-      "iso3": "MEX",
-      "name": "Mexico",
-      "buyer": "",
-      "tender": "High",
-      "income": "UMC",
-      "wheat_kt": 5800,
-      "corn_kt": 27200,
-      "black_sea": false,
-      "fx_change_30d": null,
-      "score": 163.5,
-      "rank": 1
-    },
-    {
       "iso3": "VNM",
       "name": "Vietnam",
       "buyer": "",
@@ -7099,21 +7086,8 @@
       "corn_kt": 14600,
       "black_sea": true,
       "fx_change_30d": null,
-      "score": 155.8,
-      "rank": 2
-    },
-    {
-      "iso3": "JPN",
-      "name": "Japan",
-      "buyer": "",
-      "tender": "High",
-      "income": "HIC",
-      "wheat_kt": 5550,
-      "corn_kt": 15500,
-      "black_sea": false,
-      "fx_change_30d": null,
-      "score": 145.1,
-      "rank": 3
+      "score": 129.8,
+      "rank": 1
     },
     {
       "iso3": "IDN",
@@ -7125,8 +7099,8 @@
       "corn_kt": 1000,
       "black_sea": true,
       "fx_change_30d": null,
-      "score": 125.5,
-      "rank": 4
+      "score": 104.6,
+      "rank": 2
     },
     {
       "iso3": "PHL",
@@ -7138,34 +7112,8 @@
       "corn_kt": 3000,
       "black_sea": true,
       "fx_change_30d": null,
-      "score": 108.5,
-      "rank": 5
-    },
-    {
-      "iso3": "COL",
-      "name": "Colombia",
-      "buyer": "",
-      "tender": "High",
-      "income": "UMC",
-      "wheat_kt": 2000,
-      "corn_kt": 8600,
-      "black_sea": false,
-      "fx_change_30d": null,
-      "score": 92.7,
-      "rank": 6
-    },
-    {
-      "iso3": "BRA",
-      "name": "Brazil",
-      "buyer": "",
-      "tender": "High",
-      "income": "UMC",
-      "wheat_kt": 7500,
-      "corn_kt": 1800,
-      "black_sea": false,
-      "fx_change_30d": null,
-      "score": 86.8,
-      "rank": 7
+      "score": 90.4,
+      "rank": 3
     },
     {
       "iso3": "MYS",
@@ -7177,8 +7125,8 @@
       "corn_kt": 4150,
       "black_sea": true,
       "fx_change_30d": null,
-      "score": 85.4,
-      "rank": 8
+      "score": 71.2,
+      "rank": 4
     },
     {
       "iso3": "EGY",
@@ -7190,8 +7138,8 @@
       "corn_kt": 13500,
       "black_sea": true,
       "fx_change_30d": null,
-      "score": 85.4,
-      "rank": 9
+      "score": 71.2,
+      "rank": 5
     },
     {
       "iso3": "BGD",
@@ -7203,8 +7151,8 @@
       "corn_kt": 1650,
       "black_sea": true,
       "fx_change_30d": null,
-      "score": 81.2,
-      "rank": 10
+      "score": 67.7,
+      "rank": 6
     },
     {
       "iso3": "THA",
@@ -7216,34 +7164,8 @@
       "corn_kt": 1800,
       "black_sea": true,
       "fx_change_30d": null,
-      "score": 78.6,
-      "rank": 11
-    },
-    {
-      "iso3": "TWN",
-      "name": "Taiwan",
-      "buyer": "",
-      "tender": "High",
-      "income": "HIC",
-      "wheat_kt": 1390,
-      "corn_kt": 4550,
-      "black_sea": false,
-      "fx_change_30d": null,
-      "score": 77.1,
-      "rank": 12
-    },
-    {
-      "iso3": "PER",
-      "name": "Peru",
-      "buyer": "",
-      "tender": "High",
-      "income": "UMC",
-      "wheat_kt": 2150,
-      "corn_kt": 4600,
-      "black_sea": false,
-      "fx_change_30d": null,
-      "score": 73.9,
-      "rank": 13
+      "score": 65.5,
+      "rank": 7
     },
     {
       "iso3": "NGA",
@@ -7255,21 +7177,34 @@
       "corn_kt": 500,
       "black_sea": true,
       "fx_change_30d": null,
-      "score": 70.3,
-      "rank": 14
+      "score": 58.6,
+      "rank": 8
     },
     {
-      "iso3": "CHL",
-      "name": "Chile",
+      "iso3": "MEX",
+      "name": "Mexico",
+      "buyer": "",
+      "tender": "High",
+      "income": "UMC",
+      "wheat_kt": 5800,
+      "corn_kt": 27200,
+      "black_sea": false,
+      "fx_change_30d": null,
+      "score": 57.2,
+      "rank": 9
+    },
+    {
+      "iso3": "JPN",
+      "name": "Japan",
       "buyer": "",
       "tender": "High",
       "income": "HIC",
-      "wheat_kt": 1400,
-      "corn_kt": 2850,
+      "wheat_kt": 5550,
+      "corn_kt": 15500,
       "black_sea": false,
       "fx_change_30d": null,
-      "score": 65.2,
-      "rank": 15
+      "score": 50.8,
+      "rank": 10
     },
     {
       "iso3": "KEN",
@@ -7281,34 +7216,8 @@
       "corn_kt": 1800,
       "black_sea": true,
       "fx_change_30d": null,
-      "score": 59.7,
-      "rank": 16
-    },
-    {
-      "iso3": "GTM",
-      "name": "Guatemala",
-      "buyer": "",
-      "tender": "High",
-      "income": "UMC",
-      "wheat_kt": 900,
-      "corn_kt": 2000,
-      "black_sea": false,
-      "fx_change_30d": null,
-      "score": 48.5,
-      "rank": 17
-    },
-    {
-      "iso3": "UZB",
-      "name": "Uzbekistan",
-      "buyer": "",
-      "tender": "High",
-      "income": "LMC",
-      "wheat_kt": 4000,
-      "corn_kt": 75,
-      "black_sea": false,
-      "fx_change_30d": null,
-      "score": 47.9,
-      "rank": 18
+      "score": 49.7,
+      "rank": 11
     },
     {
       "iso3": "ISR",
@@ -7320,34 +7229,8 @@
       "corn_kt": 1450,
       "black_sea": true,
       "fx_change_30d": null,
-      "score": 44.7,
-      "rank": 19
-    },
-    {
-      "iso3": "ECU",
-      "name": "Ecuador",
-      "buyer": "",
-      "tender": "High",
-      "income": "UMC",
-      "wheat_kt": 2300,
-      "corn_kt": 150,
-      "black_sea": false,
-      "fx_change_30d": null,
-      "score": 44.5,
-      "rank": 20
-    },
-    {
-      "iso3": "VEN",
-      "name": "Venezuela",
-      "buyer": "",
-      "tender": "High",
-      "income": "LMC",
-      "wheat_kt": 1650,
-      "corn_kt": 1600,
-      "black_sea": false,
-      "fx_change_30d": null,
-      "score": 42.8,
-      "rank": 21
+      "score": 37.2,
+      "rank": 12
     },
     {
       "iso3": "LKA",
@@ -7359,8 +7242,8 @@
       "corn_kt": 250,
       "black_sea": true,
       "fx_change_30d": null,
-      "score": 42.5,
-      "rank": 22
+      "score": 35.4,
+      "rank": 13
     },
     {
       "iso3": "AZE",
@@ -7372,21 +7255,8 @@
       "corn_kt": 50,
       "black_sea": true,
       "fx_change_30d": null,
-      "score": 41.8,
-      "rank": 23
-    },
-    {
-      "iso3": "ZAF",
-      "name": "South Africa",
-      "buyer": "",
-      "tender": "High",
-      "income": "UMC",
-      "wheat_kt": 2150,
-      "corn_kt": 0,
-      "black_sea": false,
-      "fx_change_30d": null,
-      "score": 41.7,
-      "rank": 24
+      "score": 34.9,
+      "rank": 14
     },
     {
       "iso3": "YEM",
@@ -7398,7 +7268,137 @@
       "corn_kt": 600,
       "black_sea": true,
       "fx_change_30d": null,
-      "score": 41.4,
+      "score": 34.5,
+      "rank": 15
+    },
+    {
+      "iso3": "COL",
+      "name": "Colombia",
+      "buyer": "",
+      "tender": "High",
+      "income": "UMC",
+      "wheat_kt": 2000,
+      "corn_kt": 8600,
+      "black_sea": false,
+      "fx_change_30d": null,
+      "score": 32.4,
+      "rank": 16
+    },
+    {
+      "iso3": "BRA",
+      "name": "Brazil",
+      "buyer": "",
+      "tender": "High",
+      "income": "UMC",
+      "wheat_kt": 7500,
+      "corn_kt": 1800,
+      "black_sea": false,
+      "fx_change_30d": null,
+      "score": 30.4,
+      "rank": 17
+    },
+    {
+      "iso3": "TZA",
+      "name": "Tanzania",
+      "buyer": "",
+      "tender": "High",
+      "income": "LMC",
+      "wheat_kt": 1600,
+      "corn_kt": 30,
+      "black_sea": true,
+      "fx_change_30d": null,
+      "score": 30.3,
+      "rank": 18
+    },
+    {
+      "iso3": "ARE",
+      "name": "United Arab Emirates",
+      "buyer": "",
+      "tender": "Medium",
+      "income": "HIC",
+      "wheat_kt": 1850,
+      "corn_kt": 600,
+      "black_sea": true,
+      "fx_change_30d": null,
+      "score": 29.7,
+      "rank": 19
+    },
+    {
+      "iso3": "AGO",
+      "name": "Angola",
+      "buyer": "",
+      "tender": "High",
+      "income": "LMC",
+      "wheat_kt": 1350,
+      "corn_kt": 200,
+      "black_sea": true,
+      "fx_change_30d": null,
+      "score": 29.5,
+      "rank": 20
+    },
+    {
+      "iso3": "SEN",
+      "name": "Senegal",
+      "buyer": "",
+      "tender": "High",
+      "income": "LMC",
+      "wheat_kt": 1000,
+      "corn_kt": 500,
+      "black_sea": true,
+      "fx_change_30d": null,
+      "score": 29.0,
+      "rank": 21
+    },
+    {
+      "iso3": "LBY",
+      "name": "Libya",
+      "buyer": "",
+      "tender": "Medium",
+      "income": "UMC",
+      "wheat_kt": 1900,
+      "corn_kt": 900,
+      "black_sea": true,
+      "fx_change_30d": null,
+      "score": 28.6,
+      "rank": 22
+    },
+    {
+      "iso3": "TWN",
+      "name": "Taiwan",
+      "buyer": "",
+      "tender": "High",
+      "income": "HIC",
+      "wheat_kt": 1390,
+      "corn_kt": 4550,
+      "black_sea": false,
+      "fx_change_30d": null,
+      "score": 27.0,
+      "rank": 23
+    },
+    {
+      "iso3": "CMR",
+      "name": "Cameroon",
+      "buyer": "",
+      "tender": "High",
+      "income": "LMC",
+      "wheat_kt": 1225,
+      "corn_kt": 50,
+      "black_sea": true,
+      "fx_change_30d": null,
+      "score": 26.8,
+      "rank": 24
+    },
+    {
+      "iso3": "SDN",
+      "name": "Sudan",
+      "buyer": "Private importers / aid",
+      "tender": "High",
+      "income": "LIC",
+      "wheat_kt": 2700,
+      "corn_kt": 0,
+      "black_sea": true,
+      "fx_change_30d": null,
+      "score": 26.0,
       "rank": 25
     }
   ],
