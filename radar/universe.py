@@ -61,7 +61,7 @@ def build(cfg, psd_all, psd_names, ipc_all):
             continue
         iso_to_fas.setdefault(iso, fas)
         crops = psd_all.get(fas) or {}
-        imports = max((crops.get(k) or {}).get("imports", 0) for k in ("wheat", "corn")) if crops else 0
+        imports = max([(v or {}).get("imports", 0) for v in crops.values()] or [0])
         if imports >= min_kt and iso not in out:
             out[iso] = {"name": name, "iso3": iso, "fas": fas}
 
@@ -75,6 +75,7 @@ def build(cfg, psd_all, psd_names, ipc_all):
         c.setdefault("buyer", "")
         c["core"] = iso in core
         pc = pycountry.countries.get(alpha_3=iso)
+        c["num"] = pc.numeric if pc else None  # for the world map
         if pc and c["name"] == iso:
             c["name"] = getattr(pc, "common_name", pc.name)
     return list(out.values()), sorted(set(unmatched))

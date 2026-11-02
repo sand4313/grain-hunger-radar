@@ -36,6 +36,19 @@ def build(snap, out=ROOT):
         lines.append(f"- **{r['name']}** — risk {r['risk']}/100 ({r['risk_band']}). " + "; ".join(bits) + ".")
     lines.append("")
 
+    al, mv = snap.get("alerts") or [], snap.get("movers") or {}
+    if al or mv.get("up") or mv.get("down"):
+        lines += ["## What changed this week", ""]
+        for a in al[:8]:
+            lines.append(f"- **{a['country']}**: {a['text']}.")
+        ups = ", ".join(f"{m['name']} (+{m['change']})" for m in mv.get("up", [])[:5])
+        downs = ", ".join(f"{m['name']} ({m['change']})" for m in mv.get("down", [])[:5])
+        if ups:
+            lines.append(f"- Rising: {ups}.")
+        if downs:
+            lines.append(f"- Easing: {downs}.")
+        lines.append("")
+
     lines += ["## Tender watch", ""]
     hot = [r for r in rows if r["tender"].startswith(("High", "Medium"))]
     hot.sort(key=lambda r: (not r["tender"].startswith("High"), -(r["risk"] or 0)))
@@ -49,6 +62,15 @@ def build(snap, out=ROOT):
     elif len(hot) > 12:
         lines.append(f"- Plus {len(hot) - 12} more on the dashboard.")
     lines.append("")
+
+    opps = snap.get("opportunities") or []
+    if opps:
+        lines += ["## Where to offer grain", ""]
+        for o in opps[:5]:
+            route = ", Black Sea route" if o["black_sea"] else ""
+            lines.append(f"- **{o['name']}**: {o['tender'].split(',')[0].lower()} tender signal, "
+                         f"{o['wheat_kt']:,} kt wheat and {o['corn_kt']:,} kt corn imports{route}.")
+        lines.append("")
 
     lines += ["## Prices", ""]
     for name, pts in snap["global_prices"].items():

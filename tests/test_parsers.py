@@ -92,3 +92,21 @@ def test_income_scaling():
     poor = score.risk(dict(base, income="LIC"))[0]
     rich = score.risk(dict(base, income="HIC"))[0]
     assert poor == 100 and rich == 30
+
+
+def test_changes_and_offers():
+    from radar import changes, offers
+    prev = {"countries": [{"iso3": "EGY", "risk": 50, "risk_band": "Elevated", "tender": "Medium"}]}
+    snaps = {"2026-10-26": prev}
+    rows = [{"iso3": "EGY", "name": "Egypt", "risk": 72, "risk_band": "Severe", "tender": "High",
+             "fx_change_7d": 0.06, "income": "LMC", "psd": {"wheat": {"imports": 12000}, "corn": {"imports": 9000}}},
+            {"iso3": "VNM", "name": "Vietnam", "risk": 30, "risk_band": "Watch", "tender": "Low", "psd": {}}]
+    alerts, movers, base = changes.apply(rows, snaps, "2026-11-02")
+    kinds = {a["kind"] for a in alerts if a["iso3"] == "EGY"}
+    assert base == "2026-10-26" and {"band_up", "tender", "fx"} <= kinds
+    assert any(a["iso3"] == "VNM" and a["kind"] == "new" for a in alerts)
+    assert movers["up"][0]["change"] == 22
+    o = offers.rank(rows)
+    assert len(o) == 1 and o[0]["iso3"] == "EGY" and o[0]["black_sea"]
+    h = changes.history(snaps, rows, "2026-11-02")
+    assert [p["risk"] for p in h["EGY"]] == [50, 72]

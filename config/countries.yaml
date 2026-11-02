@@ -21,7 +21,7 @@ countries:
   - {name: Indonesia,    iso3: IDN, fas: ID, fx: IDR, buyer: "Bulog / private millers"}
 
 # Automatic expansion: besides the core list above, the radar watches every country
-# importing at least this much wheat OR corn (thousand tonnes, USDA latest year),
+# importing at least this much wheat, corn OR rice (thousand tonnes, USDA latest year),
 # plus every country with an IPC food-security analysis.
 universe:
   min_imports_kt: 300
@@ -30,6 +30,7 @@ universe:
 commodities:
   wheat: "0410000"
   corn: "0440000"
+  rice: "0422110"
 
 # Global price series pulled from the World Bank Pink Sheet (matched by name)
 global_prices:

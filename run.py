@@ -14,9 +14,10 @@ import traceback
 from datetime import date
 from pathlib import Path
 
+import pycountry
 import yaml
 
-from radar import brief, dashboard, score, store, universe
+from radar import brief, changes, dashboard, offers, score, store, universe
 from radar.http import session
 from radar.sources import enso, fao, fx, hapi, reliefweb, usda, wbincome, worldbank
 
@@ -70,6 +71,8 @@ def main():
         store.FX_HIST.write_text((FIX / "fx_history.csv").read_text())
         as_of = "2026-11-02"
         year = 2026
+        (store.DATA / "snapshots").mkdir(parents=True, exist_ok=True)
+        (store.DATA / "snapshots" / "2026-10-26.json").write_text((FIX / "prev_snapshot.json").read_text())
 
     # --- who to watch: core list + every big importer + every IPC country ----
     hapi_id = os.environ.get("HAPI_APP_IDENTIFIER")
@@ -113,6 +116,9 @@ def main():
     for c in countries:
         iso = c["iso3"]
         row = dict(c)
+        if not row.get("num"):
+            pc = pycountry.countries.get(alpha_3=iso)
+            row["num"] = pc.numeric if pc else None
         if args.offline:
             row.update(fix_c.get(iso, {}))
         else:
@@ -124,6 +130,7 @@ def main():
             row["ipc"] = None
         row["fx_rate"] = (g_fx or {}).get("rates", {}).get(c.get("fx"))
         row["fx_change_30d"] = store.fx_change(c["fx"], as_of) if c.get("fx") else None
+        row["fx_change_7d"] = store.fx_change(c["fx"], as_of, days=7) if c.get("fx") else None
         row["risk"], row["risk_parts"] = score.risk(row)
         row["risk_band"] = score.band(row["risk"])
         row["tender"] = score.tender_signal(row)
@@ -136,6 +143,13 @@ def main():
         for r in rows[:30]:
             r["reports"] = log.run("reliefweb", lambda iso=r["iso3"]: reliefweb.fetch(sess, iso, rw_app))
 
+    # --- what changed, who to sell to, tender log ----------------------------
+    snaps = changes.load_snapshots(store.DATA / "snapshots")
+    alerts, movers, base_date = changes.apply(rows, snaps, as_of)
+    hist = changes.history(snaps, rows, as_of)
+    opps = offers.rank(rows)
+    tenders = store.read_tenders(ROOT / "config" / "tenders.csv")
+
     snap = {
         "as_of": as_of,
         "mode": "offline-sample" if args.offline else "live",
@@ -145,9 +159,14 @@ def main():
         "fao_index": (g_fao or {}).get("series", []),
         "countries": rows,
         "unmatched_names": unmatched,
+        "alerts": alerts,
+        "movers": movers,
+        "compared_with": base_date,
+        "opportunities": opps,
+        "tenders": tenders,
     }
     store.write_snapshot(snap)
-    dashboard.build(snap, out)
+    dashboard.build(snap, out, history=hist)
     brief.build(snap, out)
 
     print(json.dumps(log.status, indent=2))

@@ -58,3 +58,12 @@ def write_snapshot(snap):
 
 def today():
     return date.today().isoformat()
+
+
+def read_tenders(path):
+    """Manual tender log (config/tenders.csv), newest first."""
+    if not Path(path).exists():
+        return []
+    with open(path) as f:
+        rows = [r for r in csv.DictReader(f) if (r.get("date") or "").strip()]
+    return sorted(rows, key=lambda r: r["date"], reverse=True)

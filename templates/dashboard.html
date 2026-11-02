@@ -4,124 +4,266 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Grain & Hunger Radar</title>
-<style>
-:root{--bg:#fbfaf6;--card:#fff;--ink:#14231c;--muted:#5d6b63;--line:#e4e0d4;--accent:#14352A;--wheat:#D9A441;
---sev:#b42318;--ele:#c4661f;--wat:#a8871c;--low:#2f7d4f}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1512;--card:#161e1a;--ink:#e9efe9;--muted:#9aa89f;--line:#26312b;--accent:#9fd3b4;--wheat:#e4b95e}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Lato,sans-serif}
-header{padding:28px 16px 8px;max-width:1100px;margin:auto}
-h1{margin:0;font-size:28px;letter-spacing:-.01em}h1 span{color:var(--wheat)}
-.sub{color:var(--muted);margin-top:4px}
-main{max-width:1100px;margin:auto;padding:8px 16px 40px}
-.sample{background:#fff3cd;color:#5c4400;border:1px solid #e9d38a;padding:10px 12px;border-radius:8px;margin:12px 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
-.k{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-.v{font-size:24px;font-weight:700;margin-top:2px}.d{font-size:13px;color:var(--muted)}
-h2{font-size:18px;margin:28px 0 10px}
-.tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px}
-table{border-collapse:collapse;width:100%;min-width:720px}
-th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);font-size:14px;white-space:nowrap}
-th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
-td.num{text-align:right;font-variant-numeric:tabular-nums}
-.bar{display:inline-block;height:8px;border-radius:4px;background:var(--line);width:90px;vertical-align:middle;margin-right:8px;overflow:hidden}
-.bar i{display:block;height:100%}
-.pill{font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid currentColor}
-.Severe{color:var(--sev)}.Elevated{color:var(--ele)}.Watch{color:var(--wat)}.Low{color:var(--low)}
-.spark{width:100%;height:46px;display:block;margin-top:6px}
-ul.src{padding-left:18px;color:var(--muted);font-size:13px}
-footer{color:var(--muted);font-size:12px;max-width:1100px;margin:auto;padding:0 16px 30px}
-a{color:var(--accent)}
-</style>
+<meta name="description" content="Daily food-security and grain-import risk for 100+ countries.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>Grain <span>&</span> Hunger Radar</h1>
-  <div class="sub" id="asof"></div>
-</header>
-<main>
-  <div id="sample"></div>
-  <div class="grid" id="kpis"></div>
-  <h2>Country watchlist <span class="d" id="cnt"></span></h2>
-  <input id="q" placeholder="Filter by country or buyer" style="width:100%;max-width:340px;padding:9px 12px;margin:0 0 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit">
+<header class="mast"><div class="wrap">
+  <a class="brand" href="./">Grain <b>&amp;</b> Hunger Radar</a>
+  <span class="asof" id="asof"></span>
+</div></header>
+<nav class="tabs" aria-label="Sections"><div class="wrap" role="tablist">
+  <button role="tab" data-tab="overview" aria-selected="true">Overview</button>
+  <button role="tab" data-tab="watch">Watchlist</button>
+  <button role="tab" data-tab="opps">Export opportunities</button>
+  <button role="tab" data-tab="prices">Prices</button>
+  <button role="tab" data-tab="tenders">Tenders</button>
+  <button role="tab" data-tab="calc">CIF calculator</button>
+  <button role="tab" data-tab="method">Method</button>
+</div></nav>
+
+<main class="wrap">
+<div id="sample"></div>
+
+<section role="tabpanel" id="overview">
+  <div class="hero">
+    <div class="mapbox">
+      <svg id="map" viewBox="0 0 960 470" role="img" aria-label="World map coloured by food and grain risk"></svg>
+      <div class="tip" id="tip"></div>
+      <div class="legend" id="legend"></div>
+    </div>
+    <div class="side">
+      <div class="panel"><div class="facts" id="facts"></div></div>
+      <div class="panel"><h3>Alerts since last week</h3><ul class="plain" id="alerts"></ul></div>
+    </div>
+  </div>
+  <h2>Biggest moves this week</h2>
+  <div class="movers">
+    <div class="panel"><h3>Risk rising</h3><ul class="plain" id="mUp"></ul></div>
+    <div class="panel"><h3>Risk easing</h3><ul class="plain" id="mDown"></ul></div>
+  </div>
+</section>
+
+<section role="tabpanel" id="watch" hidden>
+  <h2>Every country we watch</h2>
+  <p class="lede">Sorted by risk. Click a country for its full page. Tap a column name to sort.</p>
+  <div class="tools">
+    <input id="q" type="search" placeholder="Find a country or buyer" aria-label="Find a country or buyer">
+    <select id="band" aria-label="Risk band"><option value="">All risk bands</option><option>Severe</option><option>Elevated</option><option>Watch</option><option>Low</option></select>
+    <select id="tsig" aria-label="Tender signal"><option value="">Any tender signal</option><option value="High">High</option><option value="Medium">Medium</option><option value="Low">Low</option></select>
+  </div>
+  <p class="muted" id="cnt"></p>
   <div class="tablewrap"><table id="tbl"><thead><tr>
-    <th>Country</th><th>Risk</th><th>Band</th><th>IPC 3+</th><th class="num">FX 30d</th>
-    <th class="num">Wheat stocks/use</th><th class="num">Import dep.</th><th>Tender signal</th><th>Income</th><th>Buyer</th>
+    <th><button data-k="name">Country</button></th><th><button data-k="risk">Risk</button></th><th class="n"><button data-k="risk_change">7 days</button></th>
+    <th>Band</th><th class="n"><button data-k="ipc">IPC 3+</button></th><th class="n"><button data-k="fx">FX 30 days</button></th>
+    <th class="n"><button data-k="stu">Wheat stocks/use</button></th><th class="n"><button data-k="imp">Wheat imports, kt</button></th><th>Tender signal</th><th>Income</th>
   </tr></thead><tbody></tbody></table></div>
-  <h2>Global prices</h2>
-  <div class="grid" id="prices"></div>
-  <h2>Latest reports</h2>
-  <div id="reports"></div>
-  <h2>Data sources</h2>
-  <ul class="src" id="sources"></ul>
+</section>
+
+<section role="tabpanel" id="opps" hidden>
+  <h2>Who to offer grain to this week</h2>
+  <p class="lede">Countries likely to buy soon, that import real volume and can pay. Natural Black Sea destinations get a boost. Built for a Ukrainian or Black Sea origin seller.</p>
+  <div class="tablewrap"><table id="otbl"><thead><tr>
+    <th>Rank</th><th>Country</th><th>Tender signal</th><th class="n">Wheat imports, kt</th><th class="n">Corn imports, kt</th><th>Black Sea route</th><th>Income</th><th>Buyer</th>
+  </tr></thead><tbody></tbody></table></div>
+</section>
+
+<section role="tabpanel" id="prices" hidden>
+  <h2>World prices</h2>
+  <p class="lede">Monthly averages from the World Bank and FAO.</p>
+  <div class="grid" id="pgrid"></div>
+  <h2>Climate</h2>
+  <div class="panel" id="enso"></div>
+</section>
+
+<section role="tabpanel" id="tenders" hidden>
+  <h2>Tender log</h2>
+  <p class="lede">State purchases recorded by hand from public announcements, so you can check the radar's tender signals against what actually happened.</p>
+  <div id="tlist"></div>
+</section>
+
+<section role="tabpanel" id="calc" hidden>
+  <h2>Delivered price calculator</h2>
+  <p class="lede">Turn a FOB offer into a CFR and CIF price, and see how it compares with the world wheat price.</p>
+  <form class="calc" id="cform" onsubmit="return false">
+    <label>FOB price, USD/t<input type="number" id="fob" value="230" step="0.5" inputmode="decimal"></label>
+    <label>Freight, USD/t<input type="number" id="frt" value="28" step="0.5" inputmode="decimal"></label>
+    <label>Insurance, % of CFR<input type="number" id="ins" value="0.15" step="0.01" inputmode="decimal"></label>
+    <label>Finance, days<input type="number" id="days" value="45" step="1" inputmode="numeric"></label>
+    <label>Finance rate, % a year<input type="number" id="rate" value="8" step="0.1" inputmode="decimal"></label>
+  </form>
+  <div class="result panel" id="cres"></div>
+</section>
+
+<section role="tabpanel" id="method" hidden>
+  <h2>How the score works</h2>
+  <div class="panel" style="max-width:760px">
+    <p>Each country gets a risk score from 0 to 100, built from four parts. Parts without data are left out and the rest re-weighted, so the coverage figure next to each score shows how many of the four were available.</p>
+    <ul>
+      <li><b>Hunger, 35%:</b> share of people in IPC Phase 3 or worse. 40% scores the maximum.</li>
+      <li><b>Currency, 20%:</b> loss against the dollar over 30 days. A 10% fall scores the maximum.</li>
+      <li><b>Wheat stocks, 25%:</b> ending stocks as a share of a year's use. Below 0.10 scores the maximum, above 0.40 scores zero.</li>
+      <li><b>Import dependence, 20%:</b> imports as a share of use.</li>
+    </ul>
+    <p>Stocks and imports count for less in richer countries, because a wealthy importer with thin stocks buys more instead of going hungry: high income counts 30%, upper-middle 70%.</p>
+    <p>The tender signal is separate: high when a country imports at least 40% of its wheat and holds 0.20 or less of a year's use in stock. It is a heuristic, not a forecast.</p>
+    <p class="muted" id="srcs"></p>
+  </div>
+</section>
 </main>
-<footer>Risk score is a transparent heuristic (hunger, currency, stocks, import dependence), not a forecast.
-Sources: IPC via HDX HAPI, USDA FAS PSD, World Bank Pink Sheet, FAO, NOAA CPC, ReliefWeb.
-<a href="https://www.exchangerate-api.com">Rates By Exchange Rate API</a>.</footer>
+
+<footer><div class="wrap">Sources: IPC via HDX HAPI, USDA FAS PSD, World Bank, FAO, NOAA CPC, ReliefWeb. <a href="https://www.exchangerate-api.com">Rates By Exchange Rate API</a>. Map: Natural Earth via world-atlas.</div></footer>
+
+<script src="vendor/d3.min.js"></script>
+<script src="vendor/topojson-client.min.js"></script>
 <script id="data" type="application/json">__DATA__</script>
 <script>
 const S = JSON.parse(document.getElementById('data').textContent);
 const $ = id => document.getElementById(id);
-const pct = x => x == null ? '—' : (x*100>0?'+':'') + (x*100).toFixed(1) + '%';
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-$('asof').textContent = 'Data as of ' + S.as_of;
-if (S.mode !== 'live') $('sample').innerHTML = '<div class="sample">Sample data from an offline test run — not real figures.</div>';
+const pct = (x, d=1) => x == null ? '—' : (x > 0 ? '+' : '') + (x*100).toFixed(d) + '%';
+const num = x => x == null ? '—' : Math.round(x).toLocaleString();
+const INC = {HIC:'High', UMC:'Upper-middle', LMC:'Lower-middle', LIC:'Low'};
+const RAMP = ['var(--r0)','var(--r1)','var(--r2)','var(--r3)','var(--r4)'];
+const rampOf = r => r == null ? 'var(--none)' : RAMP[r >= 85 ? 4 : r >= 70 ? 3 : r >= 45 ? 2 : r >= 25 ? 1 : 0];
+const C = S.countries;
+const link = c => `<a href="c/${c.iso3}.html">${esc(c.name)}</a>`;
 
-const C = S.countries, scored = C.filter(c => c.risk != null);
-const hot = C.filter(c => /^(High|Medium)/.test(c.tender));
-const k = [
-  ['Countries watched', C.length, ''],
-  ['Severe or elevated', scored.filter(c => c.risk >= 45).length, 'risk score 45+'],
-  ['Tender signals', hot.length, hot.map(c => c.name).slice(0,3).join(', ')],
-  ['ENSO', S.enso ? S.enso.phase : '—', S.enso ? 'ONI ' + S.enso.latest.anom.toFixed(1) : ''],
-];
-$('kpis').innerHTML = k.map(([a,b,c]) => `<div class="card"><div class="k">${a}</div><div class="v">${esc(b)}</div><div class="d">${esc(c)}</div></div>`).join('');
+$('asof').textContent = `Data for ${S.as_of}, ${C.length} countries`;
+if (S.mode !== 'live') $('sample').innerHTML = '<div class="note">This page shows sample data from a test run, not real figures.</div>';
 
-const colr = b => ({Severe:'var(--sev)',Elevated:'var(--ele)',Watch:'var(--wat)',Low:'var(--low)'}[b] || 'var(--muted)');
-const rowHtml = c => {
-  const w = (c.psd || {}).wheat || {}, ipc = c.ipc;
-  return `<tr><td><b>${esc(c.name)}</b></td>
-  <td><span class="bar"><i style="width:${c.risk||0}%;background:${colr(c.risk_band)}"></i></span>${c.risk ?? '—'}${c.risk_parts && c.risk_parts.coverage ? ` <span class="d" title="data points available">${c.risk_parts.coverage}</span>` : ''}</td>
-  <td><span class="pill ${c.risk_band}">${c.risk_band}</span></td>
-  <td>${ipc ? (ipc.share_phase3plus*100).toFixed(0)+'%' : '—'}</td>
-  <td class="num">${pct(c.fx_change_30d)}</td>
-  <td class="num">${w.stocks_to_use != null ? w.stocks_to_use.toFixed(2) : '—'}</td>
-  <td class="num">${w.import_dependence != null ? (w.import_dependence*100).toFixed(0)+'%' : '—'}</td>
-  <td>${esc(c.tender)}</td><td>${esc({HIC:'High',UMC:'Upper-mid',LMC:'Lower-mid',LIC:'Low'}[c.income] || '—')}</td><td>${esc(c.buyer)}</td></tr>`;
-};
-function drawTable() {
-  const q = $('q').value.trim().toLowerCase();
-  const list = C.filter(c => !q || (c.name + ' ' + (c.buyer || '')).toLowerCase().includes(q));
-  $('tbl').querySelector('tbody').innerHTML = list.map(rowHtml).join('');
-  $('cnt').textContent = `· ${list.length} of ${C.length}`;
+/* tabs */
+const tabs = [...document.querySelectorAll('[role=tab]')];
+function show(id, push=true) {
+  tabs.forEach(t => t.setAttribute('aria-selected', t.dataset.tab === id));
+  document.querySelectorAll('[role=tabpanel]').forEach(p => p.hidden = p.id !== id);
+  if (push) history.replaceState(null, '', '#' + id);
 }
-$('q').addEventListener('input', drawTable);
+tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.tab)));
+if (location.hash && $(location.hash.slice(1))) show(location.hash.slice(1), false);
+
+/* overview facts */
+const severe = C.filter(c => c.risk_band === 'Severe').length;
+const high = C.filter(c => c.tender.startsWith('High')).length;
+const people = C.reduce((a, c) => a + ((c.ipc || {}).people_phase3plus || 0), 0);
+$('facts').innerHTML = [
+  [severe, 'countries at severe risk'],
+  [high, 'with a high tender signal'],
+  [people ? (people/1e6).toFixed(0) + 'm' : '—', 'people in IPC crisis or worse'],
+  [S.enso ? S.enso.phase : '—', S.enso ? `ONI ${S.enso.latest.anom.toFixed(1)}` : 'El Niño status'],
+].map(([b, s]) => `<div class="fact"><b>${esc(b)}</b><span>${esc(s)}</span></div>`).join('');
+
+const AL = {band_up:'▲', tender:'●', fx:'▼', new:'+'};
+$('alerts').innerHTML = (S.alerts || []).slice(0, 12).map(a =>
+  `<li>${AL[a.kind] || ''} <a href="c/${a.iso3}.html">${esc(a.country)}</a>: ${esc(a.text)}</li>`).join('')
+  || `<li class="muted">${S.compared_with ? 'Nothing crossed a threshold since ' + esc(S.compared_with) + '.' : 'Alerts start once a week of history has built up.'}</li>`;
+const mv = (list, cls) => list.map(m => `<li><a href="c/${m.iso3}.html">${esc(m.name)}</a> <span class="${cls}">${m.change > 0 ? '+' : ''}${m.change}</span> <span class="muted">now ${m.risk}</span></li>`).join('');
+$('mUp').innerHTML = mv((S.movers || {}).up || [], 'up') || '<li class="muted">No change data yet.</li>';
+$('mDown').innerHTML = mv((S.movers || {}).down || [], 'down') || '<li class="muted">No change data yet.</li>';
+
+/* map */
+$('legend').innerHTML = [['Low','r0'],['Watch','r1'],['Elevated','r2'],['Severe','r3'],['Extreme, 85+','r4'],['Not watched','none']]
+  .map(([t, v]) => `<span><i style="background:var(--${v})"></i>${t}</span>`).join('');
+(async () => {
+  if (!window.d3 || !window.topojson) { $('map').outerHTML = '<p class="muted">Map unavailable.</p>'; return; }
+  const world = await d3.json('vendor/countries-110m.json');
+  const byNum = Object.fromEntries(C.filter(c => c.num).map(c => [String(+c.num), c]));
+  const feats = topojson.feature(world, world.objects.countries).features.filter(f => f.id !== '010');
+  const proj = d3.geoEqualEarth().fitSize([960, 470], {type: 'FeatureCollection', features: feats});
+  const path = d3.geoPath(proj), svg = d3.select('#map'), tip = $('tip');
+  svg.selectAll('path').data(feats).join('path')
+    .attr('class', 'c').attr('d', path)
+    .attr('fill', f => { const c = byNum[String(+f.id)]; return c ? rampOf(c.risk) : 'var(--none)'; })
+    .attr('tabindex', f => byNum[String(+f.id)] ? 0 : null)
+    .attr('aria-label', f => { const c = byNum[String(+f.id)]; return c ? `${c.name}, risk ${c.risk ?? 'no data'}` : null; })
+    .on('mousemove', (e, f) => {
+      const c = byNum[String(+f.id)], box = $('map').getBoundingClientRect();
+      tip.style.display = 'block';
+      tip.style.left = (e.clientX - box.left + 12) + 'px'; tip.style.top = (e.clientY - box.top + 12) + 'px';
+      tip.textContent = c ? `${c.name}: risk ${c.risk ?? '—'}, tender ${c.tender}` : (f.properties.name + ': not watched');
+    })
+    .on('mouseleave', () => tip.style.display = 'none')
+    .on('click keydown', (e, f) => { const c = byNum[String(+f.id)]; if (c && (e.type === 'click' || e.key === 'Enter')) location.href = `c/${c.iso3}.html`; });
+})();
+
+/* watchlist */
+const val = (c, k) => ({name: c.name, risk: c.risk ?? -1, risk_change: c.risk_change ?? -999,
+  ipc: (c.ipc || {}).share_phase3plus ?? -1, fx: c.fx_change_30d ?? -9,
+  stu: ((c.psd || {}).wheat || {}).stocks_to_use ?? 9, imp: ((c.psd || {}).wheat || {}).imports ?? -1})[k];
+let sortK = 'risk', sortDir = -1;
+function drawTable() {
+  const q = $('q').value.trim().toLowerCase(), b = $('band').value, t = $('tsig').value;
+  const list = C.filter(c => (!q || (c.name + ' ' + (c.buyer || '')).toLowerCase().includes(q))
+    && (!b || c.risk_band === b) && (!t || c.tender.startsWith(t)))
+    .sort((a, z) => { const x = val(a, sortK), y = val(z, sortK); return (x > y ? 1 : x < y ? -1 : 0) * sortDir; });
+  $('cnt').textContent = `Showing ${list.length} of ${C.length}`;
+  $('tbl').tBodies[0].innerHTML = list.map(c => {
+    const w = (c.psd || {}).wheat || {}, ch = c.risk_change;
+    return `<tr><td>${link(c)}</td>
+      <td><span class="meter"><i style="width:${c.risk || 0}%;background:${rampOf(c.risk)}"></i></span>${c.risk ?? '—'} <span class="muted">${(c.risk_parts || {}).coverage || ''}</span></td>
+      <td class="n ${ch > 0 ? 'up' : ch < 0 ? 'down' : ''}">${ch == null ? '—' : (ch > 0 ? '+' : '') + ch}</td>
+      <td><span class="chip b-${c.risk_band}">${esc(c.risk_band)}</span></td>
+      <td class="n">${c.ipc ? (c.ipc.share_phase3plus*100).toFixed(0) + '%' : '—'}</td>
+      <td class="n">${pct(c.fx_change_30d)}</td>
+      <td class="n">${w.stocks_to_use != null ? w.stocks_to_use.toFixed(2) : '—'}</td>
+      <td class="n">${num(w.imports)}</td>
+      <td>${esc(c.tender)}</td><td>${INC[c.income] || '—'}</td></tr>`;
+  }).join('');
+}
+['q','band','tsig'].forEach(id => $(id).addEventListener('input', drawTable));
+document.querySelectorAll('#tbl th button').forEach(b => b.addEventListener('click', () => {
+  sortDir = sortK === b.dataset.k ? -sortDir : (b.dataset.k === 'name' || b.dataset.k === 'stu' ? 1 : -1);
+  sortK = b.dataset.k; drawTable();
+}));
 drawTable();
 
-function spark(pts, key) {
-  const v = pts.map(p => p[key]).filter(x => x != null);
+/* export opportunities */
+$('otbl').tBodies[0].innerHTML = (S.opportunities || []).map(o => `<tr><td>${o.rank}</td><td><a href="c/${o.iso3}.html">${esc(o.name)}</a></td>
+  <td>${esc(o.tender)}</td><td class="n">${num(o.wheat_kt)}</td><td class="n">${num(o.corn_kt)}</td>
+  <td>${o.black_sea ? 'Yes' : 'No'}</td><td>${INC[o.income] || '—'}</td><td>${esc(o.buyer)}</td></tr>`).join('')
+  || '<tr><td colspan="8" class="muted">No country meets the criteria today.</td></tr>';
+
+/* prices */
+function spark(v) {
   if (v.length < 2) return '';
-  const lo = Math.min(...v), hi = Math.max(...v), W = 200, H = 46;
-  const d = v.map((y,i) => `${i? 'L':'M'}${(i/(v.length-1)*W).toFixed(1)},${(H-3-(y-lo)/(hi-lo||1)*(H-6)).toFixed(1)}`).join('');
-  return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><path d="${d}" fill="none" stroke="var(--accent)" stroke-width="1.6"/></svg>`;
+  const lo = Math.min(...v), hi = Math.max(...v), W = 220, H = 48;
+  const d = v.map((y, i) => `${i ? 'L' : 'M'}${(i/(v.length-1)*W).toFixed(1)},${(H-4-(y-lo)/(hi-lo||1)*(H-8)).toFixed(1)}`).join('');
+  return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true"><path d="${d}" fill="none" stroke="var(--field-2)" stroke-width="1.8"/></svg>`;
 }
-const priceCards = Object.entries(S.global_prices).map(([n, pts]) => {
-  const a = pts.at(-2)?.value, b = pts.at(-1)?.value;
-  return `<div class="card"><div class="k">${esc(n)}</div><div class="v">${b?.toLocaleString(undefined,{maximumFractionDigits:2}) ?? '—'}</div>
-  <div class="d">USD/t · ${a ? pct(b/a-1) + ' m/m · ' : ''}${esc(pts.at(-1)?.month || '')}</div>${spark(pts,'value')}</div>`;
+const cards = Object.entries(S.global_prices).map(([n, p]) => {
+  const a = p.at(-2)?.value, b = p.at(-1)?.value;
+  return `<div class="panel price"><div class="muted">${esc(n)}, USD/t</div><b>${b?.toLocaleString(undefined, {maximumFractionDigits: 1}) ?? '—'}</b>
+    <div class="muted">${a ? pct(b/a - 1) + ' on the month, ' : ''}${esc(p.at(-1)?.month || '')}</div>${spark(p.map(x => x.value))}</div>`;
 });
-if (S.fao_index.length) {
-  const f = S.fao_index, a = f.at(-2)?.food, b = f.at(-1)?.food;
-  priceCards.push(`<div class="card"><div class="k">FAO Food Price Index</div><div class="v">${b?.toFixed(1)}</div><div class="d">${pct(b/a-1)} m/m · ${esc(f.at(-1).month)}</div>${spark(f,'food')}</div>`);
+if ((S.fao_index || []).length) {
+  const f = S.fao_index, a = f.at(-2).food, b = f.at(-1).food;
+  cards.push(`<div class="panel price"><div class="muted">FAO Food Price Index</div><b>${b.toFixed(1)}</b><div class="muted">${pct(b/a - 1)} on the month, ${esc(f.at(-1).month)}</div>${spark(f.map(x => x.food))}</div>`);
 }
-$('prices').innerHTML = priceCards.join('') || '<div class="card d">No price data this run.</div>';
+$('pgrid').innerHTML = cards.join('') || '<p class="muted">No price data in this run.</p>';
+$('enso').innerHTML = S.enso ? `<b>${esc(S.enso.phase)}</b>, Oceanic Niño Index ${S.enso.latest.anom.toFixed(2)} for ${esc(S.enso.latest.season)} ${S.enso.latest.year}.
+  <span class="muted">El Niño shifts rainfall across East and southern Africa, South and Southeast Asia and Australia; the worst food effects usually come in the following lean season.</span>` : 'No climate data in this run.';
 
-const reps = C.flatMap(c => (c.reports || []).map(r => ({...r, country: c.name}))).sort((a,b) => (b.date||'').localeCompare(a.date||'')).slice(0, 12);
-$('reports').innerHTML = reps.length ? '<div class="card"><ul style="margin:0;padding-left:18px">' + reps.map(r =>
-  `<li><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a> <span class="d">· ${esc(r.country)} · ${esc(r.source)} · ${esc(r.date)}</span></li>`).join('') + '</ul></div>'
-  : '<div class="card d">No reports this run (ReliefWeb appname not set yet).</div>';
+/* tenders */
+const T = S.tenders || [];
+$('tlist').innerHTML = T.length ? `<div class="tablewrap"><table><thead><tr><th>Date</th><th>Country</th><th>Buyer</th><th>Commodity</th><th class="n">Tonnes</th><th class="n">USD/t</th><th>Basis</th><th>Result</th></tr></thead><tbody>${
+  T.map(t => `<tr><td>${esc(t.date)}</td><td><a href="c/${esc(t.country_iso3)}.html">${esc(t.country_iso3)}</a></td><td>${esc(t.buyer)}</td><td>${esc(t.commodity)}</td><td class="n">${num(+t.tonnes || null)}</td><td class="n">${esc(t.price_usd_t)}</td><td>${esc(t.basis)}</td><td>${t.source_url ? `<a href="${esc(t.source_url)}" target="_blank" rel="noopener">${esc(t.result || 'source')}</a>` : esc(t.result)}</td></tr>`).join('')}</tbody></table></div>`
+  : '<div class="panel">No tenders logged yet. Add one line per tender to <b>config/tenders.csv</b> in the GitHub repo and it appears here the next morning.</div>';
 
-$('sources').innerHTML = Object.entries(S.sources).map(([k,v]) => `<li><b>${esc(k)}</b>: ${esc(v)}</li>`).join('');
+/* calculator */
+const wheat = (S.global_prices['Wheat, US HRW'] || []).at(-1);
+function calc() {
+  const g = id => parseFloat($(id).value) || 0;
+  const cfr = g('fob') + g('frt'), ins = cfr * g('ins') / 100, fin = g('fob') * g('rate') / 100 * g('days') / 365;
+  const cif = cfr + ins + fin;
+  $('cres').innerHTML = `<div class="two"><div><div class="muted">CFR</div><b>$${cfr.toFixed(2)}/t</b></div>
+    <div><div class="muted">CIF with finance</div><b>$${cif.toFixed(2)}/t</b></div></div>
+    <p class="muted">Insurance $${ins.toFixed(2)}/t, finance $${fin.toFixed(2)}/t.${wheat ? ` World wheat (US HRW) was $${wheat.value}/t FOB in ${wheat.month}, so your FOB is ${pct(g('fob')/wheat.value - 1)} against it.` : ''}</p>`;
+}
+$('cform').addEventListener('input', calc); calc();
+
+$('srcs').textContent = 'Data sources in this run: ' + Object.entries(S.sources).map(([k, v]) => `${k} ${v.startsWith('ok') ? 'ok' : v}`).join('; ') + '.';
 </script>
 </body>
 </html>
