@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-02",
+  "as_of": "2026-11-03",
   "mode": "live",
   "sources": {
     "usda_bulk": "ok",
@@ -1098,9 +1098,9 @@
           "production_vs_avg": 0.977
         }
       },
-      "fx_rate": 236.539112,
-      "fx_change_30d": -0.0008,
-      "fx_change_7d": 0.0003,
+      "fx_rate": 236.193202,
+      "fx_change_30d": -0.0007,
+      "fx_change_7d": 0.0001,
       "risk": 79,
       "risk_parts": {
         "hunger": 100,
@@ -1127,7 +1127,7 @@
         "imports": 600,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Sudan",
@@ -1171,9 +1171,9 @@
           "production_vs_avg": 0.696
         }
       },
-      "fx_rate": 458.917773,
-      "fx_change_30d": 0.0001,
-      "fx_change_7d": 0.0001,
+      "fx_rate": 454.426707,
+      "fx_change_30d": 0.0,
+      "fx_change_7d": -0.0,
       "risk": 78,
       "risk_parts": {
         "hunger": 100,
@@ -1200,166 +1200,7 @@
         "imports": 2700,
         "crop": "wheat"
       },
-      "risk_change": null
-    },
-    {
-      "name": "Papua New Guinea",
-      "iso3": "PNG",
-      "fas": "PP",
-      "fx": "PGK",
-      "buyer": "",
-      "core": false,
-      "num": "598",
-      "income": "LMC",
-      "ipc": null,
-      "psd": {
-        "rice": {
-          "consumption": 0.0,
-          "production": 0.0,
-          "imports": 0.0,
-          "ending_stocks": 0.0,
-          "market_year": 2026,
-          "avg5_imports": 0.0
-        },
-        "wheat": {
-          "production": 0.0,
-          "imports": 375.0,
-          "ending_stocks": 24.0,
-          "consumption": 400.0,
-          "stocks_to_use": 0.06,
-          "import_dependence": 0.938,
-          "market_year": 2026,
-          "begin_stu": 0.132,
-          "avg5_stu": 0.191,
-          "avg5_imports": 348.4,
-          "prev_imports": 370.0,
-          "import_momentum": 1.062
-        }
-      },
-      "fx_rate": 4.521808,
-      "fx_change_30d": 0.0284,
-      "fx_change_7d": 0.0001,
-      "risk": 76,
-      "risk_parts": {
-        "fx": 28,
-        "stocks": 100,
-        "imports": 94,
-        "coverage": "3/4",
-        "confidence": "Medium"
-      },
-      "confidence": "Medium",
-      "risk_band": "Severe",
-      "grain": {
-        "stocks_to_use": 0.06,
-        "import_dependence": 0.938,
-        "imports": 375,
-        "consumption": 400
-      },
-      "tender": "Low",
-      "tender_detail": {
-        "level": "Low",
-        "momentum": 1.062,
-        "harvest": null,
-        "stocks_vs_normal": 0.69,
-        "imports": 375,
-        "crop": "wheat"
-      },
-      "risk_change": null
-    },
-    {
-      "name": "Haiti",
-      "iso3": "HTI",
-      "fas": "HA",
-      "fx": "HTG",
-      "buyer": "",
-      "core": false,
-      "num": "332",
-      "income": "LMC",
-      "ipc": {
-        "period_start": "2025-09-01T00:00:00",
-        "people_phase3plus": 5697628,
-        "share_phase3plus": 0.51,
-        "ipc_type": "current",
-        "period_end": "2026-02-28T23:59:59"
-      },
-      "psd": {
-        "rice": {
-          "ending_stocks": 59.0,
-          "consumption": 560.0,
-          "production": 50.0,
-          "imports": 520.0,
-          "stocks_to_use": 0.105,
-          "import_dependence": 0.929,
-          "market_year": 2026,
-          "begin_stu": 0.088,
-          "avg5_stu": 0.07,
-          "avg5_imports": 485.0,
-          "prev_imports": 534.0,
-          "import_momentum": 1.101,
-          "avg5_production": 57.4,
-          "production_vs_avg": 0.871
-        },
-        "corn": {
-          "production": 250.0,
-          "imports": 5.0,
-          "ending_stocks": 2.0,
-          "consumption": 255.0,
-          "stocks_to_use": 0.008,
-          "import_dependence": 0.02,
-          "market_year": 2026,
-          "begin_stu": 0.007,
-          "avg5_stu": 0.008,
-          "avg5_imports": 1.4,
-          "prev_imports": 3.0,
-          "import_momentum": 2.143,
-          "avg5_production": 305.0,
-          "production_vs_avg": 0.82
-        },
-        "wheat": {
-          "production": 0.0,
-          "imports": 480.0,
-          "ending_stocks": 84.0,
-          "consumption": 465.0,
-          "stocks_to_use": 0.181,
-          "import_dependence": 1.032,
-          "market_year": 2026,
-          "begin_stu": 0.155,
-          "avg5_stu": 0.061,
-          "avg5_imports": 439.0,
-          "prev_imports": 485.0,
-          "import_momentum": 1.105
-        }
-      },
-      "fx_rate": 131.03625,
-      "fx_change_30d": 0.0042,
-      "fx_change_7d": 0.0046,
-      "risk": 75,
-      "risk_parts": {
-        "hunger": 100,
-        "fx": 4,
-        "stocks": 96,
-        "imports": 78,
-        "coverage": "4/4",
-        "confidence": "High"
-      },
-      "confidence": "High",
-      "risk_band": "Severe",
-      "grain": {
-        "stocks_to_use": 0.113,
-        "import_dependence": 0.785,
-        "imports": 1005,
-        "consumption": 1280
-      },
-      "tender": "Low",
-      "tender_detail": {
-        "level": "Low",
-        "momentum": 1.105,
-        "harvest": null,
-        "stocks_vs_normal": 2.54,
-        "imports": 480,
-        "crop": "wheat"
-      },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Uganda",
@@ -1425,13 +1266,13 @@
           "production_vs_avg": 1.102
         }
       },
-      "fx_rate": 4267.270239,
-      "fx_change_30d": 0.0674,
-      "fx_change_7d": -0.0374,
-      "risk": 75,
+      "fx_rate": 4114.343674,
+      "fx_change_30d": 0.0723,
+      "fx_change_7d": -0.0434,
+      "risk": 76,
       "risk_parts": {
         "hunger": 100,
-        "fx": 67,
+        "fx": 72,
         "stocks": 92,
         "imports": 18,
         "coverage": "4/4",
@@ -1454,7 +1295,166 @@
         "imports": 1000,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 1
+    },
+    {
+      "name": "Haiti",
+      "iso3": "HTI",
+      "fas": "HA",
+      "fx": "HTG",
+      "buyer": "",
+      "core": false,
+      "num": "332",
+      "income": "LMC",
+      "ipc": {
+        "period_start": "2025-09-01T00:00:00",
+        "people_phase3plus": 5697628,
+        "share_phase3plus": 0.51,
+        "ipc_type": "current",
+        "period_end": "2026-02-28T23:59:59"
+      },
+      "psd": {
+        "rice": {
+          "ending_stocks": 59.0,
+          "consumption": 560.0,
+          "production": 50.0,
+          "imports": 520.0,
+          "stocks_to_use": 0.105,
+          "import_dependence": 0.929,
+          "market_year": 2026,
+          "begin_stu": 0.088,
+          "avg5_stu": 0.07,
+          "avg5_imports": 485.0,
+          "prev_imports": 534.0,
+          "import_momentum": 1.101,
+          "avg5_production": 57.4,
+          "production_vs_avg": 0.871
+        },
+        "corn": {
+          "production": 250.0,
+          "imports": 5.0,
+          "ending_stocks": 2.0,
+          "consumption": 255.0,
+          "stocks_to_use": 0.008,
+          "import_dependence": 0.02,
+          "market_year": 2026,
+          "begin_stu": 0.007,
+          "avg5_stu": 0.008,
+          "avg5_imports": 1.4,
+          "prev_imports": 3.0,
+          "import_momentum": 2.143,
+          "avg5_production": 305.0,
+          "production_vs_avg": 0.82
+        },
+        "wheat": {
+          "production": 0.0,
+          "imports": 480.0,
+          "ending_stocks": 84.0,
+          "consumption": 465.0,
+          "stocks_to_use": 0.181,
+          "import_dependence": 1.032,
+          "market_year": 2026,
+          "begin_stu": 0.155,
+          "avg5_stu": 0.061,
+          "avg5_imports": 439.0,
+          "prev_imports": 485.0,
+          "import_momentum": 1.105
+        }
+      },
+      "fx_rate": 131.027027,
+      "fx_change_30d": -0.002,
+      "fx_change_7d": -0.0008,
+      "risk": 75,
+      "risk_parts": {
+        "hunger": 100,
+        "fx": 0,
+        "stocks": 96,
+        "imports": 78,
+        "coverage": "4/4",
+        "confidence": "High"
+      },
+      "confidence": "High",
+      "risk_band": "Severe",
+      "grain": {
+        "stocks_to_use": 0.113,
+        "import_dependence": 0.785,
+        "imports": 1005,
+        "consumption": 1280
+      },
+      "tender": "Low",
+      "tender_detail": {
+        "level": "Low",
+        "momentum": 1.105,
+        "harvest": null,
+        "stocks_vs_normal": 2.54,
+        "imports": 480,
+        "crop": "wheat"
+      },
+      "risk_change": 0
+    },
+    {
+      "name": "Papua New Guinea",
+      "iso3": "PNG",
+      "fas": "PP",
+      "fx": "PGK",
+      "buyer": "",
+      "core": false,
+      "num": "598",
+      "income": "LMC",
+      "ipc": null,
+      "psd": {
+        "rice": {
+          "consumption": 0.0,
+          "production": 0.0,
+          "imports": 0.0,
+          "ending_stocks": 0.0,
+          "market_year": 2026,
+          "avg5_imports": 0.0
+        },
+        "wheat": {
+          "production": 0.0,
+          "imports": 375.0,
+          "ending_stocks": 24.0,
+          "consumption": 400.0,
+          "stocks_to_use": 0.06,
+          "import_dependence": 0.938,
+          "market_year": 2026,
+          "begin_stu": 0.132,
+          "avg5_stu": 0.191,
+          "avg5_imports": 348.4,
+          "prev_imports": 370.0,
+          "import_momentum": 1.062
+        }
+      },
+      "fx_rate": 4.533383,
+      "fx_change_30d": 0.025,
+      "fx_change_7d": -0.0105,
+      "risk": 75,
+      "risk_parts": {
+        "fx": 25,
+        "stocks": 100,
+        "imports": 94,
+        "coverage": "3/4",
+        "confidence": "Medium"
+      },
+      "confidence": "Medium",
+      "risk_band": "Severe",
+      "grain": {
+        "stocks_to_use": 0.06,
+        "import_dependence": 0.938,
+        "imports": 375,
+        "consumption": 400
+      },
+      "tender": "Low",
+      "tender_detail": {
+        "level": "Low",
+        "momentum": 1.062,
+        "harvest": null,
+        "stocks_vs_normal": 0.69,
+        "imports": 375,
+        "crop": "wheat"
+      },
+      "risk_change": -1
     },
     {
       "name": "State of Palestine",
@@ -1473,13 +1473,13 @@
         "period_end": "2026-06-30T23:59:59"
       },
       "psd": null,
-      "fx_rate": 3.140484,
-      "fx_change_30d": 0.029,
-      "fx_change_7d": 0.0089,
+      "fx_rate": 3.140446,
+      "fx_change_30d": 0.0275,
+      "fx_change_7d": 0.0246,
       "risk": 74,
       "risk_parts": {
         "hunger": 100,
-        "fx": 29,
+        "fx": 27,
         "coverage": "2/4",
         "confidence": "Medium"
       },
@@ -1488,7 +1488,77 @@
       "grain": null,
       "tender": "No data",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": 0
+    },
+    {
+      "name": "Congo (Brazzaville)",
+      "iso3": "COG",
+      "fas": "CF",
+      "fx": "XAF",
+      "buyer": "",
+      "core": false,
+      "num": "178",
+      "income": "LMC",
+      "ipc": null,
+      "psd": {
+        "wheat": {
+          "production": 0.0,
+          "imports": 350.0,
+          "ending_stocks": 0.0,
+          "consumption": 350.0,
+          "stocks_to_use": 0.0,
+          "import_dependence": 1.0,
+          "market_year": 2026,
+          "begin_stu": 0.0,
+          "avg5_stu": 0.0,
+          "avg5_imports": 277.6,
+          "prev_imports": 354.0,
+          "import_momentum": 1.275
+        },
+        "corn": {
+          "production": 13.0,
+          "imports": 50.0,
+          "ending_stocks": 0.0,
+          "consumption": 63.0,
+          "stocks_to_use": 0.0,
+          "import_dependence": 0.794,
+          "market_year": 2026,
+          "begin_stu": 0.0,
+          "avg5_stu": 0.0,
+          "avg5_imports": 54.0,
+          "prev_imports": 60.0,
+          "import_momentum": 1.111
+        }
+      },
+      "fx_rate": 585.954031,
+      "fx_change_30d": 0.0058,
+      "fx_change_7d": -0.0019,
+      "risk": 70,
+      "risk_parts": {
+        "fx": 6,
+        "stocks": 100,
+        "imports": 97,
+        "coverage": "3/4",
+        "confidence": "Medium"
+      },
+      "confidence": "Medium",
+      "risk_band": "Severe",
+      "grain": {
+        "stocks_to_use": 0.0,
+        "import_dependence": 0.969,
+        "imports": 400,
+        "consumption": 413
+      },
+      "tender": "Medium",
+      "tender_detail": {
+        "level": "Medium",
+        "momentum": 1.275,
+        "harvest": null,
+        "stocks_vs_normal": null,
+        "imports": 350,
+        "crop": "wheat"
+      },
+      "risk_change": 0
     },
     {
       "name": "Egypt",
@@ -1550,19 +1620,19 @@
           "production_vs_avg": 1.077
         }
       },
-      "fx_rate": 55.960696,
-      "fx_change_30d": 0.0692,
-      "fx_change_7d": 0.0153,
-      "risk": 71,
+      "fx_rate": 55.415368,
+      "fx_change_30d": 0.0598,
+      "fx_change_7d": -0.0148,
+      "risk": 68,
       "risk_parts": {
-        "fx": 69,
+        "fx": 60,
         "stocks": 84,
         "imports": 56,
         "coverage": "3/4",
         "confidence": "Medium"
       },
       "confidence": "Medium",
-      "risk_band": "Severe",
+      "risk_band": "Elevated",
       "grain": {
         "stocks_to_use": 0.149,
         "import_dependence": 0.557,
@@ -1578,77 +1648,7 @@
         "imports": 13500,
         "crop": "corn"
       },
-      "risk_change": null
-    },
-    {
-      "name": "Congo (Brazzaville)",
-      "iso3": "COG",
-      "fas": "CF",
-      "fx": "XAF",
-      "buyer": "",
-      "core": false,
-      "num": "178",
-      "income": "LMC",
-      "ipc": null,
-      "psd": {
-        "wheat": {
-          "production": 0.0,
-          "imports": 350.0,
-          "ending_stocks": 0.0,
-          "consumption": 350.0,
-          "stocks_to_use": 0.0,
-          "import_dependence": 1.0,
-          "market_year": 2026,
-          "begin_stu": 0.0,
-          "avg5_stu": 0.0,
-          "avg5_imports": 277.6,
-          "prev_imports": 354.0,
-          "import_momentum": 1.275
-        },
-        "corn": {
-          "production": 13.0,
-          "imports": 50.0,
-          "ending_stocks": 0.0,
-          "consumption": 63.0,
-          "stocks_to_use": 0.0,
-          "import_dependence": 0.794,
-          "market_year": 2026,
-          "begin_stu": 0.0,
-          "avg5_stu": 0.0,
-          "avg5_imports": 54.0,
-          "prev_imports": 60.0,
-          "import_momentum": 1.111
-        }
-      },
-      "fx_rate": 587.750125,
-      "fx_change_30d": 0.0062,
-      "fx_change_7d": 0.0034,
-      "risk": 70,
-      "risk_parts": {
-        "fx": 6,
-        "stocks": 100,
-        "imports": 97,
-        "coverage": "3/4",
-        "confidence": "Medium"
-      },
-      "confidence": "Medium",
-      "risk_band": "Severe",
-      "grain": {
-        "stocks_to_use": 0.0,
-        "import_dependence": 0.969,
-        "imports": 400,
-        "consumption": 413
-      },
-      "tender": "Medium",
-      "tender_detail": {
-        "level": "Medium",
-        "momentum": 1.275,
-        "harvest": null,
-        "stocks_vs_normal": null,
-        "imports": 350,
-        "crop": "wheat"
-      },
-      "risk_change": null
+      "risk_change": -3
     },
     {
       "name": "Somalia",
@@ -1712,13 +1712,13 @@
           "import_momentum": 1.111
         }
       },
-      "fx_rate": 571.633433,
-      "fx_change_30d": 0.0016,
-      "fx_change_7d": 0.0033,
+      "fx_rate": 571.661679,
+      "fx_change_30d": -0.0018,
+      "fx_change_7d": -0.0025,
       "risk": 67,
       "risk_parts": {
         "hunger": 65,
-        "fx": 2,
+        "fx": 0,
         "stocks": 100,
         "imports": 96,
         "coverage": "4/4",
@@ -1741,7 +1741,95 @@
         "imports": 1200,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
+    },
+    {
+      "name": "Venezuela",
+      "iso3": "VEN",
+      "fas": "VE",
+      "fx": "VES",
+      "buyer": "",
+      "core": false,
+      "num": "862",
+      "income": "LMC",
+      "ipc": null,
+      "psd": {
+        "corn": {
+          "ending_stocks": 137.0,
+          "consumption": 3280.0,
+          "production": 1680.0,
+          "imports": 1600.0,
+          "stocks_to_use": 0.042,
+          "import_dependence": 0.488,
+          "market_year": 2026,
+          "begin_stu": 0.042,
+          "avg5_stu": 0.043,
+          "avg5_imports": 1330.0,
+          "prev_imports": 2000.0,
+          "import_momentum": 1.504,
+          "avg5_production": 1120.0,
+          "production_vs_avg": 1.5
+        },
+        "rice": {
+          "production": 373.0,
+          "imports": 375.0,
+          "ending_stocks": 128.0,
+          "consumption": 735.0,
+          "stocks_to_use": 0.174,
+          "import_dependence": 0.51,
+          "market_year": 2026,
+          "begin_stu": 0.159,
+          "avg5_stu": 0.219,
+          "avg5_imports": 411.4,
+          "prev_imports": 375.0,
+          "import_momentum": 0.912,
+          "avg5_production": 297.8,
+          "production_vs_avg": 1.253
+        },
+        "wheat": {
+          "ending_stocks": 193.0,
+          "consumption": 1650.0,
+          "production": 0.0,
+          "imports": 1650.0,
+          "stocks_to_use": 0.117,
+          "import_dependence": 1.0,
+          "market_year": 2026,
+          "begin_stu": 0.117,
+          "avg5_stu": 0.18,
+          "avg5_imports": 1426.4,
+          "prev_imports": 1760.0,
+          "import_momentum": 1.234
+        }
+      },
+      "fx_rate": 891.1054,
+      "fx_change_30d": 0.0281,
+      "fx_change_7d": 0.0055,
+      "risk": 67,
+      "risk_parts": {
+        "fx": 28,
+        "stocks": 100,
+        "imports": 64,
+        "coverage": "3/4",
+        "confidence": "Medium"
+      },
+      "confidence": "Medium",
+      "risk_band": "Elevated",
+      "grain": {
+        "stocks_to_use": 0.081,
+        "import_dependence": 0.64,
+        "imports": 3625,
+        "consumption": 5665
+      },
+      "tender": "Medium",
+      "tender_detail": {
+        "level": "Medium",
+        "momentum": 1.234,
+        "harvest": null,
+        "stocks_vs_normal": 0.65,
+        "imports": 1650,
+        "crop": "wheat"
+      },
+      "risk_change": 1
     },
     {
       "name": "Eritrea",
@@ -1809,95 +1897,7 @@
         "imports": 350,
         "crop": "wheat"
       },
-      "risk_change": null
-    },
-    {
-      "name": "Venezuela",
-      "iso3": "VEN",
-      "fas": "VE",
-      "fx": "VES",
-      "buyer": "",
-      "core": false,
-      "num": "862",
-      "income": "LMC",
-      "ipc": null,
-      "psd": {
-        "corn": {
-          "ending_stocks": 137.0,
-          "consumption": 3280.0,
-          "production": 1680.0,
-          "imports": 1600.0,
-          "stocks_to_use": 0.042,
-          "import_dependence": 0.488,
-          "market_year": 2026,
-          "begin_stu": 0.042,
-          "avg5_stu": 0.043,
-          "avg5_imports": 1330.0,
-          "prev_imports": 2000.0,
-          "import_momentum": 1.504,
-          "avg5_production": 1120.0,
-          "production_vs_avg": 1.5
-        },
-        "rice": {
-          "production": 373.0,
-          "imports": 375.0,
-          "ending_stocks": 128.0,
-          "consumption": 735.0,
-          "stocks_to_use": 0.174,
-          "import_dependence": 0.51,
-          "market_year": 2026,
-          "begin_stu": 0.159,
-          "avg5_stu": 0.219,
-          "avg5_imports": 411.4,
-          "prev_imports": 375.0,
-          "import_momentum": 0.912,
-          "avg5_production": 297.8,
-          "production_vs_avg": 1.253
-        },
-        "wheat": {
-          "ending_stocks": 193.0,
-          "consumption": 1650.0,
-          "production": 0.0,
-          "imports": 1650.0,
-          "stocks_to_use": 0.117,
-          "import_dependence": 1.0,
-          "market_year": 2026,
-          "begin_stu": 0.117,
-          "avg5_stu": 0.18,
-          "avg5_imports": 1426.4,
-          "prev_imports": 1760.0,
-          "import_momentum": 1.234
-        }
-      },
-      "fx_rate": 889.5754,
-      "fx_change_30d": 0.0261,
-      "fx_change_7d": 0.007,
-      "risk": 66,
-      "risk_parts": {
-        "fx": 26,
-        "stocks": 100,
-        "imports": 64,
-        "coverage": "3/4",
-        "confidence": "Medium"
-      },
-      "confidence": "Medium",
-      "risk_band": "Elevated",
-      "grain": {
-        "stocks_to_use": 0.081,
-        "import_dependence": 0.64,
-        "imports": 3625,
-        "consumption": 5665
-      },
-      "tender": "Medium",
-      "tender_detail": {
-        "level": "Medium",
-        "momentum": 1.234,
-        "harvest": null,
-        "stocks_vs_normal": 0.65,
-        "imports": 1650,
-        "crop": "wheat"
-      },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Afghanistan",
@@ -1965,13 +1965,13 @@
           "production_vs_avg": 1.095
         }
       },
-      "fx_rate": 64.868481,
-      "fx_change_30d": 0.001,
-      "fx_change_7d": 0.0008,
+      "fx_rate": 64.849095,
+      "fx_change_30d": -0.0011,
+      "fx_change_7d": 0.0004,
       "risk": 62,
       "risk_parts": {
         "hunger": 80,
-        "fx": 1,
+        "fx": 0,
         "stocks": 100,
         "imports": 45,
         "coverage": "4/4",
@@ -1994,7 +1994,7 @@
         "imports": 4500,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "South Sudan",
@@ -2030,7 +2030,7 @@
           "production_vs_avg": 1.055
         }
       },
-      "fx_rate": 5991.718727,
+      "fx_rate": 6094.56955,
       "fx_change_30d": 0.0057,
       "fx_change_7d": -0.0,
       "risk": 62,
@@ -2052,7 +2052,7 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Nicaragua",
@@ -2112,12 +2112,12 @@
           "production_vs_avg": 0.998
         }
       },
-      "fx_rate": 36.861146,
-      "fx_change_30d": 0.0046,
-      "fx_change_7d": 0.0018,
+      "fx_rate": 36.810663,
+      "fx_change_30d": 0.0041,
+      "fx_change_7d": -0.0008,
       "risk": 59,
       "risk_parts": {
-        "fx": 5,
+        "fx": 4,
         "stocks": 100,
         "imports": 63,
         "coverage": "3/4",
@@ -2140,7 +2140,7 @@
         "imports": 700,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Iraq",
@@ -2202,9 +2202,9 @@
           "production_vs_avg": 1.3
         }
       },
-      "fx_rate": 1517.707928,
-      "fx_change_30d": 0.1598,
-      "fx_change_7d": 0.0051,
+      "fx_rate": 1517.812697,
+      "fx_change_30d": 0.1558,
+      "fx_change_7d": -0.0025,
       "risk": 58,
       "risk_parts": {
         "fx": 100,
@@ -2230,7 +2230,7 @@
         "imports": 1500,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Lebanon",
@@ -2289,8 +2289,8 @@
         }
       },
       "fx_rate": 89500,
-      "fx_change_30d": -0.0,
-      "fx_change_7d": 0.0043,
+      "fx_change_30d": -0.0032,
+      "fx_change_7d": -0.0067,
       "risk": 58,
       "risk_parts": {
         "hunger": 42,
@@ -2317,7 +2317,151 @@
         "imports": 700,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
+    },
+    {
+      "name": "Lesotho",
+      "iso3": "LSO",
+      "fas": "LT",
+      "fx": "ZAR",
+      "buyer": "",
+      "core": false,
+      "num": "426",
+      "income": "LMC",
+      "ipc": {
+        "period_start": "2026-05-01T00:00:00",
+        "people_phase3plus": 234468,
+        "share_phase3plus": 0.15,
+        "ipc_type": "current",
+        "period_end": "2026-09-30T23:59:59"
+      },
+      "psd": {
+        "corn": {
+          "consumption": 175.0,
+          "production": 75.0,
+          "imports": 100.0,
+          "ending_stocks": 11.0,
+          "stocks_to_use": 0.063,
+          "import_dependence": 0.571,
+          "market_year": 2026,
+          "begin_stu": 0.055,
+          "avg5_stu": 0.027,
+          "avg5_imports": 106.6,
+          "prev_imports": 125.0,
+          "import_momentum": 1.173,
+          "avg5_production": 83.8,
+          "production_vs_avg": 0.895
+        },
+        "wheat": {
+          "production": 7.0,
+          "imports": 100.0,
+          "ending_stocks": 0.0,
+          "consumption": 62.0,
+          "stocks_to_use": 0.0,
+          "import_dependence": 1.613,
+          "market_year": 2026,
+          "begin_stu": 0.0,
+          "avg5_stu": 0.0,
+          "avg5_imports": 116.0,
+          "prev_imports": 120.0,
+          "import_momentum": 1.034
+        }
+      },
+      "fx_rate": 16.613417,
+      "fx_change_30d": -0.0007,
+      "fx_change_7d": -0.0005,
+      "risk": 55,
+      "risk_parts": {
+        "hunger": 37,
+        "fx": 0,
+        "stocks": 100,
+        "imports": 84,
+        "coverage": "4/4",
+        "confidence": "High"
+      },
+      "confidence": "High",
+      "risk_band": "Elevated",
+      "grain": {
+        "stocks_to_use": 0.046,
+        "import_dependence": 0.844,
+        "imports": 200,
+        "consumption": 237
+      },
+      "tender": "Low",
+      "tender_detail": null,
+      "risk_change": 0
+    },
+    {
+      "name": "Namibia",
+      "iso3": "NAM",
+      "fas": "WA",
+      "fx": "ZAR",
+      "buyer": "",
+      "core": false,
+      "num": "516",
+      "income": "LMC",
+      "ipc": {
+        "period_start": "2025-07-01T00:00:00",
+        "people_phase3plus": 455668,
+        "share_phase3plus": 0.15,
+        "ipc_type": "current",
+        "period_end": "2025-09-30T23:59:59"
+      },
+      "psd": {
+        "wheat": {
+          "ending_stocks": 7.0,
+          "consumption": 200.0,
+          "production": 25.0,
+          "imports": 200.0,
+          "stocks_to_use": 0.035,
+          "import_dependence": 1.0,
+          "market_year": 2026,
+          "begin_stu": 0.06,
+          "avg5_stu": 0.086,
+          "avg5_imports": 161.0,
+          "prev_imports": 200.0,
+          "import_momentum": 1.242
+        },
+        "corn": {
+          "production": 75.0,
+          "imports": 200.0,
+          "ending_stocks": 33.0,
+          "consumption": 275.0,
+          "stocks_to_use": 0.12,
+          "import_dependence": 0.727,
+          "market_year": 2026,
+          "begin_stu": 0.147,
+          "avg5_stu": 0.136,
+          "avg5_imports": 192.0,
+          "prev_imports": 160.0,
+          "import_momentum": 0.833,
+          "avg5_production": 71.2,
+          "production_vs_avg": 1.053
+        }
+      },
+      "fx_rate": 16.613417,
+      "fx_change_30d": -0.0007,
+      "fx_change_7d": -0.0005,
+      "risk": 55,
+      "risk_parts": {
+        "hunger": 37,
+        "fx": 0,
+        "stocks": 100,
+        "imports": 84,
+        "coverage": "4/4",
+        "confidence": "High"
+      },
+      "confidence": "High",
+      "risk_band": "Elevated",
+      "grain": {
+        "stocks_to_use": 0.084,
+        "import_dependence": 0.842,
+        "imports": 400,
+        "consumption": 475
+      },
+      "tender": "Low",
+      "tender_detail": null,
+      "risk_change": 0
     },
     {
       "name": "Kenya",
@@ -2385,13 +2529,13 @@
           "production_vs_avg": 0.43
         }
       },
-      "fx_rate": 129.93775,
-      "fx_change_30d": 0.0113,
-      "fx_change_7d": 0.0011,
-      "risk": 55,
+      "fx_rate": 129.980973,
+      "fx_change_30d": 0.0021,
+      "fx_change_7d": 0.0004,
+      "risk": 53,
       "risk_parts": {
         "hunger": 42,
-        "fx": 11,
+        "fx": 2,
         "stocks": 100,
         "imports": 65,
         "coverage": "4/4",
@@ -2414,151 +2558,7 @@
         "imports": 2600,
         "crop": "wheat"
       },
-      "risk_change": null
-    },
-    {
-      "name": "Lesotho",
-      "iso3": "LSO",
-      "fas": "LT",
-      "fx": "ZAR",
-      "buyer": "",
-      "core": false,
-      "num": "426",
-      "income": "LMC",
-      "ipc": {
-        "period_start": "2026-05-01T00:00:00",
-        "people_phase3plus": 234468,
-        "share_phase3plus": 0.15,
-        "ipc_type": "current",
-        "period_end": "2026-09-30T23:59:59"
-      },
-      "psd": {
-        "corn": {
-          "consumption": 175.0,
-          "production": 75.0,
-          "imports": 100.0,
-          "ending_stocks": 11.0,
-          "stocks_to_use": 0.063,
-          "import_dependence": 0.571,
-          "market_year": 2026,
-          "begin_stu": 0.055,
-          "avg5_stu": 0.027,
-          "avg5_imports": 106.6,
-          "prev_imports": 125.0,
-          "import_momentum": 1.173,
-          "avg5_production": 83.8,
-          "production_vs_avg": 0.895
-        },
-        "wheat": {
-          "production": 7.0,
-          "imports": 100.0,
-          "ending_stocks": 0.0,
-          "consumption": 62.0,
-          "stocks_to_use": 0.0,
-          "import_dependence": 1.613,
-          "market_year": 2026,
-          "begin_stu": 0.0,
-          "avg5_stu": 0.0,
-          "avg5_imports": 116.0,
-          "prev_imports": 120.0,
-          "import_momentum": 1.034
-        }
-      },
-      "fx_rate": 16.694252,
-      "fx_change_30d": 0.0024,
-      "fx_change_7d": 0.005,
-      "risk": 55,
-      "risk_parts": {
-        "hunger": 37,
-        "fx": 2,
-        "stocks": 100,
-        "imports": 84,
-        "coverage": "4/4",
-        "confidence": "High"
-      },
-      "confidence": "High",
-      "risk_band": "Elevated",
-      "grain": {
-        "stocks_to_use": 0.046,
-        "import_dependence": 0.844,
-        "imports": 200,
-        "consumption": 237
-      },
-      "tender": "Low",
-      "tender_detail": null,
-      "risk_change": null
-    },
-    {
-      "name": "Namibia",
-      "iso3": "NAM",
-      "fas": "WA",
-      "fx": "ZAR",
-      "buyer": "",
-      "core": false,
-      "num": "516",
-      "income": "LMC",
-      "ipc": {
-        "period_start": "2025-07-01T00:00:00",
-        "people_phase3plus": 455668,
-        "share_phase3plus": 0.15,
-        "ipc_type": "current",
-        "period_end": "2025-09-30T23:59:59"
-      },
-      "psd": {
-        "wheat": {
-          "ending_stocks": 7.0,
-          "consumption": 200.0,
-          "production": 25.0,
-          "imports": 200.0,
-          "stocks_to_use": 0.035,
-          "import_dependence": 1.0,
-          "market_year": 2026,
-          "begin_stu": 0.06,
-          "avg5_stu": 0.086,
-          "avg5_imports": 161.0,
-          "prev_imports": 200.0,
-          "import_momentum": 1.242
-        },
-        "corn": {
-          "production": 75.0,
-          "imports": 200.0,
-          "ending_stocks": 33.0,
-          "consumption": 275.0,
-          "stocks_to_use": 0.12,
-          "import_dependence": 0.727,
-          "market_year": 2026,
-          "begin_stu": 0.147,
-          "avg5_stu": 0.136,
-          "avg5_imports": 192.0,
-          "prev_imports": 160.0,
-          "import_momentum": 0.833,
-          "avg5_production": 71.2,
-          "production_vs_avg": 1.053
-        }
-      },
-      "fx_rate": 16.694252,
-      "fx_change_30d": 0.0024,
-      "fx_change_7d": 0.005,
-      "risk": 55,
-      "risk_parts": {
-        "hunger": 37,
-        "fx": 2,
-        "stocks": 100,
-        "imports": 84,
-        "coverage": "4/4",
-        "confidence": "High"
-      },
-      "confidence": "High",
-      "risk_band": "Elevated",
-      "grain": {
-        "stocks_to_use": 0.084,
-        "import_dependence": 0.842,
-        "imports": 400,
-        "consumption": 475
-      },
-      "tender": "Low",
-      "tender_detail": null,
-      "risk_change": null
+      "risk_change": -2
     },
     {
       "name": "Eswatini",
@@ -2602,13 +2602,13 @@
           "avg5_imports": 0.0
         }
       },
-      "fx_rate": 16.694072,
-      "fx_change_30d": 0.0024,
-      "fx_change_7d": 0.005,
-      "risk": 54,
+      "fx_rate": 16.613401,
+      "fx_change_30d": -0.0007,
+      "fx_change_7d": -0.0005,
+      "risk": 53,
       "risk_parts": {
         "hunger": 45,
-        "fx": 2,
+        "fx": 0,
         "stocks": 100,
         "imports": 62,
         "coverage": "4/4",
@@ -2624,7 +2624,192 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": -1
+    },
+    {
+      "name": "Congo (Kinshasa)",
+      "iso3": "COD",
+      "fas": "CG",
+      "fx": "CDF",
+      "buyer": "",
+      "core": false,
+      "num": "180",
+      "income": "LIC",
+      "ipc": {
+        "period_start": "2025-09-01T00:00:00",
+        "people_phase3plus": 24812776,
+        "share_phase3plus": 0.21,
+        "ipc_type": "current",
+        "period_end": "2025-12-31T23:59:59"
+      },
+      "psd": {
+        "rice": {
+          "production": 1197.0,
+          "imports": 400.0,
+          "ending_stocks": 0.0,
+          "consumption": 1597.0,
+          "stocks_to_use": 0.0,
+          "import_dependence": 0.25,
+          "market_year": 2026,
+          "begin_stu": 0.0,
+          "avg5_stu": 0.0,
+          "avg5_imports": 304.2,
+          "prev_imports": 383.0,
+          "import_momentum": 1.259,
+          "avg5_production": 1124.8,
+          "production_vs_avg": 1.064
+        },
+        "wheat": {
+          "production": 9.0,
+          "imports": 725.0,
+          "ending_stocks": 88.0,
+          "consumption": 775.0,
+          "stocks_to_use": 0.114,
+          "import_dependence": 0.935,
+          "market_year": 2026,
+          "begin_stu": 0.172,
+          "avg5_stu": 0.126,
+          "avg5_imports": 645.0,
+          "prev_imports": 815.0,
+          "import_momentum": 1.264
+        },
+        "corn": {
+          "consumption": 2350.0,
+          "production": 2250.0,
+          "imports": 50.0,
+          "ending_stocks": 134.0,
+          "stocks_to_use": 0.057,
+          "import_dependence": 0.021,
+          "market_year": 2026,
+          "begin_stu": 0.074,
+          "avg5_stu": 0.12,
+          "avg5_imports": 69.0,
+          "prev_imports": 100.0,
+          "import_momentum": 1.449,
+          "avg5_production": 2300.2,
+          "production_vs_avg": 0.978
+        }
+      },
+      "fx_rate": 2315.687353,
+      "fx_change_30d": 0.0176,
+      "fx_change_7d": -0.0004,
+      "risk": 52,
+      "risk_parts": {
+        "hunger": 52,
+        "fx": 18,
+        "stocks": 100,
+        "imports": 25,
+        "coverage": "4/4",
+        "confidence": "High"
+      },
+      "confidence": "High",
+      "risk_band": "Elevated",
+      "grain": {
+        "stocks_to_use": 0.047,
+        "import_dependence": 0.249,
+        "imports": 1175,
+        "consumption": 4722
+      },
+      "tender": "Medium",
+      "tender_detail": {
+        "level": "Medium",
+        "momentum": 1.264,
+        "harvest": null,
+        "stocks_vs_normal": 1.37,
+        "imports": 725,
+        "crop": "wheat"
+      },
+      "risk_change": 2
+    },
+    {
+      "name": "Iran",
+      "iso3": "IRN",
+      "fas": "IR",
+      "fx": "IRR",
+      "buyer": "",
+      "core": false,
+      "num": "364",
+      "income": "UMC",
+      "ipc": null,
+      "psd": {
+        "rice": {
+          "production": 2000.0,
+          "imports": 900.0,
+          "ending_stocks": 430.0,
+          "consumption": 3050.0,
+          "stocks_to_use": 0.141,
+          "import_dependence": 0.295,
+          "market_year": 2026,
+          "begin_stu": 0.19,
+          "avg5_stu": 0.129,
+          "avg5_imports": 1110.4,
+          "prev_imports": 800.0,
+          "import_momentum": 0.72,
+          "avg5_production": 1979.0,
+          "production_vs_avg": 1.011
+        },
+        "wheat": {
+          "production": 16000.0,
+          "imports": 2000.0,
+          "ending_stocks": 3236.0,
+          "consumption": 17050.0,
+          "stocks_to_use": 0.19,
+          "import_dependence": 0.117,
+          "market_year": 2026,
+          "begin_stu": 0.147,
+          "avg5_stu": 0.236,
+          "avg5_imports": 3620.0,
+          "prev_imports": 2800.0,
+          "import_momentum": 0.773,
+          "avg5_production": 13740.0,
+          "production_vs_avg": 1.164
+        },
+        "corn": {
+          "production": 1400.0,
+          "imports": 8500.0,
+          "ending_stocks": 1406.0,
+          "consumption": 9850.0,
+          "stocks_to_use": 0.143,
+          "import_dependence": 0.863,
+          "market_year": 2026,
+          "begin_stu": 0.138,
+          "avg5_stu": 0.147,
+          "avg5_imports": 8420.0,
+          "prev_imports": 8500.0,
+          "import_momentum": 1.01,
+          "avg5_production": 1400.0,
+          "production_vs_avg": 1.0
+        }
+      },
+      "fx_rate": 1771503.869684,
+      "fx_change_30d": 0.0761,
+      "fx_change_7d": 0.0345,
+      "risk": 52,
+      "risk_parts": {
+        "fx": 76,
+        "stocks": 54,
+        "imports": 27,
+        "coverage": "3/4",
+        "confidence": "Medium"
+      },
+      "confidence": "Medium",
+      "risk_band": "Elevated",
+      "grain": {
+        "stocks_to_use": 0.169,
+        "import_dependence": 0.381,
+        "imports": 11400,
+        "consumption": 29950
+      },
+      "tender": "Low",
+      "tender_detail": {
+        "level": "Low",
+        "momentum": 1.01,
+        "harvest": 1.0,
+        "stocks_vs_normal": 0.94,
+        "imports": 8500,
+        "crop": "corn"
+      },
+      "risk_change": 2
     },
     {
       "name": "Central African Republic",
@@ -2658,9 +2843,9 @@
           "production_vs_avg": 0.959
         }
       },
-      "fx_rate": 587.750125,
-      "fx_change_30d": 0.0062,
-      "fx_change_7d": 0.0034,
+      "fx_rate": 585.954031,
+      "fx_change_30d": 0.0058,
+      "fx_change_7d": -0.0019,
       "risk": 52,
       "risk_parts": {
         "hunger": 72,
@@ -2680,7 +2865,7 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Burkina Faso",
@@ -2747,9 +2932,9 @@
         "ipc_type": "current",
         "period_end": "2024-05-31T23:59:59"
       },
-      "fx_rate": 587.750125,
-      "fx_change_30d": 0.0062,
-      "fx_change_7d": 0.0034,
+      "fx_rate": 585.954031,
+      "fx_change_30d": 0.0058,
+      "fx_change_7d": -0.0019,
       "risk": 51,
       "risk_parts": {
         "fx": 6,
@@ -2775,97 +2960,7 @@
         "imports": 400,
         "crop": "wheat"
       },
-      "risk_change": null
-    },
-    {
-      "name": "Uzbekistan",
-      "iso3": "UZB",
-      "fas": "UZ",
-      "fx": "UZS",
-      "buyer": "",
-      "core": false,
-      "num": "860",
-      "income": "LMC",
-      "ipc": null,
-      "psd": {
-        "rice": {
-          "production": 245.0,
-          "imports": 80.0,
-          "ending_stocks": 76.0,
-          "consumption": 340.0,
-          "stocks_to_use": 0.224,
-          "import_dependence": 0.235,
-          "market_year": 2026,
-          "begin_stu": 0.276,
-          "avg5_stu": 0.288,
-          "avg5_imports": 83.6,
-          "prev_imports": 80.0,
-          "import_momentum": 0.957,
-          "avg5_production": 226.4,
-          "production_vs_avg": 1.082
-        },
-        "corn": {
-          "production": 800.0,
-          "imports": 75.0,
-          "ending_stocks": 81.0,
-          "consumption": 865.0,
-          "stocks_to_use": 0.094,
-          "import_dependence": 0.087,
-          "market_year": 2026,
-          "begin_stu": 0.085,
-          "avg5_stu": 0.091,
-          "avg5_imports": 71.4,
-          "prev_imports": 75.0,
-          "import_momentum": 1.05,
-          "avg5_production": 723.8,
-          "production_vs_avg": 1.105
-        },
-        "wheat": {
-          "production": 7200.0,
-          "imports": 4000.0,
-          "ending_stocks": 1326.0,
-          "consumption": 8900.0,
-          "stocks_to_use": 0.149,
-          "import_dependence": 0.449,
-          "market_year": 2026,
-          "begin_stu": 0.17,
-          "avg5_stu": 0.126,
-          "avg5_imports": 4140.6,
-          "prev_imports": 5600.0,
-          "import_momentum": 1.352,
-          "avg5_production": 6311.2,
-          "production_vs_avg": 1.141
-        }
-      },
-      "fx_rate": 11901.644109,
-      "fx_change_30d": 0.0182,
-      "fx_change_7d": 0.016,
-      "risk": 51,
-      "risk_parts": {
-        "fx": 18,
-        "stocks": 84,
-        "imports": 41,
-        "coverage": "3/4",
-        "confidence": "Medium"
-      },
-      "confidence": "Medium",
-      "risk_band": "Elevated",
-      "grain": {
-        "stocks_to_use": 0.147,
-        "import_dependence": 0.411,
-        "imports": 4155,
-        "consumption": 10105
-      },
-      "tender": "Medium",
-      "tender_detail": {
-        "level": "Medium",
-        "momentum": 1.352,
-        "harvest": 1.141,
-        "stocks_vs_normal": 1.35,
-        "imports": 4000,
-        "crop": "wheat"
-      },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Morocco",
@@ -2923,9 +3018,9 @@
           "production_vs_avg": 1.841
         }
       },
-      "fx_rate": 9.84236,
-      "fx_change_30d": -0.0108,
-      "fx_change_7d": -0.0009,
+      "fx_rate": 9.819344,
+      "fx_change_30d": -0.0117,
+      "fx_change_7d": -0.0016,
       "risk": 50,
       "risk_parts": {
         "fx": 0,
@@ -2951,7 +3046,7 @@
         "imports": 3450,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Angola",
@@ -3016,9 +3111,9 @@
         "ipc_type": "current",
         "period_end": "2021-09-30T23:59:59"
       },
-      "fx_rate": 922.949217,
-      "fx_change_30d": -0.0058,
-      "fx_change_7d": -0.0058,
+      "fx_rate": 941.523207,
+      "fx_change_30d": -0.0004,
+      "fx_change_7d": -0.0007,
       "risk": 50,
       "risk_parts": {
         "fx": 0,
@@ -3044,102 +3139,7 @@
         "imports": 1350,
         "crop": "wheat"
       },
-      "risk_change": null
-    },
-    {
-      "name": "Congo (Kinshasa)",
-      "iso3": "COD",
-      "fas": "CG",
-      "fx": "CDF",
-      "buyer": "",
-      "core": false,
-      "num": "180",
-      "income": "LIC",
-      "ipc": {
-        "period_start": "2025-09-01T00:00:00",
-        "people_phase3plus": 24812776,
-        "share_phase3plus": 0.21,
-        "ipc_type": "current",
-        "period_end": "2025-12-31T23:59:59"
-      },
-      "psd": {
-        "rice": {
-          "production": 1197.0,
-          "imports": 400.0,
-          "ending_stocks": 0.0,
-          "consumption": 1597.0,
-          "stocks_to_use": 0.0,
-          "import_dependence": 0.25,
-          "market_year": 2026,
-          "begin_stu": 0.0,
-          "avg5_stu": 0.0,
-          "avg5_imports": 304.2,
-          "prev_imports": 383.0,
-          "import_momentum": 1.259,
-          "avg5_production": 1124.8,
-          "production_vs_avg": 1.064
-        },
-        "wheat": {
-          "production": 9.0,
-          "imports": 725.0,
-          "ending_stocks": 88.0,
-          "consumption": 775.0,
-          "stocks_to_use": 0.114,
-          "import_dependence": 0.935,
-          "market_year": 2026,
-          "begin_stu": 0.172,
-          "avg5_stu": 0.126,
-          "avg5_imports": 645.0,
-          "prev_imports": 815.0,
-          "import_momentum": 1.264
-        },
-        "corn": {
-          "consumption": 2350.0,
-          "production": 2250.0,
-          "imports": 50.0,
-          "ending_stocks": 134.0,
-          "stocks_to_use": 0.057,
-          "import_dependence": 0.021,
-          "market_year": 2026,
-          "begin_stu": 0.074,
-          "avg5_stu": 0.12,
-          "avg5_imports": 69.0,
-          "prev_imports": 100.0,
-          "import_momentum": 1.449,
-          "avg5_production": 2300.2,
-          "production_vs_avg": 0.978
-        }
-      },
-      "fx_rate": 2314.484697,
-      "fx_change_30d": 0.0073,
-      "fx_change_7d": -0.0018,
-      "risk": 50,
-      "risk_parts": {
-        "hunger": 52,
-        "fx": 7,
-        "stocks": 100,
-        "imports": 25,
-        "coverage": "4/4",
-        "confidence": "High"
-      },
-      "confidence": "High",
-      "risk_band": "Elevated",
-      "grain": {
-        "stocks_to_use": 0.047,
-        "import_dependence": 0.249,
-        "imports": 1175,
-        "consumption": 4722
-      },
-      "tender": "Medium",
-      "tender_detail": {
-        "level": "Medium",
-        "momentum": 1.264,
-        "harvest": null,
-        "stocks_vs_normal": 1.37,
-        "imports": 725,
-        "crop": "wheat"
-      },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Honduras",
@@ -3203,9 +3203,9 @@
           "import_momentum": 1.047
         }
       },
-      "fx_rate": 26.942164,
-      "fx_change_30d": 0.0001,
-      "fx_change_7d": 0.0042,
+      "fx_rate": 26.911321,
+      "fx_change_30d": -0.0017,
+      "fx_change_7d": 0.0002,
       "risk": 50,
       "risk_parts": {
         "hunger": 32,
@@ -3232,97 +3232,7 @@
         "imports": 1150,
         "crop": "corn"
       },
-      "risk_change": null
-    },
-    {
-      "name": "Iran",
-      "iso3": "IRN",
-      "fas": "IR",
-      "fx": "IRR",
-      "buyer": "",
-      "core": false,
-      "num": "364",
-      "income": "UMC",
-      "ipc": null,
-      "psd": {
-        "rice": {
-          "production": 2000.0,
-          "imports": 900.0,
-          "ending_stocks": 430.0,
-          "consumption": 3050.0,
-          "stocks_to_use": 0.141,
-          "import_dependence": 0.295,
-          "market_year": 2026,
-          "begin_stu": 0.19,
-          "avg5_stu": 0.129,
-          "avg5_imports": 1110.4,
-          "prev_imports": 800.0,
-          "import_momentum": 0.72,
-          "avg5_production": 1979.0,
-          "production_vs_avg": 1.011
-        },
-        "wheat": {
-          "production": 16000.0,
-          "imports": 2000.0,
-          "ending_stocks": 3236.0,
-          "consumption": 17050.0,
-          "stocks_to_use": 0.19,
-          "import_dependence": 0.117,
-          "market_year": 2026,
-          "begin_stu": 0.147,
-          "avg5_stu": 0.236,
-          "avg5_imports": 3620.0,
-          "prev_imports": 2800.0,
-          "import_momentum": 0.773,
-          "avg5_production": 13740.0,
-          "production_vs_avg": 1.164
-        },
-        "corn": {
-          "production": 1400.0,
-          "imports": 8500.0,
-          "ending_stocks": 1406.0,
-          "consumption": 9850.0,
-          "stocks_to_use": 0.143,
-          "import_dependence": 0.863,
-          "market_year": 2026,
-          "begin_stu": 0.138,
-          "avg5_stu": 0.147,
-          "avg5_imports": 8420.0,
-          "prev_imports": 8500.0,
-          "import_momentum": 1.01,
-          "avg5_production": 1400.0,
-          "production_vs_avg": 1.0
-        }
-      },
-      "fx_rate": 1674549.886573,
-      "fx_change_30d": 0.0691,
-      "fx_change_7d": 0.0195,
-      "risk": 50,
-      "risk_parts": {
-        "fx": 69,
-        "stocks": 54,
-        "imports": 27,
-        "coverage": "3/4",
-        "confidence": "Medium"
-      },
-      "confidence": "Medium",
-      "risk_band": "Elevated",
-      "grain": {
-        "stocks_to_use": 0.169,
-        "import_dependence": 0.381,
-        "imports": 11400,
-        "consumption": 29950
-      },
-      "tender": "Low",
-      "tender_detail": {
-        "level": "Low",
-        "momentum": 1.01,
-        "harvest": 1.0,
-        "stocks_vs_normal": 0.94,
-        "imports": 8500,
-        "crop": "corn"
-      },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Jamaica",
@@ -3378,12 +3288,12 @@
           "import_momentum": 0.945
         }
       },
-      "fx_rate": 158.985793,
-      "fx_change_30d": 0.0062,
-      "fx_change_7d": 0.005,
+      "fx_rate": 158.895078,
+      "fx_change_30d": 0.0036,
+      "fx_change_7d": 0.0003,
       "risk": 50,
       "risk_parts": {
-        "fx": 6,
+        "fx": 4,
         "stocks": 70,
         "imports": 70,
         "coverage": "3/4",
@@ -3406,7 +3316,7 @@
         "imports": 325,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Rwanda",
@@ -3458,12 +3368,12 @@
           "production_vs_avg": 0.97
         }
       },
-      "fx_rate": 1475.652627,
-      "fx_change_30d": 0.0008,
-      "fx_change_7d": 0.0005,
+      "fx_rate": 1478.595649,
+      "fx_change_30d": 0.0021,
+      "fx_change_7d": -0.0007,
       "risk": 50,
       "risk_parts": {
-        "fx": 1,
+        "fx": 2,
         "stocks": 89,
         "imports": 50,
         "coverage": "3/4",
@@ -3486,7 +3396,7 @@
         "imports": 300,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Tajikistan",
@@ -3540,9 +3450,9 @@
           "production_vs_avg": 1.009
         }
       },
-      "fx_rate": 9.208133,
-      "fx_change_30d": 0.0002,
-      "fx_change_7d": 0.0016,
+      "fx_rate": 9.206516,
+      "fx_change_30d": -0.0031,
+      "fx_change_7d": -0.0039,
       "risk": 50,
       "risk_parts": {
         "fx": 0,
@@ -3568,7 +3478,7 @@
         "imports": 1375,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Tunisia",
@@ -3612,9 +3522,9 @@
           "production_vs_avg": 1.207
         }
       },
-      "fx_rate": 3.012975,
-      "fx_change_30d": -0.0022,
-      "fx_change_7d": -0.0044,
+      "fx_rate": 3.002363,
+      "fx_change_30d": -0.003,
+      "fx_change_7d": -0.0012,
       "risk": 49,
       "risk_parts": {
         "fx": 0,
@@ -3640,97 +3550,97 @@
         "imports": 1400,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
-      "name": "Mexico",
-      "iso3": "MEX",
-      "fas": "MX",
-      "fx": "MXN",
+      "name": "Uzbekistan",
+      "iso3": "UZB",
+      "fas": "UZ",
+      "fx": "UZS",
       "buyer": "",
       "core": false,
-      "num": "484",
-      "income": "UMC",
+      "num": "860",
+      "income": "LMC",
       "ipc": null,
       "psd": {
-        "wheat": {
-          "production": 1850.0,
-          "imports": 5800.0,
-          "ending_stocks": 351.0,
-          "consumption": 7550.0,
-          "stocks_to_use": 0.046,
-          "import_dependence": 0.768,
+        "rice": {
+          "production": 245.0,
+          "imports": 80.0,
+          "ending_stocks": 76.0,
+          "consumption": 340.0,
+          "stocks_to_use": 0.224,
+          "import_dependence": 0.235,
           "market_year": 2026,
-          "begin_stu": 0.046,
-          "avg5_stu": 0.068,
-          "avg5_imports": 5437.6,
-          "prev_imports": 5696.0,
-          "import_momentum": 1.048,
-          "avg5_production": 2947.6,
-          "production_vs_avg": 0.628
+          "begin_stu": 0.276,
+          "avg5_stu": 0.288,
+          "avg5_imports": 83.6,
+          "prev_imports": 80.0,
+          "import_momentum": 0.957,
+          "avg5_production": 226.4,
+          "production_vs_avg": 1.082
         },
         "corn": {
-          "imports": 27200.0,
-          "ending_stocks": 4831.0,
-          "consumption": 52400.0,
-          "production": 24500.0,
-          "stocks_to_use": 0.092,
-          "import_dependence": 0.519,
+          "production": 800.0,
+          "imports": 75.0,
+          "ending_stocks": 81.0,
+          "consumption": 865.0,
+          "stocks_to_use": 0.094,
+          "import_dependence": 0.087,
           "market_year": 2026,
-          "begin_stu": 0.109,
-          "avg5_stu": 0.097,
-          "avg5_imports": 22652.2,
-          "prev_imports": 26200.0,
-          "import_momentum": 1.157,
-          "avg5_production": 25267.8,
-          "production_vs_avg": 0.97
+          "begin_stu": 0.085,
+          "avg5_stu": 0.091,
+          "avg5_imports": 71.4,
+          "prev_imports": 75.0,
+          "import_momentum": 1.05,
+          "avg5_production": 723.8,
+          "production_vs_avg": 1.105
         },
-        "rice": {
-          "production": 162.0,
-          "imports": 850.0,
-          "ending_stocks": 88.0,
-          "consumption": 1020.0,
-          "stocks_to_use": 0.086,
-          "import_dependence": 0.833,
+        "wheat": {
+          "production": 7200.0,
+          "imports": 4000.0,
+          "ending_stocks": 1326.0,
+          "consumption": 8900.0,
+          "stocks_to_use": 0.149,
+          "import_dependence": 0.449,
           "market_year": 2026,
-          "begin_stu": 0.105,
-          "avg5_stu": 0.154,
-          "avg5_imports": 812.6,
-          "prev_imports": 800.0,
-          "import_momentum": 0.984,
-          "avg5_production": 167.8,
-          "production_vs_avg": 0.965
+          "begin_stu": 0.17,
+          "avg5_stu": 0.126,
+          "avg5_imports": 4140.6,
+          "prev_imports": 5600.0,
+          "import_momentum": 1.352,
+          "avg5_production": 6311.2,
+          "production_vs_avg": 1.141
         }
       },
-      "fx_rate": 18.805192,
-      "fx_change_30d": 0.0332,
-      "fx_change_7d": 0.004,
+      "fx_rate": 11926.667965,
+      "fx_change_30d": 0.014,
+      "fx_change_7d": -0.0009,
       "risk": 49,
       "risk_parts": {
-        "fx": 33,
-        "stocks": 70,
-        "imports": 39,
+        "fx": 14,
+        "stocks": 84,
+        "imports": 41,
         "coverage": "3/4",
         "confidence": "Medium"
       },
       "confidence": "Medium",
       "risk_band": "Elevated",
       "grain": {
-        "stocks_to_use": 0.086,
-        "import_dependence": 0.555,
-        "imports": 33850,
-        "consumption": 60970
+        "stocks_to_use": 0.147,
+        "import_dependence": 0.411,
+        "imports": 4155,
+        "consumption": 10105
       },
-      "tender": "Low",
+      "tender": "Medium",
       "tender_detail": {
-        "level": "Low",
-        "momentum": 1.157,
-        "harvest": 0.97,
-        "stocks_vs_normal": 1.12,
-        "imports": 27200,
-        "crop": "corn"
+        "level": "Medium",
+        "momentum": 1.352,
+        "harvest": 1.141,
+        "stocks_vs_normal": 1.35,
+        "imports": 4000,
+        "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": -2
     },
     {
       "name": "Niger",
@@ -3780,9 +3690,9 @@
           "production_vs_avg": 1.135
         }
       },
-      "fx_rate": 587.750125,
-      "fx_change_30d": 0.0062,
-      "fx_change_7d": 0.0034,
+      "fx_rate": 585.954031,
+      "fx_change_30d": 0.0058,
+      "fx_change_7d": -0.0019,
       "risk": 49,
       "risk_parts": {
         "hunger": 18,
@@ -3802,7 +3712,7 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Cuba",
@@ -3863,8 +3773,8 @@
         }
       },
       "fx_rate": 24,
-      "fx_change_30d": 0.0024,
-      "fx_change_7d": 0.005,
+      "fx_change_30d": 0.0017,
+      "fx_change_7d": -0.0026,
       "risk": 47,
       "risk_parts": {
         "fx": 2,
@@ -3890,7 +3800,100 @@
         "imports": 475,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
+    },
+    {
+      "name": "Mauritania",
+      "iso3": "MRT",
+      "fas": "MR",
+      "fx": "MRU",
+      "buyer": "",
+      "core": false,
+      "num": "478",
+      "income": "LMC",
+      "ipc": {
+        "period_start": "2025-10-01T00:00:00",
+        "people_phase3plus": 295561,
+        "share_phase3plus": 0.06,
+        "ipc_type": "current",
+        "period_end": "2025-12-31T23:59:59"
+      },
+      "psd": {
+        "corn": {
+          "production": 20.0,
+          "imports": 30.0,
+          "ending_stocks": 0.0,
+          "consumption": 50.0,
+          "stocks_to_use": 0.0,
+          "import_dependence": 0.6,
+          "market_year": 2026,
+          "begin_stu": 0.0,
+          "avg5_stu": 0.0,
+          "avg5_imports": 34.0,
+          "prev_imports": 25.0,
+          "import_momentum": 0.735
+        },
+        "wheat": {
+          "production": 0.0,
+          "imports": 850.0,
+          "ending_stocks": 73.0,
+          "consumption": 875.0,
+          "stocks_to_use": 0.083,
+          "import_dependence": 0.971,
+          "market_year": 2026,
+          "begin_stu": 0.112,
+          "avg5_stu": 0.119,
+          "avg5_imports": 751.0,
+          "prev_imports": 854.0,
+          "import_momentum": 1.137
+        },
+        "rice": {
+          "production": 300.0,
+          "imports": 50.0,
+          "ending_stocks": 57.0,
+          "consumption": 355.0,
+          "stocks_to_use": 0.161,
+          "import_dependence": 0.141,
+          "market_year": 2026,
+          "begin_stu": 0.177,
+          "avg5_stu": 0.11,
+          "avg5_imports": 54.0,
+          "prev_imports": 50.0,
+          "import_momentum": 0.926,
+          "avg5_production": 275.0,
+          "production_vs_avg": 1.091
+        }
+      },
+      "fx_rate": 40.530488,
+      "fx_change_30d": 0.014,
+      "fx_change_7d": 0.0079,
+      "risk": 47,
+      "risk_parts": {
+        "hunger": 15,
+        "fx": 14,
+        "stocks": 99,
+        "imports": 73,
+        "coverage": "4/4",
+        "confidence": "High"
+      },
+      "confidence": "High",
+      "risk_band": "Elevated",
+      "grain": {
+        "stocks_to_use": 0.102,
+        "import_dependence": 0.727,
+        "imports": 930,
+        "consumption": 1280
+      },
+      "tender": "Low",
+      "tender_detail": {
+        "level": "Low",
+        "momentum": 1.137,
+        "harvest": null,
+        "stocks_vs_normal": 0.94,
+        "imports": 850,
+        "crop": "wheat"
+      },
+      "risk_change": 1
     },
     {
       "name": "Mozambique",
@@ -3956,9 +3959,9 @@
           "production_vs_avg": 0.913
         }
       },
-      "fx_rate": 63.66384,
-      "fx_change_30d": 0.0003,
-      "fx_change_7d": 0.0003,
+      "fx_rate": 63.798429,
+      "fx_change_30d": 0.0001,
+      "fx_change_7d": 0.0008,
       "risk": 47,
       "risk_parts": {
         "hunger": 35,
@@ -3985,290 +3988,97 @@
         "imports": 900,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
-      "name": "Mauritania",
-      "iso3": "MRT",
-      "fas": "MR",
-      "fx": "MRU",
+      "name": "Mexico",
+      "iso3": "MEX",
+      "fas": "MX",
+      "fx": "MXN",
       "buyer": "",
       "core": false,
-      "num": "478",
-      "income": "LMC",
-      "ipc": {
-        "period_start": "2025-10-01T00:00:00",
-        "people_phase3plus": 295561,
-        "share_phase3plus": 0.06,
-        "ipc_type": "current",
-        "period_end": "2025-12-31T23:59:59"
-      },
+      "num": "484",
+      "income": "UMC",
+      "ipc": null,
       "psd": {
-        "corn": {
-          "production": 20.0,
-          "imports": 30.0,
-          "ending_stocks": 0.0,
-          "consumption": 50.0,
-          "stocks_to_use": 0.0,
-          "import_dependence": 0.6,
-          "market_year": 2026,
-          "begin_stu": 0.0,
-          "avg5_stu": 0.0,
-          "avg5_imports": 34.0,
-          "prev_imports": 25.0,
-          "import_momentum": 0.735
-        },
         "wheat": {
-          "production": 0.0,
-          "imports": 850.0,
-          "ending_stocks": 73.0,
-          "consumption": 875.0,
-          "stocks_to_use": 0.083,
-          "import_dependence": 0.971,
+          "production": 1850.0,
+          "imports": 5800.0,
+          "ending_stocks": 351.0,
+          "consumption": 7550.0,
+          "stocks_to_use": 0.046,
+          "import_dependence": 0.768,
           "market_year": 2026,
-          "begin_stu": 0.112,
-          "avg5_stu": 0.119,
-          "avg5_imports": 751.0,
-          "prev_imports": 854.0,
-          "import_momentum": 1.137
+          "begin_stu": 0.046,
+          "avg5_stu": 0.068,
+          "avg5_imports": 5437.6,
+          "prev_imports": 5696.0,
+          "import_momentum": 1.048,
+          "avg5_production": 2947.6,
+          "production_vs_avg": 0.628
+        },
+        "corn": {
+          "imports": 27200.0,
+          "ending_stocks": 4831.0,
+          "consumption": 52400.0,
+          "production": 24500.0,
+          "stocks_to_use": 0.092,
+          "import_dependence": 0.519,
+          "market_year": 2026,
+          "begin_stu": 0.109,
+          "avg5_stu": 0.097,
+          "avg5_imports": 22652.2,
+          "prev_imports": 26200.0,
+          "import_momentum": 1.157,
+          "avg5_production": 25267.8,
+          "production_vs_avg": 0.97
         },
         "rice": {
-          "production": 300.0,
-          "imports": 50.0,
-          "ending_stocks": 57.0,
-          "consumption": 355.0,
-          "stocks_to_use": 0.161,
-          "import_dependence": 0.141,
+          "production": 162.0,
+          "imports": 850.0,
+          "ending_stocks": 88.0,
+          "consumption": 1020.0,
+          "stocks_to_use": 0.086,
+          "import_dependence": 0.833,
           "market_year": 2026,
-          "begin_stu": 0.177,
-          "avg5_stu": 0.11,
-          "avg5_imports": 54.0,
-          "prev_imports": 50.0,
-          "import_momentum": 0.926,
-          "avg5_production": 275.0,
-          "production_vs_avg": 1.091
+          "begin_stu": 0.105,
+          "avg5_stu": 0.154,
+          "avg5_imports": 812.6,
+          "prev_imports": 800.0,
+          "import_momentum": 0.984,
+          "avg5_production": 167.8,
+          "production_vs_avg": 0.965
         }
       },
-      "fx_rate": 40.517422,
-      "fx_change_30d": 0.0046,
-      "fx_change_7d": 0.0099,
+      "fx_rate": 18.614044,
+      "fx_change_30d": 0.0232,
+      "fx_change_7d": 0.0017,
       "risk": 46,
       "risk_parts": {
-        "hunger": 15,
-        "fx": 5,
-        "stocks": 99,
-        "imports": 73,
-        "coverage": "4/4",
-        "confidence": "High"
+        "fx": 23,
+        "stocks": 70,
+        "imports": 39,
+        "coverage": "3/4",
+        "confidence": "Medium"
       },
-      "confidence": "High",
+      "confidence": "Medium",
       "risk_band": "Elevated",
       "grain": {
-        "stocks_to_use": 0.102,
-        "import_dependence": 0.727,
-        "imports": 930,
-        "consumption": 1280
+        "stocks_to_use": 0.086,
+        "import_dependence": 0.555,
+        "imports": 33850,
+        "consumption": 60970
       },
       "tender": "Low",
       "tender_detail": {
         "level": "Low",
-        "momentum": 1.137,
-        "harvest": null,
-        "stocks_vs_normal": 0.94,
-        "imports": 850,
-        "crop": "wheat"
+        "momentum": 1.157,
+        "harvest": 0.97,
+        "stocks_vs_normal": 1.12,
+        "imports": 27200,
+        "crop": "corn"
       },
-      "risk_change": null
-    },
-    {
-      "name": "Cameroon",
-      "iso3": "CMR",
-      "fas": "CM",
-      "fx": "XAF",
-      "buyer": "",
-      "core": false,
-      "num": "120",
-      "income": "LMC",
-      "ipc": {
-        "period_start": "2025-10-01T00:00:00",
-        "people_phase3plus": 3120294,
-        "share_phase3plus": 0.11,
-        "ipc_type": "current",
-        "period_end": "2025-12-31T23:59:59"
-      },
-      "psd": {
-        "rice": {
-          "production": 246.0,
-          "imports": 600.0,
-          "ending_stocks": 0.0,
-          "consumption": 846.0,
-          "stocks_to_use": 0.0,
-          "import_dependence": 0.709,
-          "market_year": 2026,
-          "begin_stu": 0.0,
-          "avg5_stu": 0.0,
-          "avg5_imports": 632.0,
-          "prev_imports": 400.0,
-          "import_momentum": 0.633,
-          "avg5_production": 225.4,
-          "production_vs_avg": 1.091
-        },
-        "wheat": {
-          "consumption": 1225.0,
-          "production": 0.0,
-          "imports": 1225.0,
-          "ending_stocks": 10.0,
-          "stocks_to_use": 0.008,
-          "import_dependence": 1.0,
-          "market_year": 2026,
-          "begin_stu": 0.009,
-          "avg5_stu": 0.008,
-          "avg5_imports": 1109.0,
-          "prev_imports": 1175.0,
-          "import_momentum": 1.06
-        },
-        "corn": {
-          "production": 2200.0,
-          "imports": 50.0,
-          "ending_stocks": 275.0,
-          "consumption": 2250.0,
-          "stocks_to_use": 0.122,
-          "import_dependence": 0.022,
-          "market_year": 2026,
-          "begin_stu": 0.122,
-          "avg5_stu": 0.097,
-          "avg5_imports": 44.0,
-          "prev_imports": 50.0,
-          "import_momentum": 1.136,
-          "avg5_production": 2180.0,
-          "production_vs_avg": 1.009
-        }
-      },
-      "fx_rate": 587.750125,
-      "fx_change_30d": 0.0062,
-      "fx_change_7d": 0.0034,
-      "risk": 45,
-      "risk_parts": {
-        "hunger": 27,
-        "fx": 6,
-        "stocks": 100,
-        "imports": 43,
-        "coverage": "4/4",
-        "confidence": "High"
-      },
-      "confidence": "High",
-      "risk_band": "Elevated",
-      "grain": {
-        "stocks_to_use": 0.066,
-        "import_dependence": 0.434,
-        "imports": 1875,
-        "consumption": 4321
-      },
-      "tender": "Low",
-      "tender_detail": {
-        "level": "Low",
-        "momentum": 1.06,
-        "harvest": null,
-        "stocks_vs_normal": null,
-        "imports": 1225,
-        "crop": "wheat"
-      },
-      "risk_change": null
-    },
-    {
-      "name": "Madagascar",
-      "iso3": "MDG",
-      "fas": "MA",
-      "fx": "MGA",
-      "buyer": "",
-      "core": false,
-      "num": "450",
-      "income": "LIC",
-      "ipc": {
-        "period_start": "2026-03-01T00:00:00",
-        "people_phase3plus": 2572569,
-        "share_phase3plus": 0.08,
-        "ipc_type": "current",
-        "period_end": "2026-05-31T23:59:59"
-      },
-      "psd": {
-        "wheat": {
-          "production": 0.0,
-          "imports": 450.0,
-          "ending_stocks": 0.0,
-          "consumption": 450.0,
-          "stocks_to_use": 0.0,
-          "import_dependence": 1.0,
-          "market_year": 2026,
-          "begin_stu": 0.0,
-          "avg5_stu": 0.0,
-          "avg5_imports": 399.0,
-          "prev_imports": 482.0,
-          "import_momentum": 1.208
-        },
-        "rice": {
-          "production": 2688.0,
-          "imports": 850.0,
-          "ending_stocks": 0.0,
-          "consumption": 3538.0,
-          "stocks_to_use": 0.0,
-          "import_dependence": 0.24,
-          "market_year": 2026,
-          "begin_stu": 0.0,
-          "avg5_stu": 0.0,
-          "avg5_imports": 583.8,
-          "prev_imports": 857.0,
-          "import_momentum": 1.468,
-          "avg5_production": 3067.0,
-          "production_vs_avg": 0.876
-        },
-        "corn": {
-          "production": 300.0,
-          "imports": 1.0,
-          "ending_stocks": 20.0,
-          "consumption": 300.0,
-          "stocks_to_use": 0.067,
-          "import_dependence": 0.003,
-          "market_year": 2026,
-          "begin_stu": 0.064,
-          "avg5_stu": 0.039,
-          "avg5_imports": 2.6,
-          "prev_imports": 5.0,
-          "import_momentum": 1.923,
-          "avg5_production": 266.4,
-          "production_vs_avg": 1.126
-        }
-      },
-      "fx_rate": 4588.875727,
-      "fx_change_30d": 0.034,
-      "fx_change_7d": 0.0151,
-      "risk": 45,
-      "risk_parts": {
-        "hunger": 20,
-        "fx": 34,
-        "stocks": 100,
-        "imports": 30,
-        "coverage": "4/4",
-        "confidence": "High"
-      },
-      "confidence": "High",
-      "risk_band": "Elevated",
-      "grain": {
-        "stocks_to_use": 0.005,
-        "import_dependence": 0.303,
-        "imports": 1301,
-        "consumption": 4288
-      },
-      "tender": "Medium",
-      "tender_detail": {
-        "level": "Medium",
-        "momentum": 1.208,
-        "harvest": null,
-        "stocks_vs_normal": null,
-        "imports": 450,
-        "crop": "wheat"
-      },
-      "risk_change": null
+      "risk_change": -3
     },
     {
       "name": "Malaysia",
@@ -4326,9 +4136,9 @@
           "import_momentum": 1.096
         }
       },
-      "fx_rate": 4.05704,
-      "fx_change_30d": -0.0046,
-      "fx_change_7d": -0.0044,
+      "fx_rate": 4.070116,
+      "fx_change_30d": -0.0026,
+      "fx_change_7d": -0.0025,
       "risk": 45,
       "risk_parts": {
         "fx": 0,
@@ -4354,7 +4164,7 @@
         "imports": 4150,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Liberia",
@@ -4404,9 +4214,9 @@
           "production_vs_avg": 1.109
         }
       },
-      "fx_rate": 170.50198,
-      "fx_change_30d": -0.0055,
-      "fx_change_7d": 0.0012,
+      "fx_rate": 170.250504,
+      "fx_change_30d": -0.0117,
+      "fx_change_7d": -0.0055,
       "risk": 45,
       "risk_parts": {
         "hunger": 18,
@@ -4426,474 +4236,7 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
-    },
-    {
-      "name": "Nigeria",
-      "iso3": "NGA",
-      "fas": "NI",
-      "fx": "NGN",
-      "buyer": "Private millers",
-      "core": true,
-      "num": "566",
-      "income": "LMC",
-      "ipc": {
-        "period_start": "2025-10-01T00:00:00",
-        "people_phase3plus": 27212933,
-        "share_phase3plus": 0.12,
-        "ipc_type": "current",
-        "period_end": "2025-12-31T23:59:59"
-      },
-      "psd": {
-        "corn": {
-          "production": 11500.0,
-          "imports": 500.0,
-          "ending_stocks": 281.0,
-          "consumption": 12000.0,
-          "stocks_to_use": 0.023,
-          "import_dependence": 0.042,
-          "market_year": 2026,
-          "begin_stu": 0.028,
-          "avg5_stu": 0.081,
-          "avg5_imports": 235.0,
-          "prev_imports": 150.0,
-          "import_momentum": 0.638,
-          "avg5_production": 11932.8,
-          "production_vs_avg": 0.964
-        },
-        "rice": {
-          "production": 5670.0,
-          "imports": 2900.0,
-          "ending_stocks": 1988.0,
-          "consumption": 8800.0,
-          "stocks_to_use": 0.226,
-          "import_dependence": 0.33,
-          "market_year": 2026,
-          "begin_stu": 0.261,
-          "avg5_stu": 0.242,
-          "avg5_imports": 2512.0,
-          "prev_imports": 2650.0,
-          "import_momentum": 1.055,
-          "avg5_production": 5585.2,
-          "production_vs_avg": 1.015
-        },
-        "wheat": {
-          "production": 140.0,
-          "imports": 5600.0,
-          "ending_stocks": 321.0,
-          "consumption": 5600.0,
-          "stocks_to_use": 0.057,
-          "import_dependence": 1.0,
-          "market_year": 2026,
-          "begin_stu": 0.093,
-          "avg5_stu": 0.103,
-          "avg5_imports": 5639.0,
-          "prev_imports": 5934.0,
-          "import_momentum": 1.052,
-          "avg5_production": 115.0,
-          "production_vs_avg": 1.217
-        }
-      },
-      "fx_rate": 1348.44829,
-      "fx_change_30d": 0.0105,
-      "fx_change_7d": -0.0023,
-      "risk": 44,
-      "risk_parts": {
-        "hunger": 30,
-        "fx": 10,
-        "stocks": 100,
-        "imports": 34,
-        "coverage": "4/4",
-        "confidence": "High"
-      },
-      "confidence": "High",
-      "risk_band": "Watch",
-      "grain": {
-        "stocks_to_use": 0.098,
-        "import_dependence": 0.341,
-        "imports": 9000,
-        "consumption": 26400
-      },
-      "tender": "Low",
-      "tender_detail": {
-        "level": "Low",
-        "momentum": 1.052,
-        "harvest": 1.217,
-        "stocks_vs_normal": 0.9,
-        "imports": 5600,
-        "crop": "wheat"
-      },
-      "risk_change": null
-    },
-    {
-      "name": "Bangladesh",
-      "iso3": "BGD",
-      "fas": "BG",
-      "fx": "BDT",
-      "buyer": "Directorate of Food",
-      "core": true,
-      "num": "050",
-      "income": "LMC",
-      "ipc": {
-        "period_start": "2026-05-01T00:00:00",
-        "people_phase3plus": 15270914,
-        "share_phase3plus": 0.15,
-        "ipc_type": "current",
-        "period_end": "2026-08-31T23:59:59"
-      },
-      "psd": {
-        "rice": {
-          "production": 36900.0,
-          "imports": 1300.0,
-          "ending_stocks": 1767.0,
-          "consumption": 38800.0,
-          "stocks_to_use": 0.046,
-          "import_dependence": 0.034,
-          "market_year": 2026,
-          "begin_stu": 0.062,
-          "avg5_stu": 0.051,
-          "avg5_imports": 1063.2,
-          "prev_imports": 1410.0,
-          "import_momentum": 1.326,
-          "avg5_production": 36690.0,
-          "production_vs_avg": 1.006
-        },
-        "wheat": {
-          "production": 1050.0,
-          "imports": 6500.0,
-          "ending_stocks": 1433.0,
-          "consumption": 7700.0,
-          "stocks_to_use": 0.186,
-          "import_dependence": 0.844,
-          "market_year": 2026,
-          "begin_stu": 0.208,
-          "avg5_stu": 0.166,
-          "avg5_imports": 6252.0,
-          "prev_imports": 7350.0,
-          "import_momentum": 1.176,
-          "avg5_production": 1087.0,
-          "production_vs_avg": 0.966
-        },
-        "corn": {
-          "consumption": 7650.0,
-          "production": 6000.0,
-          "imports": 1650.0,
-          "ending_stocks": 174.0,
-          "stocks_to_use": 0.023,
-          "import_dependence": 0.216,
-          "market_year": 2026,
-          "begin_stu": 0.023,
-          "avg5_stu": 0.033,
-          "avg5_imports": 1506.0,
-          "prev_imports": 1740.0,
-          "import_momentum": 1.155,
-          "avg5_production": 5290.0,
-          "production_vs_avg": 1.134
-        }
-      },
-      "fx_rate": 124.028893,
-      "fx_change_30d": 0.0115,
-      "fx_change_7d": 0.0076,
-      "risk": 44,
-      "risk_parts": {
-        "hunger": 37,
-        "fx": 12,
-        "stocks": 100,
-        "imports": 18,
-        "coverage": "4/4",
-        "confidence": "High"
-      },
-      "confidence": "High",
-      "risk_band": "Watch",
-      "grain": {
-        "stocks_to_use": 0.062,
-        "import_dependence": 0.175,
-        "imports": 9450,
-        "consumption": 54150
-      },
-      "tender": "Low",
-      "tender_detail": {
-        "level": "Low",
-        "momentum": 1.176,
-        "harvest": 0.966,
-        "stocks_vs_normal": 1.25,
-        "imports": 6500,
-        "crop": "wheat"
-      },
-      "risk_change": null
-    },
-    {
-      "name": "Bolivia",
-      "iso3": "BOL",
-      "fas": "BL",
-      "fx": "BOB",
-      "buyer": "",
-      "core": false,
-      "num": "068",
-      "income": "LMC",
-      "ipc": null,
-      "psd": {
-        "corn": {
-          "production": 1150.0,
-          "imports": 5.0,
-          "ending_stocks": 139.0,
-          "consumption": 1150.0,
-          "stocks_to_use": 0.121,
-          "import_dependence": 0.004,
-          "market_year": 2026,
-          "begin_stu": 0.12,
-          "avg5_stu": 0.12,
-          "avg5_imports": 4.6,
-          "prev_imports": 1.0,
-          "import_momentum": 0.217,
-          "avg5_production": 1227.2,
-          "production_vs_avg": 0.937
-        },
-        "wheat": {
-          "production": 285.0,
-          "imports": 300.0,
-          "ending_stocks": 144.0,
-          "consumption": 615.0,
-          "stocks_to_use": 0.234,
-          "import_dependence": 0.488,
-          "market_year": 2026,
-          "begin_stu": 0.308,
-          "avg5_stu": 0.191,
-          "avg5_imports": 265.2,
-          "prev_imports": 413.0,
-          "import_momentum": 1.557,
-          "avg5_production": 284.2,
-          "production_vs_avg": 1.003
-        },
-        "rice": {
-          "imports": 25.0,
-          "ending_stocks": 0.0,
-          "consumption": 439.0,
-          "production": 414.0,
-          "stocks_to_use": 0.0,
-          "import_dependence": 0.057,
-          "market_year": 2026,
-          "begin_stu": 0.0,
-          "avg5_stu": 0.0,
-          "avg5_imports": 7.6,
-          "prev_imports": 20.0,
-          "import_momentum": 2.632,
-          "avg5_production": 406.6,
-          "production_vs_avg": 1.018
-        }
-      },
-      "fx_rate": 12.102823,
-      "fx_change_30d": 0.0144,
-      "fx_change_7d": 0.0248,
-      "risk": 44,
-      "risk_parts": {
-        "fx": 14,
-        "stocks": 91,
-        "imports": 15,
-        "coverage": "3/4",
-        "confidence": "Medium"
-      },
-      "confidence": "Medium",
-      "risk_band": "Watch",
-      "grain": {
-        "stocks_to_use": 0.128,
-        "import_dependence": 0.15,
-        "imports": 330,
-        "consumption": 2204
-      },
-      "tender": "Medium",
-      "tender_detail": {
-        "level": "Medium",
-        "momentum": 1.557,
-        "harvest": 1.003,
-        "stocks_vs_normal": 1.61,
-        "imports": 300,
-        "crop": "wheat"
-      },
-      "risk_change": null
-    },
-    {
-      "name": "Colombia",
-      "iso3": "COL",
-      "fas": "CO",
-      "fx": "COP",
-      "buyer": "",
-      "core": false,
-      "num": "170",
-      "income": "UMC",
-      "ipc": null,
-      "psd": {
-        "corn": {
-          "imports": 8600.0,
-          "ending_stocks": 385.0,
-          "consumption": 10000.0,
-          "production": 1400.0,
-          "stocks_to_use": 0.038,
-          "import_dependence": 0.86,
-          "market_year": 2026,
-          "begin_stu": 0.039,
-          "avg5_stu": 0.045,
-          "avg5_imports": 7068.0,
-          "prev_imports": 8400.0,
-          "import_momentum": 1.188,
-          "avg5_production": 1546.0,
-          "production_vs_avg": 0.906
-        },
-        "rice": {
-          "production": 1925.0,
-          "imports": 220.0,
-          "ending_stocks": 216.0,
-          "consumption": 2025.0,
-          "stocks_to_use": 0.107,
-          "import_dependence": 0.109,
-          "market_year": 2026,
-          "begin_stu": 0.073,
-          "avg5_stu": 0.114,
-          "avg5_imports": 130.2,
-          "prev_imports": 108.0,
-          "import_momentum": 0.829,
-          "avg5_production": 1893.0,
-          "production_vs_avg": 1.017
-        },
-        "wheat": {
-          "production": 4.0,
-          "imports": 2000.0,
-          "consumption": 1920.0,
-          "ending_stocks": 198.0,
-          "stocks_to_use": 0.103,
-          "import_dependence": 1.042,
-          "market_year": 2026,
-          "begin_stu": 0.072,
-          "avg5_stu": 0.14,
-          "avg5_imports": 1966.6,
-          "prev_imports": 1926.0,
-          "import_momentum": 0.979
-        }
-      },
-      "fx_rate": 3192.232311,
-      "fx_change_30d": -0.0179,
-      "fx_change_7d": 0.0179,
-      "risk": 44,
-      "risk_parts": {
-        "fx": 0,
-        "stocks": 70,
-        "imports": 54,
-        "coverage": "3/4",
-        "confidence": "Medium"
-      },
-      "confidence": "Medium",
-      "risk_band": "Watch",
-      "grain": {
-        "stocks_to_use": 0.057,
-        "import_dependence": 0.776,
-        "imports": 10820,
-        "consumption": 13945
-      },
-      "tender": "High",
-      "tender_detail": {
-        "level": "High",
-        "momentum": 1.188,
-        "harvest": 0.906,
-        "stocks_vs_normal": 0.87,
-        "imports": 8600,
-        "crop": "corn"
-      },
-      "risk_change": null
-    },
-    {
-      "name": "Guinea",
-      "iso3": "GIN",
-      "fas": "GU",
-      "fx": "GNF",
-      "buyer": "",
-      "core": false,
-      "num": "324",
-      "income": "LMC",
-      "ipc": {
-        "period_start": "2025-10-01T00:00:00",
-        "people_phase3plus": 1480656,
-        "share_phase3plus": 0.11,
-        "ipc_type": "current",
-        "period_end": "2025-12-31T23:59:59"
-      },
-      "psd": {
-        "wheat": {
-          "production": 0.0,
-          "imports": 550.0,
-          "ending_stocks": 46.0,
-          "consumption": 510.0,
-          "stocks_to_use": 0.09,
-          "import_dependence": 1.078,
-          "market_year": 2026,
-          "begin_stu": 0.132,
-          "avg5_stu": 0.207,
-          "avg5_imports": 505.0,
-          "prev_imports": 488.0,
-          "import_momentum": 0.966
-        },
-        "rice": {
-          "ending_stocks": 278.0,
-          "consumption": 3500.0,
-          "production": 2459.0,
-          "imports": 1150.0,
-          "stocks_to_use": 0.079,
-          "import_dependence": 0.329,
-          "market_year": 2026,
-          "begin_stu": 0.08,
-          "avg5_stu": 0.05,
-          "avg5_imports": 920.0,
-          "prev_imports": 1050.0,
-          "import_momentum": 1.141,
-          "avg5_production": 2239.0,
-          "production_vs_avg": 1.098
-        },
-        "corn": {
-          "production": 950.0,
-          "imports": 25.0,
-          "ending_stocks": 82.0,
-          "consumption": 950.0,
-          "stocks_to_use": 0.086,
-          "import_dependence": 0.026,
-          "market_year": 2026,
-          "begin_stu": 0.066,
-          "avg5_stu": 0.095,
-          "avg5_imports": 24.0,
-          "prev_imports": 40.0,
-          "import_momentum": 1.667,
-          "avg5_production": 858.4,
-          "production_vs_avg": 1.107
-        }
-      },
-      "fx_rate": 8813.470712,
-      "fx_change_30d": 0.0101,
-      "fx_change_7d": -0.0006,
-      "risk": 44,
-      "risk_parts": {
-        "hunger": 27,
-        "fx": 10,
-        "stocks": 100,
-        "imports": 35,
-        "coverage": "4/4",
-        "confidence": "High"
-      },
-      "confidence": "High",
-      "risk_band": "Watch",
-      "grain": {
-        "stocks_to_use": 0.082,
-        "import_dependence": 0.348,
-        "imports": 1725,
-        "consumption": 4960
-      },
-      "tender": "Low",
-      "tender_detail": {
-        "level": "Low",
-        "momentum": 0.966,
-        "harvest": null,
-        "stocks_vs_normal": 0.64,
-        "imports": 550,
-        "crop": "wheat"
-      },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Ethiopia",
@@ -4962,12 +4305,12 @@
         "ipc_type": "current",
         "period_end": "2021-06-30T23:59:59"
       },
-      "fx_rate": 161.60205,
-      "fx_change_30d": 0.0057,
-      "fx_change_7d": -0.0002,
-      "risk": 43,
+      "fx_rate": 161.880262,
+      "fx_change_30d": 0.0086,
+      "fx_change_7d": -0.0021,
+      "risk": 44,
       "risk_parts": {
-        "fx": 6,
+        "fx": 9,
         "stocks": 100,
         "imports": 10,
         "coverage": "3/4",
@@ -4983,7 +4326,479 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": 1
+    },
+    {
+      "name": "Nigeria",
+      "iso3": "NGA",
+      "fas": "NI",
+      "fx": "NGN",
+      "buyer": "Private millers",
+      "core": true,
+      "num": "566",
+      "income": "LMC",
+      "ipc": {
+        "period_start": "2025-10-01T00:00:00",
+        "people_phase3plus": 27212933,
+        "share_phase3plus": 0.12,
+        "ipc_type": "current",
+        "period_end": "2025-12-31T23:59:59"
+      },
+      "psd": {
+        "corn": {
+          "production": 11500.0,
+          "imports": 500.0,
+          "ending_stocks": 281.0,
+          "consumption": 12000.0,
+          "stocks_to_use": 0.023,
+          "import_dependence": 0.042,
+          "market_year": 2026,
+          "begin_stu": 0.028,
+          "avg5_stu": 0.081,
+          "avg5_imports": 235.0,
+          "prev_imports": 150.0,
+          "import_momentum": 0.638,
+          "avg5_production": 11932.8,
+          "production_vs_avg": 0.964
+        },
+        "rice": {
+          "production": 5670.0,
+          "imports": 2900.0,
+          "ending_stocks": 1988.0,
+          "consumption": 8800.0,
+          "stocks_to_use": 0.226,
+          "import_dependence": 0.33,
+          "market_year": 2026,
+          "begin_stu": 0.261,
+          "avg5_stu": 0.242,
+          "avg5_imports": 2512.0,
+          "prev_imports": 2650.0,
+          "import_momentum": 1.055,
+          "avg5_production": 5585.2,
+          "production_vs_avg": 1.015
+        },
+        "wheat": {
+          "production": 140.0,
+          "imports": 5600.0,
+          "ending_stocks": 321.0,
+          "consumption": 5600.0,
+          "stocks_to_use": 0.057,
+          "import_dependence": 1.0,
+          "market_year": 2026,
+          "begin_stu": 0.093,
+          "avg5_stu": 0.103,
+          "avg5_imports": 5639.0,
+          "prev_imports": 5934.0,
+          "import_momentum": 1.052,
+          "avg5_production": 115.0,
+          "production_vs_avg": 1.217
+        }
+      },
+      "fx_rate": 1345.872636,
+      "fx_change_30d": 0.0079,
+      "fx_change_7d": -0.0016,
+      "risk": 44,
+      "risk_parts": {
+        "hunger": 30,
+        "fx": 8,
+        "stocks": 100,
+        "imports": 34,
+        "coverage": "4/4",
+        "confidence": "High"
+      },
+      "confidence": "High",
+      "risk_band": "Watch",
+      "grain": {
+        "stocks_to_use": 0.098,
+        "import_dependence": 0.341,
+        "imports": 9000,
+        "consumption": 26400
+      },
+      "tender": "Low",
+      "tender_detail": {
+        "level": "Low",
+        "momentum": 1.052,
+        "harvest": 1.217,
+        "stocks_vs_normal": 0.9,
+        "imports": 5600,
+        "crop": "wheat"
+      },
+      "risk_change": 0
+    },
+    {
+      "name": "Cameroon",
+      "iso3": "CMR",
+      "fas": "CM",
+      "fx": "XAF",
+      "buyer": "",
+      "core": false,
+      "num": "120",
+      "income": "LMC",
+      "ipc": {
+        "period_start": "2025-10-01T00:00:00",
+        "people_phase3plus": 3120294,
+        "share_phase3plus": 0.11,
+        "ipc_type": "current",
+        "period_end": "2025-12-31T23:59:59"
+      },
+      "psd": {
+        "rice": {
+          "production": 246.0,
+          "imports": 600.0,
+          "ending_stocks": 0.0,
+          "consumption": 846.0,
+          "stocks_to_use": 0.0,
+          "import_dependence": 0.709,
+          "market_year": 2026,
+          "begin_stu": 0.0,
+          "avg5_stu": 0.0,
+          "avg5_imports": 632.0,
+          "prev_imports": 400.0,
+          "import_momentum": 0.633,
+          "avg5_production": 225.4,
+          "production_vs_avg": 1.091
+        },
+        "wheat": {
+          "consumption": 1225.0,
+          "production": 0.0,
+          "imports": 1225.0,
+          "ending_stocks": 10.0,
+          "stocks_to_use": 0.008,
+          "import_dependence": 1.0,
+          "market_year": 2026,
+          "begin_stu": 0.009,
+          "avg5_stu": 0.008,
+          "avg5_imports": 1109.0,
+          "prev_imports": 1175.0,
+          "import_momentum": 1.06
+        },
+        "corn": {
+          "production": 2200.0,
+          "imports": 50.0,
+          "ending_stocks": 275.0,
+          "consumption": 2250.0,
+          "stocks_to_use": 0.122,
+          "import_dependence": 0.022,
+          "market_year": 2026,
+          "begin_stu": 0.122,
+          "avg5_stu": 0.097,
+          "avg5_imports": 44.0,
+          "prev_imports": 50.0,
+          "import_momentum": 1.136,
+          "avg5_production": 2180.0,
+          "production_vs_avg": 1.009
+        }
+      },
+      "fx_rate": 585.954031,
+      "fx_change_30d": 0.0058,
+      "fx_change_7d": -0.0019,
+      "risk": 44,
+      "risk_parts": {
+        "hunger": 27,
+        "fx": 6,
+        "stocks": 100,
+        "imports": 43,
+        "coverage": "4/4",
+        "confidence": "High"
+      },
+      "confidence": "High",
+      "risk_band": "Watch",
+      "grain": {
+        "stocks_to_use": 0.066,
+        "import_dependence": 0.434,
+        "imports": 1875,
+        "consumption": 4321
+      },
+      "tender": "Low",
+      "tender_detail": {
+        "level": "Low",
+        "momentum": 1.06,
+        "harvest": null,
+        "stocks_vs_normal": null,
+        "imports": 1225,
+        "crop": "wheat"
+      },
+      "risk_change": -1
+    },
+    {
+      "name": "Colombia",
+      "iso3": "COL",
+      "fas": "CO",
+      "fx": "COP",
+      "buyer": "",
+      "core": false,
+      "num": "170",
+      "income": "UMC",
+      "ipc": null,
+      "psd": {
+        "corn": {
+          "imports": 8600.0,
+          "ending_stocks": 385.0,
+          "consumption": 10000.0,
+          "production": 1400.0,
+          "stocks_to_use": 0.038,
+          "import_dependence": 0.86,
+          "market_year": 2026,
+          "begin_stu": 0.039,
+          "avg5_stu": 0.045,
+          "avg5_imports": 7068.0,
+          "prev_imports": 8400.0,
+          "import_momentum": 1.188,
+          "avg5_production": 1546.0,
+          "production_vs_avg": 0.906
+        },
+        "rice": {
+          "production": 1925.0,
+          "imports": 220.0,
+          "ending_stocks": 216.0,
+          "consumption": 2025.0,
+          "stocks_to_use": 0.107,
+          "import_dependence": 0.109,
+          "market_year": 2026,
+          "begin_stu": 0.073,
+          "avg5_stu": 0.114,
+          "avg5_imports": 130.2,
+          "prev_imports": 108.0,
+          "import_momentum": 0.829,
+          "avg5_production": 1893.0,
+          "production_vs_avg": 1.017
+        },
+        "wheat": {
+          "production": 4.0,
+          "imports": 2000.0,
+          "consumption": 1920.0,
+          "ending_stocks": 198.0,
+          "stocks_to_use": 0.103,
+          "import_dependence": 1.042,
+          "market_year": 2026,
+          "begin_stu": 0.072,
+          "avg5_stu": 0.14,
+          "avg5_imports": 1966.6,
+          "prev_imports": 1926.0,
+          "import_momentum": 0.979
+        }
+      },
+      "fx_rate": 3197.305165,
+      "fx_change_30d": -0.0149,
+      "fx_change_7d": 0.0262,
+      "risk": 44,
+      "risk_parts": {
+        "fx": 0,
+        "stocks": 70,
+        "imports": 54,
+        "coverage": "3/4",
+        "confidence": "Medium"
+      },
+      "confidence": "Medium",
+      "risk_band": "Watch",
+      "grain": {
+        "stocks_to_use": 0.057,
+        "import_dependence": 0.776,
+        "imports": 10820,
+        "consumption": 13945
+      },
+      "tender": "High",
+      "tender_detail": {
+        "level": "High",
+        "momentum": 1.188,
+        "harvest": 0.906,
+        "stocks_vs_normal": 0.87,
+        "imports": 8600,
+        "crop": "corn"
+      },
+      "risk_change": 0
+    },
+    {
+      "name": "Bangladesh",
+      "iso3": "BGD",
+      "fas": "BG",
+      "fx": "BDT",
+      "buyer": "Directorate of Food",
+      "core": true,
+      "num": "050",
+      "income": "LMC",
+      "ipc": {
+        "period_start": "2026-05-01T00:00:00",
+        "people_phase3plus": 15270914,
+        "share_phase3plus": 0.15,
+        "ipc_type": "current",
+        "period_end": "2026-08-31T23:59:59"
+      },
+      "psd": {
+        "rice": {
+          "production": 36900.0,
+          "imports": 1300.0,
+          "ending_stocks": 1767.0,
+          "consumption": 38800.0,
+          "stocks_to_use": 0.046,
+          "import_dependence": 0.034,
+          "market_year": 2026,
+          "begin_stu": 0.062,
+          "avg5_stu": 0.051,
+          "avg5_imports": 1063.2,
+          "prev_imports": 1410.0,
+          "import_momentum": 1.326,
+          "avg5_production": 36690.0,
+          "production_vs_avg": 1.006
+        },
+        "wheat": {
+          "production": 1050.0,
+          "imports": 6500.0,
+          "ending_stocks": 1433.0,
+          "consumption": 7700.0,
+          "stocks_to_use": 0.186,
+          "import_dependence": 0.844,
+          "market_year": 2026,
+          "begin_stu": 0.208,
+          "avg5_stu": 0.166,
+          "avg5_imports": 6252.0,
+          "prev_imports": 7350.0,
+          "import_momentum": 1.176,
+          "avg5_production": 1087.0,
+          "production_vs_avg": 0.966
+        },
+        "corn": {
+          "consumption": 7650.0,
+          "production": 6000.0,
+          "imports": 1650.0,
+          "ending_stocks": 174.0,
+          "stocks_to_use": 0.023,
+          "import_dependence": 0.216,
+          "market_year": 2026,
+          "begin_stu": 0.023,
+          "avg5_stu": 0.033,
+          "avg5_imports": 1506.0,
+          "prev_imports": 1740.0,
+          "import_momentum": 1.155,
+          "avg5_production": 5290.0,
+          "production_vs_avg": 1.134
+        }
+      },
+      "fx_rate": 124.387897,
+      "fx_change_30d": 0.0093,
+      "fx_change_7d": 0.0027,
+      "risk": 43,
+      "risk_parts": {
+        "hunger": 37,
+        "fx": 9,
+        "stocks": 100,
+        "imports": 18,
+        "coverage": "4/4",
+        "confidence": "High"
+      },
+      "confidence": "High",
+      "risk_band": "Watch",
+      "grain": {
+        "stocks_to_use": 0.062,
+        "import_dependence": 0.175,
+        "imports": 9450,
+        "consumption": 54150
+      },
+      "tender": "Low",
+      "tender_detail": {
+        "level": "Low",
+        "momentum": 1.176,
+        "harvest": 0.966,
+        "stocks_vs_normal": 1.25,
+        "imports": 6500,
+        "crop": "wheat"
+      },
+      "risk_change": -1
+    },
+    {
+      "name": "Guinea",
+      "iso3": "GIN",
+      "fas": "GU",
+      "fx": "GNF",
+      "buyer": "",
+      "core": false,
+      "num": "324",
+      "income": "LMC",
+      "ipc": {
+        "period_start": "2025-10-01T00:00:00",
+        "people_phase3plus": 1480656,
+        "share_phase3plus": 0.11,
+        "ipc_type": "current",
+        "period_end": "2025-12-31T23:59:59"
+      },
+      "psd": {
+        "wheat": {
+          "production": 0.0,
+          "imports": 550.0,
+          "ending_stocks": 46.0,
+          "consumption": 510.0,
+          "stocks_to_use": 0.09,
+          "import_dependence": 1.078,
+          "market_year": 2026,
+          "begin_stu": 0.132,
+          "avg5_stu": 0.207,
+          "avg5_imports": 505.0,
+          "prev_imports": 488.0,
+          "import_momentum": 0.966
+        },
+        "rice": {
+          "ending_stocks": 278.0,
+          "consumption": 3500.0,
+          "production": 2459.0,
+          "imports": 1150.0,
+          "stocks_to_use": 0.079,
+          "import_dependence": 0.329,
+          "market_year": 2026,
+          "begin_stu": 0.08,
+          "avg5_stu": 0.05,
+          "avg5_imports": 920.0,
+          "prev_imports": 1050.0,
+          "import_momentum": 1.141,
+          "avg5_production": 2239.0,
+          "production_vs_avg": 1.098
+        },
+        "corn": {
+          "production": 950.0,
+          "imports": 25.0,
+          "ending_stocks": 82.0,
+          "consumption": 950.0,
+          "stocks_to_use": 0.086,
+          "import_dependence": 0.026,
+          "market_year": 2026,
+          "begin_stu": 0.066,
+          "avg5_stu": 0.095,
+          "avg5_imports": 24.0,
+          "prev_imports": 40.0,
+          "import_momentum": 1.667,
+          "avg5_production": 858.4,
+          "production_vs_avg": 1.107
+        }
+      },
+      "fx_rate": 8839.341782,
+      "fx_change_30d": 0.0065,
+      "fx_change_7d": 0.0001,
+      "risk": 43,
+      "risk_parts": {
+        "hunger": 27,
+        "fx": 6,
+        "stocks": 100,
+        "imports": 35,
+        "coverage": "4/4",
+        "confidence": "High"
+      },
+      "confidence": "High",
+      "risk_band": "Watch",
+      "grain": {
+        "stocks_to_use": 0.082,
+        "import_dependence": 0.348,
+        "imports": 1725,
+        "consumption": 4960
+      },
+      "tender": "Low",
+      "tender_detail": {
+        "level": "Low",
+        "momentum": 0.966,
+        "harvest": null,
+        "stocks_vs_normal": 0.64,
+        "imports": 550,
+        "crop": "wheat"
+      },
+      "risk_change": -1
     },
     {
       "name": "Nepal",
@@ -5045,9 +4860,9 @@
           "production_vs_avg": 0.994
         }
       },
-      "fx_rate": 152.029502,
-      "fx_change_30d": -0.0138,
-      "fx_change_7d": -0.0011,
+      "fx_rate": 151.894385,
+      "fx_change_30d": -0.0136,
+      "fx_change_7d": -0.0038,
       "risk": 43,
       "risk_parts": {
         "fx": 0,
@@ -5066,7 +4881,7 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Peru",
@@ -5128,12 +4943,12 @@
           "production_vs_avg": 1.024
         }
       },
-      "fx_rate": 3.467246,
-      "fx_change_30d": 0.0106,
-      "fx_change_7d": 0.0111,
+      "fx_rate": 3.46461,
+      "fx_change_30d": 0.0077,
+      "fx_change_7d": 0.0041,
       "risk": 43,
       "risk_parts": {
-        "fx": 11,
+        "fx": 8,
         "stocks": 70,
         "imports": 43,
         "coverage": "3/4",
@@ -5156,7 +4971,7 @@
         "imports": 4600,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Sierra Leone",
@@ -5221,8 +5036,8 @@
         }
       },
       "fx_rate": 22.869551,
-      "fx_change_30d": -0.0048,
-      "fx_change_7d": 0.0009,
+      "fx_change_30d": -0.0046,
+      "fx_change_7d": 0.0007,
       "risk": 43,
       "risk_parts": {
         "hunger": 27,
@@ -5242,7 +5057,7 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Chad",
@@ -5308,9 +5123,9 @@
           "production_vs_avg": 0.986
         }
       },
-      "fx_rate": 587.750125,
-      "fx_change_30d": 0.0062,
-      "fx_change_7d": 0.0034,
+      "fx_rate": 585.954031,
+      "fx_change_30d": 0.0058,
+      "fx_change_7d": -0.0019,
       "risk": 43,
       "risk_parts": {
         "hunger": 30,
@@ -5330,93 +5145,97 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": 0
     },
     {
-      "name": "Libya",
-      "iso3": "LBY",
-      "fas": "LY",
-      "fx": "LYD",
+      "name": "Bolivia",
+      "iso3": "BOL",
+      "fas": "BL",
+      "fx": "BOB",
       "buyer": "",
       "core": false,
-      "num": "434",
-      "income": "UMC",
+      "num": "068",
+      "income": "LMC",
       "ipc": null,
       "psd": {
         "corn": {
-          "imports": 900.0,
-          "ending_stocks": 57.0,
-          "consumption": 900.0,
-          "production": 0.0,
-          "stocks_to_use": 0.063,
-          "import_dependence": 1.0,
+          "production": 1150.0,
+          "imports": 5.0,
+          "ending_stocks": 139.0,
+          "consumption": 1150.0,
+          "stocks_to_use": 0.121,
+          "import_dependence": 0.004,
           "market_year": 2026,
-          "begin_stu": 0.057,
-          "avg5_stu": 0.069,
-          "avg5_imports": 866.0,
-          "prev_imports": 1000.0,
-          "import_momentum": 1.155
+          "begin_stu": 0.12,
+          "avg5_stu": 0.12,
+          "avg5_imports": 4.6,
+          "prev_imports": 1.0,
+          "import_momentum": 0.217,
+          "avg5_production": 1227.2,
+          "production_vs_avg": 0.937
+        },
+        "wheat": {
+          "production": 285.0,
+          "imports": 300.0,
+          "ending_stocks": 144.0,
+          "consumption": 615.0,
+          "stocks_to_use": 0.234,
+          "import_dependence": 0.488,
+          "market_year": 2026,
+          "begin_stu": 0.308,
+          "avg5_stu": 0.191,
+          "avg5_imports": 265.2,
+          "prev_imports": 413.0,
+          "import_momentum": 1.557,
+          "avg5_production": 284.2,
+          "production_vs_avg": 1.003
         },
         "rice": {
-          "consumption": 220.0,
-          "production": 0.0,
-          "imports": 220.0,
+          "imports": 25.0,
           "ending_stocks": 0.0,
+          "consumption": 439.0,
+          "production": 414.0,
           "stocks_to_use": 0.0,
-          "import_dependence": 1.0,
+          "import_dependence": 0.057,
           "market_year": 2026,
           "begin_stu": 0.0,
           "avg5_stu": 0.0,
-          "avg5_imports": 118.6,
-          "prev_imports": 215.0,
-          "import_momentum": 1.813
-        },
-        "wheat": {
-          "production": 200.0,
-          "imports": 1900.0,
-          "ending_stocks": 511.0,
-          "consumption": 2300.0,
-          "stocks_to_use": 0.222,
-          "import_dependence": 0.826,
-          "market_year": 2026,
-          "begin_stu": 0.316,
-          "avg5_stu": 0.169,
-          "avg5_imports": 1729.4,
-          "prev_imports": 2278.0,
-          "import_momentum": 1.317,
-          "avg5_production": 200.0,
-          "production_vs_avg": 1.0
+          "avg5_imports": 7.6,
+          "prev_imports": 20.0,
+          "import_momentum": 2.632,
+          "avg5_production": 406.6,
+          "production_vs_avg": 1.018
         }
       },
-      "fx_rate": 6.427972,
-      "fx_change_30d": 0.0061,
-      "fx_change_7d": 0.0078,
+      "fx_rate": 12.137169,
+      "fx_change_30d": 0.0093,
+      "fx_change_7d": 0.0218,
       "risk": 42,
       "risk_parts": {
-        "fx": 6,
-        "stocks": 55,
-        "imports": 62,
+        "fx": 9,
+        "stocks": 91,
+        "imports": 15,
         "coverage": "3/4",
         "confidence": "Medium"
       },
       "confidence": "Medium",
       "risk_band": "Watch",
       "grain": {
-        "stocks_to_use": 0.166,
-        "import_dependence": 0.883,
-        "imports": 3020,
-        "consumption": 3420
+        "stocks_to_use": 0.128,
+        "import_dependence": 0.15,
+        "imports": 330,
+        "consumption": 2204
       },
       "tender": "Medium",
       "tender_detail": {
         "level": "Medium",
-        "momentum": 1.317,
-        "harvest": 1.0,
-        "stocks_vs_normal": 1.87,
-        "imports": 1900,
+        "momentum": 1.557,
+        "harvest": 1.003,
+        "stocks_vs_normal": 1.61,
+        "imports": 300,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": -2
     },
     {
       "name": "Brazil",
@@ -5478,9 +5297,9 @@
           "production_vs_avg": 1.071
         }
       },
-      "fx_rate": 5.436971,
-      "fx_change_30d": 0.0417,
-      "fx_change_7d": 0.0926,
+      "fx_rate": 5.43751,
+      "fx_change_30d": 0.0421,
+      "fx_change_7d": 0.0105,
       "risk": 41,
       "risk_parts": {
         "fx": 42,
@@ -5506,102 +5325,270 @@
         "imports": 7500,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
-      "name": "Dominican Republic",
-      "iso3": "DOM",
-      "fas": "DR",
-      "fx": "DOP",
+      "name": "Libya",
+      "iso3": "LBY",
+      "fas": "LY",
+      "fx": "LYD",
       "buyer": "",
       "core": false,
-      "num": "214",
+      "num": "434",
       "income": "UMC",
       "ipc": null,
       "psd": {
         "corn": {
-          "production": 80.0,
-          "imports": 1700.0,
-          "ending_stocks": 168.0,
-          "consumption": 1825.0,
-          "stocks_to_use": 0.092,
-          "import_dependence": 0.932,
+          "imports": 900.0,
+          "ending_stocks": 57.0,
+          "consumption": 900.0,
+          "production": 0.0,
+          "stocks_to_use": 0.063,
+          "import_dependence": 1.0,
           "market_year": 2026,
-          "begin_stu": 0.118,
-          "avg5_stu": 0.076,
-          "avg5_imports": 1574.8,
-          "prev_imports": 1850.0,
-          "import_momentum": 1.175,
-          "avg5_production": 61.8,
-          "production_vs_avg": 1.294
+          "begin_stu": 0.057,
+          "avg5_stu": 0.069,
+          "avg5_imports": 866.0,
+          "prev_imports": 1000.0,
+          "import_momentum": 1.155
         },
         "rice": {
-          "production": 670.0,
-          "imports": 25.0,
-          "ending_stocks": 260.0,
-          "consumption": 740.0,
-          "stocks_to_use": 0.351,
-          "import_dependence": 0.034,
+          "consumption": 220.0,
+          "production": 0.0,
+          "imports": 220.0,
+          "ending_stocks": 0.0,
+          "stocks_to_use": 0.0,
+          "import_dependence": 1.0,
           "market_year": 2026,
-          "begin_stu": 0.434,
-          "avg5_stu": 0.472,
-          "avg5_imports": 58.0,
-          "prev_imports": 26.0,
-          "import_momentum": 0.448,
-          "avg5_production": 649.0,
-          "production_vs_avg": 1.032
+          "begin_stu": 0.0,
+          "avg5_stu": 0.0,
+          "avg5_imports": 118.6,
+          "prev_imports": 215.0,
+          "import_momentum": 1.813
         },
         "wheat": {
-          "production": 0.0,
-          "imports": 820.0,
-          "ending_stocks": 143.0,
-          "consumption": 700.0,
-          "stocks_to_use": 0.204,
-          "import_dependence": 1.171,
+          "production": 200.0,
+          "imports": 1900.0,
+          "ending_stocks": 511.0,
+          "consumption": 2300.0,
+          "stocks_to_use": 0.222,
+          "import_dependence": 0.826,
           "market_year": 2026,
-          "begin_stu": 0.266,
-          "avg5_stu": 0.203,
-          "avg5_imports": 731.0,
-          "prev_imports": 835.0,
-          "import_momentum": 1.142
+          "begin_stu": 0.316,
+          "avg5_stu": 0.169,
+          "avg5_imports": 1729.4,
+          "prev_imports": 2278.0,
+          "import_momentum": 1.317,
+          "avg5_production": 200.0,
+          "production_vs_avg": 1.0
         }
       },
-      "ipc_stale": {
-        "period_start": "2024-10-01T00:00:00",
-        "people_phase3plus": 924905,
-        "share_phase3plus": 0.09,
-        "ipc_type": "current",
-        "period_end": "2025-01-31T23:59:59"
-      },
-      "fx_rate": 60.722364,
-      "fx_change_30d": 0.0116,
-      "fx_change_7d": -0.0082,
+      "fx_rate": 6.428019,
+      "fx_change_30d": 0.003,
+      "fx_change_7d": -0.0018,
       "risk": 41,
       "risk_parts": {
-        "fx": 12,
-        "stocks": 53,
-        "imports": 55,
+        "fx": 3,
+        "stocks": 55,
+        "imports": 62,
         "coverage": "3/4",
         "confidence": "Medium"
       },
       "confidence": "Medium",
       "risk_band": "Watch",
       "grain": {
-        "stocks_to_use": 0.175,
-        "import_dependence": 0.779,
-        "imports": 2545,
-        "consumption": 3265
+        "stocks_to_use": 0.166,
+        "import_dependence": 0.883,
+        "imports": 3020,
+        "consumption": 3420
       },
-      "tender": "Low",
+      "tender": "Medium",
       "tender_detail": {
-        "level": "Low",
-        "momentum": 1.175,
-        "harvest": 1.294,
-        "stocks_vs_normal": 1.55,
-        "imports": 1700,
-        "crop": "corn"
+        "level": "Medium",
+        "momentum": 1.317,
+        "harvest": 1.0,
+        "stocks_vs_normal": 1.87,
+        "imports": 1900,
+        "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": -1
+    },
+    {
+      "name": "Madagascar",
+      "iso3": "MDG",
+      "fas": "MA",
+      "fx": "MGA",
+      "buyer": "",
+      "core": false,
+      "num": "450",
+      "income": "LIC",
+      "ipc": {
+        "period_start": "2026-03-01T00:00:00",
+        "people_phase3plus": 2572569,
+        "share_phase3plus": 0.08,
+        "ipc_type": "current",
+        "period_end": "2026-05-31T23:59:59"
+      },
+      "psd": {
+        "wheat": {
+          "production": 0.0,
+          "imports": 450.0,
+          "ending_stocks": 0.0,
+          "consumption": 450.0,
+          "stocks_to_use": 0.0,
+          "import_dependence": 1.0,
+          "market_year": 2026,
+          "begin_stu": 0.0,
+          "avg5_stu": 0.0,
+          "avg5_imports": 399.0,
+          "prev_imports": 482.0,
+          "import_momentum": 1.208
+        },
+        "rice": {
+          "production": 2688.0,
+          "imports": 850.0,
+          "ending_stocks": 0.0,
+          "consumption": 3538.0,
+          "stocks_to_use": 0.0,
+          "import_dependence": 0.24,
+          "market_year": 2026,
+          "begin_stu": 0.0,
+          "avg5_stu": 0.0,
+          "avg5_imports": 583.8,
+          "prev_imports": 857.0,
+          "import_momentum": 1.468,
+          "avg5_production": 3067.0,
+          "production_vs_avg": 0.876
+        },
+        "corn": {
+          "production": 300.0,
+          "imports": 1.0,
+          "ending_stocks": 20.0,
+          "consumption": 300.0,
+          "stocks_to_use": 0.067,
+          "import_dependence": 0.003,
+          "market_year": 2026,
+          "begin_stu": 0.064,
+          "avg5_stu": 0.039,
+          "avg5_imports": 2.6,
+          "prev_imports": 5.0,
+          "import_momentum": 1.923,
+          "avg5_production": 266.4,
+          "production_vs_avg": 1.126
+        }
+      },
+      "fx_rate": 4579.08627,
+      "fx_change_30d": 0.0168,
+      "fx_change_7d": -0.0034,
+      "risk": 41,
+      "risk_parts": {
+        "hunger": 20,
+        "fx": 17,
+        "stocks": 100,
+        "imports": 30,
+        "coverage": "4/4",
+        "confidence": "High"
+      },
+      "confidence": "High",
+      "risk_band": "Watch",
+      "grain": {
+        "stocks_to_use": 0.005,
+        "import_dependence": 0.303,
+        "imports": 1301,
+        "consumption": 4288
+      },
+      "tender": "Medium",
+      "tender_detail": {
+        "level": "Medium",
+        "momentum": 1.208,
+        "harvest": null,
+        "stocks_vs_normal": null,
+        "imports": 450,
+        "crop": "wheat"
+      },
+      "risk_change": -4
+    },
+    {
+      "name": "Kyrgyzstan",
+      "iso3": "KGZ",
+      "fas": "KG",
+      "fx": "KGS",
+      "buyer": "",
+      "core": false,
+      "num": "417",
+      "income": "LMC",
+      "ipc": null,
+      "psd": {
+        "wheat": {
+          "consumption": 1100.0,
+          "production": 625.0,
+          "imports": 375.0,
+          "ending_stocks": 191.0,
+          "stocks_to_use": 0.174,
+          "import_dependence": 0.341,
+          "market_year": 2026,
+          "begin_stu": 0.281,
+          "avg5_stu": 0.176,
+          "avg5_imports": 414.0,
+          "prev_imports": 650.0,
+          "import_momentum": 1.57,
+          "avg5_production": 522.6,
+          "production_vs_avg": 1.196
+        },
+        "corn": {
+          "production": 800.0,
+          "imports": 1.0,
+          "ending_stocks": 70.0,
+          "consumption": 800.0,
+          "stocks_to_use": 0.087,
+          "import_dependence": 0.001,
+          "market_year": 2026,
+          "begin_stu": 0.105,
+          "avg5_stu": 0.133,
+          "avg5_imports": 2.0,
+          "prev_imports": 3.0,
+          "import_momentum": 1.5,
+          "avg5_production": 767.8,
+          "production_vs_avg": 1.042
+        },
+        "rice": {
+          "consumption": 0.0,
+          "production": 0.0,
+          "imports": 0.0,
+          "ending_stocks": 0.0,
+          "market_year": 2026,
+          "avg5_imports": 0.0
+        }
+      },
+      "fx_rate": 87.454927,
+      "fx_change_30d": 0.0,
+      "fx_change_7d": 0.0,
+      "risk": 40,
+      "risk_parts": {
+        "fx": 0,
+        "stocks": 88,
+        "imports": 20,
+        "coverage": "3/4",
+        "confidence": "Medium"
+      },
+      "confidence": "Medium",
+      "risk_band": "Watch",
+      "grain": {
+        "stocks_to_use": 0.137,
+        "import_dependence": 0.198,
+        "imports": 376,
+        "consumption": 1900
+      },
+      "tender": "Medium",
+      "tender_detail": {
+        "level": "Medium",
+        "momentum": 1.57,
+        "harvest": 1.196,
+        "stocks_vs_normal": 1.6,
+        "imports": 375,
+        "crop": "wheat"
+      },
+      "risk_change": 0
     },
     {
       "name": "Philippines",
@@ -5661,12 +5648,12 @@
           "production_vs_avg": 0.95
         }
       },
-      "fx_rate": 63.703704,
-      "fx_change_30d": 0.0187,
-      "fx_change_7d": -0.0034,
-      "risk": 41,
+      "fx_rate": 63.433344,
+      "fx_change_30d": 0.0147,
+      "fx_change_7d": -0.0074,
+      "risk": 40,
       "risk_parts": {
-        "fx": 19,
+        "fx": 15,
         "stocks": 68,
         "imports": 31,
         "coverage": "3/4",
@@ -5689,7 +5676,172 @@
         "imports": 7100,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": -1
+    },
+    {
+      "name": "Senegal",
+      "iso3": "SEN",
+      "fas": "SG",
+      "fx": "XOF",
+      "buyer": "",
+      "core": false,
+      "num": "686",
+      "income": "LMC",
+      "ipc": {
+        "period_start": "2026-03-01T00:00:00",
+        "people_phase3plus": 490588,
+        "share_phase3plus": 0.02,
+        "ipc_type": "current",
+        "period_end": "2026-05-31T23:59:59"
+      },
+      "psd": {
+        "wheat": {
+          "consumption": 1100.0,
+          "production": 0.0,
+          "imports": 1000.0,
+          "ending_stocks": 166.0,
+          "stocks_to_use": 0.151,
+          "import_dependence": 0.909,
+          "market_year": 2026,
+          "begin_stu": 0.268,
+          "avg5_stu": 0.168,
+          "avg5_imports": 945.2,
+          "prev_imports": 1094.0,
+          "import_momentum": 1.157
+        },
+        "rice": {
+          "production": 670.0,
+          "imports": 1400.0,
+          "ending_stocks": 175.0,
+          "consumption": 2025.0,
+          "stocks_to_use": 0.086,
+          "import_dependence": 0.691,
+          "market_year": 2026,
+          "begin_stu": 0.09,
+          "avg5_stu": 0.218,
+          "avg5_imports": 1400.0,
+          "prev_imports": 1200.0,
+          "import_momentum": 0.857,
+          "avg5_production": 781.8,
+          "production_vs_avg": 0.857
+        },
+        "corn": {
+          "production": 600.0,
+          "imports": 500.0,
+          "ending_stocks": 170.0,
+          "consumption": 1100.0,
+          "stocks_to_use": 0.155,
+          "import_dependence": 0.455,
+          "market_year": 2026,
+          "begin_stu": 0.152,
+          "avg5_stu": 0.18,
+          "avg5_imports": 479.0,
+          "prev_imports": 550.0,
+          "import_momentum": 1.148,
+          "avg5_production": 692.6,
+          "production_vs_avg": 0.866
+        }
+      },
+      "fx_rate": 585.954031,
+      "fx_change_30d": 0.0058,
+      "fx_change_7d": -0.0019,
+      "risk": 40,
+      "risk_parts": {
+        "hunger": 5,
+        "fx": 6,
+        "stocks": 93,
+        "imports": 69,
+        "coverage": "4/4",
+        "confidence": "High"
+      },
+      "confidence": "High",
+      "risk_band": "Watch",
+      "grain": {
+        "stocks_to_use": 0.121,
+        "import_dependence": 0.686,
+        "imports": 2900,
+        "consumption": 4225
+      },
+      "tender": "High",
+      "tender_detail": {
+        "level": "High",
+        "momentum": 1.148,
+        "harvest": 0.866,
+        "stocks_vs_normal": 0.84,
+        "imports": 500,
+        "crop": "corn"
+      },
+      "risk_change": 0
+    },
+    {
+      "name": "Guinea-Bissau",
+      "iso3": "GNB",
+      "fas": "PU",
+      "fx": "XOF",
+      "buyer": "",
+      "core": false,
+      "num": "624",
+      "income": "LIC",
+      "ipc": {
+        "period_start": "2025-03-01T00:00:00",
+        "people_phase3plus": 121695,
+        "share_phase3plus": 0.07,
+        "ipc_type": "current",
+        "period_end": "2025-05-31T23:59:59"
+      },
+      "psd": {
+        "rice": {
+          "production": 138.0,
+          "imports": 250.0,
+          "ending_stocks": 63.0,
+          "consumption": 400.0,
+          "stocks_to_use": 0.158,
+          "import_dependence": 0.625,
+          "market_year": 2026,
+          "begin_stu": 0.2,
+          "avg5_stu": 0.047,
+          "avg5_imports": 159.0,
+          "prev_imports": 250.0,
+          "import_momentum": 1.572,
+          "avg5_production": 139.0,
+          "production_vs_avg": 0.993
+        },
+        "corn": {
+          "production": 25.0,
+          "imports": 0.0,
+          "ending_stocks": 0.0,
+          "consumption": 25.0,
+          "stocks_to_use": 0.0,
+          "import_dependence": 0.0,
+          "market_year": 2026,
+          "begin_stu": 0.0,
+          "avg5_stu": 0.0,
+          "avg5_imports": 0.0
+        }
+      },
+      "fx_rate": 585.954031,
+      "fx_change_30d": 0.0058,
+      "fx_change_7d": -0.0019,
+      "risk": 40,
+      "risk_parts": {
+        "hunger": 18,
+        "fx": 6,
+        "stocks": 84,
+        "imports": 59,
+        "coverage": "4/4",
+        "confidence": "High"
+      },
+      "confidence": "High",
+      "risk_band": "Watch",
+      "grain": {
+        "stocks_to_use": 0.148,
+        "import_dependence": 0.588,
+        "imports": 250,
+        "consumption": 425
+      },
+      "tender": "Low",
+      "tender_detail": null,
+      "risk_change": 0
     },
     {
       "name": "Pakistan",
@@ -5757,13 +5909,13 @@
           "production_vs_avg": 1.019
         }
       },
-      "fx_rate": 276.733456,
-      "fx_change_30d": 0.0016,
-      "fx_change_7d": 0.0029,
-      "risk": 40,
+      "fx_rate": 276.692206,
+      "fx_change_30d": -0.0022,
+      "fx_change_7d": -0.0017,
+      "risk": 39,
       "risk_parts": {
         "hunger": 50,
-        "fx": 2,
+        "fx": 0,
         "stocks": 86,
         "imports": 2,
         "coverage": "4/4",
@@ -5779,254 +5931,102 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": -1
     },
     {
-      "name": "Kyrgyzstan",
-      "iso3": "KGZ",
-      "fas": "KG",
-      "fx": "KGS",
+      "name": "Dominican Republic",
+      "iso3": "DOM",
+      "fas": "DR",
+      "fx": "DOP",
       "buyer": "",
       "core": false,
-      "num": "417",
-      "income": "LMC",
+      "num": "214",
+      "income": "UMC",
       "ipc": null,
       "psd": {
-        "wheat": {
-          "consumption": 1100.0,
-          "production": 625.0,
-          "imports": 375.0,
-          "ending_stocks": 191.0,
-          "stocks_to_use": 0.174,
-          "import_dependence": 0.341,
-          "market_year": 2026,
-          "begin_stu": 0.281,
-          "avg5_stu": 0.176,
-          "avg5_imports": 414.0,
-          "prev_imports": 650.0,
-          "import_momentum": 1.57,
-          "avg5_production": 522.6,
-          "production_vs_avg": 1.196
-        },
         "corn": {
-          "production": 800.0,
-          "imports": 1.0,
-          "ending_stocks": 70.0,
-          "consumption": 800.0,
-          "stocks_to_use": 0.087,
-          "import_dependence": 0.001,
+          "production": 80.0,
+          "imports": 1700.0,
+          "ending_stocks": 168.0,
+          "consumption": 1825.0,
+          "stocks_to_use": 0.092,
+          "import_dependence": 0.932,
           "market_year": 2026,
-          "begin_stu": 0.105,
-          "avg5_stu": 0.133,
-          "avg5_imports": 2.0,
-          "prev_imports": 3.0,
-          "import_momentum": 1.5,
-          "avg5_production": 767.8,
-          "production_vs_avg": 1.042
+          "begin_stu": 0.118,
+          "avg5_stu": 0.076,
+          "avg5_imports": 1574.8,
+          "prev_imports": 1850.0,
+          "import_momentum": 1.175,
+          "avg5_production": 61.8,
+          "production_vs_avg": 1.294
         },
         "rice": {
-          "consumption": 0.0,
-          "production": 0.0,
-          "imports": 0.0,
-          "ending_stocks": 0.0,
+          "production": 670.0,
+          "imports": 25.0,
+          "ending_stocks": 260.0,
+          "consumption": 740.0,
+          "stocks_to_use": 0.351,
+          "import_dependence": 0.034,
           "market_year": 2026,
-          "avg5_imports": 0.0
+          "begin_stu": 0.434,
+          "avg5_stu": 0.472,
+          "avg5_imports": 58.0,
+          "prev_imports": 26.0,
+          "import_momentum": 0.448,
+          "avg5_production": 649.0,
+          "production_vs_avg": 1.032
+        },
+        "wheat": {
+          "production": 0.0,
+          "imports": 820.0,
+          "ending_stocks": 143.0,
+          "consumption": 700.0,
+          "stocks_to_use": 0.204,
+          "import_dependence": 1.171,
+          "market_year": 2026,
+          "begin_stu": 0.266,
+          "avg5_stu": 0.203,
+          "avg5_imports": 731.0,
+          "prev_imports": 835.0,
+          "import_momentum": 1.142
         }
       },
-      "fx_rate": 87.463066,
-      "fx_change_30d": -0.0,
-      "fx_change_7d": -0.0001,
-      "risk": 40,
+      "ipc_stale": {
+        "period_start": "2024-10-01T00:00:00",
+        "people_phase3plus": 924905,
+        "share_phase3plus": 0.09,
+        "ipc_type": "current",
+        "period_end": "2025-01-31T23:59:59"
+      },
+      "fx_rate": 60.667967,
+      "fx_change_30d": 0.0072,
+      "fx_change_7d": -0.0127,
+      "risk": 39,
       "risk_parts": {
-        "fx": 0,
-        "stocks": 88,
-        "imports": 20,
+        "fx": 7,
+        "stocks": 53,
+        "imports": 55,
         "coverage": "3/4",
         "confidence": "Medium"
       },
       "confidence": "Medium",
       "risk_band": "Watch",
       "grain": {
-        "stocks_to_use": 0.137,
-        "import_dependence": 0.198,
-        "imports": 376,
-        "consumption": 1900
-      },
-      "tender": "Medium",
-      "tender_detail": {
-        "level": "Medium",
-        "momentum": 1.57,
-        "harvest": 1.196,
-        "stocks_vs_normal": 1.6,
-        "imports": 375,
-        "crop": "wheat"
-      },
-      "risk_change": null
-    },
-    {
-      "name": "Senegal",
-      "iso3": "SEN",
-      "fas": "SG",
-      "fx": "XOF",
-      "buyer": "",
-      "core": false,
-      "num": "686",
-      "income": "LMC",
-      "ipc": {
-        "period_start": "2026-03-01T00:00:00",
-        "people_phase3plus": 490588,
-        "share_phase3plus": 0.02,
-        "ipc_type": "current",
-        "period_end": "2026-05-31T23:59:59"
-      },
-      "psd": {
-        "wheat": {
-          "consumption": 1100.0,
-          "production": 0.0,
-          "imports": 1000.0,
-          "ending_stocks": 166.0,
-          "stocks_to_use": 0.151,
-          "import_dependence": 0.909,
-          "market_year": 2026,
-          "begin_stu": 0.268,
-          "avg5_stu": 0.168,
-          "avg5_imports": 945.2,
-          "prev_imports": 1094.0,
-          "import_momentum": 1.157
-        },
-        "rice": {
-          "production": 670.0,
-          "imports": 1400.0,
-          "ending_stocks": 175.0,
-          "consumption": 2025.0,
-          "stocks_to_use": 0.086,
-          "import_dependence": 0.691,
-          "market_year": 2026,
-          "begin_stu": 0.09,
-          "avg5_stu": 0.218,
-          "avg5_imports": 1400.0,
-          "prev_imports": 1200.0,
-          "import_momentum": 0.857,
-          "avg5_production": 781.8,
-          "production_vs_avg": 0.857
-        },
-        "corn": {
-          "production": 600.0,
-          "imports": 500.0,
-          "ending_stocks": 170.0,
-          "consumption": 1100.0,
-          "stocks_to_use": 0.155,
-          "import_dependence": 0.455,
-          "market_year": 2026,
-          "begin_stu": 0.152,
-          "avg5_stu": 0.18,
-          "avg5_imports": 479.0,
-          "prev_imports": 550.0,
-          "import_momentum": 1.148,
-          "avg5_production": 692.6,
-          "production_vs_avg": 0.866
-        }
-      },
-      "fx_rate": 587.750125,
-      "fx_change_30d": 0.0062,
-      "fx_change_7d": 0.0034,
-      "risk": 40,
-      "risk_parts": {
-        "hunger": 5,
-        "fx": 6,
-        "stocks": 93,
-        "imports": 69,
-        "coverage": "4/4",
-        "confidence": "High"
-      },
-      "confidence": "High",
-      "risk_band": "Watch",
-      "grain": {
-        "stocks_to_use": 0.121,
-        "import_dependence": 0.686,
-        "imports": 2900,
-        "consumption": 4225
-      },
-      "tender": "High",
-      "tender_detail": {
-        "level": "High",
-        "momentum": 1.148,
-        "harvest": 0.866,
-        "stocks_vs_normal": 0.84,
-        "imports": 500,
-        "crop": "corn"
-      },
-      "risk_change": null
-    },
-    {
-      "name": "Guinea-Bissau",
-      "iso3": "GNB",
-      "fas": "PU",
-      "fx": "XOF",
-      "buyer": "",
-      "core": false,
-      "num": "624",
-      "income": "LIC",
-      "ipc": {
-        "period_start": "2025-03-01T00:00:00",
-        "people_phase3plus": 121695,
-        "share_phase3plus": 0.07,
-        "ipc_type": "current",
-        "period_end": "2025-05-31T23:59:59"
-      },
-      "psd": {
-        "rice": {
-          "production": 138.0,
-          "imports": 250.0,
-          "ending_stocks": 63.0,
-          "consumption": 400.0,
-          "stocks_to_use": 0.158,
-          "import_dependence": 0.625,
-          "market_year": 2026,
-          "begin_stu": 0.2,
-          "avg5_stu": 0.047,
-          "avg5_imports": 159.0,
-          "prev_imports": 250.0,
-          "import_momentum": 1.572,
-          "avg5_production": 139.0,
-          "production_vs_avg": 0.993
-        },
-        "corn": {
-          "production": 25.0,
-          "imports": 0.0,
-          "ending_stocks": 0.0,
-          "consumption": 25.0,
-          "stocks_to_use": 0.0,
-          "import_dependence": 0.0,
-          "market_year": 2026,
-          "begin_stu": 0.0,
-          "avg5_stu": 0.0,
-          "avg5_imports": 0.0
-        }
-      },
-      "fx_rate": 587.750125,
-      "fx_change_30d": 0.0062,
-      "fx_change_7d": 0.0034,
-      "risk": 40,
-      "risk_parts": {
-        "hunger": 18,
-        "fx": 6,
-        "stocks": 84,
-        "imports": 59,
-        "coverage": "4/4",
-        "confidence": "High"
-      },
-      "confidence": "High",
-      "risk_band": "Watch",
-      "grain": {
-        "stocks_to_use": 0.148,
-        "import_dependence": 0.588,
-        "imports": 250,
-        "consumption": 425
+        "stocks_to_use": 0.175,
+        "import_dependence": 0.779,
+        "imports": 2545,
+        "consumption": 3265
       },
       "tender": "Low",
-      "tender_detail": null,
-      "risk_change": null
+      "tender_detail": {
+        "level": "Low",
+        "momentum": 1.175,
+        "harvest": 1.294,
+        "stocks_vs_normal": 1.55,
+        "imports": 1700,
+        "crop": "corn"
+      },
+      "risk_change": -2
     },
     {
       "name": "El Salvador",
@@ -6119,7 +6119,7 @@
         "imports": 850,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Georgia",
@@ -6165,9 +6165,9 @@
           "production_vs_avg": 1.014
         }
       },
-      "fx_rate": 2.595346,
-      "fx_change_30d": -0.003,
-      "fx_change_7d": 0.002,
+      "fx_rate": 2.596121,
+      "fx_change_30d": -0.0017,
+      "fx_change_7d": -0.0008,
       "risk": 39,
       "risk_parts": {
         "fx": 0,
@@ -6193,7 +6193,7 @@
         "imports": 500,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Tanzania",
@@ -6261,13 +6261,13 @@
           "production_vs_avg": 0.971
         }
       },
-      "fx_rate": 2634.636062,
-      "fx_change_30d": 0.0031,
-      "fx_change_7d": -0.0005,
+      "fx_rate": 2644.575199,
+      "fx_change_30d": 0.0014,
+      "fx_change_7d": -0.0003,
       "risk": 38,
       "risk_parts": {
         "hunger": 25,
-        "fx": 3,
+        "fx": 1,
         "stocks": 100,
         "imports": 18,
         "coverage": "4/4",
@@ -6290,7 +6290,7 @@
         "imports": 1600,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Vietnam",
@@ -6350,9 +6350,9 @@
           "production_vs_avg": 0.936
         }
       },
-      "fx_rate": 25786.746123,
-      "fx_change_30d": -0.0092,
-      "fx_change_7d": -0.0028,
+      "fx_rate": 25743.911696,
+      "fx_change_30d": -0.0096,
+      "fx_change_7d": -0.0036,
       "risk": 38,
       "risk_parts": {
         "fx": 0,
@@ -6378,7 +6378,7 @@
         "imports": 14600,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Burundi",
@@ -6414,13 +6414,13 @@
           "production_vs_avg": 0.942
         }
       },
-      "fx_rate": 2995.346699,
-      "fx_change_30d": 0.0034,
-      "fx_change_7d": 0.0051,
+      "fx_rate": 2993.457365,
+      "fx_change_30d": -0.0007,
+      "fx_change_7d": 0.0012,
       "risk": 38,
       "risk_parts": {
         "hunger": 35,
-        "fx": 3,
+        "fx": 0,
         "stocks": 100,
         "imports": 2,
         "coverage": "4/4",
@@ -6436,7 +6436,7 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Cabo Verde",
@@ -6470,9 +6470,9 @@
           "import_momentum": 1.093
         }
       },
-      "fx_rate": 98.799567,
-      "fx_change_30d": 0.0062,
-      "fx_change_7d": 0.0034,
+      "fx_rate": 98.497647,
+      "fx_change_30d": 0.0058,
+      "fx_change_7d": -0.0019,
       "risk": 38,
       "risk_parts": {
         "hunger": 18,
@@ -6492,95 +6492,7 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
-    },
-    {
-      "name": "Indonesia",
-      "iso3": "IDN",
-      "fas": "ID",
-      "fx": "IDR",
-      "buyer": "Bulog / private millers",
-      "core": true,
-      "num": "360",
-      "income": "UMC",
-      "ipc": null,
-      "psd": {
-        "corn": {
-          "consumption": 14400.0,
-          "production": 13500.0,
-          "imports": 1000.0,
-          "ending_stocks": 1011.0,
-          "stocks_to_use": 0.07,
-          "import_dependence": 0.069,
-          "market_year": 2026,
-          "begin_stu": 0.065,
-          "avg5_stu": 0.091,
-          "avg5_imports": 1163.8,
-          "prev_imports": 700.0,
-          "import_momentum": 0.601,
-          "avg5_production": 12800.0,
-          "production_vs_avg": 1.055
-        },
-        "rice": {
-          "production": 33600.0,
-          "imports": 500.0,
-          "ending_stocks": 3575.0,
-          "consumption": 35000.0,
-          "stocks_to_use": 0.102,
-          "import_dependence": 0.014,
-          "market_year": 2026,
-          "begin_stu": 0.127,
-          "avg5_stu": 0.126,
-          "avg5_imports": 2019.0,
-          "prev_imports": 400.0,
-          "import_momentum": 0.198,
-          "avg5_production": 33844.0,
-          "production_vs_avg": 0.993
-        },
-        "wheat": {
-          "production": 0.0,
-          "imports": 12500.0,
-          "ending_stocks": 1220.0,
-          "consumption": 12700.0,
-          "stocks_to_use": 0.096,
-          "import_dependence": 0.984,
-          "market_year": 2026,
-          "begin_stu": 0.153,
-          "avg5_stu": 0.145,
-          "avg5_imports": 11441.4,
-          "prev_imports": 13023.0,
-          "import_momentum": 1.138
-        }
-      },
-      "fx_rate": 18144.413865,
-      "fx_change_30d": 0.0159,
-      "fx_change_7d": 0.0023,
-      "risk": 37,
-      "risk_parts": {
-        "fx": 16,
-        "stocks": 70,
-        "imports": 16,
-        "coverage": "3/4",
-        "confidence": "Medium"
-      },
-      "confidence": "Medium",
-      "risk_band": "Watch",
-      "grain": {
-        "stocks_to_use": 0.093,
-        "import_dependence": 0.225,
-        "imports": 14000,
-        "consumption": 62100
-      },
-      "tender": "Low",
-      "tender_detail": {
-        "level": "Low",
-        "momentum": 1.138,
-        "harvest": null,
-        "stocks_vs_normal": 1.06,
-        "imports": 12500,
-        "crop": "wheat"
-      },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Benin",
@@ -6646,9 +6558,9 @@
           "production_vs_avg": 1.102
         }
       },
-      "fx_rate": 587.750125,
-      "fx_change_30d": 0.0062,
-      "fx_change_7d": 0.0034,
+      "fx_rate": 585.954031,
+      "fx_change_30d": 0.0058,
+      "fx_change_7d": -0.0019,
       "risk": 37,
       "risk_parts": {
         "hunger": 18,
@@ -6675,7 +6587,7 @@
         "imports": 450,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Guatemala",
@@ -6739,13 +6651,13 @@
           "import_momentum": 1.241
         }
       },
-      "fx_rate": 7.655877,
-      "fx_change_30d": 0.0013,
-      "fx_change_7d": 0.0016,
+      "fx_rate": 7.648702,
+      "fx_change_30d": 0.0,
+      "fx_change_7d": -0.0003,
       "risk": 37,
       "risk_parts": {
         "hunger": 35,
-        "fx": 1,
+        "fx": 0,
         "stocks": 65,
         "imports": 44,
         "coverage": "4/4",
@@ -6768,7 +6680,7 @@
         "imports": 2000,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Togo",
@@ -6834,9 +6746,9 @@
           "production_vs_avg": 0.994
         }
       },
-      "fx_rate": 587.750125,
-      "fx_change_30d": 0.0062,
-      "fx_change_7d": 0.0034,
+      "fx_rate": 585.954031,
+      "fx_change_30d": 0.0058,
+      "fx_change_7d": -0.0019,
       "risk": 37,
       "risk_parts": {
         "hunger": 10,
@@ -6863,7 +6775,95 @@
         "imports": 325,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
+    },
+    {
+      "name": "Indonesia",
+      "iso3": "IDN",
+      "fas": "ID",
+      "fx": "IDR",
+      "buyer": "Bulog / private millers",
+      "core": true,
+      "num": "360",
+      "income": "UMC",
+      "ipc": null,
+      "psd": {
+        "corn": {
+          "consumption": 14400.0,
+          "production": 13500.0,
+          "imports": 1000.0,
+          "ending_stocks": 1011.0,
+          "stocks_to_use": 0.07,
+          "import_dependence": 0.069,
+          "market_year": 2026,
+          "begin_stu": 0.065,
+          "avg5_stu": 0.091,
+          "avg5_imports": 1163.8,
+          "prev_imports": 700.0,
+          "import_momentum": 0.601,
+          "avg5_production": 12800.0,
+          "production_vs_avg": 1.055
+        },
+        "rice": {
+          "production": 33600.0,
+          "imports": 500.0,
+          "ending_stocks": 3575.0,
+          "consumption": 35000.0,
+          "stocks_to_use": 0.102,
+          "import_dependence": 0.014,
+          "market_year": 2026,
+          "begin_stu": 0.127,
+          "avg5_stu": 0.126,
+          "avg5_imports": 2019.0,
+          "prev_imports": 400.0,
+          "import_momentum": 0.198,
+          "avg5_production": 33844.0,
+          "production_vs_avg": 0.993
+        },
+        "wheat": {
+          "production": 0.0,
+          "imports": 12500.0,
+          "ending_stocks": 1220.0,
+          "consumption": 12700.0,
+          "stocks_to_use": 0.096,
+          "import_dependence": 0.984,
+          "market_year": 2026,
+          "begin_stu": 0.153,
+          "avg5_stu": 0.145,
+          "avg5_imports": 11441.4,
+          "prev_imports": 13023.0,
+          "import_momentum": 1.138
+        }
+      },
+      "fx_rate": 18144.899424,
+      "fx_change_30d": 0.0128,
+      "fx_change_7d": 0.0009,
+      "risk": 36,
+      "risk_parts": {
+        "fx": 13,
+        "stocks": 70,
+        "imports": 16,
+        "coverage": "3/4",
+        "confidence": "Medium"
+      },
+      "confidence": "Medium",
+      "risk_band": "Watch",
+      "grain": {
+        "stocks_to_use": 0.093,
+        "import_dependence": 0.225,
+        "imports": 14000,
+        "consumption": 62100
+      },
+      "tender": "Low",
+      "tender_detail": {
+        "level": "Low",
+        "momentum": 1.138,
+        "harvest": null,
+        "stocks_vs_normal": 1.06,
+        "imports": 12500,
+        "crop": "wheat"
+      },
+      "risk_change": -1
     },
     {
       "name": "Azerbaijan",
@@ -6923,9 +6923,9 @@
           "production_vs_avg": 1.01
         }
       },
-      "fx_rate": 1.702552,
-      "fx_change_30d": -0.0,
-      "fx_change_7d": -0.0,
+      "fx_rate": 1.700048,
+      "fx_change_30d": -0.0009,
+      "fx_change_7d": 0.0,
       "risk": 36,
       "risk_parts": {
         "fx": 0,
@@ -6951,7 +6951,7 @@
         "imports": 1450,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Bosnia and Herzegovina",
@@ -6997,9 +6997,9 @@
           "production_vs_avg": 0.926
         }
       },
-      "fx_rate": 1.752461,
-      "fx_change_30d": 0.0062,
-      "fx_change_7d": 0.0034,
+      "fx_rate": 1.747106,
+      "fx_change_30d": 0.0058,
+      "fx_change_7d": -0.0019,
       "risk": 36,
       "risk_parts": {
         "fx": 6,
@@ -7025,7 +7025,7 @@
         "imports": 400,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Ecuador",
@@ -7120,75 +7120,7 @@
         "imports": 2300,
         "crop": "wheat"
       },
-      "risk_change": null
-    },
-    {
-      "name": "Gambia, The",
-      "iso3": "GMB",
-      "fas": "GA",
-      "fx": "GMD",
-      "buyer": "",
-      "core": false,
-      "num": "270",
-      "income": "LIC",
-      "ipc": {
-        "period_start": "2026-03-01T00:00:00",
-        "people_phase3plus": 0,
-        "share_phase3plus": 0.0,
-        "ipc_type": "current",
-        "period_end": "2026-05-31T23:59:59"
-      },
-      "psd": {
-        "rice": {
-          "production": 39.0,
-          "imports": 350.0,
-          "ending_stocks": 78.0,
-          "consumption": 380.0,
-          "stocks_to_use": 0.205,
-          "import_dependence": 0.921,
-          "market_year": 2026,
-          "begin_stu": 0.197,
-          "avg5_stu": 0.189,
-          "avg5_imports": 266.2,
-          "prev_imports": 300.0,
-          "import_momentum": 1.127
-        },
-        "corn": {
-          "production": 25.0,
-          "imports": 0.0,
-          "ending_stocks": 0.0,
-          "consumption": 25.0,
-          "stocks_to_use": 0.0,
-          "import_dependence": 0.0,
-          "market_year": 2026,
-          "begin_stu": 0.0,
-          "avg5_stu": 0.0,
-          "avg5_imports": 0.0
-        }
-      },
-      "fx_rate": 74.644883,
-      "fx_change_30d": 0.0084,
-      "fx_change_7d": -0.0007,
-      "risk": 36,
-      "risk_parts": {
-        "hunger": 0,
-        "fx": 8,
-        "stocks": 69,
-        "imports": 86,
-        "coverage": "4/4",
-        "confidence": "High"
-      },
-      "confidence": "High",
-      "risk_band": "Watch",
-      "grain": {
-        "stocks_to_use": 0.193,
-        "import_dependence": 0.864,
-        "imports": 350,
-        "consumption": 405
-      },
-      "tender": "Low",
-      "tender_detail": null,
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Cote d'Ivoire",
@@ -7254,9 +7186,9 @@
           "import_momentum": 1.099
         }
       },
-      "fx_rate": 587.750125,
-      "fx_change_30d": 0.0062,
-      "fx_change_7d": 0.0034,
+      "fx_rate": 585.954031,
+      "fx_change_30d": 0.0058,
+      "fx_change_7d": -0.0019,
       "risk": 35,
       "risk_parts": {
         "hunger": 10,
@@ -7283,7 +7215,75 @@
         "imports": 900,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
+    },
+    {
+      "name": "Gambia, The",
+      "iso3": "GMB",
+      "fas": "GA",
+      "fx": "GMD",
+      "buyer": "",
+      "core": false,
+      "num": "270",
+      "income": "LIC",
+      "ipc": {
+        "period_start": "2026-03-01T00:00:00",
+        "people_phase3plus": 0,
+        "share_phase3plus": 0.0,
+        "ipc_type": "current",
+        "period_end": "2026-05-31T23:59:59"
+      },
+      "psd": {
+        "rice": {
+          "production": 39.0,
+          "imports": 350.0,
+          "ending_stocks": 78.0,
+          "consumption": 380.0,
+          "stocks_to_use": 0.205,
+          "import_dependence": 0.921,
+          "market_year": 2026,
+          "begin_stu": 0.197,
+          "avg5_stu": 0.189,
+          "avg5_imports": 266.2,
+          "prev_imports": 300.0,
+          "import_momentum": 1.127
+        },
+        "corn": {
+          "production": 25.0,
+          "imports": 0.0,
+          "ending_stocks": 0.0,
+          "consumption": 25.0,
+          "stocks_to_use": 0.0,
+          "import_dependence": 0.0,
+          "market_year": 2026,
+          "begin_stu": 0.0,
+          "avg5_stu": 0.0,
+          "avg5_imports": 0.0
+        }
+      },
+      "fx_rate": 74.657433,
+      "fx_change_30d": 0.0024,
+      "fx_change_7d": 0.0,
+      "risk": 35,
+      "risk_parts": {
+        "hunger": 0,
+        "fx": 2,
+        "stocks": 69,
+        "imports": 86,
+        "coverage": "4/4",
+        "confidence": "High"
+      },
+      "confidence": "High",
+      "risk_band": "Watch",
+      "grain": {
+        "stocks_to_use": 0.193,
+        "import_dependence": 0.864,
+        "imports": 350,
+        "consumption": 405
+      },
+      "tender": "Low",
+      "tender_detail": null,
+      "risk_change": -1
     },
     {
       "name": "Malawi",
@@ -7341,13 +7341,13 @@
           "avg5_imports": 0.0
         }
       },
-      "fx_rate": 1734.11739,
-      "fx_change_30d": 0.001,
-      "fx_change_7d": 0.0039,
+      "fx_rate": 1743.324537,
+      "fx_change_30d": -0.0006,
+      "fx_change_7d": -0.0005,
       "risk": 35,
       "risk_parts": {
         "hunger": 25,
-        "fx": 1,
+        "fx": 0,
         "stocks": 100,
         "imports": 4,
         "coverage": "4/4",
@@ -7363,7 +7363,7 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Burma",
@@ -7425,8 +7425,8 @@
           "production_vs_avg": 0.88
         }
       },
-      "fx_rate": 2101.950349,
-      "fx_change_30d": -0.0006,
+      "fx_rate": 2098.633053,
+      "fx_change_30d": -0.0,
       "fx_change_7d": 0.0,
       "risk": 34,
       "risk_parts": {
@@ -7453,7 +7453,7 @@
         "imports": 400,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Zimbabwe",
@@ -7527,7 +7527,7 @@
         "imports": 450,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Armenia",
@@ -7557,9 +7557,9 @@
           "production_vs_avg": 1.127
         }
       },
-      "fx_rate": 360.280078,
-      "fx_change_30d": -0.0031,
-      "fx_change_7d": 0.0022,
+      "fx_rate": 360.496225,
+      "fx_change_30d": -0.006,
+      "fx_change_7d": -0.0026,
       "risk": 31,
       "risk_parts": {
         "fx": 0,
@@ -7585,7 +7585,7 @@
         "imports": 410,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Mali",
@@ -7651,9 +7651,9 @@
           "import_momentum": 1.203
         }
       },
-      "fx_rate": 587.750125,
-      "fx_change_30d": 0.0062,
-      "fx_change_7d": 0.0034,
+      "fx_rate": 585.954031,
+      "fx_change_30d": 0.0058,
+      "fx_change_7d": -0.0019,
       "risk": 31,
       "risk_parts": {
         "hunger": 8,
@@ -7680,7 +7680,7 @@
         "imports": 400,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Algeria",
@@ -7738,12 +7738,12 @@
           "production_vs_avg": 1.367
         }
       },
-      "fx_rate": 135.898342,
-      "fx_change_30d": 0.0119,
-      "fx_change_7d": 0.0067,
+      "fx_rate": 135.672835,
+      "fx_change_30d": 0.0138,
+      "fx_change_7d": 0.0056,
       "risk": 29,
       "risk_parts": {
-        "fx": 12,
+        "fx": 14,
         "stocks": 22,
         "imports": 53,
         "coverage": "3/4",
@@ -7766,7 +7766,7 @@
         "imports": 5100,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Turkey",
@@ -7828,12 +7828,12 @@
           "production_vs_avg": 1.026
         }
       },
-      "fx_rate": 49.939434,
-      "fx_change_30d": 0.0169,
+      "fx_rate": 49.993615,
+      "fx_change_30d": 0.0175,
       "fx_change_7d": 0.0042,
       "risk": 29,
       "risk_parts": {
-        "fx": 17,
+        "fx": 18,
         "stocks": 46,
         "imports": 21,
         "coverage": "3/4",
@@ -7856,7 +7856,7 @@
         "imports": 4500,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Syria",
@@ -7916,9 +7916,9 @@
           "production_vs_avg": 1.148
         }
       },
-      "fx_rate": 121.913502,
-      "fx_change_30d": -0.0007,
-      "fx_change_7d": -0.0002,
+      "fx_rate": 121.735769,
+      "fx_change_30d": -0.0001,
+      "fx_change_7d": 0.0,
       "risk": 29,
       "risk_parts": {
         "fx": 0,
@@ -7944,7 +7944,7 @@
         "imports": 300,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Ghana",
@@ -8010,9 +8010,9 @@
           "production_vs_avg": 1.056
         }
       },
-      "fx_rate": 11.645516,
-      "fx_change_30d": -0.0058,
-      "fx_change_7d": 0.0034,
+      "fx_rate": 11.681294,
+      "fx_change_30d": -0.0076,
+      "fx_change_7d": 0.002,
       "risk": 28,
       "risk_parts": {
         "hunger": 10,
@@ -8039,7 +8039,7 @@
         "imports": 1050,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Jordan",
@@ -8123,181 +8123,7 @@
         "imports": 1100,
         "crop": "corn"
       },
-      "risk_change": null
-    },
-    {
-      "name": "Sri Lanka",
-      "iso3": "LKA",
-      "fas": "CE",
-      "fx": "LKR",
-      "buyer": "",
-      "core": false,
-      "num": "144",
-      "income": "UMC",
-      "ipc": null,
-      "psd": {
-        "wheat": {
-          "production": 0.0,
-          "imports": 1300.0,
-          "ending_stocks": 127.0,
-          "consumption": 1250.0,
-          "stocks_to_use": 0.102,
-          "import_dependence": 1.04,
-          "market_year": 2026,
-          "begin_stu": 0.145,
-          "avg5_stu": 0.134,
-          "avg5_imports": 1096.6,
-          "prev_imports": 1339.0,
-          "import_momentum": 1.221
-        },
-        "rice": {
-          "ending_stocks": 886.0,
-          "consumption": 3550.0,
-          "production": 3350.0,
-          "imports": 200.0,
-          "stocks_to_use": 0.25,
-          "import_dependence": 0.056,
-          "market_year": 2026,
-          "begin_stu": 0.256,
-          "avg5_stu": 0.169,
-          "avg5_imports": 289.0,
-          "prev_imports": 250.0,
-          "import_momentum": 0.865,
-          "avg5_production": 3111.6,
-          "production_vs_avg": 1.077
-        },
-        "corn": {
-          "imports": 250.0,
-          "ending_stocks": 38.0,
-          "consumption": 550.0,
-          "production": 300.0,
-          "stocks_to_use": 0.069,
-          "import_dependence": 0.455,
-          "market_year": 2026,
-          "begin_stu": 0.074,
-          "avg5_stu": 0.079,
-          "avg5_imports": 237.6,
-          "prev_imports": 250.0,
-          "import_momentum": 1.052,
-          "avg5_production": 245.8,
-          "production_vs_avg": 1.221
-        }
-      },
-      "fx_rate": 332.391593,
-      "fx_change_30d": 0.0068,
-      "fx_change_7d": 0.0035,
-      "risk": 27,
-      "risk_parts": {
-        "fx": 7,
-        "stocks": 48,
-        "imports": 23,
-        "coverage": "3/4",
-        "confidence": "Medium"
-      },
-      "confidence": "Medium",
-      "risk_band": "Watch",
-      "grain": {
-        "stocks_to_use": 0.196,
-        "import_dependence": 0.327,
-        "imports": 1750,
-        "consumption": 5350
-      },
-      "tender": "Medium",
-      "tender_detail": {
-        "level": "Medium",
-        "momentum": 1.221,
-        "harvest": null,
-        "stocks_vs_normal": 1.08,
-        "imports": 1300,
-        "crop": "wheat"
-      },
-      "risk_change": null
-    },
-    {
-      "name": "Israel",
-      "iso3": "ISR",
-      "fas": "IS",
-      "fx": "ILS",
-      "buyer": "",
-      "core": false,
-      "num": "376",
-      "income": "HIC",
-      "ipc": null,
-      "psd": {
-        "corn": {
-          "production": 0.0,
-          "imports": 1450.0,
-          "ending_stocks": 130.0,
-          "consumption": 1400.0,
-          "stocks_to_use": 0.093,
-          "import_dependence": 1.036,
-          "market_year": 2026,
-          "begin_stu": 0.056,
-          "avg5_stu": 0.076,
-          "avg5_imports": 1535.2,
-          "prev_imports": 1600.0,
-          "import_momentum": 1.042
-        },
-        "rice": {
-          "production": 0.0,
-          "imports": 190.0,
-          "ending_stocks": 42.0,
-          "consumption": 190.0,
-          "stocks_to_use": 0.221,
-          "import_dependence": 1.0,
-          "market_year": 2026,
-          "begin_stu": 0.233,
-          "avg5_stu": 0.186,
-          "avg5_imports": 164.8,
-          "prev_imports": 180.0,
-          "import_momentum": 1.092
-        },
-        "wheat": {
-          "production": 60.0,
-          "imports": 2400.0,
-          "ending_stocks": 598.0,
-          "consumption": 2525.0,
-          "stocks_to_use": 0.237,
-          "import_dependence": 0.95,
-          "market_year": 2026,
-          "begin_stu": 0.268,
-          "avg5_stu": 0.269,
-          "avg5_imports": 2182.0,
-          "prev_imports": 2600.0,
-          "import_momentum": 1.192,
-          "avg5_production": 96.4,
-          "production_vs_avg": 0.622
-        }
-      },
-      "fx_rate": 3.140484,
-      "fx_change_30d": 0.029,
-      "fx_change_7d": 0.0089,
-      "risk": 26,
-      "risk_parts": {
-        "fx": 29,
-        "stocks": 21,
-        "imports": 29,
-        "coverage": "3/4",
-        "confidence": "Medium"
-      },
-      "confidence": "Medium",
-      "risk_band": "Watch",
-      "grain": {
-        "stocks_to_use": 0.187,
-        "import_dependence": 0.982,
-        "imports": 4040,
-        "consumption": 4115
-      },
-      "tender": "High",
-      "tender_detail": {
-        "level": "High",
-        "momentum": 1.192,
-        "harvest": 0.622,
-        "stocks_vs_normal": 1.0,
-        "imports": 2400,
-        "crop": "wheat"
-      },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Taiwan",
@@ -8357,12 +8183,12 @@
           "production_vs_avg": 1.1
         }
       },
-      "fx_rate": 32.636828,
-      "fx_change_30d": 0.0238,
-      "fx_change_7d": 0.0004,
-      "risk": 26,
+      "fx_rate": 32.589181,
+      "fx_change_30d": 0.0307,
+      "fx_change_7d": 0.0085,
+      "risk": 28,
       "risk_parts": {
-        "fx": 24,
+        "fx": 31,
         "stocks": 28,
         "imports": 26,
         "coverage": "3/4",
@@ -8385,7 +8211,181 @@
         "imports": 4550,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 2
+    },
+    {
+      "name": "Sri Lanka",
+      "iso3": "LKA",
+      "fas": "CE",
+      "fx": "LKR",
+      "buyer": "",
+      "core": false,
+      "num": "144",
+      "income": "UMC",
+      "ipc": null,
+      "psd": {
+        "wheat": {
+          "production": 0.0,
+          "imports": 1300.0,
+          "ending_stocks": 127.0,
+          "consumption": 1250.0,
+          "stocks_to_use": 0.102,
+          "import_dependence": 1.04,
+          "market_year": 2026,
+          "begin_stu": 0.145,
+          "avg5_stu": 0.134,
+          "avg5_imports": 1096.6,
+          "prev_imports": 1339.0,
+          "import_momentum": 1.221
+        },
+        "rice": {
+          "ending_stocks": 886.0,
+          "consumption": 3550.0,
+          "production": 3350.0,
+          "imports": 200.0,
+          "stocks_to_use": 0.25,
+          "import_dependence": 0.056,
+          "market_year": 2026,
+          "begin_stu": 0.256,
+          "avg5_stu": 0.169,
+          "avg5_imports": 289.0,
+          "prev_imports": 250.0,
+          "import_momentum": 0.865,
+          "avg5_production": 3111.6,
+          "production_vs_avg": 1.077
+        },
+        "corn": {
+          "imports": 250.0,
+          "ending_stocks": 38.0,
+          "consumption": 550.0,
+          "production": 300.0,
+          "stocks_to_use": 0.069,
+          "import_dependence": 0.455,
+          "market_year": 2026,
+          "begin_stu": 0.074,
+          "avg5_stu": 0.079,
+          "avg5_imports": 237.6,
+          "prev_imports": 250.0,
+          "import_momentum": 1.052,
+          "avg5_production": 245.8,
+          "production_vs_avg": 1.221
+        }
+      },
+      "fx_rate": 332.322753,
+      "fx_change_30d": 0.0053,
+      "fx_change_7d": -0.0002,
+      "risk": 27,
+      "risk_parts": {
+        "fx": 5,
+        "stocks": 48,
+        "imports": 23,
+        "coverage": "3/4",
+        "confidence": "Medium"
+      },
+      "confidence": "Medium",
+      "risk_band": "Watch",
+      "grain": {
+        "stocks_to_use": 0.196,
+        "import_dependence": 0.327,
+        "imports": 1750,
+        "consumption": 5350
+      },
+      "tender": "Medium",
+      "tender_detail": {
+        "level": "Medium",
+        "momentum": 1.221,
+        "harvest": null,
+        "stocks_vs_normal": 1.08,
+        "imports": 1300,
+        "crop": "wheat"
+      },
+      "risk_change": 0
+    },
+    {
+      "name": "Israel",
+      "iso3": "ISR",
+      "fas": "IS",
+      "fx": "ILS",
+      "buyer": "",
+      "core": false,
+      "num": "376",
+      "income": "HIC",
+      "ipc": null,
+      "psd": {
+        "corn": {
+          "production": 0.0,
+          "imports": 1450.0,
+          "ending_stocks": 130.0,
+          "consumption": 1400.0,
+          "stocks_to_use": 0.093,
+          "import_dependence": 1.036,
+          "market_year": 2026,
+          "begin_stu": 0.056,
+          "avg5_stu": 0.076,
+          "avg5_imports": 1535.2,
+          "prev_imports": 1600.0,
+          "import_momentum": 1.042
+        },
+        "rice": {
+          "production": 0.0,
+          "imports": 190.0,
+          "ending_stocks": 42.0,
+          "consumption": 190.0,
+          "stocks_to_use": 0.221,
+          "import_dependence": 1.0,
+          "market_year": 2026,
+          "begin_stu": 0.233,
+          "avg5_stu": 0.186,
+          "avg5_imports": 164.8,
+          "prev_imports": 180.0,
+          "import_momentum": 1.092
+        },
+        "wheat": {
+          "production": 60.0,
+          "imports": 2400.0,
+          "ending_stocks": 598.0,
+          "consumption": 2525.0,
+          "stocks_to_use": 0.237,
+          "import_dependence": 0.95,
+          "market_year": 2026,
+          "begin_stu": 0.268,
+          "avg5_stu": 0.269,
+          "avg5_imports": 2182.0,
+          "prev_imports": 2600.0,
+          "import_momentum": 1.192,
+          "avg5_production": 96.4,
+          "production_vs_avg": 0.622
+        }
+      },
+      "fx_rate": 3.140446,
+      "fx_change_30d": 0.0275,
+      "fx_change_7d": 0.0246,
+      "risk": 26,
+      "risk_parts": {
+        "fx": 27,
+        "stocks": 21,
+        "imports": 29,
+        "coverage": "3/4",
+        "confidence": "Medium"
+      },
+      "confidence": "Medium",
+      "risk_band": "Watch",
+      "grain": {
+        "stocks_to_use": 0.187,
+        "import_dependence": 0.982,
+        "imports": 4040,
+        "consumption": 4115
+      },
+      "tender": "High",
+      "tender_detail": {
+        "level": "High",
+        "momentum": 1.192,
+        "harvest": 0.622,
+        "stocks_vs_normal": 1.0,
+        "imports": 2400,
+        "crop": "wheat"
+      },
+      "risk_change": 0
     },
     {
       "name": "Thailand",
@@ -8445,12 +8445,12 @@
           "import_momentum": 1.035
         }
       },
-      "fx_rate": 33.755423,
-      "fx_change_30d": 0.0075,
-      "fx_change_7d": -0.0004,
-      "risk": 26,
+      "fx_rate": 33.740315,
+      "fx_change_30d": 0.0038,
+      "fx_change_7d": -0.0001,
+      "risk": 25,
       "risk_parts": {
-        "fx": 8,
+        "fx": 4,
         "stocks": 49,
         "imports": 16,
         "coverage": "3/4",
@@ -8473,7 +8473,7 @@
         "imports": 3500,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": -1
     },
     {
       "name": "Djibouti",
@@ -8502,9 +8502,9 @@
         }
       },
       "fx_rate": 177.721,
-      "fx_change_30d": 0.0005,
-      "fx_change_7d": 0.0029,
-      "risk": 26,
+      "fx_change_30d": -0.004,
+      "fx_change_7d": -0.0016,
+      "risk": 25,
       "risk_parts": {
         "hunger": 40,
         "fx": 0,
@@ -8516,7 +8516,91 @@
       "grain": null,
       "tender": "No data",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": -1
+    },
+    {
+      "name": "Kuwait",
+      "iso3": "KWT",
+      "fas": "KU",
+      "fx": "KWD",
+      "buyer": "",
+      "core": false,
+      "num": "414",
+      "income": "HIC",
+      "ipc": null,
+      "psd": {
+        "rice": {
+          "production": 0.0,
+          "imports": 220.0,
+          "ending_stocks": 0.0,
+          "consumption": 220.0,
+          "stocks_to_use": 0.0,
+          "import_dependence": 1.0,
+          "market_year": 2026,
+          "begin_stu": 0.0,
+          "avg5_stu": 0.0,
+          "avg5_imports": 216.2,
+          "prev_imports": 210.0,
+          "import_momentum": 0.971
+        },
+        "corn": {
+          "production": 0.0,
+          "imports": 125.0,
+          "ending_stocks": 10.0,
+          "consumption": 125.0,
+          "stocks_to_use": 0.08,
+          "import_dependence": 1.0,
+          "market_year": 2026,
+          "begin_stu": 0.08,
+          "avg5_stu": 0.079,
+          "avg5_imports": 147.0,
+          "prev_imports": 125.0,
+          "import_momentum": 0.85
+        },
+        "wheat": {
+          "production": 0.0,
+          "imports": 525.0,
+          "ending_stocks": 0.0,
+          "consumption": 525.0,
+          "stocks_to_use": 0.0,
+          "import_dependence": 1.0,
+          "market_year": 2026,
+          "begin_stu": 0.0,
+          "avg5_stu": 0.0,
+          "avg5_imports": 472.2,
+          "prev_imports": 352.0,
+          "import_momentum": 0.745
+        }
+      },
+      "fx_rate": 0.310972,
+      "fx_change_30d": 0.0089,
+      "fx_change_7d": 0.0026,
+      "risk": 24,
+      "risk_parts": {
+        "fx": 9,
+        "stocks": 30,
+        "imports": 30,
+        "coverage": "3/4",
+        "confidence": "Medium"
+      },
+      "confidence": "Medium",
+      "risk_band": "Low",
+      "grain": {
+        "stocks_to_use": 0.011,
+        "import_dependence": 1.0,
+        "imports": 870,
+        "consumption": 870
+      },
+      "tender": "Low",
+      "tender_detail": {
+        "level": "Low",
+        "momentum": 0.745,
+        "harvest": null,
+        "stocks_vs_normal": null,
+        "imports": 525,
+        "crop": "wheat"
+      },
+      "risk_change": 1
     },
     {
       "name": "South Africa",
@@ -8576,19 +8660,19 @@
           "production_vs_avg": 0.878
         }
       },
-      "fx_rate": 16.694252,
-      "fx_change_30d": 0.0024,
-      "fx_change_7d": 0.005,
-      "risk": 25,
+      "fx_rate": 16.613417,
+      "fx_change_30d": -0.0007,
+      "fx_change_7d": -0.0005,
+      "risk": 24,
       "risk_parts": {
-        "fx": 2,
+        "fx": 0,
         "stocks": 53,
         "imports": 12,
         "coverage": "3/4",
         "confidence": "Medium"
       },
       "confidence": "Medium",
-      "risk_band": "Watch",
+      "risk_band": "Low",
       "grain": {
         "stocks_to_use": 0.172,
         "import_dependence": 0.174,
@@ -8604,7 +8688,7 @@
         "imports": 2150,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": -1
     },
     {
       "name": "Kazakhstan",
@@ -8666,12 +8750,12 @@
           "production_vs_avg": 0.844
         }
       },
-      "fx_rate": 453.438742,
-      "fx_change_30d": 0.0121,
-      "fx_change_7d": 0.0011,
-      "risk": 23,
+      "fx_rate": 453.337185,
+      "fx_change_30d": 0.0095,
+      "fx_change_7d": -0.0003,
+      "risk": 22,
       "risk_parts": {
-        "fx": 12,
+        "fx": 9,
         "stocks": 39,
         "imports": 13,
         "coverage": "3/4",
@@ -8687,91 +8771,7 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
-    },
-    {
-      "name": "Kuwait",
-      "iso3": "KWT",
-      "fas": "KU",
-      "fx": "KWD",
-      "buyer": "",
-      "core": false,
-      "num": "414",
-      "income": "HIC",
-      "ipc": null,
-      "psd": {
-        "rice": {
-          "production": 0.0,
-          "imports": 220.0,
-          "ending_stocks": 0.0,
-          "consumption": 220.0,
-          "stocks_to_use": 0.0,
-          "import_dependence": 1.0,
-          "market_year": 2026,
-          "begin_stu": 0.0,
-          "avg5_stu": 0.0,
-          "avg5_imports": 216.2,
-          "prev_imports": 210.0,
-          "import_momentum": 0.971
-        },
-        "corn": {
-          "production": 0.0,
-          "imports": 125.0,
-          "ending_stocks": 10.0,
-          "consumption": 125.0,
-          "stocks_to_use": 0.08,
-          "import_dependence": 1.0,
-          "market_year": 2026,
-          "begin_stu": 0.08,
-          "avg5_stu": 0.079,
-          "avg5_imports": 147.0,
-          "prev_imports": 125.0,
-          "import_momentum": 0.85
-        },
-        "wheat": {
-          "production": 0.0,
-          "imports": 525.0,
-          "ending_stocks": 0.0,
-          "consumption": 525.0,
-          "stocks_to_use": 0.0,
-          "import_dependence": 1.0,
-          "market_year": 2026,
-          "begin_stu": 0.0,
-          "avg5_stu": 0.0,
-          "avg5_imports": 472.2,
-          "prev_imports": 352.0,
-          "import_momentum": 0.745
-        }
-      },
-      "fx_rate": 0.310615,
-      "fx_change_30d": 0.0077,
-      "fx_change_7d": 0.0019,
-      "risk": 23,
-      "risk_parts": {
-        "fx": 8,
-        "stocks": 30,
-        "imports": 30,
-        "coverage": "3/4",
-        "confidence": "Medium"
-      },
-      "confidence": "Medium",
-      "risk_band": "Low",
-      "grain": {
-        "stocks_to_use": 0.011,
-        "import_dependence": 1.0,
-        "imports": 870,
-        "consumption": 870
-      },
-      "tender": "Low",
-      "tender_detail": {
-        "level": "Low",
-        "momentum": 0.745,
-        "harvest": null,
-        "stocks_vs_normal": null,
-        "imports": 525,
-        "crop": "wheat"
-      },
-      "risk_change": null
+      "risk_change": -1
     },
     {
       "name": "Hong Kong",
@@ -8827,9 +8827,9 @@
           "import_momentum": 0.974
         }
       },
-      "fx_rate": 7.844618,
+      "fx_rate": 7.846694,
       "fx_change_30d": -0.0001,
-      "fx_change_7d": 0.0003,
+      "fx_change_7d": 0.0002,
       "risk": 21,
       "risk_parts": {
         "fx": 0,
@@ -8855,7 +8855,7 @@
         "imports": 410,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Singapore",
@@ -8911,12 +8911,12 @@
           "import_momentum": 0.945
         }
       },
-      "fx_rate": 1.278048,
-      "fx_change_30d": -0.0005,
-      "fx_change_7d": 0.0004,
+      "fx_rate": 1.279119,
+      "fx_change_30d": 0.0009,
+      "fx_change_7d": -0.0004,
       "risk": 21,
       "risk_parts": {
-        "fx": 0,
+        "fx": 1,
         "stocks": 30,
         "imports": 30,
         "coverage": "3/4",
@@ -8939,7 +8939,7 @@
         "imports": 390,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Costa Rica",
@@ -8997,9 +8997,9 @@
           "import_momentum": 0.996
         }
       },
-      "fx_rate": 455.428701,
-      "fx_change_30d": -0.0063,
-      "fx_change_7d": 0.0001,
+      "fx_rate": 454.916623,
+      "fx_change_30d": -0.0107,
+      "fx_change_7d": -0.0023,
       "risk": 20,
       "risk_parts": {
         "fx": 0,
@@ -9025,7 +9025,7 @@
         "imports": 1100,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Chile",
@@ -9087,12 +9087,12 @@
           "production_vs_avg": 0.984
         }
       },
-      "fx_rate": 990.838267,
-      "fx_change_30d": 0.0036,
-      "fx_change_7d": -0.0017,
-      "risk": 19,
+      "fx_rate": 993.985301,
+      "fx_change_30d": -0.0128,
+      "fx_change_7d": -0.012,
+      "risk": 18,
       "risk_parts": {
-        "fx": 4,
+        "fx": 0,
         "stocks": 30,
         "imports": 22,
         "coverage": "3/4",
@@ -9115,7 +9115,7 @@
         "imports": 2850,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": -1
     },
     {
       "name": "Panama",
@@ -9203,7 +9203,7 @@
         "imports": 700,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "United Arab Emirates",
@@ -9287,7 +9287,7 @@
         "imports": 1850,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Japan",
@@ -9347,9 +9347,9 @@
           "production_vs_avg": 0.948
         }
       },
-      "fx_rate": 157.532149,
-      "fx_change_30d": -0.001,
-      "fx_change_7d": 0.0053,
+      "fx_rate": 157.896122,
+      "fx_change_30d": -0.0001,
+      "fx_change_7d": 0.0015,
       "risk": 16,
       "risk_parts": {
         "fx": 0,
@@ -9375,7 +9375,7 @@
         "imports": 15500,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Switzerland",
@@ -9435,9 +9435,9 @@
           "production_vs_avg": 1.022
         }
       },
-      "fx_rate": 0.824534,
-      "fx_change_30d": -0.0069,
-      "fx_change_7d": -0.0009,
+      "fx_rate": 0.819466,
+      "fx_change_30d": -0.0125,
+      "fx_change_7d": -0.0114,
       "risk": 16,
       "risk_parts": {
         "fx": 0,
@@ -9463,7 +9463,7 @@
         "imports": 550,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Korea, South",
@@ -9523,9 +9523,9 @@
           "production_vs_avg": 1.015
         }
       },
-      "fx_rate": 1332.76172,
-      "fx_change_30d": -0.0004,
-      "fx_change_7d": 0.0158,
+      "fx_rate": 1344.12576,
+      "fx_change_30d": -0.0019,
+      "fx_change_7d": 0.0125,
       "risk": 15,
       "risk_parts": {
         "fx": 0,
@@ -9551,7 +9551,7 @@
         "imports": 11500,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "New Zealand",
@@ -9611,9 +9611,9 @@
           "import_momentum": 1.115
         }
       },
-      "fx_rate": 1.777652,
-      "fx_change_30d": -0.0004,
-      "fx_change_7d": 0.015,
+      "fx_rate": 1.779045,
+      "fx_change_30d": -0.0023,
+      "fx_change_7d": 0.0129,
       "risk": 14,
       "risk_parts": {
         "fx": 0,
@@ -9639,7 +9639,7 @@
         "imports": 725,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Oman",
@@ -9696,11 +9696,11 @@
         }
       },
       "fx_rate": 0.384497,
-      "fx_change_30d": 0.0018,
-      "fx_change_7d": -0.0008,
+      "fx_change_30d": 0.0006,
+      "fx_change_7d": 0.0001,
       "risk": 13,
       "risk_parts": {
-        "fx": 2,
+        "fx": 1,
         "stocks": 11,
         "imports": 29,
         "coverage": "3/4",
@@ -9723,7 +9723,7 @@
         "imports": 840,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "United Kingdom",
@@ -9781,9 +9781,9 @@
           "import_momentum": 0.962
         }
       },
-      "fx_rate": 0.746906,
-      "fx_change_30d": -0.0121,
-      "fx_change_7d": -0.0014,
+      "fx_rate": 0.745737,
+      "fx_change_30d": -0.0127,
+      "fx_change_7d": -0.0052,
       "risk": 13,
       "risk_parts": {
         "fx": 0,
@@ -9809,7 +9809,7 @@
         "imports": 2500,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Zambia",
@@ -9869,13 +9869,13 @@
           "production_vs_avg": 1.65
         }
       },
-      "fx_rate": 20.219988,
-      "fx_change_30d": 0.0306,
-      "fx_change_7d": 0.0019,
-      "risk": 12,
+      "fx_rate": 20.250833,
+      "fx_change_30d": 0.0366,
+      "fx_change_7d": 0.0045,
+      "risk": 13,
       "risk_parts": {
         "hunger": 10,
-        "fx": 31,
+        "fx": 37,
         "stocks": 0,
         "imports": 10,
         "coverage": "4/4",
@@ -9898,7 +9898,7 @@
         "imports": 350,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 1
     },
     {
       "name": "Norway",
@@ -9942,9 +9942,9 @@
           "production_vs_avg": 1.1
         }
       },
-      "fx_rate": 9.212992,
-      "fx_change_30d": -0.0434,
-      "fx_change_7d": -0.0125,
+      "fx_rate": 9.291419,
+      "fx_change_30d": -0.0352,
+      "fx_change_7d": -0.0027,
       "risk": 10,
       "risk_parts": {
         "fx": 0,
@@ -9970,7 +9970,7 @@
         "imports": 450,
         "crop": "wheat"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Saudi Arabia",
@@ -10058,7 +10058,7 @@
         "imports": 4700,
         "crop": "corn"
       },
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "United States",
@@ -10141,7 +10141,7 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Canada",
@@ -10201,9 +10201,9 @@
           "import_momentum": 1.02
         }
       },
-      "fx_rate": 1.396839,
-      "fx_change_30d": -0.019,
-      "fx_change_7d": -0.0018,
+      "fx_rate": 1.39809,
+      "fx_change_30d": -0.0194,
+      "fx_change_7d": -0.003,
       "risk": 6,
       "risk_parts": {
         "fx": 0,
@@ -10222,7 +10222,7 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Russia",
@@ -10284,9 +10284,9 @@
           "production_vs_avg": 1.022
         }
       },
-      "fx_rate": 80.61816,
-      "fx_change_30d": -0.0364,
-      "fx_change_7d": -0.0105,
+      "fx_rate": 80.944621,
+      "fx_change_30d": -0.0248,
+      "fx_change_7d": 0.0056,
       "risk": 1,
       "risk_parts": {
         "fx": 0,
@@ -10305,7 +10305,7 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Australia",
@@ -10367,9 +10367,9 @@
           "production_vs_avg": 0.275
         }
       },
-      "fx_rate": 1.422744,
-      "fx_change_30d": -0.0096,
-      "fx_change_7d": 0.0009,
+      "fx_rate": 1.427896,
+      "fx_change_30d": -0.004,
+      "fx_change_7d": 0.0069,
       "risk": 0,
       "risk_parts": {
         "fx": 0,
@@ -10388,7 +10388,7 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "China",
@@ -10450,9 +10450,9 @@
           "production_vs_avg": 1.02
         }
       },
-      "fx_rate": 6.660856,
-      "fx_change_30d": -0.0083,
-      "fx_change_7d": -0.0031,
+      "fx_rate": 6.665393,
+      "fx_change_30d": -0.0054,
+      "fx_change_7d": 0.0005,
       "risk": 0,
       "risk_parts": {
         "fx": 0,
@@ -10471,7 +10471,7 @@
       },
       "tender": "Low",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": 0
     },
     {
       "name": "Timor-Leste",
@@ -10505,7 +10505,7 @@
       "grain": null,
       "tender": "No data",
       "tender_detail": null,
-      "risk_change": null
+      "risk_change": 0
     }
   ],
   "unmatched_names": [
@@ -10521,10 +10521,108 @@
   ],
   "alerts": [],
   "movers": {
-    "up": [],
-    "down": []
+    "up": [
+      {
+        "iso3": "COD",
+        "name": "Congo (Kinshasa)",
+        "risk": 52,
+        "change": 2
+      },
+      {
+        "iso3": "IRN",
+        "name": "Iran",
+        "risk": 52,
+        "change": 2
+      },
+      {
+        "iso3": "TWN",
+        "name": "Taiwan",
+        "risk": 28,
+        "change": 2
+      },
+      {
+        "iso3": "UGA",
+        "name": "Uganda",
+        "risk": 76,
+        "change": 1
+      },
+      {
+        "iso3": "VEN",
+        "name": "Venezuela",
+        "risk": 67,
+        "change": 1
+      },
+      {
+        "iso3": "MRT",
+        "name": "Mauritania",
+        "risk": 47,
+        "change": 1
+      },
+      {
+        "iso3": "ETH",
+        "name": "Ethiopia",
+        "risk": 44,
+        "change": 1
+      },
+      {
+        "iso3": "KWT",
+        "name": "Kuwait",
+        "risk": 24,
+        "change": 1
+      }
+    ],
+    "down": [
+      {
+        "iso3": "MDG",
+        "name": "Madagascar",
+        "risk": 41,
+        "change": -4
+      },
+      {
+        "iso3": "EGY",
+        "name": "Egypt",
+        "risk": 68,
+        "change": -3
+      },
+      {
+        "iso3": "MEX",
+        "name": "Mexico",
+        "risk": 46,
+        "change": -3
+      },
+      {
+        "iso3": "KEN",
+        "name": "Kenya",
+        "risk": 53,
+        "change": -2
+      },
+      {
+        "iso3": "UZB",
+        "name": "Uzbekistan",
+        "risk": 49,
+        "change": -2
+      },
+      {
+        "iso3": "BOL",
+        "name": "Bolivia",
+        "risk": 42,
+        "change": -2
+      },
+      {
+        "iso3": "DOM",
+        "name": "Dominican Republic",
+        "risk": 39,
+        "change": -2
+      },
+      {
+        "iso3": "PNG",
+        "name": "Papua New Guinea",
+        "risk": 75,
+        "change": -1
+      }
+    ]
   },
-  "compared_with": null,
+  "compared_with": "2026-11-02",
   "opportunities": [
     {
       "iso3": "VNM",
@@ -10535,7 +10633,7 @@
       "wheat_kt": 6200,
       "corn_kt": 14600,
       "black_sea": true,
-      "fx_change_30d": -0.0092,
+      "fx_change_30d": -0.0096,
       "crop": "corn",
       "momentum": 1.23,
       "harvest": 0.936,
@@ -10551,7 +10649,7 @@
       "wheat_kt": 11500,
       "corn_kt": 13500,
       "black_sea": true,
-      "fx_change_30d": 0.0692,
+      "fx_change_30d": 0.0598,
       "crop": "corn",
       "momentum": 1.359,
       "harvest": 0.978,
@@ -10567,7 +10665,7 @@
       "wheat_kt": 8300,
       "corn_kt": 5100,
       "black_sea": true,
-      "fx_change_30d": 0.0119,
+      "fx_change_30d": 0.0138,
       "crop": "corn",
       "momentum": 1.297,
       "harvest": null,
@@ -10583,7 +10681,7 @@
       "wheat_kt": 2400,
       "corn_kt": 1450,
       "black_sea": true,
-      "fx_change_30d": 0.029,
+      "fx_change_30d": 0.0275,
       "crop": "wheat",
       "momentum": 1.192,
       "harvest": 0.622,
@@ -10599,7 +10697,7 @@
       "wheat_kt": 4500,
       "corn_kt": 4500,
       "black_sea": true,
-      "fx_change_30d": 0.0169,
+      "fx_change_30d": 0.0175,
       "crop": "corn",
       "momentum": 1.442,
       "harvest": 1.016,
@@ -10631,7 +10729,7 @@
       "wheat_kt": 2600,
       "corn_kt": 1800,
       "black_sea": true,
-      "fx_change_30d": 0.0113,
+      "fx_change_30d": 0.0021,
       "crop": "wheat",
       "momentum": 1.249,
       "harvest": 0.43,
@@ -10647,7 +10745,7 @@
       "wheat_kt": 3500,
       "corn_kt": 3450,
       "black_sea": true,
-      "fx_change_30d": -0.0108,
+      "fx_change_30d": -0.0117,
       "crop": "corn",
       "momentum": 1.325,
       "harvest": null,
@@ -10663,7 +10761,7 @@
       "wheat_kt": 2000,
       "corn_kt": 1500,
       "black_sea": true,
-      "fx_change_30d": 0.1598,
+      "fx_change_30d": 0.1558,
       "crop": "corn",
       "momentum": 1.349,
       "harvest": 1.05,
@@ -10679,7 +10777,7 @@
       "wheat_kt": 4150,
       "corn_kt": 600,
       "black_sea": true,
-      "fx_change_30d": -0.0008,
+      "fx_change_30d": -0.0007,
       "crop": "corn",
       "momentum": 1.119,
       "harvest": 0.945,
@@ -10695,7 +10793,7 @@
       "wheat_kt": 2000,
       "corn_kt": 8600,
       "black_sea": false,
-      "fx_change_30d": -0.0179,
+      "fx_change_30d": -0.0149,
       "crop": "corn",
       "momentum": 1.188,
       "harvest": 0.906,
@@ -10711,7 +10809,7 @@
       "wheat_kt": 1900,
       "corn_kt": 900,
       "black_sea": true,
-      "fx_change_30d": 0.0061,
+      "fx_change_30d": 0.003,
       "crop": "wheat",
       "momentum": 1.317,
       "harvest": 1.0,
@@ -10743,7 +10841,7 @@
       "wheat_kt": 1850,
       "corn_kt": 1400,
       "black_sea": true,
-      "fx_change_30d": -0.0022,
+      "fx_change_30d": -0.003,
       "crop": "corn",
       "momentum": 1.329,
       "harvest": null,
@@ -10759,7 +10857,7 @@
       "wheat_kt": 1000,
       "corn_kt": 500,
       "black_sea": true,
-      "fx_change_30d": 0.0062,
+      "fx_change_30d": 0.0058,
       "crop": "corn",
       "momentum": 1.148,
       "harvest": 0.866,
@@ -10775,7 +10873,7 @@
       "wheat_kt": 2700,
       "corn_kt": 0,
       "black_sea": true,
-      "fx_change_30d": 0.0001,
+      "fx_change_30d": 0.0,
       "crop": "wheat",
       "momentum": 1.134,
       "harvest": 0.696,
@@ -10791,7 +10889,7 @@
       "wheat_kt": 1300,
       "corn_kt": 250,
       "black_sea": true,
-      "fx_change_30d": 0.0068,
+      "fx_change_30d": 0.0053,
       "crop": "wheat",
       "momentum": 1.221,
       "harvest": null,
@@ -10807,7 +10905,7 @@
       "wheat_kt": 1600,
       "corn_kt": 30,
       "black_sea": true,
-      "fx_change_30d": 0.0031,
+      "fx_change_30d": 0.0014,
       "crop": "wheat",
       "momentum": 1.347,
       "harvest": 0.982,
@@ -10823,7 +10921,7 @@
       "wheat_kt": 1050,
       "corn_kt": 75,
       "black_sea": true,
-      "fx_change_30d": -0.0058,
+      "fx_change_30d": -0.0076,
       "crop": "wheat",
       "momentum": 1.252,
       "harvest": null,
@@ -10839,7 +10937,7 @@
       "wheat_kt": 2150,
       "corn_kt": 0,
       "black_sea": false,
-      "fx_change_30d": 0.0024,
+      "fx_change_30d": -0.0007,
       "crop": "wheat",
       "momentum": 1.102,
       "harvest": 0.878,
@@ -10855,7 +10953,7 @@
       "wheat_kt": 1200,
       "corn_kt": 5,
       "black_sea": true,
-      "fx_change_30d": 0.0016,
+      "fx_change_30d": -0.0018,
       "crop": "wheat",
       "momentum": 1.302,
       "harvest": null,
@@ -10871,7 +10969,7 @@
       "wheat_kt": 4000,
       "corn_kt": 75,
       "black_sea": false,
-      "fx_change_30d": 0.0182,
+      "fx_change_30d": 0.014,
       "crop": "wheat",
       "momentum": 1.352,
       "harvest": 1.141,
@@ -10887,7 +10985,7 @@
       "wheat_kt": 1000,
       "corn_kt": 5,
       "black_sea": true,
-      "fx_change_30d": 0.0674,
+      "fx_change_30d": 0.0723,
       "crop": "wheat",
       "momentum": 1.37,
       "harvest": null,
@@ -10903,7 +11001,7 @@
       "wheat_kt": 900,
       "corn_kt": 250,
       "black_sea": true,
-      "fx_change_30d": 0.0003,
+      "fx_change_30d": 0.0001,
       "crop": "wheat",
       "momentum": 1.242,
       "harvest": null,
@@ -10919,7 +11017,7 @@
       "wheat_kt": 900,
       "corn_kt": 2000,
       "black_sea": false,
-      "fx_change_30d": 0.0013,
+      "fx_change_30d": 0.0,
       "crop": "corn",
       "momentum": 1.232,
       "harvest": 1.007,
@@ -11010,7 +11108,7 @@
     "caveat": "Uses USDA's revised figures, not the estimates available at the time."
   },
   "sanity": {
-    "auc": 0.701,
+    "auc": 0.716,
     "crisis_countries": 11,
     "others": 102,
     "meaning": "Chance a country with 20%+ in IPC crisis scores higher on supply and currency alone than one without."
