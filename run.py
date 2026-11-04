@@ -146,9 +146,11 @@ def main():
 
     rows.sort(key=lambda r: (r["risk"] is None, -(r["risk"] or 0)))
 
-    # ReliefWeb reports for the 30 highest-risk countries (one call each, keeps us polite)
+    # ReliefWeb reports for every country at Elevated risk or worse, or with a High tender
+    # signal (one call each, capped at 60 to stay polite)
     if rw_app and not args.offline:
-        for r in rows[:30]:
+        pick = [r for r in rows if (r["risk"] or 0) >= 45 or r["tender"].startswith("High")][:60]
+        for r in pick:
             r["reports"] = log.run("reliefweb", lambda iso=r["iso3"]: reliefweb.fetch(sess, iso, rw_app))
 
     # --- what changed, who to sell to, tender log ----------------------------
